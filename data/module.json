@@ -1,0 +1,506 @@
+[
+  {
+    "id": "karwoche",
+    "typ": "osterkreis",
+    "prioritaet": 10,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich gehe diese Woche mit Dir. Ich danke Dir dafür, dass Du diesen Weg gegangen bist — freiwillig, für uns, bis zum Ende. Lass mich heute in Deiner Nähe bleiben, auch wenn ich meinen Alltag weiterlebe.",
+      "mittag": "Ich danke Dir für Deine Liebe, die bis ans Ende geht. Lass mich diese Stunde bei Dir bleiben.",
+      "abend": "Herr, ich danke Dir für alles, was Du in dieser Woche für uns getragen hast. Lass mich nicht darüber hinweggehen, als wäre es eine Geschichte von früher. Es gilt mir. Schenke mir ein stilles Herz auf dem Weg zum Ostermorgen."
+    },
+    "fuerbitteZusatz": "Heilige Gottesgebärerin, die Du unter dem Kreuz gestanden hast, bitte für mich.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "ostern-lichte-woche",
+    "typ": "osterkreis",
+    "prioritaet": 10,
+    "eroeffnung": "Christus ist auferstanden von den Toten. Durch den Tod hat Er den Tod zertreten und denen in den Gräbern das Leben geschenkt.",
+    "einschub": {
+      "morgen": "Christus ist auferstanden. Herr, ich danke Dir für diesen Morgen, an dem alles anders ist — für das Licht, für die Freude, die nicht von meinen Umständen abhängt, für die Gewissheit, dass der Tod nicht das letzte Wort behält. Lass mich diese Freude heute weitertragen zu jemandem, der sie braucht.",
+      "mittag": "Christus ist auferstanden. Ich danke Dir für diese Freude mitten am Tag.",
+      "abend": "Christus ist auferstanden. Herr, ich danke Dir für diesen Tag der Freude und für alles, was heute hell war. Lass mich mit dieser Gewissheit einschlafen: Es gibt nichts mehr, was endgültig verloren wäre."
+    },
+    "fuerbitteZusatz": "Heilige Gottesgebärerin, freue dich mit uns.",
+    "schluss": "Herr Jesus Christus, unser Gott, Du hast dem Tod die Macht genommen. Lass mich in Frieden einschlafen und in Deiner Freude erwachen. Amen.",
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-begegnung",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für den alten Simeon, der ein Leben lang gewartet und dann in Frieden gehen konnte. Schenke mir seine Geduld und seine Fähigkeit, das Entscheidende zu erkennen, wenn es kommt. Lass mich zufrieden sein mit dem, was ich sehen darf.",
+      "mittag": "Herr, ich danke Dir für den alten Simeon, der ein Leben lang gewartet und dann in Frieden gehen konnte. Schenke mir seine Geduld und seine Fähigkeit, das Entscheidende zu erkennen, wenn es kommt. Lass mich zufrieden sein mit dem, was ich sehen darf.",
+      "abend": "Herr, ich danke Dir für den alten Simeon, der ein Leben lang gewartet und dann in Frieden gehen konnte. Schenke mir seine Geduld und seine Fähigkeit, das Entscheidende zu erkennen, wenn es kommt. Lass mich zufrieden sein mit dem, was ich sehen darf."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-einfuehrung-tempel",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für die junge Maria, die als Kind in Dein Haus gebracht wurde. Schenke mir heute etwas von dieser Selbstverständlichkeit, in Deiner Nähe zu sein. Lass mein Herz ein Ort sein, an dem Du wohnen kannst.",
+      "mittag": "Herr, ich danke Dir für die junge Maria, die als Kind in Dein Haus gebracht wurde. Schenke mir heute etwas von dieser Selbstverständlichkeit, in Deiner Nähe zu sein. Lass mein Herz ein Ort sein, an dem Du wohnen kannst.",
+      "abend": "Herr, ich danke Dir für die junge Maria, die als Kind in Dein Haus gebracht wurde. Schenke mir heute etwas von dieser Selbstverständlichkeit, in Deiner Nähe zu sein. Lass mein Herz ein Ort sein, an dem Du wohnen kannst."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, rette uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-einzug-jerusalem",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir dafür, dass Du auf einem Esel gekommen bist und nicht auf einem Pferd. Deine Grösse sieht anders aus, als wir sie erwarten. Schenke mir heute Augen für Deine stille Art zu wirken.",
+      "mittag": "Herr, ich danke Dir dafür, dass Du auf einem Esel gekommen bist und nicht auf einem Pferd. Deine Grösse sieht anders aus, als wir sie erwarten. Schenke mir heute Augen für Deine stille Art zu wirken.",
+      "abend": "Herr, ich danke Dir dafür, dass Du auf einem Esel gekommen bist und nicht auf einem Pferd. Deine Grösse sieht anders aus, als wir sie erwarten. Schenke mir heute Augen für Deine stille Art zu wirken."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-entschlafung",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für Deine Mutter und für ihren Übergang, der kein Ende war. Sie ist uns vorausgegangen und bleibt uns nahe. Schenke mir Vertrauen für meinen eigenen Weg und für die, die ich schon losgelassen habe.",
+      "mittag": "Herr, ich danke Dir für Deine Mutter und für ihren Übergang, der kein Ende war. Sie ist uns vorausgegangen und bleibt uns nahe. Schenke mir Vertrauen für meinen eigenen Weg und für die, die ich schon losgelassen habe.",
+      "abend": "Herr, ich danke Dir für Deine Mutter und für ihren Übergang, der kein Ende war. Sie ist uns vorausgegangen und bleibt uns nahe. Schenke mir Vertrauen für meinen eigenen Weg und für die, die ich schon losgelassen habe."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, rette uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-geburt-christi",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, Du bist Mensch geworden. Ich danke Dir dafür, dass Du nicht über uns geblieben bist, sondern zu uns gekommen bist — in eine Höhle, in eine Krippe, in die Kälte. Nichts an meinem Leben ist Dir fremd. Schenke mir heute Freude, die tiefer geht als die Festtagsstimmung.",
+      "mittag": "Herr, Du bist Mensch geworden. Ich danke Dir dafür, dass Du nicht über uns geblieben bist, sondern zu uns gekommen bist — in eine Höhle, in eine Krippe, in die Kälte. Nichts an meinem Leben ist Dir fremd. Schenke mir heute Freude, die tiefer geht als die Festtagsstimmung.",
+      "abend": "Herr, Du bist Mensch geworden. Ich danke Dir dafür, dass Du nicht über uns geblieben bist, sondern zu uns gekommen bist — in eine Höhle, in eine Krippe, in die Kälte. Nichts an meinem Leben ist Dir fremd. Schenke mir heute Freude, die tiefer geht als die Festtagsstimmung."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, rette uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-geburt-gottesgebaererin",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für den stillen Anfang dieses Festes: für ein Kind, das geboren wird, und für zwei alte Menschen, die lange gewartet haben. Du beginnst Deine grössten Werke unscheinbar. Schenke mir Vertrauen in das, was in meinem Leben noch klein ist.",
+      "mittag": "Herr, ich danke Dir für den stillen Anfang dieses Festes: für ein Kind, das geboren wird, und für zwei alte Menschen, die lange gewartet haben. Du beginnst Deine grössten Werke unscheinbar. Schenke mir Vertrauen in das, was in meinem Leben noch klein ist.",
+      "abend": "Herr, ich danke Dir für den stillen Anfang dieses Festes: für ein Kind, das geboren wird, und für zwei alte Menschen, die lange gewartet haben. Du beginnst Deine grössten Werke unscheinbar. Schenke mir Vertrauen in das, was in meinem Leben noch klein ist."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, rette uns. Heilige Joachim und Anna, betet für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-kreuzerhoehung",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für das Kreuz, das aus einem Zeichen des Todes ein Zeichen des Lebens geworden ist. Lass mich heute daran denken, dass auch das Schwere in meinem Leben verwandelt werden kann. Schenke mir Kraft, mein Teil zu tragen, ohne zu verbittern.",
+      "mittag": "Herr, ich danke Dir für das Kreuz, das aus einem Zeichen des Todes ein Zeichen des Lebens geworden ist. Lass mich heute daran denken, dass auch das Schwere in meinem Leben verwandelt werden kann. Schenke mir Kraft, mein Teil zu tragen, ohne zu verbittern.",
+      "abend": "Herr, ich danke Dir für das Kreuz, das aus einem Zeichen des Todes ein Zeichen des Lebens geworden ist. Lass mich heute daran denken, dass auch das Schwere in meinem Leben verwandelt werden kann. Schenke mir Kraft, mein Teil zu tragen, ohne zu verbittern."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-theophanie",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für diesen Tag, an dem sich der Himmel geöffnet hat und Du als Vater, Sohn und Geist erkennbar geworden bist. Segne das Wasser und segne alles Gewöhnliche in meinem Leben. Schenke mir einen frischen Anfang, so wie das Wasser des Jordan alles neu gemacht hat.",
+      "mittag": "Herr, ich danke Dir für diesen Tag, an dem sich der Himmel geöffnet hat und Du als Vater, Sohn und Geist erkennbar geworden bist. Segne das Wasser und segne alles Gewöhnliche in meinem Leben. Schenke mir einen frischen Anfang, so wie das Wasser des Jordan alles neu gemacht hat.",
+      "abend": "Herr, ich danke Dir für diesen Tag, an dem sich der Himmel geöffnet hat und Du als Vater, Sohn und Geist erkennbar geworden bist. Segne das Wasser und segne alles Gewöhnliche in meinem Leben. Schenke mir einen frischen Anfang, so wie das Wasser des Jordan alles neu gemacht hat."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-verklaerung",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für das Licht auf dem Berg — dafür, dass Deine Herrlichkeit einen Augenblick sichtbar wurde und dass sie noch immer da ist, auch wenn ich sie nicht sehe. Schenke mir heute einen Blick für das Licht in den gewöhnlichen Dingen.",
+      "mittag": "Herr, ich danke Dir für das Licht auf dem Berg — dafür, dass Deine Herrlichkeit einen Augenblick sichtbar wurde und dass sie noch immer da ist, auch wenn ich sie nicht sehe. Schenke mir heute einen Blick für das Licht in den gewöhnlichen Dingen.",
+      "abend": "Herr, ich danke Dir für das Licht auf dem Berg — dafür, dass Deine Herrlichkeit einen Augenblick sichtbar wurde und dass sie noch immer da ist, auch wenn ich sie nicht sehe. Schenke mir heute einen Blick für das Licht in den gewöhnlichen Dingen."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-verkuendigung",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für das Ja Deiner Mutter, das alles verändert hat. Sie hat nicht alles verstanden und trotzdem zugestimmt. Schenke mir heute Bereitschaft für das, was Du von mir willst, auch wenn ich das Ganze nicht überblicke.",
+      "mittag": "Herr, ich danke Dir für das Ja Deiner Mutter, das alles verändert hat. Sie hat nicht alles verstanden und trotzdem zugestimmt. Schenke mir heute Bereitschaft für das, was Du von mir willst, auch wenn ich das Ganze nicht überblicke.",
+      "abend": "Herr, ich danke Dir für das Ja Deiner Mutter, das alles verändert hat. Sie hat nicht alles verstanden und trotzdem zugestimmt. Schenke mir heute Bereitschaft für das, was Du von mir willst, auch wenn ich das Ganze nicht überblicke."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, rette uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "himmelfahrt",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir dafür, dass Du unsere Menschheit mit hinaufgenommen hast — dass nichts an uns Dir fremd geblieben ist. Schenke mir heute einen Blick, der über den Tag hinausreicht.",
+      "mittag": "Ich danke Dir dafür, dass Du uns nicht zurückgelassen hast. Schenke mir Weite in dieser Stunde.",
+      "abend": "Ich danke Dir für dieses Fest. Du bist nicht fort, Du bist überall, wo ich bin. Lass mich in dieser Gewissheit ruhen."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "pfingsten",
+    "typ": "fest",
+    "prioritaet": 20,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für Deinen Geist, der uns nicht allein lässt. Erneuere mich heute an der Stelle, an der ich müde geworden bin. Schenke mir Worte, wo mir welche fehlen, und Ruhe, wo ich zu viele habe.",
+      "mittag": "Komm, Heiliger Geist, und erneuere mich in dieser Stunde. Ich danke Dir.",
+      "abend": "Ich danke Dir für diesen Tag und für Deinen Geist, der in mir wohnt, auch wenn ich es selten spüre. Lass mich in Deinem Frieden einschlafen."
+    },
+    "fuerbitteZusatz": "Himmlischer König, Tröster, Geist der Wahrheit, komm und wohne in uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "apostelfasten",
+    "typ": "fastenzeit",
+    "prioritaet": 30,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für die Apostel, die alles zurückgelassen haben und losgegangen sind. Durch sie ist der Glaube bis zu mir gekommen — über zwei Jahrtausende und viele Hände. Schenke mir heute etwas von ihrem Mut, dort, wo ich stehe.",
+      "mittag": "Ich danke Dir für die, die den Glauben weitergetragen haben. Schenke mir Freimut in dieser Stunde.",
+      "abend": "Ich danke Dir für diesen Tag und für alle, die den Glauben vor mir getragen haben. Lass mich weitergeben, was ich empfangen habe — nicht mit vielen Worten, sondern so, wie ich lebe."
+    },
+    "fuerbitteZusatz": "Heilige Apostel Petrus und Paulus, betet für mich.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "grosse-fastenzeit",
+    "typ": "fastenzeit",
+    "prioritaet": 30,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich gehe diese Wochen bewusster als sonst. Ich danke Dir für die Leichtigkeit, die entsteht, wenn ich weniger brauche — für den klaren Kopf, für den Hunger, der mich aufmerksam macht, für die Zeit, die frei wird. Schenke mir heute Freude am Verzicht und ein weites Herz für die, denen etwas fehlt, ohne dass sie es gewählt haben.",
+      "mittag": "Ich danke Dir für diese Zeit der Sammlung. Schenke mir Leichtigkeit und einen wachen Blick.",
+      "abend": "Ich danke Dir für diesen Fastentag — für das, was gelungen ist, und für das, was mir gezeigt hat, wie sehr ich an Gewohnheiten hänge. Beides ist gut. Lass mich morgen ohne Strenge gegen mich selbst weitergehen; Du misst nicht in Erfolgen. Führe mich Schritt für Schritt auf Ostern zu."
+    },
+    "fuerbitteZusatz": "Heiliger Ephräm, heiliger Andreas von Kreta, betet für mich.",
+    "schluss": null,
+    "zusatzgebet": "ephraem"
+  },
+  {
+    "id": "marienfasten",
+    "typ": "fastenzeit",
+    "prioritaet": 30,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für Deine Mutter, die einfach ja gesagt hat, ohne zu wissen, wohin es führt. Schenke mir in diesen Tagen etwas von ihrer Bereitschaft und ihrer Stille.",
+      "mittag": "Ich danke Dir für die Gottesgebärerin und ihre Fürsprache. Schenke mir ein stilles Herz.",
+      "abend": "Ich danke Dir für diesen Tag unter ihrem Schutz. Lass mich von ihr lernen, was Vertrauen heisst: nicht alles verstehen und trotzdem ja sagen."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, rette uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "osterzeit",
+    "typ": "osterkreis",
+    "prioritaet": 30,
+    "eroeffnung": "Christus ist auferstanden von den Toten. Durch den Tod hat Er den Tod zertreten und denen in den Gräbern das Leben geschenkt.",
+    "einschub": {
+      "morgen": "Christus ist auferstanden. Herr, ich danke Dir dafür, dass diese Freude nicht nach einer Woche endet. Lass sie in meinen gewöhnlichen Tagen weiterwirken — in der Arbeit, im Umgang mit Menschen, in dem, was mich sonst niederdrückt.",
+      "mittag": "Christus ist auferstanden. Ich danke Dir für diese Gewissheit in dieser Stunde.",
+      "abend": "Christus ist auferstanden. Ich danke Dir für diesen Tag im Licht der Auferstehung. Lass mich als jemand einschlafen, der weiss, wie die Geschichte ausgeht."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": "Herr Jesus Christus, unser Gott, Du hast dem Tod die Macht genommen. Lass mich in Frieden einschlafen und in Deiner Freude erwachen. Amen.",
+    "zusatzgebet": null
+  },
+  {
+    "id": "weihnachtsfasten",
+    "typ": "fastenzeit",
+    "prioritaet": 30,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich mache mich auf Dein Kommen gefasst. Ich danke Dir dafür, dass Du klein und leise in unsere Welt gekommen bist und nicht mit Macht. Schenke mir in diesen Wochen einen ruhigen Blick für das Wesentliche, mitten in einer Zeit, die laut wird.",
+      "mittag": "Ich danke Dir dafür, dass Du zu uns kommst. Schenke mir Ruhe in dieser Stunde.",
+      "abend": "Ich danke Dir für diesen Tag der Vorbereitung. Mach in mir Platz, so wie damals in Bethlehem Platz wurde, wo keiner ihn erwartet hätte. Lass mich diese Wochen nicht verpassen, während ich beschäftigt bin."
+    },
+    "fuerbitteZusatz": "Heiliger Nikolaus, heiliger Spyridon, betet für mich.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "allerheiligen",
+    "typ": "fest",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für die grosse Zahl derer, die vor mir geglaubt haben — die bekannten und die unbekannten, die in Klöstern und die in ganz gewöhnlichen Häusern. Ich stehe in einer langen Reihe und muss nichts allein tragen.",
+      "mittag": "Herr, ich danke Dir für die grosse Zahl derer, die vor mir geglaubt haben — die bekannten und die unbekannten, die in Klöstern und die in ganz gewöhnlichen Häusern. Ich stehe in einer langen Reihe und muss nichts allein tragen.",
+      "abend": "Herr, ich danke Dir für die grosse Zahl derer, die vor mir geglaubt haben — die bekannten und die unbekannten, die in Klöstern und die in ganz gewöhnlichen Häusern. Ich stehe in einer langen Reihe und muss nichts allein tragen."
+    },
+    "fuerbitteZusatz": "Alle Heiligen, betet für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-enthauptung-johannes",
+    "typ": "fest",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für Johannes, der die Wahrheit gesagt hat, auch als es ihn alles gekostet hat. Schenke mir Aufrichtigkeit, wo Schweigen bequemer wäre.",
+      "mittag": "Herr, ich danke Dir für Johannes, der die Wahrheit gesagt hat, auch als es ihn alles gekostet hat. Schenke mir Aufrichtigkeit, wo Schweigen bequemer wäre.",
+      "abend": "Herr, ich danke Dir für Johannes, der die Wahrheit gesagt hat, auch als es ihn alles gekostet hat. Schenke mir Aufrichtigkeit, wo Schweigen bequemer wäre."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-geburt-johannes",
+    "typ": "fest",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für Johannes, der den Weg bereitet und dann zurückgetreten ist. Schenke mir die Freiheit, nicht im Mittelpunkt stehen zu müssen.",
+      "mittag": "Herr, ich danke Dir für Johannes, der den Weg bereitet und dann zurückgetreten ist. Schenke mir die Freiheit, nicht im Mittelpunkt stehen zu müssen.",
+      "abend": "Herr, ich danke Dir für Johannes, der den Weg bereitet und dann zurückgetreten ist. Schenke mir die Freiheit, nicht im Mittelpunkt stehen zu müssen."
+    },
+    "fuerbitteZusatz": "Heiliger Johannes der Täufer, bitte für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-petrus-paulus",
+    "typ": "fest",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für zwei so verschiedene Menschen, die Du beide gebraucht hast: den, der Dich verleugnet hat, und den, der Dich verfolgt hat. Schenke mir Zuversicht, dass Du auch mit mir etwas anfangen kannst.",
+      "mittag": "Herr, ich danke Dir für zwei so verschiedene Menschen, die Du beide gebraucht hast: den, der Dich verleugnet hat, und den, der Dich verfolgt hat. Schenke mir Zuversicht, dass Du auch mit mir etwas anfangen kannst.",
+      "abend": "Herr, ich danke Dir für zwei so verschiedene Menschen, die Du beide gebraucht hast: den, der Dich verleugnet hat, und den, der Dich verfolgt hat. Schenke mir Zuversicht, dass Du auch mit mir etwas anfangen kannst."
+    },
+    "fuerbitteZusatz": "Heilige Apostel Petrus und Paulus, betet für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "fest-pokrov",
+    "typ": "fest",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für den Schutz Deiner Mutter, der über uns ausgebreitet ist wie ein Mantel. Schenke mir heute die Gewissheit, geborgen zu sein, auch wenn ich es nicht spüre. Lass mich selbst jemandem Schutz sein.",
+      "mittag": "Herr, ich danke Dir für den Schutz Deiner Mutter, der über uns ausgebreitet ist wie ein Mantel. Schenke mir heute die Gewissheit, geborgen zu sein, auch wenn ich es nicht spüre. Lass mich selbst jemandem Schutz sein.",
+      "abend": "Herr, ich danke Dir für den Schutz Deiner Mutter, der über uns ausgebreitet ist wie ein Mantel. Schenke mir heute die Gewissheit, geborgen zu sein, auch wenn ich es nicht spüre. Lass mich selbst jemandem Schutz sein."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, breite Deinen Schutz über uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "heilige-matrona",
+    "typ": "heiliger",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für die heilige Matrona, die blind war und mehr gesehen hat als andere. Schenke mir Vertrauen in das, was ich nicht sehen kann.",
+      "mittag": "Herr, ich danke Dir für die heilige Matrona, die blind war und mehr gesehen hat als andere. Schenke mir Vertrauen in das, was ich nicht sehen kann.",
+      "abend": "Herr, ich danke Dir für die heilige Matrona, die blind war und mehr gesehen hat als andere. Schenke mir Vertrauen in das, was ich nicht sehen kann."
+    },
+    "fuerbitteZusatz": "Heilige Mutter Matrona, bitte für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "heiliger-nikolaus",
+    "typ": "heiliger",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für den heiligen Nikolaus, der heimlich geholfen hat, ohne dass jemand es merken sollte. Schenke mir heute Gelegenheit, etwas Gutes zu tun, von dem niemand erfährt.",
+      "mittag": "Herr, ich danke Dir für den heiligen Nikolaus, der heimlich geholfen hat, ohne dass jemand es merken sollte. Schenke mir heute Gelegenheit, etwas Gutes zu tun, von dem niemand erfährt.",
+      "abend": "Herr, ich danke Dir für den heiligen Nikolaus, der heimlich geholfen hat, ohne dass jemand es merken sollte. Schenke mir heute Gelegenheit, etwas Gutes zu tun, von dem niemand erfährt."
+    },
+    "fuerbitteZusatz": "Heiliger Vater Nikolaus, bitte für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "heiliger-serafim",
+    "typ": "heiliger",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für den heiligen Serafim, der jeden Menschen mit „Meine Freude\" begrüsst hat. Schenke mir heute etwas von dieser Freundlichkeit — einen Blick, der im anderen zuerst das Gute sieht.",
+      "mittag": "Herr, ich danke Dir für den heiligen Serafim, der jeden Menschen mit „Meine Freude\" begrüsst hat. Schenke mir heute etwas von dieser Freundlichkeit — einen Blick, der im anderen zuerst das Gute sieht.",
+      "abend": "Herr, ich danke Dir für den heiligen Serafim, der jeden Menschen mit „Meine Freude\" begrüsst hat. Schenke mir heute etwas von dieser Freundlichkeit — einen Blick, der im anderen zuerst das Gute sieht."
+    },
+    "fuerbitteZusatz": "Heiliger Vater Serafim, bitte für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "heiliger-sergius",
+    "typ": "heiliger",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für den heiligen Sergius, der in der Stille angefangen hat und dem später ein ganzes Land gefolgt ist. Schenke mir Treue im Verborgenen und Geduld mit dem, was langsam wächst.",
+      "mittag": "Herr, ich danke Dir für den heiligen Sergius, der in der Stille angefangen hat und dem später ein ganzes Land gefolgt ist. Schenke mir Treue im Verborgenen und Geduld mit dem, was langsam wächst.",
+      "abend": "Herr, ich danke Dir für den heiligen Sergius, der in der Stille angefangen hat und dem später ein ganzes Land gefolgt ist. Schenke mir Treue im Verborgenen und Geduld mit dem, was langsam wächst."
+    },
+    "fuerbitteZusatz": "Heiliger Vater Sergius, bitte für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "ikone-kasan",
+    "typ": "fest",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für die Fürsprache Deiner Mutter, die über Generationen getragen hat. Schenke mir Vertrauen in Gebete, deren Antwort ich nicht erlebe.",
+      "mittag": "Herr, ich danke Dir für die Fürsprache Deiner Mutter, die über Generationen getragen hat. Schenke mir Vertrauen in Gebete, deren Antwort ich nicht erlebe.",
+      "abend": "Herr, ich danke Dir für die Fürsprache Deiner Mutter, die über Generationen getragen hat. Schenke mir Vertrauen in Gebete, deren Antwort ich nicht erlebe."
+    },
+    "fuerbitteZusatz": "Allheilige Gottesgebärerin, rette uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "neumaertyrer",
+    "typ": "fest",
+    "prioritaet": 40,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für alle, die in schwerer Zeit treu geblieben sind, und für die vielen, deren Namen niemand kennt. Schenke mir Standhaftigkeit im Kleinen, damit ich im Grossen nicht wanke.",
+      "mittag": "Herr, ich danke Dir für alle, die in schwerer Zeit treu geblieben sind, und für die vielen, deren Namen niemand kennt. Schenke mir Standhaftigkeit im Kleinen, damit ich im Grossen nicht wanke.",
+      "abend": "Herr, ich danke Dir für alle, die in schwerer Zeit treu geblieben sind, und für die vielen, deren Namen niemand kennt. Schenke mir Standhaftigkeit im Kleinen, damit ich im Grossen nicht wanke."
+    },
+    "fuerbitteZusatz": "Alle heiligen Neumärtyrer Russlands, betet für uns.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "radonitsa",
+    "typ": "gedenken",
+    "prioritaet": 45,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Christus ist auferstanden. Herr, heute bringe ich die Osterfreude zu meinen Verstorbenen. Ich danke Dir dafür, dass sie nicht ausgeschlossen sind von dem, was wir feiern — dass diese Freude gerade ihnen gilt.",
+      "mittag": "Christus ist auferstanden — auch für unsere Entschlafenen. Ich danke Dir.",
+      "abend": "Herr, ich danke Dir für diesen Tag, an dem Trauer und Freude nebeneinander stehen dürfen. Gib ihren Seelen Ruhe und schenke uns die Hoffnung auf das Wiedersehen."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "seelensamstag",
+    "typ": "gedenken",
+    "prioritaet": 45,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, an diesem Tag denke ich an alle, die vor mir gegangen sind — an die Meinen und an alle, für die niemand mehr betet. Gib ihren Seelen Ruhe an einem Ort des Lichts. Ewiges Gedenken sei ihnen geschenkt.",
+      "mittag": "Gib allen Entschlafenen Ruhe und ewiges Gedenken. Ich danke Dir für ihr Leben.",
+      "abend": "Herr, ich danke Dir für alle, die uns vorausgegangen sind. Nimm sie auf an einem Ort der Erquickung, wo kein Leid mehr ist und kein Seufzen. Lass uns einander wiedersehen."
+    },
+    "fuerbitteZusatz": "Gedenke, Herr, aller entschlafenen Väter und Brüder.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "heiligengedenken",
+    "typ": "heiliger",
+    "prioritaet": 50,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir heute für {{heiliger}} und für alles, was Du durch dieses Leben getan hast. Schenke mir etwas von dem, was Du diesem Menschen geschenkt hast, an der Stelle, an der ich stehe.",
+      "mittag": null,
+      "abend": "Herr, ich danke Dir für {{heiliger}}, dessen Gedenken wir heute begangen haben. Lass mich einschlafen im Wissen, dass ich in guter Gesellschaft gehe."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "namenstag",
+    "typ": "heiliger",
+    "prioritaet": 50,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, heute ist der Tag meines Namenspatrons. Ich danke Dir für diesen Menschen, dessen Namen ich trage, und für seine Fürsprache mein Leben lang. Schenke mir, ihm ein wenig ähnlicher zu werden.",
+      "mittag": null,
+      "abend": null
+    },
+    "fuerbitteZusatz": "Heiliger {{namenspatron}}, mein Beschützer, bitte für mich.",
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "sonntag",
+    "typ": "wochentag",
+    "prioritaet": 60,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Herr, ich danke Dir für diesen Tag der Auferstehung. Lass mich heute langsamer gehen als sonst und Zeit haben für das, was zählt.",
+      "mittag": null,
+      "abend": "Ich danke Dir für diesen Sonntag und für jede Stunde, in der ich nichts leisten musste."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  },
+  {
+    "id": "mittwoch-freitag",
+    "typ": "wochentag",
+    "prioritaet": 70,
+    "eroeffnung": null,
+    "einschub": {
+      "morgen": "Ich danke Dir für diesen Tag, der ein wenig anders ist als die übrigen. Lass mich ihn schlicht halten und dabei aufmerksam bleiben.",
+      "mittag": null,
+      "abend": "Ich danke Dir für diesen Tag und für jede kleine Enthaltsamkeit, die mir gelungen ist. Sie ist unscheinbar und ordnet trotzdem etwas in mir."
+    },
+    "fuerbitteZusatz": null,
+    "schluss": null,
+    "zusatzgebet": null
+  }
+]

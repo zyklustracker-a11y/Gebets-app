@@ -106,6 +106,11 @@ export function heiligerDesTages(datum: Date): string | null {
   return festerEintrag(normTag(datum))?.name ?? null
 }
 
+/** Kennung des liturgischen Moduls für einen festen Fest- oder Heiligentag. */
+export function festModulId(datum: Date): string | null {
+  return festerEintrag(normTag(datum))?.modulId ?? null
+}
+
 // ---------------------------------------------------------------------------
 // Färbung und Fasten
 // ---------------------------------------------------------------------------
@@ -196,6 +201,12 @@ export function istFastentag(datum: Date): boolean {
 // ---------------------------------------------------------------------------
 // Heute
 // ---------------------------------------------------------------------------
+
+/** Ob der Tag in einer fastenfreien Woche liegt (für die Modulauswahl). */
+export function istFastenfreieWoche(datum: Date): boolean {
+  const tag = normTag(datum)
+  return inFastenfreieWoche(tag, orthodoxeOstern(tag.getUTCFullYear()))
+}
 
 /**
  * Der heutige Kalendertag als UTC-Mitternacht. Liest die lokalen Datumsfelder,

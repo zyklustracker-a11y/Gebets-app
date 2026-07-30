@@ -10,7 +10,8 @@
     "typecheck": "tsc -b --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "korpus": "node scripts/korpus-bauen.mjs"
+    "korpus": "node scripts/korpus-bauen.mjs",
+    "module": "node scripts/module-bauen.mjs"
   },
   "dependencies": {
     "dexie": "^4.4.4",

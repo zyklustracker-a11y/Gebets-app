@@ -10,35 +10,24 @@
  * 2. Das Schriftwort steckt fest im gewählten Grundgebet (`vers`, `stelle`) und
  *    wird nicht separat gelost.
  *
- * Die liturgische Zusammensetzung (Module, Festeinschübe) kommt in
- * Bauabschnitt 6 dazu; hier bleibt `modulId` leer und die Eröffnung gewöhnlich.
+ * Die liturgische Zusammensetzung (Module, Festeinschübe) übernimmt
+ * `lib/komposition.ts`; welches Modul greift, bestimmt `lib/liturgie.ts`.
  */
 
 import { db } from './db'
+import { heiligerDesTages } from './kalender'
+import { zusammensetzen, type Zusammensetzung } from './komposition'
 import { korpusFuer, korpusNachId } from './korpus'
+import { modulFuer, modulNachId } from './liturgie'
 import type { Gebetseintrag, Tageszeit } from './types'
+
+export type { Zusammensetzung }
 
 /** Kategorie, auf die zurückgefallen wird, wenn kein aktives Thema greift. */
 const STANDARD_KATEGORIE = 'dankbarkeit'
 
 /** Wie viele Tage ein einmal gezeigtes Gebet gesperrt bleibt. */
 const SPERRE_TAGE = 14
-
-const EROEFFNUNG = 'Im Namen des Vaters, des Sohnes und des Heiligen Geistes.'
-
-const TAGESZEIT_LABEL: Record<Tageszeit, string> = {
-  morgen: 'Morgengebet',
-  mittag: 'Mittagsgebet',
-  abend: 'Abendgebet',
-}
-
-export interface Zusammensetzung {
-  tageszeitLabel: string
-  eroeffnung: string
-  vers: string
-  stelle: string
-  absaetze: string[]
-}
 
 // ---------------------------------------------------------------------------
 // Datums-Hilfen (Zeichenketten „YYYY-MM-DD")
@@ -51,9 +40,13 @@ export function datumIso(datum: Date): string {
   return `${jahr}-${monat}-${tag}`
 }
 
-function datumMinusTage(iso: string, tage: number): string {
+function datumAusIso(iso: string): Date {
   const teile = iso.split('-')
-  const dt = new Date(Date.UTC(Number(teile[0]), Number(teile[1]) - 1, Number(teile[2])))
+  return new Date(Date.UTC(Number(teile[0]), Number(teile[1]) - 1, Number(teile[2])))
+}
+
+function datumMinusTage(iso: string, tage: number): string {
+  const dt = datumAusIso(iso)
   dt.setUTCDate(dt.getUTCDate() - tage)
   return datumIso(dt)
 }
@@ -119,13 +112,16 @@ async function erzeugeAuswahl(
 
   const wahl = frei[streuIndex(`${datum}-${tageszeit}-${ausschlussKorpusId ?? ''}`, frei.length)]
 
+  // Welches liturgische Modul heute greift, hängt nur am Datum.
+  const modul = modulFuer(datumAusIso(datum))
+
   return {
     id: `${datum}-${tageszeit}`,
     datum,
     tageszeit,
     korpusId: wahl?.id ?? '',
     themenIds: gewaehlte.map((t) => t.id),
-    modulId: undefined,
+    modulId: modul?.id,
   }
 }
 
@@ -161,18 +157,10 @@ export async function alsGebetet(datum: string, tageszeit: Tageszeit): Promise<v
 // Zusammensetzung zum Anzeigen
 // ---------------------------------------------------------------------------
 
-/** Entfernt den ganzen Satz mit dem Platzhalter, falls kein eigenes Thema greift. */
-function ohneAnliegenzeile(text: string): string {
-  return text
-    .split('\n')
-    .filter((zeile) => !zeile.includes('{{anliegen}}'))
-    .join('\n')
-}
-
 /**
- * Baut die anzuzeigenden Teile eines Gebets. Ist ein eigenes Thema unter den
- * gewählten, wird sein Titel in `{{anliegen}}` eingesetzt; sonst entfällt der
- * ganze Trägersatz.
+ * Baut die anzuzeigenden Teile eines Gebets: Grundgebet, `{{anliegen}}` aus dem
+ * eigenen Thema und — falls eines greift — die Bausteine des liturgischen
+ * Moduls. Das Zusammenfügen selbst liegt in `lib/komposition.ts`.
  */
 export async function komponiere(eintrag: Gebetseintrag): Promise<Zusammensetzung | null> {
   const grundgebet = korpusNachId(eintrag.korpusId)
@@ -181,19 +169,16 @@ export async function komponiere(eintrag: Gebetseintrag): Promise<Zusammensetzun
   const themen = await db.themen.bulkGet(eintrag.themenIds)
   const eigenes = themen.find((t) => t?.istEigen)
 
-  let text = grundgebet.text
-  text = eigenes ? text.split('{{anliegen}}').join(eigenes.titel) : ohneAnliegenzeile(text)
+  const modul = eintrag.modulId ? (modulNachId(eintrag.modulId) ?? null) : null
+  const heiligerName = modul ? heiligerDesTages(datumAusIso(eintrag.datum)) : null
 
-  const absaetze = text
-    .split('\n')
-    .map((zeile) => zeile.trim())
-    .filter(Boolean)
-
-  return {
-    tageszeitLabel: TAGESZEIT_LABEL[eintrag.tageszeit],
-    eroeffnung: EROEFFNUNG,
+  return zusammensetzen({
+    korpustext: grundgebet.text,
     vers: grundgebet.vers,
     stelle: grundgebet.stelle,
-    absaetze,
-  }
+    tageszeit: eintrag.tageszeit,
+    modul,
+    eigenesTitel: eigenes?.titel ?? null,
+    heiligerName,
+  })
 }
