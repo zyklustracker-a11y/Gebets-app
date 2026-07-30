@@ -1,6 +1,6 @@
 # Technische Spezifikation — Gebets-PWA
 
-*Bauplan für Claude Code. Ergänzend zu `1_Konzept_GebetsApp.md` (Inhalt und Haltung) und den Entwürfen aus Claude Design (Aussehen).*
+*Bauplan für Claude Code. Ergänzend zu `1_Konzept_Gebets-App.md` (Inhalt und Haltung) und den Entwürfen aus Claude Design (Aussehen).*
 
 ---
 
@@ -98,9 +98,9 @@ interface Gebetseintrag {        // Protokoll, was wann gebetet wurde
   id: string;
   datum: string;               // "2026-07-30"
   tageszeit: Tageszeit;
-  korpusId: string;
-  versId: string;
+  korpusId: string;            // Vers und Stelle hängen am Korpuseintrag
   themenIds: string[];
+  modulId?: string;            // aktives liturgisches Modul, falls eines griff
   gebetetAm?: string;          // ISO, gesetzt beim Tippen auf "Gebetet"
 }
 
@@ -135,23 +135,31 @@ interface Einstellungen {
     "kategorie": "arbeit",
     "tageszeit": "morgen",
     "faerbung": "gewoehnlich",
+    "vers": "Lass das Werk unserer Hände gedeihen.",
+    "stelle": "Psalm 89,17",
     "text": "Herr, ich beginne diesen Tag … {{anliegen}} … Amen."
   }
 ]
 ```
 
+Das Schriftwort gehört **fest zum Gebet** und wird mit ihm ausgeliefert (`vers`, `stelle`). Die feste Paarung aus den Korpusdokumenten ist massgeblich; das Schriftwort wird nicht zur Laufzeit separat gewählt. Massgeblich ist der Wortlaut, der im Gebet steht — nicht eine eventuell abweichende Fassung in `verse.json`.
+
+Das Feld `faerbung` steht bei allen Grundgebeten auf `"gewoehnlich"` und ist vorerst funktionslos — Reserve für später. Die liturgische Färbung liefert zur Laufzeit das Modulsystem (Abschnitt 14), nicht dieses Feld.
+
 Der Platzhalter `{{anliegen}}` steht für den eingesetzten Freitext eines eigenen Themas. Ist kein eigenes Thema aktiv, wird der **gesamte Satz**, in dem der Platzhalter steht, entfernt — nicht nur der Platzhalter. Der Satz ist im Korpus deshalb immer ein eigenständiger Satz.
 
 ### Schriftworte (`data/verse.json`)
 
+Diese Datenbank dient **nicht** der täglichen Gebetsauswahl — dafür steckt der Vers bereits im Gebet. Sie ist Reservoir für die Erzeugung eigener Gebete (Abschnitt 12) und für spätere Erweiterungen.
+
 ```json
 [
   {
-    "id": "ps50-12",
+    "id": "reue-01",
     "text": "Erschaffe in mir ein reines Herz, Gott, und gib mir einen neuen, festen Geist.",
     "stelle": "Psalm 50,12",
     "stelleMasoretisch": "Psalm 51,12",
-    "kategorien": ["reue", "reinheit", "umkehr"]
+    "kategorien": ["reue", "reinheit"]
   }
 ]
 ```
@@ -210,9 +218,9 @@ Ablauf beim Öffnen eines Gebets:
 
 1. Färbung des Tages bestimmen
 2. Aktive Themen laden, 1–3 auswählen — mit Rotation, damit nicht immer dasselbe drankommt: bevorzugt die Themen, die am längsten nicht vorkamen
-3. Für die Kategorie des Hauptthemas ein Gebet aus dem Korpus wählen, das zu Tageszeit und Färbung passt und in den letzten 14 Tagen nicht verwendet wurde
+3. Für die Kategorie des Hauptthemas ein Gebet aus dem Korpus wählen, das zur Tageszeit passt und in den letzten 14 Tagen nicht verwendet wurde
 4. Ist ein eigenes Thema unter den ausgewählten: dessen Titel in `{{anliegen}}` einsetzen, sonst den Trägersatz entfernen
-5. Passendes Schriftwort zur Kategorie wählen, ebenfalls mit Wiederholungssperre
+5. Das Schriftwort steckt bereits im gewählten Gebet (`vers`, `stelle`) — es wird nicht separat gewählt
 6. Fürbitte aus den aktiven Gedenknamen zusammensetzen
 7. Ergebnis als `Gebetseintrag` speichern, damit derselbe Tag beim erneuten Öffnen dasselbe Gebet zeigt
 
@@ -274,11 +282,12 @@ Bitte in dieser Reihenfolge, jeder Abschnitt lauffähig abgeschlossen:
 3. **Bildschirme** — die Entwürfe aus Claude Design als Komponenten, zunächst mit fest verdrahteten Beispieldaten
 4. **Daten und Logik** — Themenverwaltung, Gebetsauswahl, Protokoll, Jesusgebet-Zähler mit Vibration
 5. **Korpus anbinden** — echte JSON-Dateien, Platzhalter-Ersetzung, Wiederholungssperre
-6. **Installierbarkeit** — Manifest, Icons, Offline-Test auf einem echten iPhone
-7. **Benachrichtigungen** — Worker, VAPID, Subscription, Zeitzonenlogik
-8. **Anmeldung und Abgleich** — Firebase Auth, Firestore, Sicherheitsregeln
-9. **Eigene Themen erzeugen** — zweite Worker-Route, Systemprompt, Prüfungen, Bearbeitbarkeit (Abschnitt 12)
-10. **Feinschliff** — Gedenkliste, Tagebuch, Archiv erhörter Anliegen
+6. **Liturgische Zusammensetzung** — Modulsystem mit Festeinschüben und Prioritätsregel (Abschnitt 14). Setzt Korpus und Kalender voraus
+7. **Installierbarkeit** — Manifest, Icons, Offline-Test auf einem echten iPhone
+8. **Benachrichtigungen** — Worker, VAPID, Subscription, Zeitzonenlogik
+9. **Anmeldung und Abgleich** — Firebase Auth, Firestore, Sicherheitsregeln
+10. **Eigene Themen erzeugen** — zweite Worker-Route, Systemprompt, Prüfungen, Bearbeitbarkeit (Abschnitt 12)
+11. **Feinschliff** — Gedenkliste, Tagebuch, Archiv erhörter Anliegen
 
 ---
 

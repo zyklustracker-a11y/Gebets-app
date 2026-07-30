@@ -452,7 +452,7 @@
 ]
 ```
 
-**Auswahlregel:** Ist ein liturgisches Modul aktiv und hat es zugeordnete Verse, wird daraus gewählt. Sonst wird nach Kategorie gewählt, mit Wiederholungssperre von 21 Tagen. Verse mit Mehrfachzuordnung erhöhen die Vielfalt und sind gewollt.
+**Rolle dieser Datenbank:** Sie dient **nicht** der täglichen Gebetsauswahl. Das Schriftwort steckt fest im jeweiligen Gebet (`vers`, `stelle` in `gebete.json`) und wird mit ihm angezeigt. `verse.json` ist Reservoir für die Erzeugung eigener Gebete (Spezifikation Abschnitt 12) und für spätere Erweiterungen des Korpus. Das Feld `liturgisch` erlaubt es, bei Bedarf ein zur liturgischen Zeit passendes Schriftwort zu finden.
 
 **Bei Psalmen** wird in der App die LXX-Angabe angezeigt. Ein Tippen auf die Stellenangabe blendet die masoretische Zählung ein — hilfreich, wenn du in einer westlichen Bibelausgabe nachschlagen willst.
 

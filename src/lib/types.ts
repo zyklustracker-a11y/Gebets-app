@@ -60,9 +60,8 @@ export interface Gebetszeit {
  * Protokoll, was wann gebetet wurde. Hält die Auswahl fest, damit dasselbe
  * (Datum, Tageszeit) beim erneuten Öffnen denselben Text zeigt.
  *
- * Das Feld `versId` aus der Spezifikation entfällt: Das Schriftwort gehört
- * fest zum Korpuseintrag (siehe `docs/9_Entscheidungen.md`, Nummer 4),
- * `korpusId` bestimmt es also mit.
+ * Das Schriftwort gehört fest zum Korpuseintrag (Spezifikation, Abschnitt 4),
+ * `korpusId` bestimmt es also mit; ein eigenes `versId` gibt es nicht.
  */
 export interface Gebetseintrag {
   id: string;
@@ -71,6 +70,8 @@ export interface Gebetseintrag {
   tageszeit: Tageszeit;
   korpusId: string;
   themenIds: string[];
+  /** Kennung des aktiven liturgischen Moduls, falls eines griff (Abschnitt 14). */
+  modulId?: string;
   /** ISO-Zeitstempel, gesetzt beim Tippen auf „Gebetet". */
   gebetetAm?: string;
 }

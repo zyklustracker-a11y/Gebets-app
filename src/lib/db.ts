@@ -43,7 +43,7 @@ export class GebetsDatenbank extends Dexie {
       gebetszeiten: 'typ',
       // Der zusammengesetzte Index trägt die Regel „ein Gebet je Tag und
       // Tageszeit" — mehrmaliges Öffnen darf den Text nicht wechseln.
-      protokoll: 'id, &[datum+tageszeit], datum, korpusId',
+      protokoll: 'id, &[datum+tageszeit], datum, korpusId, modulId',
       gedenknamen: 'id, art, name',
       journal: 'id, gebetId, datum',
       einstellungen: 'id',

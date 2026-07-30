@@ -48,8 +48,8 @@ Eine sehr persönliche, ruhige App, die dich dreimal täglich zum Gebet ruft —
 
 - Alle Fest- und Heiligentage werden julianisch berechnet und im gregorianischen Datum angezeigt (derzeit +13 Tage).
 - **Osterdatum** nach dem julianischen Algorithmus, davon abgeleitet der gesamte bewegliche Festkreis: Triodion-Vorbereitungswochen, Grosse Fastenzeit, Karwoche, Ostern, Christi Himmelfahrt, Pfingsten, Allerheiligen, Apostelfasten.
-- **Feste Fastenzeiten:** Weihnachtsfasten (28.11.–6.1. jul.), Marienfasten (1.–14.8. jul.), dazu Mittwoch und Freitag ganzjährig.
-- **Liturgische Färbung** beeinflusst den Ton: mehr Reue in der Fastenzeit, Osterjubel in den 40 Tagen nach Ostern — dort beginnt das Gebet mit „Christus ist auferstanden!" statt mit der gewöhnlichen Eröffnung.
+- **Feste Fastenzeiten:** Weihnachtsfasten (15.11.–24.12. jul. = 28.11.–6.1. greg.), Marienfasten (1.–14.8. jul.), dazu Mittwoch und Freitag ganzjährig. *Massgeblich für die Berechnung sind stets die julianischen Datumsangaben der technischen Spezifikation, Abschnitt 5.*
+- **Liturgische Färbung** beeinflusst den Ton: mehr Reue in der Fastenzeit, Osterjubel in den 40 Tagen nach Ostern — dort beginnt das Gebet mit „Christus ist auferstanden" statt mit der gewöhnlichen Eröffnung.
 - **Heiliger des Tages** aus dem russischen Heiligenkalender (Nikolaus, Serafim von Sarow, Sergius von Radonesch, Matrona von Moskau, Johannes von Kronstadt u. a.), optional als Zeile und in der Fürbitte.
 - **Psalmen-Zählung** folgt der Septuaginta: Ps 50 ist das Bussgebet, nicht Ps 51. Masoretische Zählung in Klammern.
 
@@ -151,16 +151,18 @@ Deshalb: Das tägliche Gebet kommt immer aus dem Korpus auf dem Gerät. Neue Tex
 
 ### 5.2 Stattdessen: mitgeliefertes Gebetskorpus
 
-Die Gebete werden **einmalig vorab erzeugt** — von dir, mit Claude, ausserhalb der App — und als JSON-Datei mit ausgeliefert.
+Die Gebete werden **einmalig vorab erzeugt** — ausserhalb der App — und als JSON-Datei mit ausgeliefert. Das Kirchenjahr ersetzt die Gebete nicht, es ergänzt sie über Module (siehe technische Spezifikation, Abschnitt 14):
 
 ```
-16 Kategorien × 3 Tageszeiten × 4 liturgische Färbungen × 6 Varianten
-≈ 1 150 Gebete, etwa 1–2 MB
+144 Grundgebete   (16 Kategorien × 3 Tageszeiten × 3 Varianten)
+ 39 liturgische Module   (Fastenzeiten, Osterkreis, Feste, Gedenken)
+260 Schriftworte
+zusammen etwa 1 MB
 ```
 
-Liturgische Färbungen: gewöhnliche Zeit · Fastenzeit · Osterzeit · Trauer/Gedenken.
+Ein Fest legt sich als Einschub über das vertraute Themengebet, statt es durch eine eigene Vollfassung zu ersetzen. Das ist weniger als ein Drittel der Textmenge, die vier vollständige Färbungsfassungen bräuchten, und fühlt sich geschmeidiger an.
 
-**Vorteile:** laufende Kosten null · funktioniert vollständig offline · kein persönliches Datum verlässt je das Gerät · jeder Text war einmal von dir angesehen · sofortige Anzeige ohne Ladezeit.
+**Vorteile:** laufende Kosten null · funktioniert vollständig offline · kein persönliches Datum verlässt je das Gerät · jeder Text war einmal angesehen · sofortige Anzeige ohne Ladezeit.
 
 ### 5.3 Eigene Freitext-Themen — zwei Wege
 
@@ -194,9 +196,9 @@ Neue Gebete fügst du dem JSON hinzu und veröffentlichst die App neu — ein Be
 
 ## 7. Roadmap
 
-**MVP (v0.1)** — Gerüst und Datenmodell · Themenverwaltung · drei Gebetszeiten · Gebetsansicht mit Schriftwort, Gebet und Jesusgebet · Korpus mit ~400 Gebeten für die gewöhnliche Zeit · lokale Speicherung · Dark Mode · als PWA installierbar
+**MVP (v0.1)** — Gerüst und Datenmodell · Themenverwaltung · drei Gebetszeiten · Gebetsansicht mit Schriftwort, Gebet und Jesusgebet · die 144 Grundgebete · lokale Speicherung · Dark Mode · als PWA installierbar
 
-**v0.2** — Julianischer Kirchenkalender (Fastenzeiten, Feste, Heiliger des Tages) · Korpus auf alle vier Färbungen erweitert · Benachrichtigungen über Web Push
+**v0.2** — Julianischer Kirchenkalender (Fastenzeiten, Feste, Heiliger des Tages) · die 39 liturgischen Module mit Festeinschüben · Benachrichtigungen über Web Push
 
 **v0.3** — Google-Anmeldung und Geräteabgleich · Gedenkliste · Gebetstagebuch · Archiv erhörter Anliegen
 
