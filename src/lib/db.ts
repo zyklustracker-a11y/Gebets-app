@@ -53,6 +53,7 @@ export class GebetsDatenbank extends Dexie {
     this.on('populate', () => {
       void this.einstellungen.add(STANDARD_EINSTELLUNGEN);
       void this.gebetszeiten.bulkAdd(STANDARD_GEBETSZEITEN);
+      void this.themen.bulkAdd(STANDARD_THEMEN());
     });
   }
 }
@@ -78,6 +79,19 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   heiligentagAnzeigen: true,
   erscheinungsbild: 'system',
 };
+
+/**
+ * Ein kleines Startset aktiver Kategorien, damit die App vom ersten Öffnen an
+ * ein Gebet zeigen kann. Alles Weitere wählt der Nutzer auf dem Themen-Schirm.
+ */
+export function STANDARD_THEMEN(): Thema[] {
+  const jetzt = new Date().toISOString();
+  return [
+    { id: crypto.randomUUID(), titel: 'Dankbarkeit', kategorie: 'dankbarkeit', istEigen: false, status: 'aktiv', erstelltAm: jetzt },
+    { id: crypto.randomUUID(), titel: 'Familie', kategorie: 'familie', istEigen: false, status: 'aktiv', erstelltAm: jetzt },
+    { id: crypto.randomUUID(), titel: 'Arbeit & Berufung', kategorie: 'arbeit', istEigen: false, status: 'aktiv', erstelltAm: jetzt },
+  ];
+}
 
 // ---------------------------------------------------------------------------
 // Zugriff

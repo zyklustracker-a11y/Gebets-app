@@ -1,36 +1,37 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Linie, RAND, SERIF, Ueberschrift, bildschirm, obenSafe, untenSafe } from '../components/ui'
+import { KATEGORIEN } from '../lib/kategorien'
+import { themaAnlegen } from '../lib/themen'
 
 /**
  * Bildschirm 5 · Neues Thema — Freitext und Kategorie für ein eigenes Anliegen.
- * Fest verdrahtete Beispieldaten; die Eingabe wird in Bauabschnitt 4 lebendig.
+ * Legt beim Aufnehmen ein aktives Thema in der Datenbank an.
  */
 
-interface Kategorie {
-  name: string
-  gewaehlt: boolean
-}
-
-const KATEGORIEN: Kategorie[] = [
-  { name: 'Familie', gewaehlt: true },
-  { name: 'Geduld', gewaehlt: false },
-  { name: 'Zorn & Vergebung', gewaehlt: false },
-]
+// Zunächst eine kleine Auswahl; „Alle Kategorien zeigen" klappt den Rest auf.
+const VORAUSWAHL = ['familie', 'geduld', 'zorn']
 
 export default function ThemaNeu() {
   const navigate = useNavigate()
+  const [titel, setTitel] = useState('')
+  const [kategorie, setKategorie] = useState('familie')
+  const [alleZeigen, setAlleZeigen] = useState(false)
+
+  const sichtbar = alleZeigen
+    ? KATEGORIEN
+    : KATEGORIEN.filter((k) => VORAUSWAHL.includes(k.schluessel) || k.schluessel === kategorie)
+
+  async function aufnehmen() {
+    if (!titel.trim()) return
+    await themaAnlegen(titel, kategorie)
+    navigate('/themen')
+  }
 
   return (
     <div style={bildschirm}>
-      <div
-        style={{
-          padding: `${obenSafe} ${RAND}px 8px`,
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'flex-end',
-        }}
-      >
+      <div style={{ padding: `${obenSafe} ${RAND}px 8px`, display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' }}>
         <button onClick={() => navigate('/themen')} style={{ fontSize: 13, fontWeight: 500, color: 'var(--muted)' }}>
           Abbrechen
         </button>
@@ -41,7 +42,11 @@ export default function ThemaNeu() {
           Was beschäftigt dich gerade?
         </div>
 
-        <div
+        <input
+          autoFocus
+          value={titel}
+          onChange={(e) => setTitel(e.target.value)}
+          placeholder="Geduld mit meinem Vater"
           style={{
             marginTop: 20,
             paddingBottom: 14,
@@ -49,56 +54,54 @@ export default function ThemaNeu() {
             fontFamily: SERIF,
             fontSize: 21,
             lineHeight: 1.6,
-            minHeight: 34,
+            color: 'var(--ink)',
           }}
-        >
-          Geduld mit meinem Vater
-          <span
-            style={{
-              display: 'inline-block',
-              width: 1.5,
-              height: 22,
-              background: 'var(--red)',
-              verticalAlign: -4,
-              marginLeft: 2,
-            }}
-          />
-        </div>
+        />
 
         <div style={{ marginTop: 44 }}>
           <Ueberschrift>Kategorie</Ueberschrift>
         </div>
         <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column' }}>
           <Linie />
-          {KATEGORIEN.map((kategorie) => (
-            <div key={kategorie.name} style={{ display: 'flex', flexDirection: 'column' }}>
-              <div
-                style={{
-                  minHeight: 56,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  color: kategorie.gewaehlt ? undefined : 'var(--muted)',
-                }}
-              >
-                <div style={{ fontFamily: SERIF, fontSize: 20 }}>{kategorie.name}</div>
-                {kategorie.gewaehlt && (
-                  <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--red-text)' }} />
-                )}
+          {sichtbar.map((k) => {
+            const gewaehlt = k.schluessel === kategorie
+            return (
+              <div key={k.schluessel} style={{ display: 'flex', flexDirection: 'column' }}>
+                <button
+                  onClick={() => setKategorie(k.schluessel)}
+                  style={{
+                    minHeight: 56,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    color: gewaehlt ? undefined : 'var(--muted)',
+                  }}
+                >
+                  <div style={{ fontFamily: SERIF, fontSize: 20 }}>{k.name}</div>
+                  {gewaehlt && <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--red-text)' }} />}
+                </button>
+                <Linie />
               </div>
+            )
+          })}
+          {!alleZeigen && (
+            <>
+              <button
+                onClick={() => setAlleZeigen(true)}
+                style={{ minHeight: 56, display: 'flex', alignItems: 'center', width: '100%', fontSize: 15, color: 'var(--faint)' }}
+              >
+                Alle Kategorien zeigen
+              </button>
               <Linie />
-            </div>
-          ))}
-          <div style={{ minHeight: 56, display: 'flex', alignItems: 'center', color: 'var(--faint)' }}>
-            <div style={{ fontSize: 15 }}>Alle Kategorien zeigen</div>
-          </div>
-          <Linie />
+            </>
+          )}
         </div>
 
         <div style={{ flex: 1 }} />
         <div style={{ paddingBottom: 20 }}>
           <button
-            onClick={() => navigate('/themen')}
+            onClick={aufnehmen}
             style={{
               width: '100%',
               height: 52,
@@ -110,6 +113,7 @@ export default function ThemaNeu() {
               justifyContent: 'center',
               fontSize: 16,
               fontWeight: 500,
+              opacity: titel.trim() ? 1 : 0.5,
             }}
           >
             Thema aufnehmen

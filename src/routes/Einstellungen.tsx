@@ -1,21 +1,25 @@
+import { useLiveQuery } from 'dexie-react-hooks'
 import type { ReactNode } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import { Linie, RAND, SERIF, Schalter, Ueberschrift, bildschirm, obenSafe, untenSafe } from '../components/ui'
+import { Linie, RAND, SERIF, Schalter, Ueberschrift, ZurueckWinkel, bildschirm, obenSafe, untenSafe } from '../components/ui'
+import { db, einstellungenLesen, einstellungenSchreiben } from '../lib/db'
+import { JESUSGEBET_ANZAHLEN, type Erscheinungsbild } from '../lib/types'
 
 /**
- * Bildschirm 6 · Einstellungen — Gebetszeiten, Jesusgebet, Darstellung,
- * Anmeldung. Fest verdrahtete Beispieldaten; die Schalter werden in
- * Bauabschnitt 4 (und die Anmeldung in Bauabschnitt 9) lebendig.
+ * Bildschirm 6 · Einstellungen — an die Datenbank angebunden. Themen sind von
+ * hier aus gut sichtbar oben erreichbar. Die Anmeldung bleibt bis Bauabschnitt 9
+ * eine Anzeige.
  */
 
-const GEBETSZEITEN = [
-  { titel: 'Morgen', uhrzeit: '7:00', an: true },
-  { titel: 'Mittag', uhrzeit: '12:30', an: true },
-  { titel: 'Abend', uhrzeit: '21:00', an: false },
-]
+const ERSCHEINUNG_LABEL: Record<Erscheinungsbild, string> = {
+  system: 'System',
+  hell: 'Hell',
+  dunkel: 'Dunkel',
+}
+const ERSCHEINUNG_FOLGE: Erscheinungsbild[] = ['system', 'hell', 'dunkel']
 
-const WIEDERHOLUNGEN = [12, 33, 100]
-const GEWAEHLTE_ANZAHL = 12
+const TITEL: Record<'morgen' | 'mittag' | 'abend', string> = { morgen: 'Morgen', mittag: 'Mittag', abend: 'Abend' }
 
 function Abschnitt({ titel, children }: { titel: string; children: ReactNode }) {
   return (
@@ -32,21 +36,70 @@ function Abschnitt({ titel, children }: { titel: string; children: ReactNode }) 
 }
 
 export default function Einstellungen() {
+  const navigate = useNavigate()
+
+  const gebetszeiten = useLiveQuery(async () => {
+    const alle = await db.gebetszeiten.toArray()
+    const reihenfolge = ['morgen', 'mittag', 'abend']
+    return alle.sort((a, b) => reihenfolge.indexOf(a.typ) - reihenfolge.indexOf(b.typ))
+  }, [])
+
+  const einstellungen = useLiveQuery(() => einstellungenLesen(), [])
+
+  async function zeitUmschalten(typ: 'morgen' | 'mittag' | 'abend', aktiv: boolean) {
+    await db.gebetszeiten.update(typ, { aktiv: !aktiv })
+  }
+
+  async function erscheinungWeiter() {
+    const jetzt = einstellungen?.erscheinungsbild ?? 'system'
+    const naechste = ERSCHEINUNG_FOLGE[(ERSCHEINUNG_FOLGE.indexOf(jetzt) + 1) % ERSCHEINUNG_FOLGE.length] ?? 'system'
+    await einstellungenSchreiben({ erscheinungsbild: naechste })
+  }
+
   return (
     <div style={bildschirm}>
       <div style={{ height: obenSafe }} />
-      <div style={{ flex: 1, padding: `22px ${RAND}px 0` }}>
+      <div style={{ padding: `2px ${RAND}px 0` }}>
+        <button onClick={() => navigate('/')} aria-label="Zurück zu Heute" style={{ padding: 8, margin: -8 }}>
+          <ZurueckWinkel />
+        </button>
+      </div>
+
+      <div style={{ flex: 1, padding: `14px ${RAND}px 0` }}>
         <div style={{ fontFamily: SERIF, fontSize: 28 }}>Einstellungen</div>
 
+        {/* Themen bewusst oben und gross — sie sind das Herzstück. */}
+        <button
+          onClick={() => navigate('/themen')}
+          style={{
+            marginTop: 24,
+            width: '100%',
+            minHeight: 60,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            background: 'var(--field)',
+            borderRadius: 10,
+            padding: '0 18px',
+          }}
+        >
+          <span style={{ fontFamily: SERIF, fontSize: 22 }}>Themen</span>
+          <span style={{ display: 'inline-flex', transform: 'scaleX(-1)' }}>
+            <ZurueckWinkel />
+          </span>
+        </button>
+
         <Abschnitt titel="Gebetszeiten">
-          {GEBETSZEITEN.map((zeit) => (
-            <div key={zeit.titel} style={{ display: 'flex', flexDirection: 'column' }}>
+          {(gebetszeiten ?? []).map((zeit) => (
+            <div key={zeit.typ} style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 14 }}>
-                  <span style={{ fontFamily: SERIF, fontSize: 20 }}>{zeit.titel}</span>
-                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>{zeit.uhrzeit}</span>
+                  <span style={{ fontFamily: SERIF, fontSize: 20 }}>{TITEL[zeit.typ]}</span>
+                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>{zeit.uhrzeit.replace(/^0/, '')}</span>
                 </div>
-                <Schalter an={zeit.an} beschriftung={`${zeit.titel} benachrichtigen`} />
+                <button onClick={() => zeitUmschalten(zeit.typ, zeit.aktiv)} aria-label={`${TITEL[zeit.typ]} anzeigen`}>
+                  <Schalter an={zeit.aktiv} />
+                </button>
               </div>
               <Linie />
             </div>
@@ -57,11 +110,12 @@ export default function Einstellungen() {
           <div style={{ minHeight: 76, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
             <div style={{ fontFamily: SERIF, fontSize: 20 }}>Wiederholungen</div>
             <div style={{ display: 'flex', gap: 6 }}>
-              {WIEDERHOLUNGEN.map((anzahl) => {
-                const gewaehlt = anzahl === GEWAEHLTE_ANZAHL
+              {JESUSGEBET_ANZAHLEN.map((anzahl) => {
+                const gewaehlt = anzahl === einstellungen?.jesusgebetAnzahl
                 return (
-                  <div
+                  <button
                     key={anzahl}
+                    onClick={() => einstellungenSchreiben({ jesusgebetAnzahl: anzahl })}
                     style={{
                       minWidth: 52,
                       height: 44,
@@ -76,7 +130,7 @@ export default function Einstellungen() {
                     }}
                   >
                     {anzahl}
-                  </div>
+                  </button>
                 )
               })}
             </div>
@@ -87,29 +141,36 @@ export default function Einstellungen() {
         <Abschnitt titel="Darstellung">
           <div style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ fontFamily: SERIF, fontSize: 20 }}>Heiligentag anzeigen</div>
-            <Schalter an beschriftung="Heiligentag anzeigen" />
+            <button
+              onClick={() => einstellungenSchreiben({ heiligentagAnzeigen: !(einstellungen?.heiligentagAnzeigen ?? true) })}
+              aria-label="Heiligentag anzeigen"
+            >
+              <Schalter an={einstellungen?.heiligentagAnzeigen ?? true} />
+            </button>
           </div>
           <Linie />
-          <div style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <button
+            onClick={erscheinungWeiter}
+            style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}
+          >
             <div style={{ fontFamily: SERIF, fontSize: 20 }}>Erscheinungsbild</div>
-            <div style={{ fontSize: 15, color: 'var(--muted)' }}>Hell</div>
-          </div>
+            <div style={{ fontSize: 15, color: 'var(--muted)' }}>
+              {ERSCHEINUNG_LABEL[einstellungen?.erscheinungsbild ?? 'system']}
+            </div>
+          </button>
           <Linie />
         </Abschnitt>
 
         <Abschnitt titel="Anmeldung">
           <div style={{ minHeight: 78, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
             <div>
-              <div style={{ fontFamily: SERIF, fontSize: 20 }}>Angemeldet mit Google</div>
-              <div style={{ marginTop: 4, fontSize: 13, color: 'var(--muted)' }}>anna.weber@gmail.com</div>
-            </div>
-            <div style={{ minHeight: 44, display: 'flex', alignItems: 'center', fontSize: 15, color: 'var(--red-text)' }}>
-              Abmelden
+              <div style={{ fontFamily: SERIF, fontSize: 20 }}>Nicht angemeldet</div>
+              <div style={{ marginTop: 4, fontSize: 13, color: 'var(--muted)' }}>Alles läuft lokal auf diesem Gerät.</div>
             </div>
           </div>
           <Linie />
           <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
-            Themen und Tagebuch werden auf allen Geräten abgeglichen.
+            Anmeldung und Geräteabgleich kommen später. Themen und Tagebuch bleiben bis dahin auf diesem Gerät.
           </div>
         </Abschnitt>
 

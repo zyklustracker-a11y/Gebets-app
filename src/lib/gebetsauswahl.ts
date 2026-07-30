@@ -1,0 +1,199 @@
+/**
+ * Gebetsauswahl (Spezifikation, Abschnitt 6).
+ *
+ * Zwei Zusagen dieses Moduls:
+ *
+ * 1. Die Auswahl ist deterministisch pro (Datum, Tageszeit). Das erste Öffnen
+ *    legt einen `Gebetseintrag` an; jedes weitere Öffnen liefert genau diesen
+ *    Eintrag zurück, der Text wechselt also nicht. Nur „Anderes Gebet"
+ *    (`andersWaehlen`) setzt die Auswahl bewusst neu.
+ * 2. Das Schriftwort steckt fest im gewählten Grundgebet (`vers`, `stelle`) und
+ *    wird nicht separat gelost.
+ *
+ * Die liturgische Zusammensetzung (Module, Festeinschübe) kommt in
+ * Bauabschnitt 6 dazu; hier bleibt `modulId` leer und die Eröffnung gewöhnlich.
+ */
+
+import { db } from './db'
+import { korpusFuer, korpusNachId } from './korpus'
+import type { Gebetseintrag, Tageszeit } from './types'
+
+/** Kategorie, auf die zurückgefallen wird, wenn kein aktives Thema greift. */
+const STANDARD_KATEGORIE = 'dankbarkeit'
+
+/** Wie viele Tage ein einmal gezeigtes Gebet gesperrt bleibt. */
+const SPERRE_TAGE = 14
+
+const EROEFFNUNG = 'Im Namen des Vaters, des Sohnes und des Heiligen Geistes.'
+
+const TAGESZEIT_LABEL: Record<Tageszeit, string> = {
+  morgen: 'Morgengebet',
+  mittag: 'Mittagsgebet',
+  abend: 'Abendgebet',
+}
+
+export interface Zusammensetzung {
+  tageszeitLabel: string
+  eroeffnung: string
+  vers: string
+  stelle: string
+  absaetze: string[]
+}
+
+// ---------------------------------------------------------------------------
+// Datums-Hilfen (Zeichenketten „YYYY-MM-DD")
+// ---------------------------------------------------------------------------
+
+export function datumIso(datum: Date): string {
+  const jahr = datum.getUTCFullYear()
+  const monat = String(datum.getUTCMonth() + 1).padStart(2, '0')
+  const tag = String(datum.getUTCDate()).padStart(2, '0')
+  return `${jahr}-${monat}-${tag}`
+}
+
+function datumMinusTage(iso: string, tage: number): string {
+  const teile = iso.split('-')
+  const dt = new Date(Date.UTC(Number(teile[0]), Number(teile[1]) - 1, Number(teile[2])))
+  dt.setUTCDate(dt.getUTCDate() - tage)
+  return datumIso(dt)
+}
+
+/** Kleiner deterministischer Streuwert (FNV-1a), damit die Wahl variiert. */
+function streuIndex(schluessel: string, laenge: number): number {
+  let h = 2166136261
+  for (let i = 0; i < schluessel.length; i++) {
+    h ^= schluessel.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return Math.abs(h) % laenge
+}
+
+// ---------------------------------------------------------------------------
+// Auswahl
+// ---------------------------------------------------------------------------
+
+async function erzeugeAuswahl(
+  datum: string,
+  tageszeit: Tageszeit,
+  ausschlussKorpusId: string | null,
+): Promise<Gebetseintrag> {
+  const protokoll = await db.protokoll.toArray()
+
+  // Aktive Themen nach längster Abwesenheit sortieren: das Thema, das am
+  // längsten nicht vorkam, kommt zuerst (Rotation).
+  const aktive = await db.themen.where('status').equals('aktiv').toArray()
+  const zuletzt = (themaId: string): string => {
+    let max = ''
+    for (const eintrag of protokoll) {
+      if (eintrag.themenIds.includes(themaId) && eintrag.datum > max) max = eintrag.datum
+    }
+    return max
+  }
+  aktive.sort((a, b) => {
+    const za = zuletzt(a.id)
+    const zb = zuletzt(b.id)
+    if (za !== zb) return za < zb ? -1 : 1
+    return a.erstelltAm < b.erstelltAm ? -1 : 1
+  })
+
+  const gewaehlte = aktive.slice(0, Math.min(3, aktive.length))
+  const hauptThema = gewaehlte[0]
+  const kategorie = hauptThema?.kategorie ?? STANDARD_KATEGORIE
+
+  // Grundgebete zur Kategorie und Tageszeit, mit Rückfall auf die Standard-
+  // kategorie und zuletzt auf alles zur Tageszeit passende.
+  let auswahl = korpusFuer(kategorie, tageszeit)
+  if (auswahl.length === 0) auswahl = korpusFuer(STANDARD_KATEGORIE, tageszeit)
+
+  // Wiederholungssperre: was in den letzten 14 Tagen dran war, meiden.
+  const grenze = datumMinusTage(datum, SPERRE_TAGE)
+  const kuerzlich = new Set(protokoll.filter((e) => e.datum > grenze).map((e) => e.korpusId))
+  let frei = auswahl.filter((e) => !kuerzlich.has(e.id))
+  if (frei.length === 0) frei = auswahl
+
+  // „Anderes Gebet": das bisherige ausschliessen, sofern es Alternativen gibt.
+  if (ausschlussKorpusId) {
+    const ohne = frei.filter((e) => e.id !== ausschlussKorpusId)
+    if (ohne.length > 0) frei = ohne
+  }
+
+  const wahl = frei[streuIndex(`${datum}-${tageszeit}-${ausschlussKorpusId ?? ''}`, frei.length)]
+
+  return {
+    id: `${datum}-${tageszeit}`,
+    datum,
+    tageszeit,
+    korpusId: wahl?.id ?? '',
+    themenIds: gewaehlte.map((t) => t.id),
+    modulId: undefined,
+  }
+}
+
+/**
+ * Liefert das Gebet für (Datum, Tageszeit). Existiert bereits eine Auswahl,
+ * wird genau sie zurückgegeben — der Text wechselt beim erneuten Öffnen nicht.
+ */
+export async function ermittleGebet(datum: string, tageszeit: Tageszeit): Promise<Gebetseintrag> {
+  const id = `${datum}-${tageszeit}`
+  const vorhanden = await db.protokoll.get(id)
+  if (vorhanden) return vorhanden
+  const neu = await erzeugeAuswahl(datum, tageszeit, null)
+  await db.protokoll.put(neu)
+  return neu
+}
+
+/** „Anderes Gebet": setzt die Auswahl bewusst neu und schliesst das bisherige aus. */
+export async function andersWaehlen(datum: string, tageszeit: Tageszeit): Promise<Gebetseintrag> {
+  const id = `${datum}-${tageszeit}`
+  const vorhanden = await db.protokoll.get(id)
+  const neu = await erzeugeAuswahl(datum, tageszeit, vorhanden?.korpusId ?? null)
+  await db.protokoll.put(neu)
+  return neu
+}
+
+/** Setzt den Zeitstempel „Gebetet" auf dem heutigen Eintrag. */
+export async function alsGebetet(datum: string, tageszeit: Tageszeit): Promise<void> {
+  const eintrag = await ermittleGebet(datum, tageszeit)
+  await db.protokoll.update(eintrag.id, { gebetetAm: new Date().toISOString() })
+}
+
+// ---------------------------------------------------------------------------
+// Zusammensetzung zum Anzeigen
+// ---------------------------------------------------------------------------
+
+/** Entfernt den ganzen Satz mit dem Platzhalter, falls kein eigenes Thema greift. */
+function ohneAnliegenzeile(text: string): string {
+  return text
+    .split('\n')
+    .filter((zeile) => !zeile.includes('{{anliegen}}'))
+    .join('\n')
+}
+
+/**
+ * Baut die anzuzeigenden Teile eines Gebets. Ist ein eigenes Thema unter den
+ * gewählten, wird sein Titel in `{{anliegen}}` eingesetzt; sonst entfällt der
+ * ganze Trägersatz.
+ */
+export async function komponiere(eintrag: Gebetseintrag): Promise<Zusammensetzung | null> {
+  const grundgebet = korpusNachId(eintrag.korpusId)
+  if (!grundgebet) return null
+
+  const themen = await db.themen.bulkGet(eintrag.themenIds)
+  const eigenes = themen.find((t) => t?.istEigen)
+
+  let text = grundgebet.text
+  text = eigenes ? text.split('{{anliegen}}').join(eigenes.titel) : ohneAnliegenzeile(text)
+
+  const absaetze = text
+    .split('\n')
+    .map((zeile) => zeile.trim())
+    .filter(Boolean)
+
+  return {
+    tageszeitLabel: TAGESZEIT_LABEL[eintrag.tageszeit],
+    eroeffnung: EROEFFNUNG,
+    vers: grundgebet.vers,
+    stelle: grundgebet.stelle,
+    absaetze,
+  }
+}
