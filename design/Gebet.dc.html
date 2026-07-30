@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+  body { margin:0; background:#E4DFD6; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#8C2F2F; text-decoration:none; }
+  a:hover { color:#6E2424; }
+  [data-theme="light"]{ --bg:#F6F1E8; --ink:#2A2622; --muted:rgba(42,38,34,.58); --faint:rgba(42,38,34,.4); --rule:rgba(42,38,34,.13); --field:rgba(42,38,34,.05); --gold:#B08D3F; --red:#8C2F2F; --red-text:#8C2F2F; --on-red:#F6F1E8; --edge:rgba(42,38,34,.18); }
+  [data-theme="dark"]{ --bg:#1A1815; --ink:#E9E1D2; --muted:rgba(233,225,210,.68); --faint:rgba(233,225,210,.5); --rule:rgba(233,225,210,.16); --field:rgba(233,225,210,.06); --gold:#C4A254; --red:#8C2F2F; --red-text:#D06B6B; --on-red:#F3ECE0; --edge:rgba(233,225,210,.14); }
+  .sx::-webkit-scrollbar{ display:none; }
+</style>
+</helmet>
+
+<div style="padding:56px 64px 96px;display:flex;flex-direction:column;gap:72px;min-width:940px">
+
+  <div style="display:flex;flex-direction:column;gap:10px;max-width:620px">
+    <div style="font-family:'EB Garamond',Georgia,serif;font-size:34px;color:#2A2622">Gebet</div>
+    <div style="font-size:13px;line-height:1.7;color:rgba(42,38,34,.6)">Persönliches Gebet in der russisch-orthodoxen Tradition · iPhone 393 × 852 pt · sechs Bildschirme, hell und dunkel</div>
+  </div>
+
+  <!-- 2 · GEBETSANSICHT -->
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,38,34,.5)">2 · Gebetsansicht</div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap">
+      <sc-for list="{{ themes }}" as="t" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div data-theme="{{ t.mode }}" data-screen-label="Gebetsansicht" style="width:393px;height:852px;background:var(--bg);color:var(--ink);border-radius:44px;border:1px solid var(--edge);overflow:hidden;display:flex;flex-direction:column">
+            <div style="height:59px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:13px;font-weight:500;color:var(--muted)">
+              <span>9:41</span>
+              <span style="width:22px;height:30px;position:relative;display:block">
+                <span style="position:absolute;left:10px;top:2px;width:1.5px;height:26px;background:var(--gold)"></span>
+                <span style="position:absolute;left:6.5px;top:6px;width:9px;height:1.5px;background:var(--gold)"></span>
+                <span style="position:absolute;left:2px;top:12px;width:18px;height:1.5px;background:var(--gold)"></span>
+                <span style="position:absolute;left:4px;top:21px;width:14px;height:1.5px;background:var(--gold);transform:rotate(18deg)"></span>
+              </span>
+            </div>
+            <div class="sx" style="flex:1;overflow-y:auto;padding:6px 30px 0;scrollbar-width:none">
+              <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Morgengebet</div>
+              <div style="margin-top:26px;font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.6;color:var(--muted)">Im Namen des Vaters, des Sohnes und des Heiligen Geistes.</div>
+              <div style="margin-top:30px;padding-left:16px;border-left:1px solid var(--rule)">
+                <div style="font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:19px;line-height:1.6;text-wrap:pretty">Erschaffe in mir ein reines Herz, Gott, und gib mir einen neuen, festen Geist.</div>
+                <div style="margin-top:10px;font-size:12px;letter-spacing:.06em;color:var(--faint)">Psalm 50,12</div>
+              </div>
+              <div style="margin-top:34px;font-family:'EB Garamond',Georgia,serif;font-size:20px;line-height:1.6;text-wrap:pretty;display:flex;flex-direction:column;gap:18px">
+                <p style="margin:0">Herr, Du kennst diesen Morgen, ehe er begonnen hat. Ich lege Dir mein Herz hin, wie es ist: unruhig, ungeduldig, voll eigener Pläne.</p>
+                <p style="margin:0">Ich bringe Dir meinen Vater. Du hast ihn mir gegeben, und Du kennst jedes Wort, das zwischen uns steht. Nimm die Härte aus meiner Stimme und die Eile aus meinem Urteil. Lehre mich, ihn anzuhören, ohne mich zu verteidigen, und ihn zu ehren, auch wenn ich ihn nicht verstehe. Schenke mir Geduld, die nicht aus meiner Kraft kommt, sondern aus Deiner Barmherzigkeit.</p>
+                <p style="margin:0">Ich bringe Dir meine Arbeit. Ich weiss nicht, welchen Weg ich gehen soll, und ich fürchte, das Falsche zu wählen. Nimm mir die Angst vor der Entscheidung. Zeige mir nicht alles, nur den nächsten Schritt, und gib mir den Mut, ihn zu gehen.</p>
+                <p style="margin:0">Was dieser Tag mir bringt, nehme ich aus Deiner Hand. Dir vertraue ich mich an, jetzt und alle Tage. Amen.</p>
+              </div>
+              <div style="margin:36px 0 0;height:1px;background:var(--gold);opacity:.5"></div>
+              <div style="margin-top:22px;font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.6;color:var(--muted)">Nun das Jesusgebet, {{ repsWord }} Mal.</div>
+            </div>
+            <div style="padding:18px 30px 0;display:flex;align-items:center;gap:18px;border-top:1px solid var(--rule)">
+              <div style="flex:1;height:52px;border-radius:10px;background:var(--red);color:var(--on-red);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;letter-spacing:.02em">Gebetet</div>
+              <div style="height:52px;padding:0 4px;display:flex;align-items:center;font-size:15px;color:var(--muted)">Anderes Gebet</div>
+            </div>
+            <div style="height:34px;display:flex;align-items:center;justify-content:center">
+              <div style="width:120px;height:4px;border-radius:2px;background:var(--rule)"></div>
+            </div>
+          </div>
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(42,38,34,.45)">{{ t.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- 1 · HEUTE -->
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,38,34,.5)">1 · Heute</div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap">
+      <sc-for list="{{ themes }}" as="t" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div data-theme="{{ t.mode }}" data-screen-label="Heute" style="width:393px;height:852px;background:var(--bg);color:var(--ink);border-radius:44px;border:1px solid var(--edge);overflow:hidden;display:flex;flex-direction:column">
+            <div style="height:59px;display:flex;align-items:flex-end;padding:0 30px 8px;font-size:13px;font-weight:500;color:var(--muted)">9:41</div>
+            <div style="flex:1;padding:26px 30px 0;display:flex;flex-direction:column">
+              <div style="width:22px;height:30px;position:relative;margin-bottom:30px">
+                <span style="position:absolute;left:10px;top:2px;width:1.5px;height:26px;background:var(--gold)"></span>
+                <span style="position:absolute;left:6.5px;top:6px;width:9px;height:1.5px;background:var(--gold)"></span>
+                <span style="position:absolute;left:2px;top:12px;width:18px;height:1.5px;background:var(--gold)"></span>
+                <span style="position:absolute;left:4px;top:21px;width:14px;height:1.5px;background:var(--gold);transform:rotate(18deg)"></span>
+              </div>
+              <div style="font-family:'EB Garamond',Georgia,serif;font-size:30px;line-height:1.3">Donnerstag,<br>30. Juli 2026</div>
+              <div style="margin-top:14px;font-size:13px;line-height:1.7;color:var(--muted)">Hl. Apostel Silas<br>Achte Woche nach Pfingsten</div>
+              <div style="margin-top:52px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:72px;display:flex;align-items:center;justify-content:space-between;color:var(--muted)">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:21px">Morgen</div>
+                  <div style="display:flex;align-items:center;gap:14px">
+                    <span style="font-size:15px">7:00</span>
+                    <span style="width:14px;height:9px;position:relative;display:block">
+                      <span style="position:absolute;left:0;top:4px;width:6px;height:1.5px;background:var(--gold);transform:rotate(45deg)"></span>
+                      <span style="position:absolute;left:4px;top:3px;width:11px;height:1.5px;background:var(--gold);transform:rotate(-45deg)"></span>
+                    </span>
+                  </div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:88px;display:flex;align-items:center;justify-content:space-between;background:var(--field);border-radius:10px;padding:0 18px;margin:0 -18px">
+                  <div>
+                    <div style="font-family:'EB Garamond',Georgia,serif;font-size:23px">Mittag</div>
+                    <div style="margin-top:5px;font-size:13px;color:var(--red-text)">Jetzt beten</div>
+                  </div>
+                  <div style="font-size:15px;color:var(--muted)">12:30</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:72px;display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:21px">Abend</div>
+                  <div style="font-size:15px;color:var(--muted)">21:00</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+              </div>
+              <div style="flex:1"></div>
+              <div style="padding-bottom:22px;font-size:13px;color:var(--faint)">{{ activeSummary }}</div>
+            </div>
+            <div style="height:34px;display:flex;align-items:center;justify-content:center">
+              <div style="width:120px;height:4px;border-radius:2px;background:var(--rule)"></div>
+            </div>
+          </div>
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(42,38,34,.45)">{{ t.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- 3 · JESUSGEBET -->
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,38,34,.5)">3 · Jesusgebet · die Fläche ist antippbar</div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap">
+      <sc-for list="{{ themes }}" as="t" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div data-theme="{{ t.mode }}" data-screen-label="Jesusgebet" onClick="{{ tap }}" style="width:393px;height:852px;background:var(--bg);color:var(--ink);border-radius:44px;border:1px solid var(--edge);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;user-select:none">
+            <div style="height:59px"></div>
+            <div style="flex:1;padding:0 44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:64px">
+              <div style="font-family:'EB Garamond',Georgia,serif;font-size:22px;line-height:1.6;text-align:center;text-wrap:pretty">Herr Jesus Christus, Sohn Gottes, erbarme dich meiner, des Sünders.</div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:26px">
+                <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:11px;max-width:220px">
+                  <sc-for list="{{ beads }}" as="b" hint-placeholder-count="12">
+                    <span style="width:7px;height:7px;border-radius:50%;background:{{ b.bg }}"></span>
+                  </sc-for>
+                </div>
+                <div style="font-family:'EB Garamond',Georgia,serif;font-size:17px;color:var(--muted);letter-spacing:.08em">{{ counter }}</div>
+              </div>
+            </div>
+            <div style="height:34px;display:flex;align-items:center;justify-content:center">
+              <div style="width:120px;height:4px;border-radius:2px;background:var(--rule)"></div>
+            </div>
+          </div>
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(42,38,34,.45)">{{ t.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- 4 · THEMEN -->
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,38,34,.5)">4 · Themen</div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap">
+      <sc-for list="{{ themes }}" as="t" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div data-theme="{{ t.mode }}" data-screen-label="Themen" style="width:393px;height:852px;background:var(--bg);color:var(--ink);border-radius:44px;border:1px solid var(--edge);overflow:hidden;display:flex;flex-direction:column">
+            <div style="height:59px;display:flex;align-items:flex-end;padding:0 30px 8px;font-size:13px;font-weight:500;color:var(--muted)">9:41</div>
+            <div class="sx" style="flex:1;overflow-y:auto;padding:22px 30px 0;scrollbar-width:none">
+              <div style="font-family:'EB Garamond',Georgia,serif;font-size:28px">Themen</div>
+              <div style="margin-top:10px;font-size:13px;line-height:1.7;color:var(--muted)">Angetippte Themen kommen in den nächsten Gebeten vor.</div>
+
+              <div style="margin-top:36px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Eigene Themen</div>
+              <div style="margin-top:12px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Geduld mit meinem Vater</div>
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--red-text);flex:none"></span>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Klarheit über den Jobwechsel</div>
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--red-text);flex:none"></span>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--faint)">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Umzug in eine andere Stadt</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+              </div>
+
+              <div style="margin-top:32px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Kategorien</div>
+              <div style="margin-top:12px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <sc-for list="{{ categories }}" as="c" hint-placeholder-count="10">
+                  <div style="display:flex;flex-direction:column">
+                    <div style="min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;color:{{ c.color }}">
+                      <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">{{ c.name }}</div>
+                      <span style="width:7px;height:7px;border-radius:50%;background:{{ c.dot }};flex:none"></span>
+                    </div>
+                    <div style="height:1px;background:var(--rule)"></div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="height:24px"></div>
+            </div>
+            <div style="padding:14px 30px 0;border-top:1px solid var(--rule);display:flex;align-items:center;min-height:56px">
+              <div style="font-size:15px;color:var(--red-text)">Eigenes Thema hinzufügen</div>
+            </div>
+            <div style="height:34px;display:flex;align-items:center;justify-content:center">
+              <div style="width:120px;height:4px;border-radius:2px;background:var(--rule)"></div>
+            </div>
+          </div>
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(42,38,34,.45)">{{ t.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- 5 · NEUES THEMA -->
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,38,34,.5)">5 · Neues Thema</div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap">
+      <sc-for list="{{ themes }}" as="t" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div data-theme="{{ t.mode }}" data-screen-label="Neues Thema" style="width:393px;height:852px;background:var(--bg);color:var(--ink);border-radius:44px;border:1px solid var(--edge);overflow:hidden;display:flex;flex-direction:column">
+            <div style="height:59px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px;font-size:13px;font-weight:500;color:var(--muted)">
+              <span>9:41</span>
+              <span style="color:var(--muted)">Abbrechen</span>
+            </div>
+            <div style="flex:1;padding:30px 30px 0;display:flex;flex-direction:column">
+              <div style="font-family:'EB Garamond',Georgia,serif;font-size:22px;line-height:1.5;color:var(--muted)">Was beschäftigt dich gerade?</div>
+              <div style="margin-top:20px;padding-bottom:14px;border-bottom:1px solid var(--rule);font-family:'EB Garamond',Georgia,serif;font-size:21px;line-height:1.6;min-height:34px">Geduld mit meinem Vater<span style="display:inline-block;width:1.5px;height:22px;background:var(--red);vertical-align:-4px;margin-left:2px"></span></div>
+              <div style="margin-top:44px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Kategorie</div>
+              <div style="margin-top:12px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:56px;display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Familie</div>
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--red-text)"></span>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:56px;display:flex;align-items:center;color:var(--muted)">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Geduld</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:56px;display:flex;align-items:center;color:var(--muted)">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Zorn &amp; Vergebung</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:56px;display:flex;align-items:center;color:var(--faint)">
+                  <div style="font-size:15px">Alle Kategorien zeigen</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+              </div>
+              <div style="flex:1"></div>
+              <div style="padding-bottom:20px">
+                <div style="height:52px;border-radius:10px;background:var(--red);color:var(--on-red);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500">Thema aufnehmen</div>
+              </div>
+            </div>
+            <div style="height:34px;display:flex;align-items:center;justify-content:center">
+              <div style="width:120px;height:4px;border-radius:2px;background:var(--rule)"></div>
+            </div>
+          </div>
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(42,38,34,.45)">{{ t.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- 6 · EINSTELLUNGEN -->
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,38,34,.5)">6 · Einstellungen</div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap">
+      <sc-for list="{{ themes }}" as="t" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div data-theme="{{ t.mode }}" data-screen-label="Einstellungen" style="width:393px;height:852px;background:var(--bg);color:var(--ink);border-radius:44px;border:1px solid var(--edge);overflow:hidden;display:flex;flex-direction:column">
+            <div style="height:59px;display:flex;align-items:flex-end;padding:0 30px 8px;font-size:13px;font-weight:500;color:var(--muted)">9:41</div>
+            <div class="sx" style="flex:1;overflow-y:auto;padding:22px 30px 0;scrollbar-width:none">
+              <div style="font-family:'EB Garamond',Georgia,serif;font-size:28px">Einstellungen</div>
+
+              <div style="margin-top:34px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Gebetszeiten</div>
+              <div style="margin-top:12px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:baseline;gap:14px">
+                    <span style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Morgen</span>
+                    <span style="font-size:14px;color:var(--muted)">7:00</span>
+                  </div>
+                  <div style="width:46px;height:26px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:flex-end;padding:0 4px">
+                    <div style="width:18px;height:18px;border-radius:5px;background:var(--on-red)"></div>
+                  </div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:baseline;gap:14px">
+                    <span style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Mittag</span>
+                    <span style="font-size:14px;color:var(--muted)">12:30</span>
+                  </div>
+                  <div style="width:46px;height:26px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:flex-end;padding:0 4px">
+                    <div style="width:18px;height:18px;border-radius:5px;background:var(--on-red)"></div>
+                  </div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:baseline;gap:14px">
+                    <span style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Abend</span>
+                    <span style="font-size:14px;color:var(--muted)">21:00</span>
+                  </div>
+                  <div style="width:46px;height:26px;border-radius:7px;background:var(--field);border:1px solid var(--rule);display:flex;align-items:center;padding:0 4px">
+                    <div style="width:18px;height:18px;border-radius:5px;background:var(--rule)"></div>
+                  </div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+              </div>
+
+              <div style="margin-top:32px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Jesusgebet</div>
+              <div style="margin-top:12px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Wiederholungen</div>
+                  <div style="display:flex;gap:6px">
+                    <sc-for list="{{ repOptions }}" as="r" hint-placeholder-count="3">
+                      <div style="min-width:52px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;background:{{ r.bg }};color:{{ r.color }};border:1px solid {{ r.border }}">{{ r.label }}</div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+              </div>
+
+              <div style="margin-top:32px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Darstellung</div>
+              <div style="margin-top:12px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Heiligentag anzeigen</div>
+                  <div style="width:46px;height:26px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:flex-end;padding:0 4px">
+                    <div style="width:18px;height:18px;border-radius:5px;background:var(--on-red)"></div>
+                  </div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:60px;display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Erscheinungsbild</div>
+                  <div style="font-size:15px;color:var(--muted)">{{ t.appearance }}</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+              </div>
+
+              <div style="margin-top:32px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)">Anmeldung</div>
+              <div style="margin-top:12px;display:flex;flex-direction:column">
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+                  <div>
+                    <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px">Angemeldet mit Google</div>
+                    <div style="margin-top:4px;font-size:13px;color:var(--muted)">anna.weber@gmail.com</div>
+                  </div>
+                  <div style="min-height:44px;display:flex;align-items:center;font-size:15px;color:var(--red-text)">Abmelden</div>
+                </div>
+                <div style="height:1px;background:var(--rule)"></div>
+                <div style="padding:14px 0 0;font-size:13px;line-height:1.7;color:var(--faint)">Themen und Tagebuch werden auf allen Geräten abgeglichen.</div>
+              </div>
+              <div style="height:28px"></div>
+            </div>
+            <div style="height:34px;display:flex;align-items:center;justify-content:center">
+              <div style="width:120px;height:4px;border-radius:2px;background:var(--rule)"></div>
+            </div>
+          </div>
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(42,38,34,.45)">{{ t.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;jesusRepetitions&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;12&quot;,&quot;33&quot;,&quot;100&quot;],&quot;default&quot;:&quot;12&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Gebet&quot;},&quot;activeCategories&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Familie, Arbeit &amp; Berufung, Geduld&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Gebet&quot;},&quot;showDark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Darstellung&quot;}}">
+class Component extends DCLogic {
+  state = { count: 7 };
+  renderVals() {
+    const reps = Number(this.props.jesusRepetitions ?? 12);
+    const showDark = this.props.showDark ?? true;
+    const active = this.props.activeCategories ?? "Familie, Arbeit & Berufung, Geduld";
+    const activeSet = active.split(",").map(s => s.trim());
+    const count = Math.min(this.state.count, reps);
+    const beadTotal = Math.min(reps, 33);
+    return {
+      themes: showDark
+        ? [{ mode: "light", label: "Hell", appearance: "Hell" }, { mode: "dark", label: "Dunkel", appearance: "Dunkel" }]
+        : [{ mode: "light", label: "Hell", appearance: "Hell" }],
+      repsWord: reps,
+      activeSummary: (() => {
+        const n = activeSet.filter(Boolean).length + 2;
+        const words = ["Kein", "Ein", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun", "Zehn", "Elf", "Zwölf"];
+        return n === 1 ? "Ein Thema ist aktiv" : (words[n] || n) + " Themen sind aktiv";
+      })(),
+      counter: count + " / " + reps,
+      beads: Array.from({ length: beadTotal }, (_, i) => ({
+        bg: i < Math.round(count / reps * beadTotal) ? "var(--red)" : "var(--rule)"
+      })),
+      tap: () => this.setState(s => ({ count: s.count >= reps ? 0 : s.count + 1 })),
+      categories: ["Familie", "Arbeit & Berufung", "Gesundheit", "Angst & Sorge", "Zorn & Vergebung", "Dankbarkeit", "Reue & Umkehr", "Geduld", "Entscheidungen", "Verstorbene"].map(name => {
+        const on = activeSet.includes(name);
+        return { name, color: on ? "var(--ink)" : "var(--faint)", dot: on ? "var(--red)" : "transparent" };
+      }),
+      repOptions: [12, 33, 100].map(n => ({
+        label: String(n),
+        bg: n === reps ? "var(--red)" : "transparent",
+        color: n === reps ? "var(--on-red)" : "var(--muted)",
+        border: n === reps ? "var(--red)" : "var(--rule)"
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
