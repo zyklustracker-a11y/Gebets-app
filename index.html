@@ -8,13 +8,20 @@
     <meta name="theme-color" content="#1A1815" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <!-- Schriften liegen lokal in /fonts, siehe src/styles/fonts.css. -->
     <title>Gebet</title>
+    <script>
+      // Setzt das Theme vor dem ersten Zeichnen, damit die App nicht hell
+      // aufblitzt, bevor React die Einstellung aus IndexedDB gelesen hat.
+      document.documentElement.dataset.theme = window.matchMedia(
+        '(prefers-color-scheme: dark)',
+      ).matches
+        ? 'dark'
+        : 'light';
+    </script>
   </head>
   <body>
     <div id="root"></div>

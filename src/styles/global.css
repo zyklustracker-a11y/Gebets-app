@@ -1,3 +1,6 @@
+@import 'tailwindcss';
+@import './fonts.css';
+
 /* Farb- und Formwerte stammen unverändert aus dem Design-Dokument Gebet.dc.html. */
 
 :root[data-theme='light'] {

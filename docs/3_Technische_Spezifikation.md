@@ -1,6 +1,6 @@
 # Technische Spezifikation — Gebets-PWA
 
-*Bauplan für Claude Code. Ergänzend zu `1_Konzept_Gebets-App.md` (Inhalt und Haltung) und den Entwürfen aus Claude Design (Aussehen).*
+*Bauplan für Claude Code. Ergänzend zu `1_Konzept_GebetsApp.md` (Inhalt und Haltung) und den Entwürfen aus Claude Design (Aussehen).*
 
 ---
 
