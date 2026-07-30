@@ -166,9 +166,12 @@ for (const [code, [id, typ, prioritaet, zusatzgebet]] of Object.entries(ANGEWEND
   if (!roh) throw new Error(`Block ${code} fehlt in docs/7`)
   const { felder, fuehrend } = blockLesen(roh)
 
+  // Der führende Absatz (Feste in Teil D und E) füllt nur Morgen und Abend.
+  // Mittags schieben Feste nichts ein — das Mittagsgebet bleibt das kürzeste.
+  // Fasten- und Osterzeit haben eigene, kurze Mittagsformen als Label.
   const einschub = {
     morgen: felder['Einschub Morgen'] ?? fuehrend ?? null,
-    mittag: felder['Einschub Mittag'] ?? fuehrend ?? null,
+    mittag: felder['Einschub Mittag'] ?? null,
     abend: felder['Einschub Abend'] ?? fuehrend ?? null,
   }
 

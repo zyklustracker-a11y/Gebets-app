@@ -25,8 +25,12 @@ const TAGESZEIT_LABEL: Record<Tageszeit, string> = {
   abend: 'Abendgebet',
 }
 
-// Wo im Grundtext die Fürbitte beginnt und wo die Schlussformel steht.
-const FUERBITTE = /^(Heilige Gottesgebärerin|Heiliger Schutzengel|Allheilige Gottesgebärerin|Himmlischer König)/
+// Ab hier gehört der Rest des Grundtextes zur Fürbitte und zur Schlussformel;
+// Einschübe kommen davor. Deckt auch den kurzen Mittagsschluss ab
+// („Herr Jesus Christus, Sohn Gottes …").
+const GRENZE = /^(Heilige Gottesgebärerin|Heiliger Schutzengel|Allheilige Gottesgebärerin|Himmlischer König|Herr Jesus Christus)/
+
+// Nur die abendliche Schlussformel wird überschrieben.
 const SCHLUSS = /^Herr Jesus Christus, unser Gott/
 
 export interface Zusammensetzung {
@@ -73,9 +77,8 @@ export function zusammensetzen(eingabe: KompositionEingabe): Zusammensetzung {
     .map((z) => z.trim())
     .filter(Boolean)
 
-  // Grenze zwischen Themengebet und Fürbitte finden.
-  let grenze = zeilen.findIndex((z) => FUERBITTE.test(z))
-  if (grenze === -1) grenze = zeilen.findIndex((z) => SCHLUSS.test(z))
+  // Grenze zwischen Themengebet und Fürbitte/Schluss finden.
+  let grenze = zeilen.findIndex((z) => GRENZE.test(z))
   if (grenze === -1) grenze = zeilen.length
 
   const kopf = zeilen.slice(0, grenze)
@@ -90,7 +93,9 @@ export function zusammensetzen(eingabe: KompositionEingabe): Zusammensetzung {
   }
 
   const einschub = heiligerEinsetzen(modul?.einschub[tageszeit] ?? null, heiligerName)
-  const zusatz = heiligerEinsetzen(modul?.fuerbitteZusatz ?? null, heiligerName)
+  // Der Fürbitte-Zusatz gehört zur Fürbitte — die gibt es nur morgens und
+  // abends. Das Mittagsgebet bleibt bewusst kurz.
+  const zusatz = tageszeit === 'mittag' ? null : heiligerEinsetzen(modul?.fuerbitteZusatz ?? null, heiligerName)
 
   const absaetze = [
     ...kopf,

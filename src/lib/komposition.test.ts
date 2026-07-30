@@ -67,6 +67,23 @@ describe('zusammensetzen — Schluss abends überschreiben', () => {
   })
 })
 
+describe('zusammensetzen — Mittag bleibt kurz', () => {
+  it('ein Fest schiebt mittags nichts ein', () => {
+    const ohne = bauen('familie-mittag-gewoehnlich-01', 'mittag', null)
+    const mitFest = bauen('familie-mittag-gewoehnlich-01', 'mittag', 'fest-entschlafung')
+    expect(mitFest.absaetze).toEqual(ohne.absaetze)
+    expect(mitFest.absaetze.join('\n')).not.toContain('Allheilige Gottesgebärerin')
+  })
+
+  it('die Osterzeit behält ihre kurze Mittagsform, vor der Schlusszeile', () => {
+    const z = bauen('dankbarkeit-mittag-gewoehnlich-01', 'mittag', 'osterzeit')
+    const einschub = z.absaetze.indexOf('Christus ist auferstanden. Ich danke Dir für diese Gewissheit in dieser Stunde.')
+    const schluss = z.absaetze.findIndex((a) => a.startsWith('Herr Jesus Christus, Sohn Gottes'))
+    expect(einschub).toBeGreaterThanOrEqual(0)
+    expect(einschub).toBeLessThan(schluss)
+  })
+})
+
 // Zum Mitlesen: das fertig zusammengesetzte Ostergebet.
 describe('Leseprobe', () => {
   it('Ostersonntag, Morgen', () => {

@@ -17,13 +17,17 @@ export default defineConfig({
       injectRegister: 'auto',
       // Das Manifest liegt von Hand in `public/` und ist in index.html verlinkt.
       manifest: false,
-      includeAssets: ['icon.svg', 'manifest.webmanifest'],
+      includeAssets: ['icon.svg', 'manifest.webmanifest', '*.png', 'fonts/*.woff2'],
       workbox: {
-        // Korpus, Verse, Module und Heiligenkalender werden vorab in den Cache
-        // gelegt — die App muss nach der Installation offline vollständig
-        // funktionieren.
-        globPatterns: ['**/*.{js,css,html,svg,json,woff2,webmanifest}'],
+        // Alles wird vorab in den Cache gelegt — die App muss nach der
+        // Installation offline vollständig funktionieren. Korpus, Module und
+        // Heiligenkalender stecken im JS-Bündel (importiertes JSON) und sind
+        // damit ebenfalls Teil des Precache.
+        globPatterns: ['**/*.{js,css,html,svg,png,json,woff2,webmanifest}'],
         navigateFallback: '/index.html',
+        // Grosszügiges Limit, damit das JS-Bündel mit dem Korpus sicher
+        // vorab gecacht wird.
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
     }),
   ],
