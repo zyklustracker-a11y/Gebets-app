@@ -15,7 +15,16 @@
     "faerbung": "gewoehnlich",
     "vers": "Lobe den Herrn, meine Seele, und vergiss nicht, was Er dir Gutes getan hat.",
     "stelle": "Psalm 102,2",
-    "text": "Herr, ich wache auf und will heute nichts überhören.\nIch danke Dir für den warmen Boden unter den Füssen, für das Wasser, das aus dem Hahn kommt, für den Duft des Kaffees, für die Kleider, die bereitliegen.\nSo vieles davon nehme ich hin, als wäre es selbstverständlich. Nichts davon ist es.\nSchenke mir heute wache Sinne. Lass mich dreimal am Tag stehen bleiben und merken, dass gerade etwas gut ist.\nBesonders danke ich Dir für: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du beschenkst mich lange, bevor ich darum bitte. Ich danke Dir. Amen."
+    "text": "Herr, ich wache auf und will heute nichts überhören.\nIch danke Dir für den warmen Boden unter den Füssen, für das Wasser, das aus dem Hahn kommt, für den Duft des Kaffees, für die Kleider, die bereitliegen.\nSo vieles davon nehme ich hin, als wäre es selbstverständlich. Nichts davon ist es.\nSchenke mir heute wache Sinne. Lass mich dreimal am Tag stehen bleiben und merken, dass gerade etwas gut ist.\nÖffne mir die Augen für die Menschen, die ihre Arbeit tun, damit mein Tag läuft, und die ich nie sehe.\nBesonders danke ich Dir für: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du beschenkst mich lange, bevor ich darum bitte. Ich danke Dir. Amen."
+  },
+  {
+    "id": "dankbarkeit-morgen-gewoehnlich-03",
+    "kategorie": "dankbarkeit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Danket dem Herrn, denn Er ist gütig; Seine Barmherzigkeit währt ewig.",
+    "stelle": "Psalm 106,1",
+    "text": "Herr, ich beginne diesen Tag mit einem Dank, der nichts ausnimmt.\nIch danke Dir für alles Helle in meinem Leben — und ich versuche heute auch für das zu danken, was ich mir nicht ausgesucht hätte.\nManches davon hat mich weicher gemacht, aufmerksamer, weniger sicher und dadurch offener. Ich verstehe es nicht ganz, und ich muss es nicht.\nSchenke mir heute die Weite, alles aus Deiner Hand zu nehmen: das Leichte mit Freude und das Schwere ohne Bitterkeit.\nLass mich am Abend sagen können, dass es ein guter Tag war — nicht, weil alles gelungen ist, sondern weil Du darin warst.\nBesonders danke ich Dir für: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Amen."
   },
   {
     "id": "dankbarkeit-mittag-gewoehnlich-01",
@@ -27,6 +36,24 @@
     "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für alles, was mich bis hierher getragen hat — für die Arbeit, für das Essen, für jeden freundlichen Blick.\nDu bist gut, und Deine Güte hört nicht auf.\nBesonders danke ich Dir für: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
   },
   {
+    "id": "dankbarkeit-mittag-gewoehnlich-02",
+    "kategorie": "dankbarkeit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Dies ist der Tag, den der Herr gemacht hat.",
+    "stelle": "Psalm 117,24",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für diese Stunde, so unscheinbar sie ist.\nFür das Essen von vorhin, für einen Menschen, der freundlich war, für Luft und Licht.\nLass mich den Rest des Tages wacher gehen.\nBesonders danke ich Dir für: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "dankbarkeit-mittag-gewoehnlich-03",
+    "kategorie": "dankbarkeit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Gütig ist der Herr gegen alle, und Sein Erbarmen über all Seinen Werken.",
+    "stelle": "Psalm 144,9",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für diesen Vormittag, für das Gelungene und auch für das, was mich gefordert hat.\nBeides hat mich hierher gebracht.\nSchenke mir ein weites Herz für den Rest des Tages.\nBesonders danke ich Dir für: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
     "id": "dankbarkeit-abend-gewoehnlich-01",
     "kategorie": "dankbarkeit",
     "tageszeit": "abend",
@@ -36,40 +63,22 @@
     "text": "Herr, der Tag ist zu Ende, und ich halte still, bevor ich schlafe.\nIch danke Dir für diesen Tag, so wie er gewesen ist. Für das Brot, das ich gegessen habe. Für die Arbeit, die ich tun durfte. Für die Stimmen, die ich gehört habe, und für die Stille dazwischen.\nIch danke Dir für das Gute, das ich bemerkt habe — und ebenso für das Gute, das an mir vorbeigegangen ist, ohne dass ich es gesehen habe.\nWo ich heute hinter dem zurückgeblieben bin, was Du mir zugetraut hast, vergib mir. Ich lasse es bei Dir.\nDeine Treue reicht durch die Nacht.\nBesonders danke ich Dir für: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und dankbar erwachen. Amen."
   },
   {
-    "id": "familie-morgen-gewoehnlich-01",
-    "kategorie": "familie",
-    "tageszeit": "morgen",
-    "faerbung": "gewoehnlich",
-    "vers": "Wie gut und wie schön, wenn Brüder beieinander wohnen.",
-    "stelle": "Psalm 132,1",
-    "text": "Herr, ich danke Dir für die Menschen, die Du mir gegeben hast.\nIch habe sie mir nicht ausgesucht, und gerade darin liegt Dein Geschenk: Sie gehören zu mir, wie sie sind, und ich zu ihnen.\nSegne heute jeden von ihnen, wo immer er ist. Schenke ihnen Gesundheit, Freude an ihrem Tag und Menschen, die es gut mit ihnen meinen.\nGib mir ein weites Herz für sie — Geduld für das, was mir schwerfällt, und Augen für das Gute, das ich längst gewohnt bin.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit unserem Haus.\nHerr Jesus Christus, unser Gott, Du hältst uns zusammen. Ich danke Dir für die Meinen. Amen."
-  },
-  {
-    "id": "familie-morgen-gewoehnlich-02",
-    "kategorie": "familie",
-    "tageszeit": "morgen",
-    "faerbung": "gewoehnlich",
-    "vers": "Gott gibt den Vereinsamten ein Zuhause.",
-    "stelle": "Psalm 67,7",
-    "text": "Herr, ich danke Dir für die, aus denen ich komme.\nFür meine Eltern, für alles, was sie mir gegeben haben, und auch für das, was sie nicht geben konnten — sie hatten selbst nicht mehr.\nIch danke Dir für die Menschen vor ihnen, deren Namen ich kaum kenne und deren Gebete mich vielleicht bis heute tragen.\nSegne heute jeden in meiner Familie, die Nahen und die Fernen, die Leichten und die Anstrengenden.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit unserem Haus.\nHerr Jesus Christus, unser Gott, Du hast mich in diese Familie gestellt. Ich danke Dir dafür. Amen."
-  },
-  {
-    "id": "familie-mittag-gewoehnlich-01",
-    "kategorie": "familie",
-    "tageszeit": "mittag",
-    "faerbung": "gewoehnlich",
-    "vers": "Kinder sind eine Gabe des Herrn.",
-    "stelle": "Psalm 126,3",
-    "text": "Herr, mitten am Tag denke ich an die Meinen.\nIch danke Dir für sie und lege jeden Einzelnen in Deine Hand.\nSei bei ihnen, wo ich jetzt nicht sein kann.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
-  },
-  {
-    "id": "familie-abend-gewoehnlich-01",
-    "kategorie": "familie",
+    "id": "dankbarkeit-abend-gewoehnlich-02",
+    "kategorie": "dankbarkeit",
     "tageszeit": "abend",
     "faerbung": "gewoehnlich",
-    "vers": "Der Herr segne dich, und du siehst deine Kinder und Kindeskinder.",
-    "stelle": "Psalm 127,5–6",
-    "text": "Herr, der Tag ist zu Ende, und ich lege die Meinen in Deine Hände.\nIch danke Dir für jede Begegnung heute — für die Worte am Tisch, für die Nachricht, die kam, für das Wissen, dass es sie gibt, auch wenn ich sie lange nicht gesehen habe.\nIch danke Dir für unsere gemeinsame Geschichte, für alles, was uns getragen hat, und für die Liebe, die älter ist als jeder Streit.\nWo ich heute ungeduldig oder achtlos war, vergib mir. Ich lasse es bei Dir und trage es nicht in den nächsten Tag.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, wache über unser Haus.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass uns in Frieden einschlafen und dankbar erwachen. Amen."
+    "vers": "Du krönst das Jahr mit Deiner Güte.",
+    "stelle": "Psalm 64,12",
+    "text": "Herr, bevor ich schlafe, gehe ich diesen Tag noch einmal durch.\nIch danke Dir für drei Dinge, die ich am Morgen nicht erwartet hätte: für einen Satz, der mir gutgetan hat, für etwas, das leichter ging als gedacht, für einen Augenblick, in dem ich einfach da war.\nIch danke Dir für alles, was heute nicht geschehen ist — für die Sorgen, die sich nicht bewahrheitet haben, und für die Gefahren, von denen ich nichts weiss.\nWo ich heute achtlos an Deinen Gaben vorbeigegangen bin, vergib mir. Ich lasse es bei Dir.\nDeine Güte ist beharrlicher als meine Aufmerksamkeit.\nBesonders danke ich Dir für: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "dankbarkeit-abend-gewoehnlich-03",
+    "kategorie": "dankbarkeit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich danke Dir, Herr, von ganzem Herzen.",
+    "stelle": "Psalm 137,1",
+    "text": "Herr, der Tag ist zu Ende, und ich danke Dir für ihn — ohne Auswahl.\nFür das, was schön war, und für das, was mich Mühe gekostet hat. Für die Menschen, die es mir leicht gemacht haben, und für die, an denen ich gewachsen bin.\nIch danke Dir für die Umwege in meinem Leben. Vieles, wofür ich heute dankbar bin, ist auf einem Weg entstanden, den ich nicht gewählt hätte.\nWo ich heute nur gerechnet und nicht gedankt habe, vergib mir. Ich lasse es bei Dir.\nDu führst mich besser, als ich mich selbst führen würde.\nBesonders danke ich Dir für: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und dankbar erwachen. Amen."
   },
   {
     "id": "arbeit-morgen-gewoehnlich-01",
@@ -78,7 +87,7 @@
     "faerbung": "gewoehnlich",
     "vers": "Lass das Werk unserer Hände gedeihen.",
     "stelle": "Psalm 89,17",
-    "text": "Herr, ich stehe am Anfang dieses Tages, und er ist ein Geschenk aus Deiner Hand.\nIch danke Dir für die Arbeit, die vor mir liegt — für die Kraft, sie zu tun, für das Können, das Du mir gegeben hast, und für die Menschen, mit denen ich sie teile.\nSchenke mir heute einen klaren Kopf und ein weites Herz. Lass mich sorgfältig tun, was zu tun ist, und in allem Deine Hand erkennen.\nSegne das Werk meiner Hände, damit es Bestand hat und anderen dient.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, alles Gelingen kommt von Dir. Ich danke Dir für diesen Tag, noch bevor er begonnen hat. Amen."
+    "text": "Herr, ich stehe am Anfang dieses Tages, und er ist ein Geschenk aus Deiner Hand.\nIch danke Dir für die Arbeit, die vor mir liegt — für die Kraft, sie zu tun, für das Können, das Du mir gegeben hast, und für die Menschen, mit denen ich sie teile.\nSchenke mir heute einen klaren Kopf und ein weites Herz. Lass mich sorgfältig tun, was zu tun ist, und in allem Deine Hand erkennen. Gib mir Freude am Gelingen und Gelassenheit, wo etwas anders läuft, als ich es mir gedacht habe.\nSegne das Werk meiner Hände, damit es Bestand hat und anderen dient.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, alles Gelingen kommt von Dir. Ich danke Dir für diesen Tag, noch bevor er begonnen hat. Amen."
   },
   {
     "id": "arbeit-morgen-gewoehnlich-02",
@@ -87,7 +96,16 @@
     "faerbung": "gewoehnlich",
     "vers": "Was ihr tut, das tut von Herzen, als für den Herrn.",
     "stelle": "Kolosser 3,23",
-    "text": "Herr, Du hast mich an diesen Platz gestellt, und heute darf ich ihn ausfüllen.\nIch danke Dir für das, was ich kann — nichts davon habe ich mir selbst gegeben.\nLass mich heute nicht nur arbeiten, sondern dienen. Zeige mir, wem meine Arbeit zugutekommt, auch wenn ich sie oft nur als Aufgabenliste sehe.\nSchenke mir Sorgfalt im Kleinen und Übersicht im Ganzen. Lass mich das Nötige zuerst tun und mich nicht verzetteln.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, meine Arbeit gehört Dir. Ich danke Dir für sie. Amen."
+    "text": "Herr, Du hast mich an diesen Platz gestellt, und heute darf ich ihn ausfüllen.\nIch danke Dir für das, was ich kann — nichts davon habe ich mir selbst gegeben.\nLass mich heute nicht nur arbeiten, sondern dienen. Zeige mir, wem meine Arbeit zugutekommt, auch wenn ich sie oft nur als Aufgabenliste sehe.\nSchenke mir Sorgfalt im Kleinen und Übersicht im Ganzen. Lass mich das Nötige zuerst tun und mich nicht verzetteln.\nWenn heute jemand meine Hilfe braucht, gib mir Augen dafür und Zeit dafür.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, meine Arbeit gehört Dir. Ich danke Dir für sie. Amen."
+  },
+  {
+    "id": "arbeit-morgen-gewoehnlich-03",
+    "kategorie": "arbeit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Lehre uns, unsere Tage zu zählen, damit wir ein weises Herz gewinnen.",
+    "stelle": "Psalm 89,12",
+    "text": "Herr, ich beginne diesen Tag mit einer bestimmten Menge Zeit und einer bestimmten Menge Kraft. Beides ist genau bemessen, und beides kommt von Dir.\nIch danke Dir für die Arbeit, die mir anvertraut ist, und für die Grenzen, die dazugehören.\nSchenke mir heute einen klaren Anfang: Lass mich mit dem Wichtigsten beginnen, nicht mit dem Lautesten.\nUnd schenke mir einen klaren Schluss. Lass mich aufhören können, wenn es genug ist, ohne schlechtes Gewissen.\nZeige mir, was heute wirklich meine Aufgabe ist und was ich getrost anderen oder einem anderen Tag überlassen darf.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, meine Zeit ist in Deiner Hand. Ich danke Dir dafür. Amen."
   },
   {
     "id": "arbeit-mittag-gewoehnlich-01",
@@ -99,12 +117,1182 @@
     "text": "Herr, mitten in der Arbeit halte ich einen Augenblick inne.\nIch danke Dir für das, was bis hierher gelungen ist, und für die Kraft, die noch reicht.\nDu bist auch hier, in diesem Raum, in dieser Stunde.\nSchenke mir Ruhe im Tun.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
   },
   {
+    "id": "arbeit-mittag-gewoehnlich-02",
+    "kategorie": "arbeit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Wie die Augen der Knechte auf die Hand ihres Herrn.",
+    "stelle": "Psalm 122,2",
+    "text": "Herr, mitten in der Arbeit halte ich einen Augenblick inne.\nIch danke Dir für diese Aufgabe und für die Kraft, sie zu tun.\nLass mich das Nächste gut machen, nicht schnell.\nSchenke mir Freude an dem, was jetzt dran ist.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "arbeit-mittag-gewoehnlich-03",
+    "kategorie": "arbeit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Kommt zu mir, die ihr mühselig und beladen seid.",
+    "stelle": "Matthäus 11,28",
+    "text": "Herr, mitten in der Arbeit halte ich einen Augenblick inne.\nIch danke Dir für die Kraft, die bis hierher gereicht hat.\nLass mich diese Pause wirklich nehmen und nicht nebenbei weiterdenken.\nSchenke mir einen ruhigen zweiten Teil des Tages.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
     "id": "arbeit-abend-gewoehnlich-01",
     "kategorie": "arbeit",
     "tageszeit": "abend",
     "faerbung": "gewoehnlich",
     "vers": "Wenn der Herr das Haus nicht baut, mühen sich die Bauleute vergeblich.",
     "stelle": "Psalm 126,1",
-    "text": "Herr, ich lege die Arbeit dieses Tages nieder.\nIch danke Dir für alles, was gelungen ist — für die Aufgaben, die ich zu Ende gebracht habe, für die Gespräche, die gut waren, für jede Stunde, in der ich ganz bei der Sache sein durfte.\nIch danke Dir auch für das Unfertige. Es bleibt liegen, und das darf es; ich muss nicht alles heute vollenden.\nWo ich heute ungeduldig war oder mich wichtiger genommen habe, als ich bin, vergib mir. Ich lasse es bei Dir.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und dankbar erwachen. Amen."
+    "text": "Herr, ich lege die Arbeit dieses Tages nieder.\nIch danke Dir für alles, was gelungen ist — für die Aufgaben, die ich zu Ende gebracht habe, für die Gespräche, die gut waren, für jede Stunde, in der ich ganz bei der Sache sein durfte.\nIch danke Dir auch für das Unfertige. Es bleibt liegen, und das darf es; ich muss nicht alles heute vollenden.\nWo ich heute ungeduldig war oder mich wichtiger genommen habe, als ich bin, vergib mir. Ich lasse es bei Dir.\nDu baust das Haus, nicht ich. Was in Deiner Hand liegt, ist gut aufgehoben.\nSchenke mir eine ruhige Nacht, damit ich morgen mit frischen Kräften an mein Werk gehe.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "arbeit-abend-gewoehnlich-02",
+    "kategorie": "arbeit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Wie zahlreich sind Deine Werke, Herr; alle hast Du mit Weisheit gemacht.",
+    "stelle": "Psalm 103,24",
+    "text": "Herr, ich lege die Arbeit dieses Tages nieder.\nIch danke Dir für jede Stunde, in der ich wusste, wofür ich es tue. Für einen Menschen, dem meine Arbeit heute genützt hat, auch wenn ich es nicht erfahre. Für Kolleginnen und Kollegen, die ihren Teil getragen haben.\nIch danke Dir dafür, dass mein Wert nicht an meiner Leistung hängt. Auch morgen nicht, wenn wenig gelingt.\nWo ich heute nur abgearbeitet und nicht gedient habe, vergib mir. Ich lasse es bei Dir.\nSchenke mir Schlaf, der wirklich Ruhe ist, und morgen einen Anfang mit Sinn.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und froh erwachen. Amen."
+  },
+  {
+    "id": "arbeit-abend-gewoehnlich-03",
+    "kategorie": "arbeit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Kommt mit an einen stillen Ort und ruht ein wenig.",
+    "stelle": "Markus 6,31",
+    "text": "Herr, ich höre auf für heute, und das ist gut so.\nIch danke Dir für alles, was ich zu Ende gebracht habe, und für die Erlaubnis, das Übrige liegen zu lassen. Die Welt läuft weiter, auch ohne mich.\nIch danke Dir für jede Stunde heute, in der ich nicht an die Uhr gedacht habe.\nWo ich heute nicht aufhören konnte oder mich über meine Kräfte hinaus getrieben habe, vergib mir. Ich lasse es bei Dir.\nDu hast am siebten Tag geruht. Ich darf es auch, ohne mich rechtfertigen zu müssen.\nSchenke mir Schlaf, der wirklich Ruhe ist, und morgen einen guten Anfang.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und froh erwachen. Amen."
+  },
+  {
+    "id": "familie-morgen-gewoehnlich-01",
+    "kategorie": "familie",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wie gut und wie schön, wenn Brüder beieinander wohnen.",
+    "stelle": "Psalm 132,1",
+    "text": "Herr, ich danke Dir für die Menschen, die Du mir gegeben hast.\nIch habe sie mir nicht ausgesucht, und gerade darin liegt Dein Geschenk: Sie gehören zu mir, wie sie sind, und ich zu ihnen.\nSegne heute jeden von ihnen, wo immer er ist. Schenke ihnen Gesundheit, Freude an ihrem Tag und Menschen, die es gut mit ihnen meinen.\nGib mir ein weites Herz für sie — Geduld für das, was mir schwerfällt, und Augen für das Gute, das ich längst gewohnt bin.\nLass mich heute ein freundliches Wort sagen, an das ich sonst nicht gedacht hätte.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit unserem Haus.\nHerr Jesus Christus, unser Gott, Du hältst uns zusammen. Ich danke Dir für die Meinen. Amen."
+  },
+  {
+    "id": "familie-morgen-gewoehnlich-02",
+    "kategorie": "familie",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Gott gibt den Vereinsamten ein Zuhause.",
+    "stelle": "Psalm 67,7",
+    "text": "Herr, ich danke Dir für die, aus denen ich komme.\nFür meine Eltern, für alles, was sie mir gegeben haben, und auch für das, was sie nicht geben konnten — sie hatten selbst nicht mehr.\nIch danke Dir für die Menschen vor ihnen, deren Namen ich kaum kenne und deren Gebete mich vielleicht bis heute tragen.\nSegne heute jeden in meiner Familie, die Nahen und die Fernen, die Leichten und die Anstrengenden.\nSchenke mir ein grosszügiges Herz für unsere Geschichte. Lass mich weitergeben, was gut war, und nicht weitergeben, was verletzt hat.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit unserem Haus.\nHerr Jesus Christus, unser Gott, Du hast mich in diese Familie gestellt. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "familie-morgen-gewoehnlich-03",
+    "kategorie": "familie",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich will wandeln mit lauterem Herzen in meinem Hause.",
+    "stelle": "Psalm 100,2",
+    "text": "Herr, unser Haus ist ein kleiner Ort, an dem Du wohnen willst.\nIch danke Dir dafür, dass Du nicht erst in der Kirche anfängst, sondern schon am Frühstückstisch — im Ton, in dem wir miteinander reden, in der Art, wie wir einander begegnen.\nSegne heute jeden, der bei uns ein und aus geht.\nSchenke mir Geduld für die kleinen Reibungen, die zum Zusammenleben gehören, und Humor, wo es sonst eng wird.\nLass unser Haus ein Ort sein, an den man gern zurückkommt und an dem man ausatmen kann.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit unserem Haus.\nHerr Jesus Christus, unser Gott, wohne bei uns. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "familie-mittag-gewoehnlich-01",
+    "kategorie": "familie",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Kinder sind eine Gabe des Herrn.",
+    "stelle": "Psalm 126,3",
+    "text": "Herr, mitten am Tag denke ich an die Meinen.\nIch danke Dir für sie und lege jeden Einzelnen in Deine Hand.\nSei bei ihnen, wo ich jetzt nicht sein kann.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "familie-mittag-gewoehnlich-02",
+    "kategorie": "familie",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Das Auge des Herrn ruht auf denen, die Ihn fürchten.",
+    "stelle": "Psalm 32,18",
+    "text": "Herr, mitten am Tag denke ich an die Meinen.\nIch danke Dir für jeden Einzelnen von ihnen.\nSei bei ihnen in dieser Stunde, in der ich nicht bei ihnen bin.\nSchenke uns heute noch ein gutes Wort miteinander.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "familie-mittag-gewoehnlich-03",
+    "kategorie": "familie",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Seid einander zugetan in herzlicher Liebe.",
+    "stelle": "Römer 12,10",
+    "text": "Herr, mitten am Tag denke ich an die Meinen.\nIch danke Dir für jeden Einzelnen.\nSegne sie in dieser Stunde, wo immer sie gerade sind.\nSchenke mir heute Abend Geduld und ein offenes Ohr.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "familie-abend-gewoehnlich-01",
+    "kategorie": "familie",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Herr segne dich, und du siehst deine Kinder und Kindeskinder.",
+    "stelle": "Psalm 127,5–6",
+    "text": "Herr, der Tag ist zu Ende, und ich lege die Meinen in Deine Hände.\nIch danke Dir für jede Begegnung heute — für die Worte am Tisch, für die Nachricht, die kam, für das Wissen, dass es sie gibt, auch wenn ich sie lange nicht gesehen habe.\nIch danke Dir für unsere gemeinsame Geschichte, für alles, was uns getragen hat, und für die Liebe, die älter ist als jeder Streit.\nWo ich heute ungeduldig oder achtlos war, vergib mir. Ich lasse es bei Dir und trage es nicht in den nächsten Tag.\nSchenke jedem von ihnen einen ruhigen Schlaf und einen guten Morgen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, wache über unser Haus.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass uns in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "familie-abend-gewoehnlich-02",
+    "kategorie": "familie",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Herr behüte deinen Ausgang und deinen Eingang.",
+    "stelle": "Psalm 120,8",
+    "text": "Herr, der Tag ist zu Ende, und ich denke an mein Haus und an alle, die dazugehören.\nIch danke Dir für die Selbstverständlichkeit, mit der wir nebeneinander leben — für Türen, die aufgehen, für Fragen, die keiner stellen muss, für das Wissen, wo jemand ist.\nIch danke Dir für die Alten, die uns vorausgegangen sind, und für die Jungen, die nach uns kommen.\nWo ich heute schnell geurteilt oder eine alte Rechnung aufgemacht habe, vergib mir. Ich lasse es bei Dir.\nHalte uns zusammen, auch über Entfernungen und über Schweigen hinweg.\nSchenke jedem der Meinen diese Nacht Ruhe und morgen einen guten Anfang.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, wache über unser Haus.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass uns in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "familie-abend-gewoehnlich-03",
+    "kategorie": "familie",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Er hat Seinen Engeln befohlen, dich zu behüten auf all deinen Wegen.",
+    "stelle": "Psalm 90,11",
+    "text": "Herr, es ist Abend, und unser Haus wird still.\nIch danke Dir für diesen Tag unter einem Dach — für gemeinsames Essen, für ein Gespräch im Vorbeigehen, für Türen, die offenstehen, und für das Wissen, dass jemand da ist.\nIch danke Dir für die Selbstverständlichkeit, die zwischen uns gewachsen ist. Sie sieht nach nichts aus und ist alles.\nWo ich heute barsch war oder nur halb zugehört habe, vergib mir. Ich lasse es bei Dir und nehme es nicht mit in den Schlaf.\nSende Deine Engel in jedes Zimmer dieses Hauses und zu allen, die weit weg sind.\nSchenke jedem der Meinen eine ruhige Nacht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, wache über unser Haus.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass uns in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "angst-morgen-gewoehnlich-01",
+    "kategorie": "angst",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Herr ist mein Licht und mein Heil — vor wem sollte ich mich fürchten?",
+    "stelle": "Psalm 26,1",
+    "text": "Herr, ich beginne diesen Tag, und Du gehst ihn mit mir.\nIch danke Dir für den festen Boden unter meinen Füssen, für den Atem, der mir geschenkt wird, für alles, was mich bisher getragen hat — und es war vieles.\nDu bist stärker als alles, was vor mir liegt. In Deiner Hand ist alles gut aufgehoben.\nSchenke mir heute ein ruhiges Herz und einen klaren Blick. Lass mich tun, was heute an der Reihe ist, und das Übrige Dir überlassen.\nGib mir Vertrauen, das grösser ist als meine Vorstellungskraft.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, ich bin in Deiner Hut. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "angst-morgen-gewoehnlich-02",
+    "kategorie": "angst",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "An dem Tag, da ich mich fürchte, vertraue ich auf Dich.",
+    "stelle": "Psalm 55,4",
+    "text": "Herr, ich habe heute nur diesen einen Tag zu leben, nicht die ganze Zukunft.\nIch danke Dir dafür, dass Du mir Kraft immer für den Tag gibst, an dem ich sie brauche, und nie auf Vorrat — sonst würde ich sie horten statt Dir zu vertrauen.\nSchenke mir ein Herz, das im Heute bleibt. Lass mich tun, was jetzt möglich ist, und das Übrige ruhen lassen.\nWenn die Gedanken vorauslaufen, hol mich zurück in diese Stunde. Hier bist Du, und hier ist genug.\nGib mir Zuversicht, die nicht davon abhängt, dass ich alles überblicke.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, dieser Tag reicht. Ich danke Dir für ihn. Amen."
+  },
+  {
+    "id": "angst-morgen-gewoehnlich-03",
+    "kategorie": "angst",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wenn ich den Himmel sehe — was ist der Mensch, dass Du an ihn denkst?",
+    "stelle": "Psalm 8,4–5",
+    "text": "Herr, ich beginne diesen Tag, und meine Sorge füllt gerade den ganzen Raum aus.\nIch danke Dir dafür, dass Du grösser bist als sie. Nicht weil sie unwichtig wäre, sondern weil Du so gross bist.\nDu hältst die Sterne und denkst zugleich an mich. Beides ist wahr.\nSchenke mir heute ein Stück von Deiner Weite. Lass mich hinausschauen, ein paar Schritte gehen, den Himmel ansehen, atmen.\nWas mich beschäftigt, ist wirklich — und es ist nicht das Ganze.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du hältst alles. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "angst-mittag-gewoehnlich-01",
+    "kategorie": "angst",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Leg deine Last auf den Herrn, und Er wird für dich sorgen.",
+    "stelle": "Psalm 54,23",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nDu bist hier, näher als mein eigener Atem. In Deiner Hand ist alles gut aufgehoben — auch das, was ich gerade trage.\nSchenke mir Deinen Frieden, jetzt, in diesem Augenblick.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "angst-mittag-gewoehnlich-02",
+    "kategorie": "angst",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Sorgt euch nicht um morgen; jeder Tag hat genug an seiner Mühe.",
+    "stelle": "Matthäus 6,34",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass ich bis hierher getragen wurde.\nDu bist in dieser Stunde, nicht erst in der Zukunft, vor der ich mich fürchte.\nSchenke mir Ruhe für die nächsten Stunden.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "angst-mittag-gewoehnlich-03",
+    "kategorie": "angst",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Gott ist unsere Zuflucht und Stärke, eine Hilfe in Nöten, gut bewährt.",
+    "stelle": "Psalm 45,2",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass Du bis hierher getragen hast.\nDu bist grösser als das, was mich gerade beschäftigt.\nSchenke mir Weite und einen ruhigen Atem.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "angst-abend-gewoehnlich-01",
+    "kategorie": "angst",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Wer im Schutz des Höchsten wohnt, ruht im Schatten des Allmächtigen.",
+    "stelle": "Psalm 90,1",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ihn ab.\nIch danke Dir für alles, was heute gut gegangen ist — und es war mehr, als ich am Morgen zu hoffen wagte.\nIch danke Dir für jede Stunde, in der ich ruhig war, für jeden Menschen, der mir freundlich begegnet ist, für das Dach über mir und das Bett, in das ich gleich steige.\nWas ich heute nicht lösen konnte, lege ich hin. Du wachst, wenn ich schlafe, und Du bist nie müde.\nWo ich mich heute in Gedanken verloren habe, vergib mir und hol mich zurück. Ich lasse es bei Dir.\nSchenke mir eine Nacht ohne Umherirren und einen Morgen voller Zuversicht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und getrost erwachen. Amen."
+  },
+  {
+    "id": "angst-abend-gewoehnlich-02",
+    "kategorie": "angst",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Er schlummert nicht und schläft nicht, der über dich wacht.",
+    "stelle": "Psalm 120,4",
+    "text": "Herr, der Tag ist vorbei, und das meiste, was ich am Morgen befürchtet habe, ist nicht eingetreten.\nIch danke Dir dafür. Ich will es mir merken, denn morgen werde ich es wieder vergessen haben.\nIch danke Dir für alles, was heute getragen hat: für Menschen, die einfach da waren, für Arbeit, die mich in Anspruch genommen hat, für jede Stunde ohne Grübeln.\nWas ungelöst bleibt, lege ich vor Dich. Du bleibst wach, wenn ich schlafe, und in dieser Nacht ist nichts zu entscheiden.\nWo ich mich heute in Gedanken verrannt habe, vergib mir und hol mich heim. Ich lasse es bei Dir.\nSchenke mir eine ruhige Nacht und morgen einen leichteren Anfang.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und getrost erwachen. Amen."
+  },
+  {
+    "id": "angst-abend-gewoehnlich-03",
+    "kategorie": "angst",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "In Deine Hände lege ich meinen Geist.",
+    "stelle": "Psalm 30,6",
+    "text": "Herr, der Tag ist zu Ende, und ich gebe alles ab.\nIch danke Dir für alles, was heute getragen hat: für Arbeit, die mich abgelenkt hat, für einen Menschen, mit dem ich reden konnte, für jede Stunde ohne Kreisen im Kopf.\nIch danke Dir dafür, dass in dieser Nacht nichts entschieden werden muss. Die Fragen dürfen liegen bleiben.\nWo ich mich heute in Gedanken verloren habe, vergib mir und hol mich zurück. Ich lasse es bei Dir.\nDu bist der Grössere, und Du bist wach.\nSchenke mir eine ruhige Nacht und morgen einen weiten Blick.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und getrost erwachen. Amen."
+  },
+  {
+    "id": "gesundheit-morgen-gewoehnlich-01",
+    "kategorie": "gesundheit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Lobe den Herrn, meine Seele — Er heilt alle deine Gebrechen.",
+    "stelle": "Psalm 102,2–3",
+    "text": "Herr, ich danke Dir für diesen Leib, den Du mir gegeben hast.\nIch danke Dir für jeden Atemzug, für das Herz, das schlägt, ohne dass ich es befehle, für die Kräfte, die mich heute tragen werden.\nDu bist der Arzt der Seelen und der Leiber. In Deiner Hand liegt mein Werden und mein Heilen.\nSchenke mir heute Kraft für das, was ansteht, und Weisheit, gut mit mir umzugehen — genug Ruhe, gutes Essen, Bewegung an der frischen Luft.\nSegne alle, die heute für die Gesundheit anderer arbeiten: die Ärzte, die Pflegenden, die Helfenden.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, mein Leben ist in Deiner Hand. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "gesundheit-morgen-gewoehnlich-02",
+    "kategorie": "gesundheit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Gott ist der Fels meines Herzens und mein Teil auf ewig.",
+    "stelle": "Psalm 72,26",
+    "text": "Herr, ich beginne diesen Tag mit dem Leib, den ich habe — nicht mit dem, den ich mir wünsche.\nIch danke Dir für alles, was heute funktioniert, ohne dass ich daran denke: Herzschlag, Atem, Verdauung, Schlaf. Es ist ein stilles Wunder, und ich bemerke es meist erst, wenn es fehlt.\nSchenke mir heute Kraft für das, was nötig ist, und Klugheit, meine Grenzen zu achten statt sie zu bekämpfen.\nLass mich gut mit mir umgehen: genug trinken, mich bewegen, rechtzeitig aufhören.\nHeile, was zu heilen ist, in Deiner Zeit. Und wo etwas bleibt, schenke mir Frieden damit.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, mein Leben ist in Deiner Hand. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "gesundheit-morgen-gewoehnlich-03",
+    "kategorie": "gesundheit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Die auf den Herrn hoffen, bekommen neue Kraft.",
+    "stelle": "Jesaja 40,31",
+    "text": "Herr, ich beginne diesen Tag und danke Dir für jede Kraft, die ich habe.\nIch danke Dir für das, was mein Leib heute leisten kann — und ich will es nicht erst schätzen, wenn es fehlt.\nSchenke mir Weisheit im Umgang mit mir: das rechte Mass an Arbeit, an Essen, an Ruhe.\nIch denke heute an alle, die krank sind: an die, die ich kenne, und an die vielen, von denen ich nichts weiss. Sei ihnen nahe, lindere ihre Schmerzen, schenke ihnen Menschen, die bleiben.\nSegne alle, die heilen und pflegen, und gib ihnen Kraft und Freundlichkeit bis zum Abend.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du bist der Arzt der Seelen und der Leiber. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "gesundheit-mittag-gewoehnlich-01",
+    "kategorie": "gesundheit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Bei Dir ist die Quelle des Lebens.",
+    "stelle": "Psalm 35,10",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für die Kräfte, die bis hierher gereicht haben.\nDu erneuerst, was müde ist.\nSchenke mir Ruhe und einen neuen Atemzug.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "gesundheit-mittag-gewoehnlich-02",
+    "kategorie": "gesundheit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "In Deiner Hand sind meine Zeiten.",
+    "stelle": "Psalm 30,16",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für die Kräfte, die bis hierher gereicht haben.\nZeige mir, was ich jetzt brauche: eine Pause, einen Schluck Wasser, ein paar Schritte an die Luft.\nSchenke mir Ruhe im Leib.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "gesundheit-mittag-gewoehnlich-03",
+    "kategorie": "gesundheit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Ehre den Arzt, denn der Herr hat ihn geschaffen.",
+    "stelle": "Jesus Sirach 38,1",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für alle, die heute für die Gesundheit anderer arbeiten.\nSegne ihre Hände und ihre Geduld.\nSchenke auch mir Ruhe und neue Kraft.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "gesundheit-abend-gewoehnlich-01",
+    "kategorie": "gesundheit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich legte mich nieder und schlief; ich erwachte, denn der Herr hält mich.",
+    "stelle": "Psalm 3,6",
+    "text": "Herr, der Tag ist zu Ende, und ich lege diesen Leib zur Ruhe.\nIch danke Dir für alles, was er heute geleistet hat — für jeden Schritt, für jeden Handgriff, für die Stunden, in denen ich nicht an ihn denken musste.\nIch danke Dir für die Heilung, die im Schlaf geschieht, ohne dass ich etwas dazu tue.\nWo ich heute achtlos mit meinen Kräften umgegangen bin, vergib mir. Ich lasse es bei Dir.\nDu bist der Arzt der Seelen und der Leiber. Was ich nicht heilen kann, heilst Du in Deiner Zeit.\nSchenke mir einen tiefen Schlaf und einen erneuerten Morgen. Denke auch an alle, die diese Nacht wach liegen und leiden.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und gestärkt erwachen. Amen."
+  },
+  {
+    "id": "gesundheit-abend-gewoehnlich-02",
+    "kategorie": "gesundheit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Den Seinen gibt Er es im Schlaf.",
+    "stelle": "Psalm 126,2",
+    "text": "Herr, der Tag ist zu Ende, und ich lege diesen Leib zur Ruhe.\nIch danke Dir für jeden Schritt heute, für jede Bewegung, die ohne Schmerz ging, für die Mahlzeiten, die mich gestärkt haben.\nIch danke Dir für die Heilung, die jetzt beginnt, während ich schlafe und nichts dazu tue. Du arbeitest in mir, wenn ich aufhöre zu arbeiten.\nWo ich mich heute übernommen oder mich übergangen habe, vergib mir. Ich lasse es bei Dir.\nIch denke an alle, die diese Nacht Schmerzen haben, und an alle, die bei ihnen wachen. Sei ihnen nahe.\nSchenke mir tiefen Schlaf und einen Morgen mit neuen Kräften.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und gestärkt erwachen. Amen."
+  },
+  {
+    "id": "gesundheit-abend-gewoehnlich-03",
+    "kategorie": "gesundheit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Herr richtet auf, die niedergebeugt sind.",
+    "stelle": "Psalm 145,8",
+    "text": "Herr, der Tag ist zu Ende, und ich lege diesen Leib zur Ruhe.\nIch danke Dir für alles, was er heute getragen hat, und für jede Stunde ohne Schmerz.\nIch danke Dir für die Heilung, die jetzt beginnt, während ich schlafe und nichts dazu tue.\nIch denke an alle, die in dieser Nacht wach liegen: an die Kranken, an die, die bei ihnen sitzen, an die im Nachtdienst. Schenke ihnen Kraft und Trost.\nWo ich heute achtlos mit meinen Kräften umgegangen bin, vergib mir. Ich lasse es bei Dir.\nSchenke mir tiefen Schlaf und einen Morgen mit neuen Kräften.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und gestärkt erwachen. Amen."
+  },
+  {
+    "id": "entscheidungen-morgen-gewoehnlich-01",
+    "kategorie": "entscheidungen",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Zeige mir, Herr, Deine Wege und lehre mich Deine Pfade.",
+    "stelle": "Psalm 24,4",
+    "text": "Herr, ich stehe vor einem Tag, in dem ich wählen muss.\nIch danke Dir dafür, dass ich nicht allein entscheide — dass Du mitgehst und dass Du längst weisst, wohin dieser Weg führt.\nSchenke mir einen ruhigen Kopf und ein hörendes Herz. Lass mich unterscheiden zwischen dem, was mich drängt, und dem, was wirklich gut ist.\nZeige mir den nächsten Schritt. Den übernächsten musst Du mir noch nicht zeigen.\nGib mir Mut, das Erkannte auch zu tun, und Frieden mit dem, was ich zurücklasse.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Dein Wille ist gut. Ich danke Dir, dass Du mich führst. Amen."
+  },
+  {
+    "id": "entscheidungen-morgen-gewoehnlich-02",
+    "kategorie": "entscheidungen",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Lehre mich tun, was Dir wohlgefällt, denn Du bist mein Gott.",
+    "stelle": "Psalm 142,10",
+    "text": "Herr, ich beginne diesen Tag mit einer offenen Frage, und das ist in Ordnung.\nIch danke Dir dafür, dass ich nicht alles allein wissen muss — dass es Menschen gibt, die ich fragen kann, und dass Du mir Zeit gibst.\nSchenke mir heute die Gabe zu unterscheiden: was aus Angst kommt und was aus Freiheit, was mich enger macht und was mich weiter.\nLass mich den Rat derer hören, die mich kennen und die es gut mit mir meinen, und lass mich ihn wirklich hören, nicht nur bestätigt bekommen, was ich schon will.\nGib mir Frieden als Prüfstein: Was von Dir kommt, macht ruhig, auch wenn es fordert.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du führst mich. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "entscheidungen-morgen-gewoehnlich-03",
+    "kategorie": "entscheidungen",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Vertraue auf den Herrn von ganzem Herzen, und Er wird deine Pfade ebnen.",
+    "stelle": "Sprüche 3,5–6",
+    "text": "Herr, ich beginne diesen Tag und weiss noch nicht, wie es ausgeht.\nIch danke Dir dafür, dass das aushaltbar ist — dass ich nicht alles im Voraus wissen muss, um gut leben zu können.\nSchenke mir heute die Freiheit, zu entscheiden und dann loszulassen. Ich neige dazu, danach weiterzugrübeln, statt weiterzugehen.\nLass mich nach bestem Wissen wählen und das Ergebnis Dir überlassen. Wenn ich mich irre, wirst Du auch daraus etwas machen.\nGib mir Frieden mit dem, was ich nicht in der Hand habe.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du gehst voraus. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "entscheidungen-mittag-gewoehnlich-01",
+    "kategorie": "entscheidungen",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Dein Wort ist meinem Fuss eine Leuchte und ein Licht auf meinem Weg.",
+    "stelle": "Psalm 118,105",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für die Klarheit, die schon da ist, und warte ruhig auf die, die noch fehlt.\nDu gehst voraus.\nZeige mir den nächsten Schritt.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "entscheidungen-mittag-gewoehnlich-02",
+    "kategorie": "entscheidungen",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Wem es an Weisheit fehlt, der bitte Gott, der gerne gibt.",
+    "stelle": "Jakobus 1,5",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass ich fragen darf und keine Antwort erzwingen muss.\nZeige mir, was jetzt dran ist, und nur das.\nSchenke mir einen stillen Kopf.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "entscheidungen-mittag-gewoehnlich-03",
+    "kategorie": "entscheidungen",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Leite mich in Deiner Wahrheit und lehre mich.",
+    "stelle": "Psalm 24,5",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass Du mitgehst, gleich wie ich mich entscheide.\nZeige mir, was jetzt dran ist.\nSchenke mir Ruhe im Kopf.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "entscheidungen-abend-gewoehnlich-01",
+    "kategorie": "entscheidungen",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Befiehl dem Herrn deinen Weg und vertraue auf Ihn; Er wird es vollbringen.",
+    "stelle": "Psalm 36,5",
+    "text": "Herr, der Tag ist zu Ende, und ich lege meine Fragen in Deine Hände.\nIch danke Dir für alles, was heute klarer geworden ist — für ein Gespräch, für einen Gedanken, für ein ruhiges Gefühl, das mir etwas gesagt hat.\nIch danke Dir auch dafür, dass ich heute nicht alles entscheiden musste.\nWo ich heute gedrängt oder gezögert habe, wo ich nicht bei mir war, vergib mir. Ich lasse es bei Dir.\nLass in dieser Nacht reifen, was reifen muss. Oft ist ein Weg am Morgen klar, der abends noch verschlossen schien.\nSchenke mir ein ruhiges Herz und Vertrauen, dass Du es vollbringst.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und klar erwachen. Amen."
+  },
+  {
+    "id": "entscheidungen-abend-gewoehnlich-02",
+    "kategorie": "entscheidungen",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich preise den Herrn, der mich beraten hat; auch in der Nacht mahnt mich mein Innerstes.",
+    "stelle": "Psalm 15,7",
+    "text": "Herr, der Tag ist zu Ende, und ich lege meine Fragen ab.\nIch danke Dir für jeden Hinweis heute: für ein Gespräch, das etwas geklärt hat, für ein Unbehagen, das mir etwas gesagt hat, für eine Ruhe, die mir eine Richtung zeigte.\nIch danke Dir auch für die Türen, die zugegangen sind. Sie sind oft die deutlichere Antwort.\nWo ich heute aus Ungeduld gedrängt oder aus Bequemlichkeit ausgewichen bin, vergib mir. Ich lasse es bei Dir.\nLass in dieser Nacht klarer werden, was jetzt noch trüb ist. Du wirkst auch im Schlaf.\nSchenke mir Vertrauen, dass ich den Weg nicht verfehle, solange ich Dich suche.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und klar erwachen. Amen."
+  },
+  {
+    "id": "entscheidungen-abend-gewoehnlich-03",
+    "kategorie": "entscheidungen",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Vom Herrn werden die Schritte des Menschen gefestigt.",
+    "stelle": "Psalm 36,23",
+    "text": "Herr, der Tag ist zu Ende, und ich lege meine Fragen ab.\nIch danke Dir für alles, was ich heute entschieden habe, auch für das Kleine — es waren mehr Entscheidungen, als ich bemerkt habe, und die meisten sind gut ausgegangen.\nIch danke Dir dafür, dass ich nicht perfekt wählen muss, um von Dir geführt zu werden.\nWo ich heute nach einer Entscheidung immer weiter gegrübelt habe, vergib mir. Ich lasse es bei Dir.\nDu machst auch aus Umwegen einen Weg. Nichts ist verloren, was Dir übergeben ist.\nSchenke mir eine ruhige Nacht ohne Nachrechnen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und klar erwachen. Amen."
+  },
+  {
+    "id": "geduld-morgen-gewoehnlich-01",
+    "kategorie": "geduld",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich hoffte auf den Herrn, und Er neigte sich zu mir.",
+    "stelle": "Psalm 39,2",
+    "text": "Herr, ich beginne diesen Tag in Deiner Zeit, nicht in meiner.\nIch danke Dir dafür, dass Du langsam wirkst und gründlich — dass nichts von dem, was Du beginnst, unvollendet bleibt.\nSchenke mir heute einen langen Atem. Lass mich stehen bleiben, wo ich sonst dränge, und zuhören, wo ich sonst schon antworte.\nGib mir Freude an dem, was gerade wächst, auch wenn ich die Frucht noch nicht sehe.\nLass mich freundlich sein zu den Menschen, die heute langsamer sind als ich.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, alles hat seine Stunde bei Dir. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "geduld-morgen-gewoehnlich-02",
+    "kategorie": "geduld",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Nur bei Gott kommt meine Seele zur Ruhe.",
+    "stelle": "Psalm 61,2",
+    "text": "Herr, ich habe heute Zeit — mehr, als ich mir zugestehe.\nIch danke Dir für die Stunden dieses Tages als Gabe, nicht als Vorrat, den ich verbrauchen muss.\nSchenke mir heute die Ruhe, eine Sache nach der anderen zu tun und dabei zu bleiben, bis sie fertig ist.\nLass mich beim Warten nicht innerlich weiterhetzen: in der Schlange, im Verkehr, im Gespräch mit jemandem, der weit ausholt. Diese Minuten sind nicht verloren, sie sind mein Leben.\nGib mir Freude an dem, was langsam geht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, meine Zeit liegt bei Dir. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "geduld-morgen-gewoehnlich-03",
+    "kategorie": "geduld",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Sie werden noch im Alter Frucht bringen.",
+    "stelle": "Psalm 91,15",
+    "text": "Herr, ich beginne diesen Tag und bitte um Geduld — zuerst mit mir selbst.\nIch danke Dir dafür, dass Du mit mir langsam gehst und mich nicht antreibst. Du hast Zeit für mich, mehr als ich für mich habe.\nSchenke mir heute Freundlichkeit mir gegenüber. Ich erwarte oft von mir, was ich von keinem anderen erwarten würde.\nLass mich Fortschritte in kleinen Schritten sehen und nicht daran messen, wie weit es noch ist.\nGib mir die Ruhe, dieselbe Sache noch einmal zu üben, ohne mich dafür zu verachten.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du hast Geduld mit mir. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "geduld-mittag-gewoehnlich-01",
+    "kategorie": "geduld",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Sei still vor dem Herrn und harre auf Ihn.",
+    "stelle": "Psalm 36,7",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für diese Unterbrechung.\nDu hast Zeit, und heute darf ich sie auch haben.\nSchenke mir einen langen Atem für den Rest des Tages.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "geduld-mittag-gewoehnlich-02",
+    "kategorie": "geduld",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich hoffe auf den Herrn, meine Seele hofft.",
+    "stelle": "Psalm 129,5",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für diese Unterbrechung, die ich mir sonst nicht nehme.\nNichts muss in dieser Minute vorangehen.\nSchenke mir Ruhe für den Rest des Tages.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "geduld-mittag-gewoehnlich-03",
+    "kategorie": "geduld",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Bauer wartet geduldig auf die kostbare Frucht der Erde.",
+    "stelle": "Jakobus 5,7",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass ich heute nicht fertig werden muss.\nVieles wächst, ohne dass ich es sehe.\nSchenke mir Ruhe mit mir selbst.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "geduld-abend-gewoehnlich-01",
+    "kategorie": "geduld",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Harre auf den Herrn, sei stark, und dein Herz fasse Mut.",
+    "stelle": "Psalm 26,14",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ihn ab, so wie er war.\nIch danke Dir für jeden Augenblick heute, in dem ich ruhig bleiben konnte — für ein Wort, das ich zurückgehalten habe, für eine Wartezeit, die ich ausgehalten habe, für ein Ziel, das noch nicht erreicht ist und trotzdem in Bewegung.\nIch danke Dir für alles, was in aller Stille wächst, ohne dass ich davon weiss.\nWo ich heute gedrängt habe, wo ich zu schnell war, vergib mir. Ich lasse es bei Dir.\nDu säst und lässt reifen. Ich darf warten und muss nichts erzwingen.\nSchenke mir eine ruhige Nacht und morgen einen längeren Atem als heute.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und geduldig erwachen. Amen."
+  },
+  {
+    "id": "geduld-abend-gewoehnlich-02",
+    "kategorie": "geduld",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Durch eure Standhaftigkeit werdet ihr euer Leben gewinnen.",
+    "stelle": "Lukas 21,19",
+    "text": "Herr, der Tag ist zu Ende, und vieles ist genau da, wo es heute Morgen war.\nIch danke Dir dafür, dass das in Ordnung ist. Du misst nicht in Tagen.\nIch danke Dir für jeden Augenblick heute, in dem ich langsam bleiben konnte — für ein Gespräch, das ich nicht abgekürzt habe, für eine Aufgabe, die ich in Ruhe zu Ende gebracht habe.\nWo ich heute gedrängt oder gehetzt habe, vergib mir. Ich lasse es bei Dir.\nWas Du beginnst, führst Du zu Ende — in Deinem Mass, nicht in meinem.\nSchenke mir eine ruhige Nacht, in der ich nichts vorantreiben muss.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und geduldig erwachen. Amen."
+  },
+  {
+    "id": "geduld-abend-gewoehnlich-03",
+    "kategorie": "geduld",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Ihr braucht Standhaftigkeit, damit ihr empfangt, was verheissen ist.",
+    "stelle": "Hebräer 10,36",
+    "text": "Herr, der Tag ist zu Ende, und ich bin nicht so weit gekommen, wie ich wollte.\nIch danke Dir dafür, dass das genügt. Du misst nicht in Tagen, und ich muss es auch nicht.\nIch danke Dir für jeden Augenblick heute, in dem ich freundlich zu mir war — für eine Pause, die ich mir gegönnt habe, für einen Fehler, über den ich hinweggehen konnte.\nWo ich heute hart mit mir umgegangen bin, vergib mir. Ich lasse es bei Dir.\nDu hast mich nicht auf Geschwindigkeit angelegt, sondern auf Treue.\nSchenke mir eine ruhige Nacht und morgen einen geduldigen Anfang.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und geduldig erwachen. Amen."
+  },
+  {
+    "id": "ehe-morgen-gewoehnlich-01",
+    "kategorie": "ehe",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wohl dem, der den Herrn fürchtet und auf Seinen Wegen geht.",
+    "stelle": "Psalm 127,1",
+    "text": "Herr, ich danke Dir für den Menschen an meiner Seite.\nIch danke Dir für den Tag, an dem wir uns begegnet sind, und für jeden Tag seither — für die guten und für die, die uns geformt haben.\nSegne ihn heute, wo immer er ist. Schenke ihm Freude an seiner Arbeit, freundliche Menschen und das Wissen, dass er nicht allein ist.\nGib mir heute Augen für das, was er tut und was ich längst gewohnt bin. Lass mich ihm zuhören, ohne schon zu antworten, und ihn ansehen, wie ich ihn am Anfang angesehen habe.\nMach unsere Liebe warm und geduldig.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit uns beiden.\nHerr Jesus Christus, unser Gott, Du hast uns zusammengeführt. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "ehe-morgen-gewoehnlich-02",
+    "kategorie": "ehe",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Grosse Wasser können die Liebe nicht auslöschen.",
+    "stelle": "Hoheslied 8,7",
+    "text": "Herr, ich danke Dir für die Treue im Kleinen.\nFür die Handgriffe, die jeden Morgen gleich sind. Für den Kaffee, der schon da steht. Für die Frage, wie ich geschlafen habe. Nichts davon ist gross, und alles davon ist Liebe.\nSegne ihn heute, in jeder Stunde, in der ich nicht bei ihm bin.\nSchenke mir Aufmerksamkeit für das, was er still trägt und worüber er nicht spricht.\nLass mich heute eines dieser kleinen Dinge tun, ohne dass es einen Anlass braucht.\nBewahre unsere Liebe lebendig in der Gewohnheit.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit uns beiden.\nHerr Jesus Christus, unser Gott, Du hältst uns zusammen. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "ehe-morgen-gewoehnlich-03",
+    "kategorie": "ehe",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Güte und Treue begegnen einander.",
+    "stelle": "Psalm 84,11",
+    "text": "Herr, ich danke Dir für den Menschen, mit dem ich mein Leben teile.\nIch danke Dir für alles Zärtliche zwischen uns — für eine Hand im Vorbeigehen, für ein Lachen über etwas, das nur wir verstehen, für die Ruhe, nebeneinander zu schweigen.\nSchenke uns heute einen Augenblick, in dem wir uns wirklich ansehen und nicht nur nebeneinander funktionieren.\nWo etwas zwischen uns eng geworden ist, mach es wieder weit. Gib mir den Mut zum ersten Schritt, auch wenn ich finde, dass er nicht an mir wäre.\nLass uns immer wieder neu miteinander anfangen dürfen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, geh mit uns beiden.\nHerr Jesus Christus, unser Gott, Du erneuerst, was müde geworden ist. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "ehe-mittag-gewoehnlich-01",
+    "kategorie": "ehe",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Die Liebe hört niemals auf.",
+    "stelle": "1. Korinther 13,8",
+    "text": "Herr, mitten am Tag denke ich an ihn.\nIch danke Dir für ihn und lege ihn in Deine Hand.\nSei bei ihm, wo ich jetzt nicht sein kann.\nSchenke uns beiden einen guten Rest dieses Tages.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "ehe-mittag-gewoehnlich-02",
+    "kategorie": "ehe",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Sie erträgt alles, glaubt alles, hofft alles.",
+    "stelle": "1. Korinther 13,7",
+    "text": "Herr, mitten am Tag denke ich an ihn.\nIch danke Dir für ihn, so wie er ist.\nSei bei ihm in dieser Stunde.\nSchenke uns beiden einen guten Abend miteinander.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "ehe-mittag-gewoehnlich-03",
+    "kategorie": "ehe",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Vor allem habt beständige Liebe zueinander.",
+    "stelle": "1. Petrus 4,8",
+    "text": "Herr, mitten am Tag denke ich an ihn.\nIch danke Dir für ihn und für unsere gemeinsame Zeit.\nSei bei ihm in dieser Stunde.\nSchenke uns heute Abend einen guten Augenblick miteinander.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "ehe-abend-gewoehnlich-01",
+    "kategorie": "ehe",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Wie ein fruchtbarer Weinstock im Innern deines Hauses.",
+    "stelle": "Psalm 127,3",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ihn und uns in Deine Hände.\nIch danke Dir für heute — für ein Wort, für ein gemeinsames Essen, für eine Berührung im Vorbeigehen, für die Selbstverständlichkeit, die zwischen uns gewachsen ist.\nIch danke Dir für alles, was er trägt, ohne davon zu sprechen.\nWo ich heute unaufmerksam oder scharf war, vergib mir. Ich lasse es bei Dir und nehme es nicht mit in den Schlaf.\nHalte uns beieinander, auch in den Wochen, in denen wir aneinander vorbeileben. Lass unsere Liebe tiefer werden, nicht bequemer.\nSchenke ihm eine ruhige Nacht und mir ein dankbares Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, wache über unser Haus.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass uns in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "ehe-abend-gewoehnlich-02",
+    "kategorie": "ehe",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "So wird der Mensch gesegnet, der den Herrn fürchtet.",
+    "stelle": "Psalm 127,4",
+    "text": "Herr, der Tag ist zu Ende, und wir beide sind wieder unter einem Dach.\nIch danke Dir für die Jahre, die hinter uns liegen — für die guten, die leicht zu danken sind, und für die schweren, in denen wir geblieben sind.\nIch danke Dir für alles, was heute unausgesprochen zwischen uns gut war.\nWo ich heute nur halb zugehört oder etwas gesagt habe, das ich zurücknehmen möchte, vergib mir. Ich lasse es bei Dir und trage es nicht in den Schlaf.\nLass uns miteinander alt werden und einander dabei freundlich bleiben.\nSchenke ihm eine ruhige Nacht und uns beiden einen guten Morgen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, wache über unser Haus.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass uns in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "ehe-abend-gewoehnlich-03",
+    "kategorie": "ehe",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Über alles aber zieht die Liebe an; sie ist das Band der Vollkommenheit.",
+    "stelle": "Kolosser 3,14",
+    "text": "Herr, der Tag ist zu Ende, und wir kommen zur Ruhe.\nIch danke Dir für heute — für einen gemeinsamen Augenblick, so klein er war, und für alles Unausgesprochene, das gut zwischen uns steht.\nIch danke Dir dafür, dass wir einander nicht verdient haben. Es ist ein Geschenk, und ich will es so behandeln.\nWo ich heute abwesend oder ungerecht war, vergib mir. Ich lasse es bei Dir und trage es nicht in die Nacht.\nErneuere unsere Liebe, so oft sie müde wird. Lass sie nicht nur halten, sondern wachsen.\nSchenke ihm eine ruhige Nacht und uns beiden einen freundlichen Morgen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns. Heiliger Schutzengel, wache über unser Haus.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass uns in Frieden einschlafen und dankbar erwachen. Amen."
+  },
+  {
+    "id": "zorn-morgen-gewoehnlich-01",
+    "kategorie": "zorn",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Selig, die Frieden stiften, denn sie werden Kinder Gottes heissen.",
+    "stelle": "Matthäus 5,9",
+    "text": "Herr, ich beginne diesen Tag und bitte um ein weites Herz.\nIch danke Dir für Deine Geduld mit mir — dafür, dass Du mir jeden Morgen neu begegnest, ohne aufzurechnen.\nSchenke mir heute Sanftmut. Lass mich einen Atemzug länger warten, bevor ich antworte, und in dem, was mich reizt, den Menschen sehen statt nur das Verhalten.\nGib mir die Freiheit, loszulassen, was ich lange festhalte. Es kostet mich mehr Kraft, als es wert ist.\nMach mich heute zu jemandem, der Frieden bringt, wo er hinkommt.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Deine Barmherzigkeit ist grösser als alles. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "zorn-morgen-gewoehnlich-02",
+    "kategorie": "zorn",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Suche den Frieden und jage ihm nach.",
+    "stelle": "Psalm 33,15",
+    "text": "Herr, ich beginne diesen Tag und will heute jemand sein, der Frieden bringt.\nIch danke Dir für Deine Langmut mit mir — dafür, dass Du nie zurückschlägst und nie aufrechnest.\nSchenke mir heute Worte, die lösen statt festzuziehen. Lass mich zuerst fragen, bevor ich urteile, und zuerst verstehen, bevor ich antworte.\nWenn ich heute in eine Spannung gerate, gib mir den Mut zum ersten Schritt — auch wenn ich mich im Recht fühle. Recht zu haben ist billiger als Frieden zu stiften.\nMach mich freundlich, gerade dort, wo ich es nicht sein müsste.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du bist unser Friede. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "zorn-morgen-gewoehnlich-03",
+    "kategorie": "zorn",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Grossen Frieden haben, die Dein Gesetz lieben.",
+    "stelle": "Psalm 118,165",
+    "text": "Herr, ich beginne diesen Tag und bringe Dir eine Kraft, die ich oft schlecht einsetze.\nWas in mir aufsteht, wenn etwas nicht in Ordnung ist, hast Du mir gegeben. Ich danke Dir dafür — es macht mich wach für Unrecht.\nSchenke mir heute Klarheit ohne Härte. Lass mich sagen, was zu sagen ist, ruhig und ohne zu verletzen.\nNimm mir die Bitterkeit, die sich gern dazustellt und die niemandem hilft, mir am wenigsten.\nLass mich für Gerechtigkeit eintreten, ohne selbst ungerecht zu werden.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du bist gerecht und barmherzig zugleich. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "zorn-mittag-gewoehnlich-01",
+    "kategorie": "zorn",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Ein sanftes Wort wendet den Zorn.",
+    "stelle": "Sprüche 15,1",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für Deine Geduld mit mir.\nSchenke mir Ruhe im Herzen und Sanftmut in den Worten.\nLass mich freundlich bleiben.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "zorn-mittag-gewoehnlich-02",
+    "kategorie": "zorn",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Schnell zum Hören, langsam zum Reden.",
+    "stelle": "Jakobus 1,19",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für Deine Geduld mit mir heute Morgen.\nSchenke mir einen Atemzug mehr, bevor ich antworte.\nLass mich freundlich bleiben, auch wenn ich müde werde.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "zorn-mittag-gewoehnlich-03",
+    "kategorie": "zorn",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Wer geduldig ist, ist besser als ein Held.",
+    "stelle": "Sprüche 16,32",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für jede Beherrschung, die mir heute gelungen ist.\nSchenke mir Ruhe im Herzen und Klarheit in den Worten.\nLass mich freundlich und aufrichtig zugleich sein.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "zorn-abend-gewoehnlich-01",
+    "kategorie": "zorn",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Die Sonne soll über eurem Zorn nicht untergehen.",
+    "stelle": "Epheser 4,26",
+    "text": "Herr, der Tag ist zu Ende, und ich will nichts mit hinübernehmen.\nIch danke Dir für jeden Augenblick heute, in dem ich ruhig geblieben bin — für ein Wort, das ich nicht gesagt habe, für eine Kränkung, die ich habe vorbeiziehen lassen.\nIch danke Dir für die Menschen, die heute Geduld mit mir hatten.\nWo ich heute hart war oder verletzt habe, vergib mir. Ich lasse es bei Dir.\nUnd wo mir Unrecht geschehen ist: Ich lege auch das hin. Du kennst die ganze Geschichte, ich nur meinen Teil davon.\nSchenke mir einen freien Schlaf und ein Herz, das morgen leichter ist als heute.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und versöhnt erwachen. Amen."
+  },
+  {
+    "id": "zorn-abend-gewoehnlich-02",
+    "kategorie": "zorn",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Bedenkt es in eurem Herzen auf eurem Lager und werdet still.",
+    "stelle": "Psalm 4,5",
+    "text": "Herr, der Tag ist zu Ende, und ich will ihn abgeben, bevor ich schlafe.\nIch danke Dir für jeden Augenblick heute, in dem Frieden entstanden ist — für ein versöhnliches Wort, für ein Schweigen zur rechten Zeit, für einen Menschen, der mir entgegengekommen ist.\nWo ich heute hart war, vergib mir. Und wo mir Unrecht geschehen ist, lege ich es hin: Ich will es nicht über Nacht aufbewahren, es kostet mich mehr, als es wert ist.\nDeine Barmherzigkeit ist grösser als mein Anspruch auf Recht.\nSegne die, mit denen ich heute aneinandergeraten bin. Schenke ihnen eine gute Nacht.\nSchenke mir ein leichtes Herz und morgen einen freundlichen Anfang.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und versöhnt erwachen. Amen."
+  },
+  {
+    "id": "zorn-abend-gewoehnlich-03",
+    "kategorie": "zorn",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Gnädig und barmherzig ist der Herr, langmütig und reich an Güte.",
+    "stelle": "Psalm 144,8",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ab, was ich noch mit mir trage.\nIch danke Dir für jeden Augenblick heute, in dem ich ruhig und trotzdem deutlich war.\nIch danke Dir für die Menschen, die mir heute Nachsicht geschenkt haben, ohne davon zu sprechen.\nWo ich heute verletzt habe, vergib mir. Und wo mir Unrecht geschehen ist, lege ich es hin: Ich will nicht darauf schlafen.\nDu bist der Richter, nicht ich, und ich bin froh darüber. Es nimmt mir eine Last, die ich nie tragen konnte.\nSchenke mir ein freies Herz und morgen einen freundlichen Anfang.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und versöhnt erwachen. Amen."
+  },
+  {
+    "id": "schwierige-morgen-gewoehnlich-01",
+    "kategorie": "schwierige",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Liebt eure Feinde und betet für die, die euch verfolgen.",
+    "stelle": "Matthäus 5,44",
+    "text": "Herr, ich beginne diesen Tag und denke an den Menschen, der mir schwerfällt.\nIch danke Dir dafür, dass Du auch ihn liebst — genauso beharrlich, wie Du mich liebst.\nSegne ihn heute. Schenke ihm, was er braucht: Frieden, Freude, Menschen, die es gut mit ihm meinen. Ich bitte darum, auch wenn es mir nicht leichtfällt.\nGib mir einen weiten Blick für ihn. Lass mich sehen, was ihn trägt und was ihn drückt, und nicht nur, was mich an ihm stört.\nSchenke mir Freundlichkeit, die nicht davon abhängt, wie er mir begegnet.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns beide. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du bist der Frieden zwischen uns. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "schwierige-morgen-gewoehnlich-02",
+    "kategorie": "schwierige",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Lass dich nicht vom Bösen überwinden, sondern überwinde das Böse mit Gutem.",
+    "stelle": "Römer 12,21",
+    "text": "Herr, ich beginne diesen Tag und denke an den, mit dem es schwer ist.\nIch danke Dir dafür, dass Du mich siehst, wie ich bin, und mich trotzdem nicht abschreibst. Genau das bitte ich für ihn — und genau das fällt mir schwer.\nZeige mir meinen eigenen Anteil. Vielleicht bin ich in seiner Geschichte auch der Schwierige.\nNimm mir die Last, ihn beurteilen zu müssen. Das ist nicht meine Aufgabe, und ich bin froh darüber.\nSchenke mir Höflichkeit, wo Herzlichkeit noch nicht geht, und Wahrhaftigkeit, wo Höflichkeit nicht reicht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns beide. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du liebst uns beide gleich. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "schwierige-morgen-gewoehnlich-03",
+    "kategorie": "schwierige",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich bin für den Frieden.",
+    "stelle": "Psalm 119,7",
+    "text": "Herr, ich beginne diesen Tag und denke an den, der mir schwerfällt.\nIch danke Dir dafür, dass ich ihn nicht mögen muss, um für ihn beten zu können. Beten geht auch mit gemischten Gefühlen.\nSegne ihn heute. Schenke ihm, was ihm fehlt.\nUnd schenke mir Klarheit über meine Grenzen. Zeige mir, wo Nähe gut ist und wo Abstand das Ehrlichere ist. Beides kann Liebe sein.\nLass mich freundlich bleiben, ohne mich zu verbiegen, und aufrichtig, ohne zu verletzen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns beide. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du liebst uns beide. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "schwierige-mittag-gewoehnlich-01",
+    "kategorie": "schwierige",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Segnet, die euch fluchen.",
+    "stelle": "Lukas 6,28",
+    "text": "Herr, mitten am Tag denke ich an ihn.\nIch danke Dir dafür, dass Du auch ihn in Deiner Hand hältst.\nSegne ihn heute.\nSchenke mir ein ruhiges Herz und freundliche Worte.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "schwierige-mittag-gewoehnlich-02",
+    "kategorie": "schwierige",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Er lässt Seine Sonne aufgehen über Böse und Gute.",
+    "stelle": "Matthäus 5,45",
+    "text": "Herr, mitten am Tag denke ich an ihn.\nIch danke Dir dafür, dass Deine Güte niemanden auslässt.\nSegne ihn in dieser Stunde.\nSchenke mir ein freies Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "schwierige-mittag-gewoehnlich-03",
+    "kategorie": "schwierige",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Soweit es an euch liegt, haltet Frieden mit allen Menschen.",
+    "stelle": "Römer 12,18",
+    "text": "Herr, mitten am Tag denke ich an ihn.\nIch danke Dir dafür, dass ich nur meinen Teil verantworte und nicht seinen.\nSegne ihn in dieser Stunde.\nSchenke mir ein ruhiges, freies Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "schwierige-abend-gewoehnlich-01",
+    "kategorie": "schwierige",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Wie gut und wie schön, wenn Menschen in Eintracht beieinander sind.",
+    "stelle": "Psalm 132,1",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ihn in Deine Hände.\nIch danke Dir für jeden Augenblick heute, in dem mir Freundlichkeit gelungen ist — auch für die kleinen, die niemand bemerkt hat.\nIch danke Dir für die Menschen, mit denen es leicht ist, und ich bitte Dich auch für den, mit dem es schwer ist. Segne ihn diese Nacht.\nWo ich heute im Recht sein wollte statt im Frieden, vergib mir. Ich lasse es bei Dir.\nDu siehst uns beide, und Du siehst mehr, als wir voneinander wissen.\nSchenke mir einen ruhigen Schlaf und morgen ein Herz ohne Mauer.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns beide. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und versöhnlich erwachen. Amen."
+  },
+  {
+    "id": "schwierige-abend-gewoehnlich-02",
+    "kategorie": "schwierige",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Ertragt einander und vergebt einander.",
+    "stelle": "Kolosser 3,13",
+    "text": "Herr, der Tag ist zu Ende, und ich lege auch diese Beziehung in Deine Hände.\nIch danke Dir für alle Menschen, mit denen es heute leicht war. Ich vergesse leicht, wie viele das sind, weil einer mich beschäftigt.\nIch danke Dir für die Geduld, die andere heute mit mir hatten.\nWo ich heute abwertend über ihn gedacht oder gesprochen habe, vergib mir. Ich lasse es bei Dir.\nDu kennst seine ganze Geschichte, ich nur den Ausschnitt, in dem er mir wehtut.\nSegne ihn diese Nacht. Schenke ihm Frieden, und schenke mir ein Herz, das morgen ohne Mauer aufwacht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns beide. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und versöhnlich erwachen. Amen."
+  },
+  {
+    "id": "schwierige-abend-gewoehnlich-03",
+    "kategorie": "schwierige",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Vergeltet nicht Böses mit Bösem, sondern segnet.",
+    "stelle": "1. Petrus 3,9",
+    "text": "Herr, der Tag ist zu Ende, und ich lege auch ihn in Deine Hände.\nIch danke Dir für die vielen Menschen, mit denen es heute leicht war. Ich vergesse sie über dem einen, der mich beschäftigt.\nIch danke Dir für jede Grenze, die ich heute ruhig gezogen habe, ohne hart zu werden.\nWo ich heute schlecht über ihn gesprochen oder gedacht habe, vergib mir. Ich lasse es bei Dir.\nDu siehst seine ganze Geschichte, ich nur den kleinen Teil, in dem er mir begegnet.\nSegne ihn diese Nacht, und schenke mir einen Schlaf ohne inneres Streiten.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für uns beide. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und versöhnlich erwachen. Amen."
+  },
+  {
+    "id": "reue-morgen-gewoehnlich-01",
+    "kategorie": "reue",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "So weit der Aufgang vom Untergang, so weit tut Er unsere Verfehlungen von uns.",
+    "stelle": "Psalm 102,12",
+    "text": "Herr, ich beginne diesen Tag als ein Beschenkter.\nIch danke Dir dafür, dass jeder Morgen ein neuer Anfang ist und dass Deine Barmherzigkeit jeden Tag neu ist.\nSchenke mir heute ein waches Herz — eines, das früh merkt, wo es abbiegt, und leicht zurückfindet.\nGib mir die Freiheit, ein Wort zurückzunehmen, ohne mein Gesicht zu verlieren, und die Bereitschaft, zuerst auf den anderen zuzugehen.\nLass mich diesen Tag so leben, dass ich ihn heute Abend gern in Deine Hände lege.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Deine Güte ist grösser als meine Vergangenheit. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "reue-morgen-gewoehnlich-02",
+    "kategorie": "reue",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Bei Dir ist die Vergebung, darum fürchtet man Dich.",
+    "stelle": "Psalm 129,4",
+    "text": "Herr, ich beginne diesen Tag als jemand, dem vergeben wird.\nIch danke Dir dafür, dass ich nicht bei meinem schlechtesten Tag festgehalten werde — weder von Dir noch, wenn ich es zulasse, von mir selbst.\nSchenke mir heute ein weiches Herz für andere. Was ich empfange, will ich weitergeben: Nachsicht mit einem Fehler, ein zweites Mal Zuhören, ein Urteil, das ich für mich behalte.\nLass mich rasch merken, wenn ich falsch abbiege, und rasch zurückfinden, ohne grosses Aufheben.\nGib mir die Freiheit, mich zu entschuldigen, bevor es unangenehm wird.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Deine Barmherzigkeit geht mir voraus. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "reue-morgen-gewoehnlich-03",
+    "kategorie": "reue",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich bekannte Dir meine Schuld, und Du hast sie mir vergeben.",
+    "stelle": "Psalm 31,5",
+    "text": "Herr, ich beginne diesen Tag mit einem freien Kopf, weil Du mir vergibst.\nIch danke Dir dafür, dass Umkehr bei Dir nicht demütigend ist, sondern befreiend.\nSchenke mir heute den Mut, etwas beim Namen zu nennen, statt es zu umschreiben — vor Dir und, wo es nötig ist, vor einem Menschen.\nZeige mir, wo ich etwas wiedergutmachen kann. Nicht als Strafe, sondern weil es zur Umkehr gehört: ein Anruf, eine Entschuldigung, ein zurückgegebenes Wort.\nGib mir die Freiheit, es heute zu tun und nicht auf einen besseren Moment zu warten.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du machst frei. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "reue-mittag-gewoehnlich-01",
+    "kategorie": "reue",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Nahe ist der Herr denen, die zerbrochenen Herzens sind.",
+    "stelle": "Psalm 33,19",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass ich jederzeit umkehren darf und nicht bis zum Abend warten muss.\nSchenke mir ein waches, leichtes Herz.\nLass mich den Rest dieses Tages neu beginnen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "reue-mittag-gewoehnlich-02",
+    "kategorie": "reue",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Erbarme Dich meiner, Gott, nach Deiner grossen Barmherzigkeit.",
+    "stelle": "Psalm 50,3",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass ich jetzt umkehren darf und nicht erst heute Abend.\nSchenke mir ein leichtes, waches Herz.\nLass mich den Rest des Tages neu beginnen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "reue-mittag-gewoehnlich-03",
+    "kategorie": "reue",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Als er noch weit entfernt war, sah ihn sein Vater und lief ihm entgegen.",
+    "stelle": "Lukas 15,20",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass Du mir entgegenkommst, sobald ich mich umdrehe.\nSchenke mir ein waches Herz.\nLass mich das Nötige heute noch in Ordnung bringen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "reue-abend-gewoehnlich-01",
+    "kategorie": "reue",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Ein zerbrochenes und gedemütigtes Herz wirst Du, Gott, nicht verachten.",
+    "stelle": "Psalm 50,19",
+    "text": "Herr, der Tag ist zu Ende, und ich bringe ihn Dir, so wie er geworden ist.\nIch danke Dir für alles Gute darin — für die Menschen, die mir begegnet sind, für die Arbeit, für jede Stunde, in der ich ganz da war.\nWo ich heute hinter dem zurückgeblieben bin, was Du mir zugetraut hast, vergib mir. Ich rede es nicht schön und ich trage es nicht weiter; ich lasse es bei Dir.\nDeine Barmherzigkeit ist grösser als mein Gedächtnis, und Deine Freude ist grösser als meine Reue.\nLehre mich umkehren — nicht morgen, sondern jetzt, in diesem Augenblick, in dem ich es ausspreche.\nSchenke mir einen freien Schlaf und einen Morgen, der wirklich neu ist.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und erneuert erwachen. Amen."
+  },
+  {
+    "id": "reue-abend-gewoehnlich-02",
+    "kategorie": "reue",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Seine Barmherzigkeit ist jeden Morgen neu; gross ist Deine Treue.",
+    "stelle": "Klagelieder 3,23",
+    "text": "Herr, der Tag ist zu Ende, und ich bringe ihn Dir.\nIch danke Dir für alles Gute darin — und ich danke Dir dafür, dass ich das Gute zuerst nennen darf, bevor ich vom Übrigen spreche.\nWo ich heute hinter dem zurückgeblieben bin, was Du mir zugetraut hast, vergib mir. Ich lasse es bei Dir und nehme es nicht mit.\nIch danke Dir dafür, dass Du mich nicht kleiner machst, wenn ich es zugebe, sondern freier.\nLass mich morgen weitergeben, was ich heute Abend empfange.\nSchenke mir einen ruhigen Schlaf und einen Morgen, der wirklich neu ist.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und erneuert erwachen. Amen."
+  },
+  {
+    "id": "reue-abend-gewoehnlich-03",
+    "kategorie": "reue",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Selig, dem die Verfehlung vergeben und die Schuld bedeckt ist.",
+    "stelle": "Psalm 31,1",
+    "text": "Herr, der Tag ist zu Ende, und ich bringe ihn Dir, wie er war.\nIch danke Dir für alles Gute darin, und ich nenne es zuerst — für die Menschen, die Arbeit, die Stunden, in denen ich ganz da war.\nWo ich heute hinter dem zurückgeblieben bin, was Du mir zugetraut hast, sage ich es Dir, ohne Umschweife. Ich lasse es bei Dir.\nIch danke Dir dafür, dass Vergebung bei Dir nicht Vergessen ist, sondern Neuanfang: Ich darf morgen weitergehen, nicht wieder von vorn beginnen.\nZeige mir, was ich morgen in Ordnung bringen soll, und schenke mir den Mut dazu.\nSchenke mir einen ruhigen Schlaf und einen Morgen, der wirklich neu ist.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und erneuert erwachen. Amen."
+  },
+  {
+    "id": "demut-morgen-gewoehnlich-01",
+    "kategorie": "demut",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Herr, mein Herz ist nicht hochmütig, und meine Augen sind nicht stolz.",
+    "stelle": "Psalm 130,1",
+    "text": "Herr, ich beginne diesen Tag und weiss, dass ich ihn nicht mir selbst verdanke.\nIch danke Dir für alles, was mir gegeben ist — für Gaben, die ich mir nicht ausgesucht habe, und für Menschen, die mich getragen haben, ohne dass ich es bemerkte.\nSchenke mir heute ein rechtes Mass von mir selbst: nicht kleiner, als Du mich gemacht hast, und nicht grösser.\nLass mich zuhören, ohne mich zu vergleichen, und mich mitfreuen, wenn ein anderer vorne steht.\nGib mir die Freiheit, um Hilfe zu bitten, und die Ruhe, nicht recht behalten zu müssen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, alles ist Gabe. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "demut-morgen-gewoehnlich-02",
+    "kategorie": "demut",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Den Demütigen gibt Gott Gnade.",
+    "stelle": "Jakobus 4,6",
+    "text": "Herr, ich beginne diesen Tag und muss heute niemandem etwas beweisen.\nIch danke Dir dafür — es ist eine Erleichterung, die ich mir selbst nicht geben kann.\nSchenke mir Freude an dem, was niemand sieht: an einer Arbeit, die keiner lobt, an einer Hilfe, von der niemand erfährt, an einem Gebet, das ich für mich behalte.\nLass mich heute jemandem den Vortritt lassen, ohne innerlich Buch zu führen.\nGib mir ein weites Herz, wenn ein anderer Erfolg hat, und die Ruhe, mich mitzufreuen, statt zu vergleichen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du siehst das Verborgene. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "demut-morgen-gewoehnlich-03",
+    "kategorie": "demut",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Er hat auf die Niedrigkeit Seiner Magd geschaut.",
+    "stelle": "Lukas 1,48",
+    "text": "Herr, ich beginne diesen Tag als jemand, der empfängt.\nIch danke Dir dafür — es ist überraschend schwer, etwas anzunehmen, ohne sofort etwas zurückgeben zu wollen.\nSchenke mir heute die Fähigkeit, Hilfe anzunehmen: ein Angebot, ein Kompliment, eine Hand, die mir etwas abnimmt. Lass mich einfach danke sagen und nicht abwehren.\nGib mir die Freiheit, um etwas zu bitten, wenn ich es brauche. Es macht mich nicht kleiner.\nLehre mich von der Gottesgebärerin, die einfach ja gesagt hat, ohne sich zu verstecken und ohne sich grösser zu machen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, alles ist Gabe. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "demut-mittag-gewoehnlich-01",
+    "kategorie": "demut",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Lernt von mir, denn ich bin sanftmütig und von Herzen demütig.",
+    "stelle": "Matthäus 11,29",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für alles, was mir heute geschenkt wurde und was ich nicht selbst gemacht habe.\nDu bist der Grund, auf dem ich stehe.\nSchenke mir ein stilles Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "demut-mittag-gewoehnlich-02",
+    "kategorie": "demut",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Herr sieht tief herab auf Himmel und Erde.",
+    "stelle": "Psalm 112,6",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass ich klein sein darf.\nNichts hängt an mir allein.\nSchenke mir ein stilles Herz für den Rest des Tages.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "demut-mittag-gewoehnlich-03",
+    "kategorie": "demut",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Er leitet die Demütigen im Recht und lehrt sie Seinen Weg.",
+    "stelle": "Psalm 24,9",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für alles, was mir heute gegeben wurde und was ich nicht selbst gemacht habe.\nLass mich empfangen, ohne mich zu rechtfertigen.\nSchenke mir ein stilles Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "demut-abend-gewoehnlich-01",
+    "kategorie": "demut",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "…wie ein gestilltes Kind bei seiner Mutter.",
+    "stelle": "Psalm 130,2",
+    "text": "Herr, der Tag ist zu Ende, und ich lege alles ab, was ich heute sein wollte.\nIch danke Dir für das, was gelungen ist, und dafür, dass es nicht allein an mir lag. Für jede Hand, die mitgeholfen hat, für jeden Rat, den ich angenommen habe.\nIch danke Dir auch für die Augenblicke, in denen ich klein war und nichts beweisen musste. Sie waren die leichtesten des Tages.\nWo ich heute mehr scheinen wollte, als ich bin, vergib mir. Ich lasse es bei Dir.\nBei Dir muss ich nichts darstellen. Du kennst mich ganz und bleibst.\nSchenke mir eine stille Nacht und einen Morgen ohne Last.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und still erwachen. Amen."
+  },
+  {
+    "id": "demut-abend-gewoehnlich-02",
+    "kategorie": "demut",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Komm zur Ruhe, meine Seele, denn der Herr hat dir Gutes getan.",
+    "stelle": "Psalm 114,7",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ab, was ich heute darstellen wollte.\nIch danke Dir für alles Verborgene: für die Handgriffe, die niemand bemerkt hat, für die Menschen, die im Hintergrund gearbeitet haben, damit mein Tag gelingt.\nIch danke Dir für jede Stunde, in der ich einfach getan habe, was zu tun war, ohne mich dabei zu beobachten.\nWo ich heute zu gross von mir gedacht oder mich zu klein gemacht habe, vergib mir. Beides ist dasselbe. Ich lasse es bei Dir.\nBei Dir bin ich weder mehr noch weniger als geliebt.\nSchenke mir eine stille Nacht und einen Morgen ohne Last.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und still erwachen. Amen."
+  },
+  {
+    "id": "demut-abend-gewoehnlich-03",
+    "kategorie": "demut",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Achtet einer den andern höher als sich selbst.",
+    "stelle": "Philipper 2,3",
+    "text": "Herr, der Tag ist zu Ende, und ich zähle nach, was ich heute bekommen habe.\nIch danke Dir für jede Hilfe, die ich angenommen habe, und für jede, die mir angeboten wurde, auch wenn ich sie ausgeschlagen habe.\nIch danke Dir für die Menschen, die heute etwas für mich getan haben, ohne dass ich es bemerkt habe.\nWo ich heute nicht empfangen konnte, wo ich lieber allein zurechtkommen wollte, vergib mir. Ich lasse es bei Dir.\nBei Dir muss ich nichts leisten, um zu gelten. Das ist die grösste Erleichterung, die ich kenne.\nSchenke mir eine stille Nacht und einen Morgen mit offenen Händen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und still erwachen. Amen."
+  },
+  {
+    "id": "finanzen-morgen-gewoehnlich-01",
+    "kategorie": "finanzen",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Herr ist mein Hirt, mir wird nichts fehlen.",
+    "stelle": "Psalm 22,1",
+    "text": "Herr, ich beginne diesen Tag und danke Dir für alles, was ich habe.\nFür ein Dach über mir, für Essen im Haus, für Kleidung, für die Arbeit, die mich trägt. Es ist mehr, als ich täglich bemerke.\nDu sorgst für mich, und Du hast es bisher immer getan.\nSchenke mir heute einen klaren Kopf im Umgang mit dem, was mir anvertraut ist: Sorgfalt ohne Ängstlichkeit, Grosszügigkeit ohne Leichtsinn.\nLass mich das Notwendige gut ordnen und das Übrige Dir überlassen.\nGib mir ein weites Herz für die, die weniger haben.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du versorgst mich. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "finanzen-morgen-gewoehnlich-02",
+    "kategorie": "finanzen",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Gib mir weder Armut noch Reichtum; lass mich mein Teil Brot essen.",
+    "stelle": "Sprüche 30,8",
+    "text": "Herr, ich beginne diesen Tag und danke Dir für das Genug.\nIch habe heute, was ich brauche. Das ist mehr, als die meisten Menschen sagen können, und mehr, als ich mir eingestehe, wenn ich rechne.\nSchenke mir Zufriedenheit mit dem Meinen und Freiheit von dem Blick auf das, was andere haben.\nLass mich heute grosszügig sein — mit Geld, wenn es dran ist, und mit Zeit, was mich oft mehr kostet.\nGib mir Klarheit in den Zahlen und Ruhe im Herzen. Beides gehört zusammen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du weisst, was ich brauche. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "finanzen-morgen-gewoehnlich-03",
+    "kategorie": "finanzen",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wenn der Reichtum wächst, hängt euer Herz nicht daran.",
+    "stelle": "Psalm 61,11",
+    "text": "Herr, ich beginne diesen Tag und danke Dir für alles, was Du mir anvertraut hast.\nEs ist anvertraut, nicht Besitz. Das zu wissen macht mich freier im Umgang damit.\nSchenke mir heute Ordnung: den Überblick über das, was hereinkommt und hinausgeht, und den Mut, hinzuschauen, wo ich lieber wegsehe.\nGib mir Klarheit statt Verdrängen. Was geordnet ist, macht weniger Sorgen, auch wenn es wenig ist.\nLass mich verantwortlich mit dem umgehen, was ich habe — für mich, für die Meinen und für die, die weniger haben.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, alles gehört Dir. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "finanzen-mittag-gewoehnlich-01",
+    "kategorie": "finanzen",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Seht die Vögel des Himmels — euer himmlischer Vater ernährt sie.",
+    "stelle": "Matthäus 6,26",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für das tägliche Brot, das ich heute schon bekommen habe.\nDu kennst, was ich brauche, bevor ich es sage.\nSchenke mir ein ruhiges Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "finanzen-mittag-gewoehnlich-02",
+    "kategorie": "finanzen",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Die den Herrn suchen, haben an nichts Mangel.",
+    "stelle": "Psalm 33,11",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für das, was ich heute schon bekommen habe.\nEs reicht für diese Stunde, und mehr brauche ich jetzt nicht.\nSchenke mir ein ruhiges, weites Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "finanzen-mittag-gewoehnlich-03",
+    "kategorie": "finanzen",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Wo dein Schatz ist, da ist auch dein Herz.",
+    "stelle": "Matthäus 6,21",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für alles, was ich habe und was mich heute trägt.\nZeige mir, woran mein Herz wirklich hängt.\nSchenke mir Ruhe und ein weites Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "finanzen-abend-gewoehnlich-01",
+    "kategorie": "finanzen",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Du öffnest Deine Hand und sättigst alles, was lebt.",
+    "stelle": "Psalm 144,16",
+    "text": "Herr, der Tag ist zu Ende, und ich zähle nach, was Du mir gegeben hast.\nIch danke Dir für das Essen auf meinem Tisch, für das warme Zimmer, für jede Rechnung, die ich bezahlen konnte, und für jede Sorge, die sich als kleiner erwies, als sie aussah.\nIch danke Dir für die Arbeit, die mich versorgt, und für die Menschen, die grosszügig zu mir waren.\nWo ich heute geizig war oder ängstlich gerechnet habe, vergib mir. Ich lasse es bei Dir.\nDeine Hand ist offen. Was ich morgen brauche, wird morgen da sein.\nSchenke mir eine sorgenfreie Nacht und ein grosszügiges Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und getrost erwachen. Amen."
+  },
+  {
+    "id": "finanzen-abend-gewoehnlich-02",
+    "kategorie": "finanzen",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich war jung und bin alt geworden und sah nie den Gerechten verlassen.",
+    "stelle": "Psalm 36,25",
+    "text": "Herr, der Tag ist zu Ende, und ich zähle noch einmal nach, was ich habe.\nIch danke Dir für das Dach, unter dem ich schlafe, für das Essen im Schrank, für die Kleider im Kasten. Für jede Rechnung, die bezahlt ist, und für jede, die warten kann.\nIch danke Dir für alles, was ich heute nicht gekauft habe und trotzdem nicht vermisse.\nWo ich heute geizig war oder ängstlich gerechnet habe, vergib mir. Ich lasse es bei Dir.\nDu hast mich bis heute versorgt, und Du hörst damit nicht auf.\nSchenke mir eine sorgenfreie Nacht und morgen ein grosszügiges Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und getrost erwachen. Amen."
+  },
+  {
+    "id": "finanzen-abend-gewoehnlich-03",
+    "kategorie": "finanzen",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Gut steht es um den, der gütig ist und gerne gibt.",
+    "stelle": "Psalm 111,5",
+    "text": "Herr, der Tag ist zu Ende, und ich lege auch die Zahlen ab.\nIch danke Dir für alles, was heute gereicht hat. Für jede Ausgabe, die richtig war, und für jede Sorge, die kleiner war, als sie sich anfühlte.\nIch danke Dir für die Arbeit, die mich versorgt, und für alle, die grosszügig zu mir waren, als ich es brauchte.\nWo ich heute ängstlich gerechnet oder unnötig gegeizt habe, vergib mir. Ich lasse es bei Dir.\nDu hast mich bis heute getragen. Was morgen nötig ist, wird morgen da sein.\nSchenke mir eine Nacht ohne Rechnen und einen Morgen mit freiem Kopf.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und getrost erwachen. Amen."
+  },
+  {
+    "id": "reinheit-morgen-gewoehnlich-01",
+    "kategorie": "reinheit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Selig, die reinen Herzens sind, denn sie werden Gott schauen.",
+    "stelle": "Matthäus 5,8",
+    "text": "Herr, ich beginne diesen Tag und bitte um einen klaren Blick.\nIch danke Dir für diesen Leib und für alle Sinne, die Du mir gegeben hast — sie sind gut, und sie sind Deine Gabe.\nSchenke mir heute ein ungeteiltes Herz. Lass mich die Menschen ansehen, wie Du sie ansiehst, und die Schönheit achten, statt sie zu gebrauchen.\nGib mir Freude an dem, was wahr und einfach ist, und lass mich meine Aufmerksamkeit dorthin lenken, wo sie mich weiter macht.\nMach mich heute ganz und ungeteilt in dem, was ich tue.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du machst rein und hell. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "reinheit-morgen-gewoehnlich-02",
+    "kategorie": "reinheit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wodurch hält ein Mensch seinen Weg rein? Wenn er sich hält an Dein Wort.",
+    "stelle": "Psalm 118,9",
+    "text": "Herr, ich beginne diesen Tag und bitte um eine ungeteilte Aufmerksamkeit.\nIch danke Dir für alles, was heute meine ganze Anwesenheit verdient: ein Gesicht mir gegenüber, eine Arbeit, ein Essen, ein Weg zu Fuss.\nSchenke mir die Ruhe, eine Sache anzuschauen, ohne sofort nach der nächsten zu greifen.\nLass mich achtsam wählen, was ich heute vor Augen habe. Was ich ansehe, prägt mich, und ich vergesse das leicht.\nGib mir Freude an dem, was schlicht und wahr ist.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du machst hell und einfach. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "reinheit-morgen-gewoehnlich-03",
+    "kategorie": "reinheit",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wer darf hinaufsteigen zum Berg des Herrn? Wer reine Hände hat und ein lauteres Herz.",
+    "stelle": "Psalm 23,3–4",
+    "text": "Herr, ich beginne diesen Tag und bitte um Lauterkeit — dass aussen und innen dasselbe ist.\nIch danke Dir dafür, dass ich vor Dir nichts verbergen muss. Bei Dir darf ich einfach ich sein, und das ist eine Erleichterung.\nSchenke mir heute ehrliche Worte. Lass mich sagen, was ich meine, und meinen, was ich sage — freundlich, aber ohne Doppelboden.\nLass mich dieselbe Person sein, ob jemand zusieht oder nicht.\nGib mir Freude an dem, was schlicht und wahr ist.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du machst rein und hell. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "reinheit-mittag-gewoehnlich-01",
+    "kategorie": "reinheit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Erschaffe in mir ein reines Herz, Gott.",
+    "stelle": "Psalm 50,12",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für jede Stunde heute, in der ich ganz bei einer Sache war.\nSchenke mir einen klaren Blick und ein ungeteiltes Herz.\nLass mich den Rest des Tages licht gehen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "reinheit-mittag-gewoehnlich-02",
+    "kategorie": "reinheit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Das Auge ist das Licht des Leibes.",
+    "stelle": "Matthäus 6,22",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für jede Stunde heute, in der ich ganz bei einer Sache war.\nSammle mich wieder, wo ich mich verstreut habe.\nSchenke mir einen klaren Blick für den Rest des Tages.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "reinheit-mittag-gewoehnlich-03",
+    "kategorie": "reinheit",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Wende meine Augen von dem ab, was nichtig ist.",
+    "stelle": "Psalm 118,37",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir für jede Stunde heute, in der ich aufrichtig war.\nSammle mich, wo ich mich verstreut habe.\nSchenke mir einen klaren Blick für den Rest des Tages.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "reinheit-abend-gewoehnlich-01",
+    "kategorie": "reinheit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Bei Dir ist die Quelle des Lebens; in Deinem Licht sehen wir das Licht.",
+    "stelle": "Psalm 35,10",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ihn in Deine Hände.\nIch danke Dir für jeden Augenblick heute, in dem mein Blick klar war — für gute Arbeit, für ein aufrichtiges Gespräch, für Freude an einfachen Dingen.\nIch danke Dir für alles, was ich heute weggelegt habe, ohne dass es jemand bemerkte.\nWo mein Herz sich heute geteilt hat, vergib mir. Ich lasse es bei Dir und nehme es nicht mit in die Nacht.\nDu machst neu, so oft ich komme, und Du wirst nicht müde dabei.\nSchenke mir einen ruhigen Schlaf und einen hellen Morgen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und klar erwachen. Amen."
+  },
+  {
+    "id": "reinheit-abend-gewoehnlich-02",
+    "kategorie": "reinheit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Erforsche mich, Gott, und erkenne mein Herz.",
+    "stelle": "Psalm 138,23",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ihn offen vor Dich hin.\nIch danke Dir für jede Stunde heute, in der ich ganz da war — bei einem Menschen, bei einer Arbeit, bei einer Mahlzeit, ohne dass mein Kopf woanders war.\nIch danke Dir für alles, was ich heute weggelegt habe, ohne dass es jemand bemerkt hat. Diese kleinen Entscheidungen sind mein eigentliches Leben.\nWo mein Herz sich heute geteilt hat, vergib mir. Ich lasse es bei Dir und trage es nicht in die Nacht.\nDu machst neu, so oft ich komme, und ich muss mich dafür nicht schämen.\nSchenke mir einen ruhigen Schlaf und einen hellen Morgen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und klar erwachen. Amen."
+  },
+  {
+    "id": "reinheit-abend-gewoehnlich-03",
+    "kategorie": "reinheit",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Jeder, der diese Hoffnung hat, hält sich rein.",
+    "stelle": "1. Johannes 3,3",
+    "text": "Herr, der Tag ist zu Ende, und ich lege ihn offen vor Dich.\nIch danke Dir für jedes ehrliche Wort heute — auch für die, die mich etwas gekostet haben.\nIch danke Dir für jede kleine Entscheidung, die niemand gesehen hat. Sie sind mein eigentliches Leben, und sie summieren sich zu dem, was ich bin.\nWo ich heute etwas beschönigt habe oder mein Herz sich geteilt hat, vergib mir. Ich lasse es bei Dir und trage es nicht in die Nacht.\nDu machst neu, so oft ich komme. Ich muss mich dafür nicht schämen.\nSchenke mir einen ruhigen Schlaf und einen hellen Morgen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und klar erwachen. Amen."
+  },
+  {
+    "id": "glaubenszweifel-morgen-gewoehnlich-01",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Kostet und seht, wie gut der Herr ist.",
+    "stelle": "Psalm 33,9",
+    "text": "Herr, ich beginne diesen Tag und wende mich Dir zu — auch heute, auch wenn ich nicht alles verstehe.\nIch danke Dir dafür, dass Du grösser bist als das, was ich von Dir begreifen kann, und dass Dein Dasein nicht von meiner Gewissheit abhängt.\nIch danke Dir für jeden Augenblick, in dem ich Dich schon gespürt habe. Ich erinnere mich, und diese Erinnerung trägt.\nSchenke mir heute die Treue, den nächsten Schritt zu tun. Der Glaube wächst im Gehen, nicht im Nachdenken darüber.\nStärke, was in mir glaubt, und sei geduldig mit dem Rest.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du bist da, ob ich es fühle oder nicht. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "glaubenszweifel-morgen-gewoehnlich-02",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wie der Hirsch nach Wasserbächen, so verlangt meine Seele nach Dir.",
+    "stelle": "Psalm 41,2",
+    "text": "Herr, ich beginne diesen Tag und wende mich Dir zu — auch mit dem, was ich nicht verstehe.\nIch danke Dir dafür, dass die Sehnsucht selbst schon von Dir kommt. Wer Dich sucht, hat Dich in gewisser Weise schon gefunden.\nIch erinnere mich an die Augenblicke, in denen Du mir nahe warst. Sie waren wirklich, auch wenn ich sie heute nicht spüre.\nSchenke mir heute die Treue der kleinen Schritte: ein Gebet, das ich spreche, ohne es zu fühlen, ein Kreuzzeichen, eine Kerze.\nLass mich Menschen begegnen, die glauben, wenn ich es gerade nicht kann. Ich muss es nicht allein tragen.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du hältst mich fest. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "glaubenszweifel-morgen-gewoehnlich-03",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Dein Angesicht, Herr, will ich suchen.",
+    "stelle": "Psalm 26,8",
+    "text": "Herr, ich beginne diesen Tag und tue, was ich tun kann: Ich stehe hier und rede mit Dir.\nIch danke Dir dafür, dass der Glaube nicht an meinem Gefühl hängt. Er wächst im Tun, nicht im Grübeln.\nSchenke mir heute die Treue der einfachen Handlungen: das Kreuzzeichen, ein Wort aus dem Psalter, eine Kerze, ein Gebet, das ich spreche, ohne es zu spüren.\nLass mich Gutes tun, auch wenn ich gerade nicht weiss, warum. Oft kommt das Verstehen erst danach.\nTrag mich in dieser Zeit durch die Kirche, wenn ich mich selbst nicht tragen kann.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, Du bleibst treu. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "glaubenszweifel-mittag-gewoehnlich-01",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich bin bei euch alle Tage.",
+    "stelle": "Matthäus 28,20",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass Du bleibst, auch wenn ich schwanke.\nDu bist hier, in dieser Stunde.\nStärke, was in mir glaubt.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "glaubenszweifel-mittag-gewoehnlich-02",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Herr, zu wem sollten wir gehen? Du hast Worte des ewigen Lebens.",
+    "stelle": "Johannes 6,68",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass ich hier bin und Dich anrede — das ist schon Glaube genug für diese Minute.\nDu bleibst, auch wenn ich schwanke.\nStärke, was in mir glaubt.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "glaubenszweifel-mittag-gewoehnlich-03",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Alles ist möglich dem, der glaubt.",
+    "stelle": "Markus 9,23",
+    "text": "Herr, mitten am Tag halte ich einen Augenblick inne.\nIch danke Dir dafür, dass dieses Innehalten schon Glaube ist.\nIch muss nichts fühlen, um bei Dir zu sein.\nStärke, was in mir glaubt.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "glaubenszweifel-abend-gewoehnlich-01",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Auch die Finsternis ist nicht finster vor Dir; die Nacht leuchtet wie der Tag.",
+    "stelle": "Psalm 138,12",
+    "text": "Herr, der Tag ist zu Ende, und ich komme zu Dir, wie ich bin.\nIch danke Dir für jeden Augenblick heute, in dem etwas hell war — ein Wort, ein Gesicht, ein Stück Musik, ein Gedanke, der mich weiter gemacht hat. Das warst Du, auch wenn ich es nicht sofort erkannt habe.\nIch danke Dir dafür, dass ich Dich suchen darf und dass die Suche selbst schon Gebet ist.\nWo ich heute mehr gegrübelt als vertraut habe, vergib mir. Ich lasse es bei Dir.\nDu hältst mich, auch wenn ich Dich nicht halte.\nSchenke mir eine ruhige Nacht und einen Morgen mit etwas mehr Licht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und zuversichtlich erwachen. Amen."
+  },
+  {
+    "id": "glaubenszweifel-abend-gewoehnlich-02",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Und ob ich wanderte im finsteren Tal — Du bist bei mir.",
+    "stelle": "Psalm 22,4",
+    "text": "Herr, der Tag ist zu Ende, und ich komme zu Dir, wie ich bin.\nIch danke Dir für alle, die vor mir geglaubt haben und die auch ihre dunklen Zeiten hatten: für die Heiligen, für meine Grosseltern, für Menschen in meiner Gemeinde, deren Ruhe ich beneide.\nIch stehe in einer langen Reihe, und ich muss den Glauben nicht neu erfinden. Er wird mir gereicht.\nIch danke Dir für jeden Augenblick heute, in dem etwas hell war. Das warst Du, auch wenn ich es erst später erkenne.\nWo ich heute mehr gegrübelt als vertraut habe, vergib mir. Ich lasse es bei Dir.\nSchenke mir eine ruhige Nacht und einen Morgen mit etwas mehr Licht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und zuversichtlich erwachen. Amen."
+  },
+  {
+    "id": "glaubenszweifel-abend-gewoehnlich-03",
+    "kategorie": "glaubenszweifel",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Wenn ich mich schlafen lege, denke ich an Dich.",
+    "stelle": "Psalm 62,7",
+    "text": "Herr, der Tag ist zu Ende, und ich komme zu Dir, wie ich bin.\nIch danke Dir für jede kleine Handlung heute, die Glaube war, auch ohne Gefühl: ein Gebet, eine Freundlichkeit, ein Verzicht, an den ich mich gehalten habe.\nIch danke Dir für die Kirche, die glaubt, wenn ich müde bin, und für alle, die heute für mich gebetet haben, ohne dass ich es weiss.\nWo ich heute mehr gegrübelt als gelebt habe, vergib mir. Ich lasse es bei Dir.\nDu hältst mich, auch wenn ich Dich nicht halte. Das ist der ganze Unterschied.\nSchenke mir eine ruhige Nacht und morgen etwas mehr Licht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und zuversichtlich erwachen. Amen."
+  },
+  {
+    "id": "verstorbene-morgen-gewoehnlich-01",
+    "kategorie": "verstorbene",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Ich bin die Auferstehung und das Leben.",
+    "stelle": "Johannes 11,25",
+    "text": "Herr, ich beginne diesen Tag und denke an die, die vor mir gegangen sind.\nIch danke Dir für ihr Leben — für alles, was sie mir gegeben haben, für das, was ich von ihnen gelernt habe, für die Spuren, die sie in mir hinterlassen haben.\nGib ihren Seelen Ruhe an einem Ort des Lichts, wo kein Schmerz mehr ist. Ewiges Gedenken sei ihnen geschenkt.\nIch danke Dir dafür, dass die Liebe nicht endet und dass wir in Deiner Hand miteinander verbunden bleiben.\nLass mich heute so leben, dass es sie freuen würde.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für sie und für uns. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, bei Dir leben sie. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "verstorbene-morgen-gewoehnlich-02",
+    "kategorie": "verstorbene",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Wir wollen nicht trauern wie die anderen, die keine Hoffnung haben.",
+    "stelle": "1. Thessalonicher 4,13",
+    "text": "Herr, ich beginne diesen Tag und denke an die, die mir vorausgegangen sind.\nIch danke Dir für die Hoffnung, in der wir sie beweinen dürfen — nicht als Verlorene, sondern als Vorausgegangene.\nGib ihren Seelen Ruhe an einem Ort des Lichts. Ewiges Gedenken sei ihnen geschenkt.\nIch danke Dir dafür, dass ich für sie beten darf und dass diese Bitte sie erreicht, auch wenn ich nicht verstehe, wie.\nLass mich heute so leben, dass ich mich auf das Wiedersehen freuen kann.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für sie und für uns. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, bei Dir sind sie geborgen. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "verstorbene-morgen-gewoehnlich-03",
+    "kategorie": "verstorbene",
+    "tageszeit": "morgen",
+    "faerbung": "gewoehnlich",
+    "vers": "Selig, den Du erwählst und zu Dir nahen lässt.",
+    "stelle": "Psalm 64,5",
+    "text": "Herr, ich beginne diesen Tag und denke an alle, die vor mir gegangen sind.\nIch danke Dir für die, die ich gekannt habe, und ich bitte Dich auch für die, an die niemand mehr denkt — für die Vergessenen, die Namenlosen, die ohne Gebet gestorben sind.\nGib ihren Seelen Ruhe an einem Ort des Lichts. Ewiges Gedenken sei ihnen geschenkt.\nIch danke Dir dafür, dass auch mein Leben ein Mass hat. Lass mich das nicht verdrängen, sondern in Frieden damit leben.\nSchenke mir, diesen Tag so zu füllen, dass er zählt.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für sie und für uns. Heiliger Schutzengel, geh diesen Tag mit mir.\nHerr Jesus Christus, unser Gott, bei Dir lebt alles. Ich danke Dir dafür. Amen."
+  },
+  {
+    "id": "verstorbene-mittag-gewoehnlich-01",
+    "kategorie": "verstorbene",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Kehre zurück, meine Seele, zu deiner Ruhe.",
+    "stelle": "Psalm 114,7",
+    "text": "Herr, mitten am Tag denke ich an sie.\nIch danke Dir für alles, was sie mir gegeben haben.\nGib ihren Seelen Ruhe und ewiges Gedenken.\nSchenke mir ein dankbares Herz.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "verstorbene-mittag-gewoehnlich-02",
+    "kategorie": "verstorbene",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Der Herr ist nahe denen, die zerbrochenen Herzens sind.",
+    "stelle": "Psalm 33,19",
+    "text": "Herr, mitten am Tag denke ich an sie.\nIch danke Dir für jedes Jahr, das ich mit ihnen hatte.\nGib ihren Seelen Ruhe und ewiges Gedenken.\nTröste alle, die heute trauern.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "verstorbene-mittag-gewoehnlich-03",
+    "kategorie": "verstorbene",
+    "tageszeit": "mittag",
+    "faerbung": "gewoehnlich",
+    "vers": "Aus der Tiefe rufe ich zu Dir, Herr.",
+    "stelle": "Psalm 129,1",
+    "text": "Herr, mitten am Tag denke ich an sie.\nIch danke Dir für alles, was sie mir gegeben haben.\nGib ihren Seelen Ruhe und ewiges Gedenken.\nDenke auch an die, für die niemand mehr betet.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHerr Jesus Christus, Sohn Gottes, ich danke Dir."
+  },
+  {
+    "id": "verstorbene-abend-gewoehnlich-01",
+    "kategorie": "verstorbene",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Kostbar ist in den Augen des Herrn der Tod seiner Frommen.",
+    "stelle": "Psalm 115,6",
+    "text": "Herr, der Tag ist zu Ende, und ich denke an die, die ich liebe und die nicht mehr hier sind.\nIch danke Dir für jedes Jahr, das ich mit ihnen hatte. Für ihre Stimmen, die ich noch im Ohr habe. Für ihre Hände, ihre Gewohnheiten, ihre Art zu lachen.\nIch danke Dir für alles, was sie mir mitgegeben haben und was in mir weiterlebt, ohne dass ich es täglich bemerke.\nGib ihren Seelen Ruhe an einem Ort des Lichts, an einem Ort der Erquickung, wo kein Leid mehr ist und kein Seufzen. Ewiges Gedenken sei ihnen geschenkt.\nWo ich ihnen etwas schuldig geblieben bin, vergib mir. Ich lasse es bei Dir.\nBei Dir ist niemand verloren. Was Du zusammengefügt hast, trennt auch der Tod nicht.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für sie und für uns. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und in Hoffnung erwachen. Amen."
+  },
+  {
+    "id": "verstorbene-abend-gewoehnlich-02",
+    "kategorie": "verstorbene",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Er wird abwischen alle Tränen von ihren Augen.",
+    "stelle": "Offenbarung 21,4",
+    "text": "Herr, der Tag ist zu Ende, und ich denke an die, die nicht mehr hier sind.\nIch danke Dir für alles, was sie mir mitgegeben haben: eine Redewendung, die ich benutze, ohne es zu merken, eine Art, Dinge anzupacken, ein Lied, das mir einfällt.\nIch danke Dir dafür, dass die Trennung nicht das letzte Wort hat — dass wir uns wiedersehen und dass die Liebe die Zeit überdauert.\nGib ihren Seelen Ruhe an einem Ort des Lichts, an einem Ort der Erquickung, wo kein Leid mehr ist und kein Seufzen. Ewiges Gedenken sei ihnen geschenkt.\nWo ich ihnen etwas schuldig geblieben bin, vergib mir. Ich lasse es bei Dir.\nSchenke mir eine ruhige Nacht und die Hoffnung, mit der ich morgen aufstehen kann.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für sie und für uns. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und in Hoffnung erwachen. Amen."
+  },
+  {
+    "id": "verstorbene-abend-gewoehnlich-03",
+    "kategorie": "verstorbene",
+    "tageszeit": "abend",
+    "faerbung": "gewoehnlich",
+    "vers": "Er ist vom Tod zum Leben hinübergegangen.",
+    "stelle": "Johannes 5,24",
+    "text": "Herr, der Tag ist zu Ende, und ich denke an die Entschlafenen.\nIch danke Dir für ihr Leben, für alles, was sie gearbeitet, geliebt und ertragen haben, und für das, was sie mir hinterlassen haben.\nIch bitte Dich für alle, die heute gestorben sind, und für alle, die heute jemanden verloren haben. Tröste sie in dieser Nacht.\nGib ihren Seelen Ruhe an einem Ort des Lichts, an einem Ort der Erquickung, wo kein Leid mehr ist und kein Seufzen. Ewiges Gedenken sei ihnen geschenkt.\nWo ich ihnen etwas schuldig geblieben bin, vergib mir. Ich lasse es bei Dir.\nLehre mich, meine Tage zu zählen, ohne mich zu fürchten. Bei Dir ist niemand verloren.\nBesonders bringe ich Dir vor Augen: {{anliegen}}.\nHeilige Gottesgebärerin, bitte für sie und für uns. Heiliger Schutzengel, wache über meinen Schlaf.\nHerr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und in Hoffnung erwachen. Amen."
   }
 ]
