@@ -201,4 +201,9 @@ export interface Heiligentag {
   fest?: string;
   /** Kennung eines Moduls, das an diesem Tag greift. */
   modulId?: string;
+  /**
+   * Strenger Fastentag unabhängig vom Wochentag, etwa Kreuzerhöhung oder die
+   * Enthauptung Johannes' des Täufers (siehe `docs/7_Liturgische_Module.md`).
+   */
+  strengerFastentag?: boolean;
 }
