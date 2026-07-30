@@ -103,3 +103,24 @@ describe('istFastentag', () => {
     expect(istFastentag(tag(2026, 8, 20))).toBe(true) // Marienfasten
   })
 })
+
+describe('Weihnachtsfasten — 13-Tage-Verschiebung an den Grenzen', () => {
+  // Julianisch 15. November – 24. Dezember entspricht gregorianisch
+  // 28. November – 6. Januar. Die Wochentage sind bewusst so gewählt, dass
+  // nicht die Mittwochs-/Freitagsregel das Ergebnis erklärt, sondern das Fasten.
+
+  it('beginnt am 28. November (gregorianisch)', () => {
+    expect(tag(2026, 11, 28).getUTCDay()).toBe(6) // Samstag, sonst kein Fastentag
+    expect(istFastentag(tag(2026, 11, 28))).toBe(true)
+  })
+
+  it('schliesst den 6. Januar noch ein', () => {
+    expect(tag(2026, 1, 6).getUTCDay()).toBe(2) // Dienstag, sonst kein Fastentag
+    expect(istFastentag(tag(2026, 1, 6))).toBe(true)
+  })
+
+  it('endet mit dem 6. Januar — der 7. gehört nicht mehr dazu', () => {
+    expect(tag(2026, 1, 7).getUTCDay()).toBe(3) // Mittwoch, trotzdem kein Fastentag
+    expect(istFastentag(tag(2026, 1, 7))).toBe(false) // Geburt Christi, dazu Swjatki
+  })
+})
