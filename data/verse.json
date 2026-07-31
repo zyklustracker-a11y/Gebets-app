@@ -1,0 +1,2624 @@
+[
+  {
+    "id": "angst-01",
+    "text": "Der Herr ist mein Licht und mein Heil — vor wem sollte ich mich fürchten?",
+    "stelle": "Psalm 26,1",
+    "stelleMasoretisch": "Psalm 27,1",
+    "kategorien": [
+      "angst",
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-02",
+    "text": "Leg deine Last auf den Herrn, und Er wird für dich sorgen.",
+    "stelle": "Psalm 54,23",
+    "stelleMasoretisch": "Psalm 55,23",
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-03",
+    "text": "Wer im Schutz des Höchsten wohnt, ruht im Schatten des Allmächtigen.",
+    "stelle": "Psalm 90,1",
+    "stelleMasoretisch": "Psalm 91,1",
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-04",
+    "text": "An dem Tag, da ich mich fürchte, vertraue ich auf Dich.",
+    "stelle": "Psalm 55,4",
+    "stelleMasoretisch": "Psalm 56,4",
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-05",
+    "text": "Er schlummert nicht und schläft nicht, der über dich wacht.",
+    "stelle": "Psalm 120,4",
+    "stelleMasoretisch": "Psalm 121,4",
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-06",
+    "text": "Gott ist unsere Zuflucht und Stärke, eine Hilfe in Nöten, gut bewährt.",
+    "stelle": "Psalm 45,2",
+    "stelleMasoretisch": "Psalm 46,2",
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-07",
+    "text": "Wenn ich den Himmel sehe — was ist der Mensch, dass Du an ihn denkst?",
+    "stelle": "Psalm 8,4–5",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "angst",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-08",
+    "text": "In Deine Hände lege ich meinen Geist.",
+    "stelle": "Psalm 30,6",
+    "stelleMasoretisch": "Psalm 31,6",
+    "kategorien": [
+      "angst",
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-09",
+    "text": "Sorgt euch nicht um morgen; jeder Tag hat genug an seiner Mühe.",
+    "stelle": "Matthäus 6,34",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "angst",
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-10",
+    "text": "Werft alle eure Sorge auf Ihn, denn Er sorgt für euch.",
+    "stelle": "1. Petrus 5,7",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-11",
+    "text": "Und ob ich wanderte im finsteren Tal — Du bist bei mir.",
+    "stelle": "Psalm 22,4",
+    "stelleMasoretisch": "Psalm 23,4",
+    "kategorien": [
+      "angst",
+      "verstorbene",
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-12",
+    "text": "Ich legte mich nieder und schlief; ich erwachte, denn der Herr hält mich.",
+    "stelle": "Psalm 3,6",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "angst",
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-13",
+    "text": "In Frieden will ich mich niederlegen und schlafen.",
+    "stelle": "Psalm 4,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-14",
+    "text": "Nähme ich Flügel der Morgenröte — auch dort würde Deine Hand mich führen.",
+    "stelle": "Psalm 138,9–10",
+    "stelleMasoretisch": "Psalm 139,9–10",
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-15",
+    "text": "Meinen Frieden gebe ich euch.",
+    "stelle": "Johannes 14,27",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-16",
+    "text": "Nur bei Gott kommt meine Seele zur Ruhe.",
+    "stelle": "Psalm 61,2",
+    "stelleMasoretisch": "Psalm 62,2",
+    "kategorien": [
+      "angst",
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-17",
+    "text": "Ich suchte den Herrn, und Er erhörte mich.",
+    "stelle": "Psalm 33,5",
+    "stelleMasoretisch": "Psalm 34,5",
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "angst-18",
+    "text": "Fürchte dich nicht, ich bin mit dir.",
+    "stelle": "Jesaja 41,10",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-01",
+    "text": "Lass das Werk unserer Hände gedeihen.",
+    "stelle": "Psalm 89,17",
+    "stelleMasoretisch": "Psalm 90,17",
+    "kategorien": [
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-02",
+    "text": "Wenn der Herr das Haus nicht baut, mühen sich die Bauleute vergeblich.",
+    "stelle": "Psalm 126,1",
+    "stelleMasoretisch": "Psalm 127,1",
+    "kategorien": [
+      "arbeit",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-03",
+    "text": "Der Mensch geht hinaus an sein Werk und an seine Arbeit bis zum Abend.",
+    "stelle": "Psalm 103,23",
+    "stelleMasoretisch": "Psalm 104,23",
+    "kategorien": [
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-04",
+    "text": "Lehre uns, unsere Tage zu zählen, damit wir ein weises Herz gewinnen.",
+    "stelle": "Psalm 89,12",
+    "stelleMasoretisch": "Psalm 90,12",
+    "kategorien": [
+      "arbeit",
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-05",
+    "text": "Was ihr tut, das tut von Herzen, als für den Herrn.",
+    "stelle": "Kolosser 3,23",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-06",
+    "text": "Wie die Augen der Knechte auf die Hand ihres Herrn.",
+    "stelle": "Psalm 122,2",
+    "stelleMasoretisch": "Psalm 123,2",
+    "kategorien": [
+      "arbeit",
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-07",
+    "text": "Kommt zu mir, die ihr mühselig und beladen seid.",
+    "stelle": "Matthäus 11,28",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "arbeit",
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-08",
+    "text": "Kommt mit an einen stillen Ort und ruht ein wenig.",
+    "stelle": "Markus 6,31",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "arbeit",
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-09",
+    "text": "Du wirst dich nähren von der Arbeit deiner Hände.",
+    "stelle": "Psalm 127,2",
+    "stelleMasoretisch": "Psalm 128,2",
+    "kategorien": [
+      "arbeit",
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-10",
+    "text": "Alles hat seine Zeit.",
+    "stelle": "Prediger 3,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "arbeit",
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-11",
+    "text": "Befiehl dem Herrn deinen Weg und vertraue auf Ihn.",
+    "stelle": "Psalm 36,5",
+    "stelleMasoretisch": "Psalm 37,5",
+    "kategorien": [
+      "arbeit",
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-12",
+    "text": "Eure Arbeit ist nicht vergeblich.",
+    "stelle": "1. Korinther 15,58",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "arbeit",
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-13",
+    "text": "Befiehl dem Herrn deine Werke, so wird gelingen, was du planst.",
+    "stelle": "Sprüche 16,3",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "arbeit",
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-14",
+    "text": "In Deiner Hand sind meine Zeiten.",
+    "stelle": "Psalm 30,16",
+    "stelleMasoretisch": "Psalm 31,16",
+    "kategorien": [
+      "arbeit",
+      "gesundheit",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "arb-15",
+    "text": "Gut steht es um den, der gütig ist und gerne gibt.",
+    "stelle": "Psalm 111,5",
+    "stelleMasoretisch": "Psalm 112,5",
+    "kategorien": [
+      "arbeit",
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-01",
+    "text": "Es ist gut, dem Herrn zu danken.",
+    "stelle": "Psalm 91,2",
+    "stelleMasoretisch": "Psalm 92,2",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-02",
+    "text": "Danket dem Herrn, denn Er ist gütig; Seine Barmherzigkeit währt ewig.",
+    "stelle": "Psalm 106,1",
+    "stelleMasoretisch": "Psalm 107,1",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-03",
+    "text": "Ich will den Herrn preisen zu jeder Zeit.",
+    "stelle": "Psalm 33,2",
+    "stelleMasoretisch": "Psalm 34,2",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-04",
+    "text": "Ich danke Dir, Herr, von ganzem Herzen.",
+    "stelle": "Psalm 137,1",
+    "stelleMasoretisch": "Psalm 138,1",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-05",
+    "text": "Vergiss nicht, was Er dir Gutes getan hat.",
+    "stelle": "Psalm 102,2",
+    "stelleMasoretisch": "Psalm 103,2",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-06",
+    "text": "Am Morgen Deine Barmherzigkeit verkünden, in den Nächten Deine Treue.",
+    "stelle": "Psalm 91,3",
+    "stelleMasoretisch": "Psalm 92,3",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-07",
+    "text": "Dies ist der Tag, den der Herr gemacht hat.",
+    "stelle": "Psalm 117,24",
+    "stelleMasoretisch": "Psalm 118,24",
+    "kategorien": [
+      "dankbarkeit",
+      "ostern"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-08",
+    "text": "Du krönst das Jahr mit Deiner Güte.",
+    "stelle": "Psalm 64,12",
+    "stelleMasoretisch": "Psalm 65,12",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-09",
+    "text": "Gütig ist der Herr gegen alle, und Sein Erbarmen über all Seinen Werken.",
+    "stelle": "Psalm 144,9",
+    "stelleMasoretisch": "Psalm 145,9",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-10",
+    "text": "Wie zahlreich sind Deine Werke, Herr; alle hast Du mit Weisheit gemacht.",
+    "stelle": "Psalm 103,24",
+    "stelleMasoretisch": "Psalm 104,24",
+    "kategorien": [
+      "dankbarkeit",
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-11",
+    "text": "Kommt zu Seinen Toren mit Dank.",
+    "stelle": "Psalm 99,4",
+    "stelleMasoretisch": "Psalm 100,4",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-12",
+    "text": "Sie sollen dem Herrn danken für Seine Güte.",
+    "stelle": "Psalm 106,8",
+    "stelleMasoretisch": "Psalm 107,8",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-13",
+    "text": "Dankt in allem.",
+    "stelle": "1. Thessalonicher 5,18",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-14",
+    "text": "Jede gute Gabe kommt von oben.",
+    "stelle": "Jakobus 1,17",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "dankbarkeit",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dank-15",
+    "text": "Jauchzt Gott, alle Lande.",
+    "stelle": "Psalm 65,1",
+    "stelleMasoretisch": "Psalm 66,1",
+    "kategorien": [
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-01",
+    "text": "Herr, mein Herz ist nicht hochmütig, und meine Augen sind nicht stolz.",
+    "stelle": "Psalm 130,1",
+    "stelleMasoretisch": "Psalm 131,1",
+    "kategorien": [
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-02",
+    "text": "Wie ein gestilltes Kind bei seiner Mutter.",
+    "stelle": "Psalm 130,2",
+    "stelleMasoretisch": "Psalm 131,2",
+    "kategorien": [
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-03",
+    "text": "Lernt von mir, denn ich bin sanftmütig und von Herzen demütig.",
+    "stelle": "Matthäus 11,29",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-04",
+    "text": "Den Demütigen gibt Gott Gnade.",
+    "stelle": "Jakobus 4,6",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-05",
+    "text": "Er hat auf die Niedrigkeit Seiner Magd geschaut.",
+    "stelle": "Lukas 1,48",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut",
+      "gottesgebaererin"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-06",
+    "text": "Achtet einer den andern höher als sich selbst.",
+    "stelle": "Philipper 2,3",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut",
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-07",
+    "text": "Er leitet die Demütigen im Recht und lehrt sie Seinen Weg.",
+    "stelle": "Psalm 24,9",
+    "stelleMasoretisch": "Psalm 25,9",
+    "kategorien": [
+      "demut",
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-08",
+    "text": "Der Herr sieht tief herab auf Himmel und Erde.",
+    "stelle": "Psalm 112,6",
+    "stelleMasoretisch": "Psalm 113,6",
+    "kategorien": [
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-09",
+    "text": "Wer sich selbst erniedrigt, wird erhöht werden.",
+    "stelle": "Lukas 14,11",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-10",
+    "text": "Was ist der Mensch, dass Du an ihn denkst?",
+    "stelle": "Psalm 8,5",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-11",
+    "text": "Kleidet euch alle mit Demut.",
+    "stelle": "1. Petrus 5,5",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-12",
+    "text": "Komm zur Ruhe, meine Seele, denn der Herr hat dir Gutes getan.",
+    "stelle": "Psalm 114,7",
+    "stelleMasoretisch": "Psalm 116,7",
+    "kategorien": [
+      "demut",
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "dem-13",
+    "text": "Meine Kraft ist in den Schwachen mächtig.",
+    "stelle": "2. Korinther 12,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "demut",
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-01",
+    "text": "Wohl dem, der den Herrn fürchtet und auf Seinen Wegen geht.",
+    "stelle": "Psalm 127,1",
+    "stelleMasoretisch": "Psalm 128,1",
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-02",
+    "text": "Grosse Wasser können die Liebe nicht auslöschen.",
+    "stelle": "Hoheslied 8,7",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-03",
+    "text": "Lege mich wie ein Siegel auf dein Herz.",
+    "stelle": "Hoheslied 8,6",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-04",
+    "text": "Die Liebe ist langmütig und freundlich.",
+    "stelle": "1. Korinther 13,4",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe",
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-05",
+    "text": "Sie erträgt alles, glaubt alles, hofft alles.",
+    "stelle": "1. Korinther 13,7",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-06",
+    "text": "Die Liebe hört niemals auf.",
+    "stelle": "1. Korinther 13,8",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe",
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-07",
+    "text": "Über alles aber zieht die Liebe an; sie ist das Band der Vollkommenheit.",
+    "stelle": "Kolosser 3,14",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-08",
+    "text": "Vor allem habt beständige Liebe zueinander.",
+    "stelle": "1. Petrus 4,8",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe",
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-09",
+    "text": "Güte und Treue begegnen einander.",
+    "stelle": "Psalm 84,11",
+    "stelleMasoretisch": "Psalm 85,11",
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-10",
+    "text": "Liebt einander, wie Christus die Kirche geliebt hat.",
+    "stelle": "Epheser 5,25",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-11",
+    "text": "Zwei sind besser als einer.",
+    "stelle": "Prediger 4,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-12",
+    "text": "So wird der Mensch gesegnet, der den Herrn fürchtet.",
+    "stelle": "Psalm 127,4",
+    "stelleMasoretisch": "Psalm 128,4",
+    "kategorien": [
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ehe-13",
+    "text": "Wie ein fruchtbarer Weinstock im Innern deines Hauses.",
+    "stelle": "Psalm 127,3",
+    "stelleMasoretisch": "Psalm 128,3",
+    "kategorien": [
+      "ehe",
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-01",
+    "text": "Zeige mir, Herr, Deine Wege und lehre mich Deine Pfade.",
+    "stelle": "Psalm 24,4",
+    "stelleMasoretisch": "Psalm 25,4",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-02",
+    "text": "Leite mich in Deiner Wahrheit und lehre mich.",
+    "stelle": "Psalm 24,5",
+    "stelleMasoretisch": "Psalm 25,5",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-03",
+    "text": "Dein Wort ist meinem Fuss eine Leuchte und ein Licht auf meinem Weg.",
+    "stelle": "Psalm 118,105",
+    "stelleMasoretisch": "Psalm 119,105",
+    "kategorien": [
+      "entscheidungen",
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-04",
+    "text": "Befiehl dem Herrn deinen Weg; Er wird es vollbringen.",
+    "stelle": "Psalm 36,5",
+    "stelleMasoretisch": "Psalm 37,5",
+    "kategorien": [
+      "entscheidungen",
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-05",
+    "text": "Vom Herrn werden die Schritte des Menschen gefestigt.",
+    "stelle": "Psalm 36,23",
+    "stelleMasoretisch": "Psalm 37,23",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-06",
+    "text": "Ich preise den Herrn, der mich beraten hat.",
+    "stelle": "Psalm 15,7",
+    "stelleMasoretisch": "Psalm 16,7",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-07",
+    "text": "Lehre mich tun, was Dir wohlgefällt, denn Du bist mein Gott.",
+    "stelle": "Psalm 142,10",
+    "stelleMasoretisch": "Psalm 143,10",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-08",
+    "text": "Vertraue auf den Herrn von ganzem Herzen, und Er wird deine Pfade ebnen.",
+    "stelle": "Sprüche 3,5–6",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-09",
+    "text": "Wem es an Weisheit fehlt, der bitte Gott, der gerne gibt.",
+    "stelle": "Jakobus 1,5",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "entscheidungen",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-10",
+    "text": "Ich will dich unterweisen und dir den Weg zeigen, den du gehen sollst.",
+    "stelle": "Psalm 31,8",
+    "stelleMasoretisch": "Psalm 32,8",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-11",
+    "text": "Leite mich auf ewigem Weg.",
+    "stelle": "Psalm 138,24",
+    "stelleMasoretisch": "Psalm 139,24",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-12",
+    "text": "Er leitet die Demütigen im Recht und lehrt sie Seinen Weg.",
+    "stelle": "Psalm 24,9",
+    "stelleMasoretisch": "Psalm 25,9",
+    "kategorien": [
+      "entscheidungen",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-13",
+    "text": "Er führt mich auf rechter Strasse.",
+    "stelle": "Psalm 22,3",
+    "stelleMasoretisch": "Psalm 23,3",
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-14",
+    "text": "Der Mensch plant seinen Weg, der Herr lenkt seinen Schritt.",
+    "stelle": "Sprüche 16,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "entscheidungen",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ent-15",
+    "text": "Ebne vor mir Deinen Weg.",
+    "stelle": "Psalm 5,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-01",
+    "text": "Wie gut und wie schön, wenn Brüder beieinander wohnen.",
+    "stelle": "Psalm 132,1",
+    "stelleMasoretisch": "Psalm 133,1",
+    "kategorien": [
+      "familie",
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-02",
+    "text": "Kinder sind eine Gabe des Herrn.",
+    "stelle": "Psalm 126,3",
+    "stelleMasoretisch": "Psalm 127,3",
+    "kategorien": [
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-03",
+    "text": "Wie ein fruchtbarer Weinstock im Innern deines Hauses.",
+    "stelle": "Psalm 127,3",
+    "stelleMasoretisch": "Psalm 128,3",
+    "kategorien": [
+      "familie",
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-04",
+    "text": "Der Herr segne dich, und du siehst deine Kindeskinder.",
+    "stelle": "Psalm 127,5–6",
+    "stelleMasoretisch": "Psalm 128,5–6",
+    "kategorien": [
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-05",
+    "text": "Gott gibt den Vereinsamten ein Zuhause.",
+    "stelle": "Psalm 67,7",
+    "stelleMasoretisch": "Psalm 68,7",
+    "kategorien": [
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-06",
+    "text": "Ich will wandeln mit lauterem Herzen in meinem Hause.",
+    "stelle": "Psalm 100,2",
+    "stelleMasoretisch": "Psalm 101,2",
+    "kategorien": [
+      "familie",
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-07",
+    "text": "Der Herr behüte deinen Ausgang und deinen Eingang.",
+    "stelle": "Psalm 120,8",
+    "stelleMasoretisch": "Psalm 121,8",
+    "kategorien": [
+      "familie",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-08",
+    "text": "Er hat Seinen Engeln befohlen, dich zu behüten auf all deinen Wegen.",
+    "stelle": "Psalm 90,11",
+    "stelleMasoretisch": "Psalm 91,11",
+    "kategorien": [
+      "familie",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-09",
+    "text": "Seid einander zugetan in herzlicher Liebe.",
+    "stelle": "Römer 12,10",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "familie",
+      "ehe"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-10",
+    "text": "Seine Gerechtigkeit reicht bis zu Kindeskindern.",
+    "stelle": "Psalm 102,17",
+    "stelleMasoretisch": "Psalm 103,17",
+    "kategorien": [
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-11",
+    "text": "Seid gütig zueinander und vergebt einander.",
+    "stelle": "Epheser 4,32",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "familie",
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-12",
+    "text": "Das Auge des Herrn ruht auf denen, die Ihn fürchten.",
+    "stelle": "Psalm 32,18",
+    "stelleMasoretisch": "Psalm 33,18",
+    "kategorien": [
+      "familie",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-13",
+    "text": "Ich und mein Haus, wir wollen dem Herrn dienen.",
+    "stelle": "Josua 24,15",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-14",
+    "text": "Ein Geschlecht rühmt dem andern Deine Werke.",
+    "stelle": "Psalm 144,4",
+    "stelleMasoretisch": "Psalm 145,4",
+    "kategorien": [
+      "familie",
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fam-15",
+    "text": "Sein Geschlecht wird gesegnet sein.",
+    "stelle": "Psalm 111,2",
+    "stelleMasoretisch": "Psalm 112,2",
+    "kategorien": [
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-01",
+    "text": "Der Herr ist mein Hirt, mir wird nichts fehlen.",
+    "stelle": "Psalm 22,1",
+    "stelleMasoretisch": "Psalm 23,1",
+    "kategorien": [
+      "finanzen",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-02",
+    "text": "Seht die Vögel des Himmels — euer himmlischer Vater ernährt sie.",
+    "stelle": "Matthäus 6,26",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "finanzen",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-03",
+    "text": "Wo dein Schatz ist, da ist auch dein Herz.",
+    "stelle": "Matthäus 6,21",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "finanzen",
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-04",
+    "text": "Gib mir weder Armut noch Reichtum; lass mich mein Teil Brot essen.",
+    "stelle": "Sprüche 30,8",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-05",
+    "text": "Du öffnest Deine Hand und sättigst alles, was lebt.",
+    "stelle": "Psalm 144,16",
+    "stelleMasoretisch": "Psalm 145,16",
+    "kategorien": [
+      "finanzen",
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-06",
+    "text": "Die den Herrn suchen, haben an nichts Mangel.",
+    "stelle": "Psalm 33,11",
+    "stelleMasoretisch": "Psalm 34,11",
+    "kategorien": [
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-07",
+    "text": "Ich war jung und bin alt geworden und sah nie den Gerechten verlassen.",
+    "stelle": "Psalm 36,25",
+    "stelleMasoretisch": "Psalm 37,25",
+    "kategorien": [
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-08",
+    "text": "Wenn der Reichtum wächst, hängt euer Herz nicht daran.",
+    "stelle": "Psalm 61,11",
+    "stelleMasoretisch": "Psalm 62,11",
+    "kategorien": [
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-09",
+    "text": "Gut steht es um den, der gütig ist und gerne gibt.",
+    "stelle": "Psalm 111,5",
+    "stelleMasoretisch": "Psalm 112,5",
+    "kategorien": [
+      "finanzen",
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-10",
+    "text": "Gottesfurcht mit Genügsamkeit ist grosser Gewinn.",
+    "stelle": "1. Timotheus 6,6",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "finanzen",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-11",
+    "text": "Unser tägliches Brot gib uns heute.",
+    "stelle": "Matthäus 6,11",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-12",
+    "text": "Seid zufrieden mit dem, was da ist.",
+    "stelle": "Hebräer 13,5",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "finanzen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "fin-13",
+    "text": "Du wirst dich nähren von der Arbeit deiner Hände.",
+    "stelle": "Psalm 127,2",
+    "stelleMasoretisch": "Psalm 128,2",
+    "kategorien": [
+      "finanzen",
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-01",
+    "text": "Ich hoffte auf den Herrn, und Er neigte sich zu mir.",
+    "stelle": "Psalm 39,2",
+    "stelleMasoretisch": "Psalm 40,2",
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-02",
+    "text": "Sei still vor dem Herrn und harre auf Ihn.",
+    "stelle": "Psalm 36,7",
+    "stelleMasoretisch": "Psalm 37,7",
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-03",
+    "text": "Harre auf den Herrn, sei stark, und dein Herz fasse Mut.",
+    "stelle": "Psalm 26,14",
+    "stelleMasoretisch": "Psalm 27,14",
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-04",
+    "text": "Meine Seele wartet auf den Herrn mehr als die Wächter auf den Morgen.",
+    "stelle": "Psalm 129,6",
+    "stelleMasoretisch": "Psalm 130,6",
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-05",
+    "text": "Sie werden noch im Alter Frucht bringen.",
+    "stelle": "Psalm 91,15",
+    "stelleMasoretisch": "Psalm 92,15",
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-06",
+    "text": "Der Bauer wartet geduldig auf die kostbare Frucht der Erde.",
+    "stelle": "Jakobus 5,7",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-07",
+    "text": "Durch eure Standhaftigkeit werdet ihr euer Leben gewinnen.",
+    "stelle": "Lukas 21,19",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-08",
+    "text": "Ihr braucht Standhaftigkeit, damit ihr empfangt, was verheissen ist.",
+    "stelle": "Hebräer 10,36",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-09",
+    "text": "Unsere Seele harrt auf den Herrn; Er ist unsere Hilfe.",
+    "stelle": "Psalm 32,20",
+    "stelleMasoretisch": "Psalm 33,20",
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-10",
+    "text": "Seid geduldig in Bedrängnis, beharrlich im Gebet.",
+    "stelle": "Römer 12,12",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-11",
+    "text": "Ich glaube, das Gute des Herrn zu sehen im Land der Lebenden.",
+    "stelle": "Psalm 26,13",
+    "stelleMasoretisch": "Psalm 27,13",
+    "kategorien": [
+      "geduld",
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-12",
+    "text": "Lasst uns nicht müde werden, Gutes zu tun.",
+    "stelle": "Galater 6,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-13",
+    "text": "Alles hat seine Zeit.",
+    "stelle": "Prediger 3,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "geduld",
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ged-14",
+    "text": "Wer geduldig ist, ist besser als ein Held.",
+    "stelle": "Sprüche 16,32",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "geduld",
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-01",
+    "text": "Lobe den Herrn, meine Seele — Er heilt alle deine Gebrechen.",
+    "stelle": "Psalm 102,2–3",
+    "stelleMasoretisch": "Psalm 103,2–3",
+    "kategorien": [
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-02",
+    "text": "Bei Dir ist die Quelle des Lebens.",
+    "stelle": "Psalm 35,10",
+    "stelleMasoretisch": "Psalm 36,10",
+    "kategorien": [
+      "gesundheit",
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-03",
+    "text": "Den Seinen gibt Er es im Schlaf.",
+    "stelle": "Psalm 126,2",
+    "stelleMasoretisch": "Psalm 127,2",
+    "kategorien": [
+      "gesundheit",
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-04",
+    "text": "Die auf den Herrn hoffen, bekommen neue Kraft.",
+    "stelle": "Jesaja 40,31",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "gesundheit",
+      "geduld"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-05",
+    "text": "Ehre den Arzt, denn der Herr hat ihn geschaffen.",
+    "stelle": "Jesus Sirach 38,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-06",
+    "text": "Der Herr richtet auf, die niedergebeugt sind.",
+    "stelle": "Psalm 145,8",
+    "stelleMasoretisch": "Psalm 146,8",
+    "kategorien": [
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-07",
+    "text": "Meine Hilfe kommt vom Herrn, der Himmel und Erde gemacht hat.",
+    "stelle": "Psalm 120,2",
+    "stelleMasoretisch": "Psalm 121,2",
+    "kategorien": [
+      "gesundheit",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-08",
+    "text": "Gott ist der Fels meines Herzens und mein Teil auf ewig.",
+    "stelle": "Psalm 72,26",
+    "stelleMasoretisch": "Psalm 73,26",
+    "kategorien": [
+      "gesundheit",
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-09",
+    "text": "Dein Glaube hat dir geholfen; geh hin in Frieden.",
+    "stelle": "Markus 5,34",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "gesundheit",
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-10",
+    "text": "Der Herr stärkt ihn auf seinem Krankenlager.",
+    "stelle": "Psalm 40,4",
+    "stelleMasoretisch": "Psalm 41,4",
+    "kategorien": [
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-11",
+    "text": "Das Gebet des Glaubens wird dem Kranken helfen.",
+    "stelle": "Jakobus 5,15",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-12",
+    "text": "Er sättigt dein Verlangen mit Gutem.",
+    "stelle": "Psalm 102,5",
+    "stelleMasoretisch": "Psalm 103,5",
+    "kategorien": [
+      "gesundheit",
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-13",
+    "text": "Heile mich, Herr, dann bin ich heil.",
+    "stelle": "Jeremia 17,14",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-14",
+    "text": "Meine Kraft ist in den Schwachen mächtig.",
+    "stelle": "2. Korinther 12,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "gesundheit",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "ges-15",
+    "text": "Er gibt dem Müden Kraft.",
+    "stelle": "Jesaja 40,29",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-01",
+    "text": "Kostet und seht, wie gut der Herr ist.",
+    "stelle": "Psalm 33,9",
+    "stelleMasoretisch": "Psalm 34,9",
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-02",
+    "text": "Wie der Hirsch nach Wasserbächen, so verlangt meine Seele nach Dir.",
+    "stelle": "Psalm 41,2",
+    "stelleMasoretisch": "Psalm 42,2",
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-03",
+    "text": "Dein Angesicht, Herr, will ich suchen.",
+    "stelle": "Psalm 26,8",
+    "stelleMasoretisch": "Psalm 27,8",
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-04",
+    "text": "Wenn ich mich schlafen lege, denke ich an Dich.",
+    "stelle": "Psalm 62,7",
+    "stelleMasoretisch": "Psalm 63,7",
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-05",
+    "text": "Auch die Finsternis ist nicht finster vor Dir; die Nacht leuchtet wie der Tag.",
+    "stelle": "Psalm 138,12",
+    "stelleMasoretisch": "Psalm 139,12",
+    "kategorien": [
+      "glaubenszweifel",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-06",
+    "text": "Alles ist möglich dem, der glaubt.",
+    "stelle": "Markus 9,23",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-07",
+    "text": "Ich glaube; hilf meinem Unglauben.",
+    "stelle": "Markus 9,24",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-08",
+    "text": "Herr, zu wem sollten wir gehen? Du hast Worte des ewigen Lebens.",
+    "stelle": "Johannes 6,68",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-09",
+    "text": "Ich bin bei euch alle Tage.",
+    "stelle": "Matthäus 28,20",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "glaubenszweifel",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-10",
+    "text": "Ich bleibe stets bei Dir; Du hältst mich bei meiner rechten Hand.",
+    "stelle": "Psalm 72,23",
+    "stelleMasoretisch": "Psalm 73,23",
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-11",
+    "text": "Glaube ist ein Feststehen in dem, was man hofft.",
+    "stelle": "Hebräer 11,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-12",
+    "text": "Wenn wir untreu sind, bleibt Er treu.",
+    "stelle": "2. Timotheus 2,13",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-13",
+    "text": "Wir sind umgeben von einer grossen Wolke von Zeugen.",
+    "stelle": "Hebräer 12,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "glaubenszweifel",
+      "heilige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "glaub-14",
+    "text": "Dein Wort ist meinem Fuss eine Leuchte.",
+    "stelle": "Psalm 118,105",
+    "stelleMasoretisch": "Psalm 119,105",
+    "kategorien": [
+      "glaubenszweifel",
+      "entscheidungen"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "lit-fast-01",
+    "text": "Kehrt um zu mir mit ganzem Herzen.",
+    "stelle": "Joel 2,12",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "fastenzeit"
+  },
+  {
+    "id": "lit-fast-02",
+    "text": "Erschaffe in mir ein reines Herz, Gott.",
+    "stelle": "Psalm 50,12",
+    "stelleMasoretisch": "Psalm 51,12",
+    "kategorien": [],
+    "liturgisch": "fastenzeit"
+  },
+  {
+    "id": "lit-fast-03",
+    "text": "Brich dem Hungrigen dein Brot.",
+    "stelle": "Jesaja 58,7",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "fastenzeit"
+  },
+  {
+    "id": "lit-fast-04",
+    "text": "Wenn du fastest, salbe dein Haupt und wasche dein Gesicht.",
+    "stelle": "Matthäus 6,17",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "fastenzeit"
+  },
+  {
+    "id": "lit-fast-05",
+    "text": "Sieh meine Mühsal an und vergib mir alles.",
+    "stelle": "Psalm 24,18",
+    "stelleMasoretisch": "Psalm 25,18",
+    "kategorien": [],
+    "liturgisch": "fastenzeit"
+  },
+  {
+    "id": "lit-gott-01",
+    "text": "Mir geschehe nach Deinem Wort.",
+    "stelle": "Lukas 1,38",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "gottesgebaererin"
+  },
+  {
+    "id": "lit-gott-02",
+    "text": "Meine Seele erhebt den Herrn.",
+    "stelle": "Lukas 1,46",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "gottesgebaererin"
+  },
+  {
+    "id": "lit-gott-03",
+    "text": "Alle Geschlechter werden mich seligpreisen.",
+    "stelle": "Lukas 1,48",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "gottesgebaererin"
+  },
+  {
+    "id": "lit-heil-01",
+    "text": "Wir sind umgeben von einer grossen Wolke von Zeugen.",
+    "stelle": "Hebräer 12,1",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "heilige"
+  },
+  {
+    "id": "lit-heil-02",
+    "text": "Die Frommen sollen jubeln in Herrlichkeit.",
+    "stelle": "Psalm 149,5",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "heilige"
+  },
+  {
+    "id": "lit-heil-03",
+    "text": "Sei treu bis in den Tod.",
+    "stelle": "Offenbarung 2,10",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "heilige"
+  },
+  {
+    "id": "lit-him-01",
+    "text": "Dieser Jesus wird so wiederkommen, wie ihr Ihn habt gehen sehen.",
+    "stelle": "Apostelgeschichte 1,11",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "himmelfahrt"
+  },
+  {
+    "id": "lit-him-02",
+    "text": "Gott fährt empor unter Jubel.",
+    "stelle": "Psalm 46,6",
+    "stelleMasoretisch": "Psalm 47,6",
+    "kategorien": [],
+    "liturgisch": "himmelfahrt"
+  },
+  {
+    "id": "lit-kar-01",
+    "text": "Er liebte sie bis ans Ende.",
+    "stelle": "Johannes 13,1",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "karwoche"
+  },
+  {
+    "id": "lit-kar-02",
+    "text": "Er erniedrigte sich und war gehorsam bis zum Tod.",
+    "stelle": "Philipper 2,8",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "karwoche"
+  },
+  {
+    "id": "lit-kar-03",
+    "text": "Er trug unsere Krankheit und lud auf sich unsere Schmerzen.",
+    "stelle": "Jesaja 53,4",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "karwoche"
+  },
+  {
+    "id": "lit-kar-04",
+    "text": "Vater, in Deine Hände lege ich meinen Geist.",
+    "stelle": "Lukas 23,46",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "karwoche"
+  },
+  {
+    "id": "lit-kreuz-01",
+    "text": "Ich will mich allein des Kreuzes rühmen.",
+    "stelle": "Galater 6,14",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "kreuz"
+  },
+  {
+    "id": "lit-kreuz-02",
+    "text": "Das Wort vom Kreuz ist Gottes Kraft.",
+    "stelle": "1. Korinther 1,18",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "kreuz"
+  },
+  {
+    "id": "lit-ost-01",
+    "text": "Dies ist der Tag, den der Herr gemacht hat.",
+    "stelle": "Psalm 117,24",
+    "stelleMasoretisch": "Psalm 118,24",
+    "kategorien": [],
+    "liturgisch": "ostern"
+  },
+  {
+    "id": "lit-ost-02",
+    "text": "Christus ist auferstanden von den Toten.",
+    "stelle": "1. Korinther 15,20",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "ostern"
+  },
+  {
+    "id": "lit-ost-03",
+    "text": "Gott steht auf, und Seine Feinde zerstieben.",
+    "stelle": "Psalm 67,2",
+    "stelleMasoretisch": "Psalm 68,2",
+    "kategorien": [],
+    "liturgisch": "ostern"
+  },
+  {
+    "id": "lit-ost-04",
+    "text": "Der Herr ist wirklich auferstanden.",
+    "stelle": "Lukas 24,34",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "ostern"
+  },
+  {
+    "id": "lit-ost-05",
+    "text": "Tod, wo ist dein Stachel?",
+    "stelle": "1. Korinther 15,55",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "ostern"
+  },
+  {
+    "id": "lit-pfi-01",
+    "text": "Sie wurden alle erfüllt vom Heiligen Geist.",
+    "stelle": "Apostelgeschichte 2,4",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "pfingsten"
+  },
+  {
+    "id": "lit-pfi-02",
+    "text": "Du sendest Deinen Geist aus, und alles wird neu.",
+    "stelle": "Psalm 103,30",
+    "stelleMasoretisch": "Psalm 104,30",
+    "kategorien": [],
+    "liturgisch": "pfingsten"
+  },
+  {
+    "id": "lit-theo-01",
+    "text": "Dieser ist mein geliebter Sohn.",
+    "stelle": "Matthäus 3,17",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "theophanie"
+  },
+  {
+    "id": "lit-theo-02",
+    "text": "Die Stimme des Herrn über den Wassern.",
+    "stelle": "Psalm 28,3",
+    "stelleMasoretisch": "Psalm 29,3",
+    "kategorien": [],
+    "liturgisch": "theophanie"
+  },
+  {
+    "id": "lit-verkl-01",
+    "text": "Sein Angesicht leuchtete wie die Sonne.",
+    "stelle": "Matthäus 17,2",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "verklaerung"
+  },
+  {
+    "id": "lit-verkl-02",
+    "text": "Sie wandeln im Licht Deines Angesichts.",
+    "stelle": "Psalm 88,16",
+    "stelleMasoretisch": "Psalm 89,16",
+    "kategorien": [],
+    "liturgisch": "verklaerung"
+  },
+  {
+    "id": "lit-weih-01",
+    "text": "Euch ist heute der Retter geboren.",
+    "stelle": "Lukas 2,11",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "weihnachten"
+  },
+  {
+    "id": "lit-weih-02",
+    "text": "Das Wort wurde Fleisch und wohnte unter uns.",
+    "stelle": "Johannes 1,14",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "weihnachten"
+  },
+  {
+    "id": "lit-weih-03",
+    "text": "Das Volk, das im Dunkel geht, sieht ein grosses Licht.",
+    "stelle": "Jesaja 9,1",
+    "stelleMasoretisch": null,
+    "kategorien": [],
+    "liturgisch": "weihnachten"
+  },
+  {
+    "id": "rein-01",
+    "text": "Selig, die reinen Herzens sind, denn sie werden Gott schauen.",
+    "stelle": "Matthäus 5,8",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-02",
+    "text": "Erschaffe in mir ein reines Herz, Gott.",
+    "stelle": "Psalm 50,12",
+    "stelleMasoretisch": "Psalm 51,12",
+    "kategorien": [
+      "reinheit",
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-03",
+    "text": "Wer darf hinaufsteigen zum Berg des Herrn? Wer reine Hände hat und ein lauteres Herz.",
+    "stelle": "Psalm 23,3–4",
+    "stelleMasoretisch": "Psalm 24,3–4",
+    "kategorien": [
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-04",
+    "text": "Wodurch hält ein Mensch seinen Weg rein? Wenn er sich an Dein Wort hält.",
+    "stelle": "Psalm 118,9",
+    "stelleMasoretisch": "Psalm 119,9",
+    "kategorien": [
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-05",
+    "text": "Wende meine Augen von dem ab, was nichtig ist.",
+    "stelle": "Psalm 118,37",
+    "stelleMasoretisch": "Psalm 119,37",
+    "kategorien": [
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-06",
+    "text": "Das Auge ist das Licht des Leibes.",
+    "stelle": "Matthäus 6,22",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-07",
+    "text": "Erforsche mich, Gott, und erkenne mein Herz.",
+    "stelle": "Psalm 138,23",
+    "stelleMasoretisch": "Psalm 139,23",
+    "kategorien": [
+      "reinheit",
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-08",
+    "text": "Jeder, der diese Hoffnung hat, hält sich rein.",
+    "stelle": "1. Johannes 3,3",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-09",
+    "text": "In Deinem Licht sehen wir das Licht.",
+    "stelle": "Psalm 35,10",
+    "stelleMasoretisch": "Psalm 36,10",
+    "kategorien": [
+      "reinheit",
+      "glaubenszweifel"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-10",
+    "text": "Euer Leib ist ein Tempel des Heiligen Geistes.",
+    "stelle": "1. Korinther 6,19",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reinheit",
+      "gesundheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-11",
+    "text": "Was wahrhaftig, was rein, was liebenswert ist — darauf richtet euren Sinn.",
+    "stelle": "Philipper 4,8",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "rein-12",
+    "text": "Ich will wandeln mit lauterem Herzen in meinem Hause.",
+    "stelle": "Psalm 100,2",
+    "stelleMasoretisch": "Psalm 101,2",
+    "kategorien": [
+      "reinheit",
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-01",
+    "text": "Erschaffe in mir ein reines Herz, Gott, und gib mir einen neuen, festen Geist.",
+    "stelle": "Psalm 50,12",
+    "stelleMasoretisch": "Psalm 51,12",
+    "kategorien": [
+      "reue",
+      "reinheit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-02",
+    "text": "Ein zerbrochenes und gedemütigtes Herz wirst Du, Gott, nicht verachten.",
+    "stelle": "Psalm 50,19",
+    "stelleMasoretisch": "Psalm 51,19",
+    "kategorien": [
+      "reue",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-03",
+    "text": "Erbarme Dich meiner, Gott, nach Deiner grossen Barmherzigkeit.",
+    "stelle": "Psalm 50,3",
+    "stelleMasoretisch": "Psalm 51,3",
+    "kategorien": [
+      "reue",
+      "fastenzeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-04",
+    "text": "Selig, dem die Verfehlung vergeben und die Schuld bedeckt ist.",
+    "stelle": "Psalm 31,1",
+    "stelleMasoretisch": "Psalm 32,1",
+    "kategorien": [
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-05",
+    "text": "Ich bekannte Dir meine Schuld, und Du hast sie mir vergeben.",
+    "stelle": "Psalm 31,5",
+    "stelleMasoretisch": "Psalm 32,5",
+    "kategorien": [
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-06",
+    "text": "Bei Dir ist die Vergebung, darum fürchtet man Dich.",
+    "stelle": "Psalm 129,4",
+    "stelleMasoretisch": "Psalm 130,4",
+    "kategorien": [
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-07",
+    "text": "So weit der Aufgang vom Untergang, so weit tut Er unsere Verfehlungen von uns.",
+    "stelle": "Psalm 102,12",
+    "stelleMasoretisch": "Psalm 103,12",
+    "kategorien": [
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-08",
+    "text": "Seine Barmherzigkeit ist jeden Morgen neu; gross ist Deine Treue.",
+    "stelle": "Klagelieder 3,23",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reue",
+      "dankbarkeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-09",
+    "text": "Als er noch weit entfernt war, sah ihn sein Vater und lief ihm entgegen.",
+    "stelle": "Lukas 15,20",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-10",
+    "text": "Gott, sei mir gnädig.",
+    "stelle": "Lukas 18,13",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reue",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-11",
+    "text": "Nahe ist der Herr denen, die zerbrochenen Herzens sind.",
+    "stelle": "Psalm 33,19",
+    "stelleMasoretisch": "Psalm 34,19",
+    "kategorien": [
+      "reue",
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-12",
+    "text": "Wenn wir unsere Schuld bekennen, ist Er treu und vergibt.",
+    "stelle": "1. Johannes 1,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-13",
+    "text": "Kehrt um zum Herrn, denn Er ist gnädig und barmherzig.",
+    "stelle": "Joel 2,13",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "reue",
+      "fastenzeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-14",
+    "text": "Gedenke nicht der Verfehlungen meiner Jugend.",
+    "stelle": "Psalm 24,7",
+    "stelleMasoretisch": "Psalm 25,7",
+    "kategorien": [
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "reue-15",
+    "text": "Aus der Tiefe rufe ich zu Dir, Herr.",
+    "stelle": "Psalm 129,1",
+    "stelleMasoretisch": "Psalm 130,1",
+    "kategorien": [
+      "reue",
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-01",
+    "text": "Liebt eure Feinde und betet für die, die euch verfolgen.",
+    "stelle": "Matthäus 5,44",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-02",
+    "text": "Segnet, die euch fluchen.",
+    "stelle": "Lukas 6,28",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-03",
+    "text": "Er lässt Seine Sonne aufgehen über Böse und Gute.",
+    "stelle": "Matthäus 5,45",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-04",
+    "text": "Soweit es an euch liegt, haltet Frieden mit allen Menschen.",
+    "stelle": "Römer 12,18",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-05",
+    "text": "Lass dich nicht vom Bösen überwinden, sondern überwinde das Böse mit Gutem.",
+    "stelle": "Römer 12,21",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-06",
+    "text": "Vergeltet nicht Böses mit Bösem, sondern segnet.",
+    "stelle": "1. Petrus 3,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-07",
+    "text": "Ich bin für den Frieden.",
+    "stelle": "Psalm 119,7",
+    "stelleMasoretisch": "Psalm 120,7",
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-08",
+    "text": "Alles, was ihr wollt, dass euch die Menschen tun, das tut auch ihnen.",
+    "stelle": "Matthäus 7,12",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-09",
+    "text": "Seid barmherzig, wie euer Vater barmherzig ist.",
+    "stelle": "Lukas 6,36",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige",
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-10",
+    "text": "Wie gut und wie schön, wenn Menschen in Eintracht beieinander sind.",
+    "stelle": "Psalm 132,1",
+    "stelleMasoretisch": "Psalm 133,1",
+    "kategorien": [
+      "schwierige",
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-11",
+    "text": "Ertragt einander in Liebe.",
+    "stelle": "Epheser 4,2",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "schw-12",
+    "text": "Richtet nicht, damit ihr nicht gerichtet werdet.",
+    "stelle": "Matthäus 7,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "schwierige",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-01",
+    "text": "Ich bin die Auferstehung und das Leben.",
+    "stelle": "Johannes 11,25",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "verstorbene",
+      "ostern"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-02",
+    "text": "Er ist vom Tod zum Leben hinübergegangen.",
+    "stelle": "Johannes 5,24",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-03",
+    "text": "Kehre zurück, meine Seele, zu deiner Ruhe.",
+    "stelle": "Psalm 114,7",
+    "stelleMasoretisch": "Psalm 116,7",
+    "kategorien": [
+      "verstorbene",
+      "demut"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-04",
+    "text": "Kostbar ist in den Augen des Herrn der Tod Seiner Frommen.",
+    "stelle": "Psalm 115,6",
+    "stelleMasoretisch": "Psalm 116,15",
+    "kategorien": [
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-05",
+    "text": "Aus der Tiefe rufe ich zu Dir, Herr.",
+    "stelle": "Psalm 129,1",
+    "stelleMasoretisch": "Psalm 130,1",
+    "kategorien": [
+      "verstorbene",
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-06",
+    "text": "Selig, den Du erwählst und zu Dir nahen lässt.",
+    "stelle": "Psalm 64,5",
+    "stelleMasoretisch": "Psalm 65,5",
+    "kategorien": [
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-07",
+    "text": "Wir wollen nicht trauern wie die anderen, die keine Hoffnung haben.",
+    "stelle": "1. Thessalonicher 4,13",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-08",
+    "text": "Er wird abwischen alle Tränen von ihren Augen.",
+    "stelle": "Offenbarung 21,4",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-09",
+    "text": "Ob wir leben oder sterben, wir gehören dem Herrn.",
+    "stelle": "Römer 14,8",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-10",
+    "text": "Lehre uns, unsere Tage zu zählen.",
+    "stelle": "Psalm 89,12",
+    "stelleMasoretisch": "Psalm 90,12",
+    "kategorien": [
+      "verstorbene",
+      "arbeit"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-11",
+    "text": "Die Seelen der Gerechten sind in Gottes Hand.",
+    "stelle": "Weisheit 3,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "verstorbene"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-12",
+    "text": "Tod, wo ist dein Stachel?",
+    "stelle": "1. Korinther 15,55",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "verstorbene",
+      "ostern"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "verst-13",
+    "text": "Und ob ich wanderte im finsteren Tal — Du bist bei mir.",
+    "stelle": "Psalm 22,4",
+    "stelleMasoretisch": "Psalm 23,4",
+    "kategorien": [
+      "verstorbene",
+      "angst"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-01",
+    "text": "Selig, die Frieden stiften, denn sie werden Kinder Gottes heissen.",
+    "stelle": "Matthäus 5,9",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn",
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-02",
+    "text": "Suche den Frieden und jage ihm nach.",
+    "stelle": "Psalm 33,15",
+    "stelleMasoretisch": "Psalm 34,15",
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-03",
+    "text": "Grossen Frieden haben, die Dein Gesetz lieben.",
+    "stelle": "Psalm 118,165",
+    "stelleMasoretisch": "Psalm 119,165",
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-04",
+    "text": "Bedenkt es in eurem Herzen auf eurem Lager und werdet still.",
+    "stelle": "Psalm 4,5",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-05",
+    "text": "Gnädig und barmherzig ist der Herr, langmütig und reich an Güte.",
+    "stelle": "Psalm 144,8",
+    "stelleMasoretisch": "Psalm 145,8",
+    "kategorien": [
+      "zorn",
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-06",
+    "text": "Barmherzig und gnädig ist der Herr, langmütig.",
+    "stelle": "Psalm 102,8",
+    "stelleMasoretisch": "Psalm 103,8",
+    "kategorien": [
+      "zorn",
+      "reue"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-07",
+    "text": "Die Sonne soll über eurem Zorn nicht untergehen.",
+    "stelle": "Epheser 4,26",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-08",
+    "text": "Seid gütig zueinander und vergebt einander.",
+    "stelle": "Epheser 4,32",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn",
+      "familie"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-09",
+    "text": "Ein sanftes Wort wendet den Zorn.",
+    "stelle": "Sprüche 15,1",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-10",
+    "text": "Schnell zum Hören, langsam zum Reden.",
+    "stelle": "Jakobus 1,19",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-11",
+    "text": "Wenn ihr den Menschen vergebt, wird auch euch euer Vater vergeben.",
+    "stelle": "Matthäus 6,14",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-12",
+    "text": "Nicht siebenmal, sondern siebzigmal siebenmal.",
+    "stelle": "Matthäus 18,22",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-13",
+    "text": "Ertragt einander und vergebt einander.",
+    "stelle": "Kolosser 3,13",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn",
+      "schwierige"
+    ],
+    "liturgisch": null
+  },
+  {
+    "id": "zorn-14",
+    "text": "Wer geduldig ist, ist besser als ein Held.",
+    "stelle": "Sprüche 16,32",
+    "stelleMasoretisch": null,
+    "kategorien": [
+      "zorn",
+      "geduld"
+    ],
+    "liturgisch": null
+  }
+]
