@@ -83,7 +83,8 @@ button:focus-visible,
   border-radius: 4px;
 }
 
-input {
+input,
+textarea {
   font: inherit;
   color: inherit;
   background: none;
@@ -92,11 +93,13 @@ input {
   width: 100%;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: var(--faint);
 }
 

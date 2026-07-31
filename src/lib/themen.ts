@@ -45,6 +45,29 @@ export async function themaStatusUmschalten(id: string): Promise<void> {
   await db.themen.update(id, { status: thema.status === 'aktiv' ? 'pausiert' : 'aktiv' })
 }
 
+/**
+ * Schliesst ein Anliegen ab: Status „erhört", Datum und die Antwort auf
+ * „Wie hat Gott geantwortet?" (Spezifikation, Abschnitt 11). Die Antwort ist
+ * freiwillig. Erhörte Anliegen erscheinen fortan im Archiv.
+ */
+export async function themaAbschliessen(id: string, notiz: string): Promise<void> {
+  const thema = await db.themen.get(id)
+  if (!thema) return
+  const antwort = notiz.trim()
+  await db.themen.update(id, {
+    status: 'erhoert',
+    abgeschlossenAm: new Date().toISOString(),
+    notiz: antwort || undefined,
+  })
+}
+
+/** Holt ein abgeschlossenes Anliegen zurück in die aktive Liste. */
+export async function themaWiederAufnehmen(id: string): Promise<void> {
+  const thema = await db.themen.get(id)
+  if (!thema) return
+  await db.themen.update(id, { status: 'aktiv', abgeschlossenAm: undefined })
+}
+
 /** Formuliert die Fusszeile auf „Heute" — wie viele Themen gerade aktiv sind. */
 export function themenZusammenfassung(anzahl: number): string {
   if (anzahl === 0) return 'Noch keine Themen aktiv'

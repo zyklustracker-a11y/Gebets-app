@@ -95,6 +95,101 @@ export function ZurueckWinkel() {
   )
 }
 
+/**
+ * Ein ruhiges Blatt, das von unten über den Bildschirm legt — für die Frage
+ * beim Abschliessen eines Anliegens. Ein Tippen daneben schliesst es.
+ */
+export function Overlay({ children, onSchliessen }: { children: ReactNode; onSchliessen: () => void }) {
+  return (
+    <div
+      onClick={onSchliessen}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 50,
+        background: 'rgba(0, 0, 0, 0.32)',
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+        padding: 14,
+        paddingBottom: `max(env(safe-area-inset-bottom), 14px)`,
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: '100%',
+          maxWidth: 365,
+          background: 'var(--bg)',
+          border: '1px solid var(--edge)',
+          borderRadius: 14,
+          padding: 22,
+          boxShadow: '0 12px 40px rgba(0, 0, 0, 0.24)',
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  )
+}
+
+/** Ein mehrzeiliges Eingabefeld im Ton der App (Serif, ruhige Linie). */
+export function Textfeld(props: {
+  wert: string
+  aendern: (wert: string) => void
+  platzhalter?: string
+  autoFocus?: boolean
+}) {
+  return (
+    <textarea
+      autoFocus={props.autoFocus}
+      value={props.wert}
+      onChange={(e) => props.aendern(e.target.value)}
+      placeholder={props.platzhalter}
+      rows={3}
+      className="sx"
+      style={{
+        width: '100%',
+        resize: 'none',
+        font: 'inherit',
+        fontFamily: SERIF,
+        fontSize: 19,
+        lineHeight: 1.6,
+        color: 'var(--ink)',
+        background: 'var(--field)',
+        border: '1px solid var(--rule)',
+        borderRadius: 10,
+        padding: '12px 14px',
+        outline: 'none',
+      }}
+    />
+  )
+}
+
+/** Die rote Haupthandlung (wie „Gebetet"). */
+export function Knopf({ children, onClick, gedaempft }: { children: ReactNode; onClick: () => void; gedaempft?: boolean }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        width: '100%',
+        height: 50,
+        borderRadius: 10,
+        background: gedaempft ? 'transparent' : 'var(--red)',
+        color: gedaempft ? 'var(--muted)' : 'var(--on-red)',
+        border: gedaempft ? '1px solid var(--rule)' : 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 16,
+        fontWeight: 500,
+      }}
+    >
+      {children}
+    </button>
+  )
+}
+
 /** Ein Schalter, wie in den Einstellungen. */
 export function Schalter({ an, beschriftung }: { an: boolean; beschriftung?: string }) {
   return (

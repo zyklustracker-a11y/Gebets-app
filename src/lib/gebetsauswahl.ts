@@ -15,6 +15,7 @@
  */
 
 import { db } from './db'
+import { aktiveGedenknamen } from './gedenken'
 import { heiligerDesTages } from './kalender'
 import { zusammensetzen, type Zusammensetzung } from './komposition'
 import { korpusFuer, korpusNachId } from './korpus'
@@ -172,6 +173,8 @@ export async function komponiere(eintrag: Gebetseintrag): Promise<Zusammensetzun
   const modul = eintrag.modulId ? (modulNachId(eintrag.modulId) ?? null) : null
   const heiligerName = modul ? heiligerDesTages(datumAusIso(eintrag.datum)) : null
 
+  const { lebende, entschlafene } = await aktiveGedenknamen()
+
   return zusammensetzen({
     korpustext: grundgebet.text,
     vers: grundgebet.vers,
@@ -180,5 +183,7 @@ export async function komponiere(eintrag: Gebetseintrag): Promise<Zusammensetzun
     modul,
     eigenesTitel: eigenes?.titel ?? null,
     heiligerName,
+    lebende,
+    entschlafene,
   })
 }

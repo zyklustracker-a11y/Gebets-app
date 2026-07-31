@@ -33,6 +33,23 @@ const HINWEIS: Record<Grund, string> = {
   fehler: 'Das Anmelden hat nicht geklappt. Später erneut versuchen.',
 }
 
+function Verweiszeile({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <>
+      <button
+        onClick={onClick}
+        style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}
+      >
+        <span style={{ fontFamily: SERIF, fontSize: 20 }}>{label}</span>
+        <span style={{ display: 'inline-flex', transform: 'scaleX(-1)' }}>
+          <ZurueckWinkel />
+        </span>
+      </button>
+      <Linie />
+    </>
+  )
+}
+
 function Abschnitt({ titel, children }: { titel: string; children: ReactNode }) {
   return (
     <>
@@ -125,6 +142,12 @@ export default function Einstellungen() {
             <ZurueckWinkel />
           </span>
         </button>
+
+        <Abschnitt titel="Gedenken und Rückschau">
+          <Verweiszeile label="Gedenkliste" onClick={() => navigate('/gedenkliste')} />
+          <Verweiszeile label="Tagebuch" onClick={() => navigate('/tagebuch')} />
+          <Verweiszeile label="Erhörte Gebete" onClick={() => navigate('/erhoert')} />
+        </Abschnitt>
 
         <Abschnitt titel="Gebetszeiten">
           {(gebetszeiten ?? []).map((zeit) => (

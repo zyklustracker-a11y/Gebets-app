@@ -84,6 +84,68 @@ describe('zusammensetzen — Mittag bleibt kurz', () => {
   })
 })
 
+describe('zusammensetzen — Gedenkliste in der Fürbitte', () => {
+  const g = korpusNachId('dankbarkeit-morgen-gewoehnlich-01')
+  if (!g) throw new Error('Korpus fehlt')
+
+  const z = zusammensetzen({
+    korpustext: g.text,
+    vers: g.vers,
+    stelle: g.stelle,
+    tageszeit: 'morgen',
+    modul: null,
+    eigenesTitel: null,
+    heiligerName: null,
+    lebende: ['Maria', 'Johannes'],
+    entschlafene: ['Nikolai'],
+  })
+
+  it('nennt die Lebenden und die Entschlafenen', () => {
+    const text = z.absaetze.join('\n')
+    expect(text).toContain('Gedenke, o Herr, Maria und Johannes')
+    expect(text).toContain('Gib den entschlafenen Nikolai Ruhe')
+  })
+
+  it('setzt sie an die Stelle der Fürbitte: nach der allgemeinen Fürbitte, vor dem Schluss', () => {
+    const fuerbitte = z.absaetze.findIndex((a) => a.startsWith('Heilige Gottesgebärerin, bitte für mich'))
+    const gedenken = z.absaetze.findIndex((a) => a.startsWith('Gedenke, o Herr'))
+    const schluss = z.absaetze.findIndex((a) => a.startsWith('Herr Jesus Christus, unser Gott'))
+    expect(fuerbitte).toBeGreaterThanOrEqual(0)
+    expect(fuerbitte).toBeLessThan(gedenken)
+    expect(gedenken).toBeLessThan(schluss)
+  })
+
+  it('lässt das Mittagsgebet unberührt — es bleibt kurz', () => {
+    const m = korpusNachId('dankbarkeit-mittag-gewoehnlich-01')
+    if (!m) throw new Error('Korpus fehlt')
+    const zm = zusammensetzen({
+      korpustext: m.text,
+      vers: m.vers,
+      stelle: m.stelle,
+      tageszeit: 'mittag',
+      modul: null,
+      eigenesTitel: null,
+      heiligerName: null,
+      lebende: ['Maria'],
+      entschlafene: ['Nikolai'],
+    })
+    expect(zm.absaetze.join('\n')).not.toContain('Gedenke, o Herr')
+  })
+
+  it('fügt nichts ein, wenn die Gedenkliste leer ist', () => {
+    const leer = zusammensetzen({
+      korpustext: g.text,
+      vers: g.vers,
+      stelle: g.stelle,
+      tageszeit: 'morgen',
+      modul: null,
+      eigenesTitel: null,
+      heiligerName: null,
+    })
+    expect(leer.absaetze.join('\n')).not.toContain('Gedenke, o Herr')
+  })
+})
+
 // Zum Mitlesen: das fertig zusammengesetzte Ostergebet.
 describe('Leseprobe', () => {
   it('Ostersonntag, Morgen', () => {

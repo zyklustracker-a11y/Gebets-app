@@ -51,6 +51,31 @@ export interface KompositionEingabe {
   eigenesTitel: string | null
   /** Name des Heiligen für `{{heiliger}}` in generischen Modulen, sonst null. */
   heiligerName: string | null
+  /** Aktive Gedenknamen für die Fürbitte (Lebende), sonst leer. */
+  lebende?: string[]
+  /** Aktive Gedenknamen für die Fürbitte (Entschlafene), sonst leer. */
+  entschlafene?: string[]
+}
+
+/** Fügt Namen zu einer deutschen Aufzählung: „A", „A und B", „A, B und C". */
+function nennung(namen: string[]): string {
+  if (namen.length <= 1) return namen[0] ?? ''
+  return `${namen.slice(0, -1).join(', ')} und ${namen[namen.length - 1]}`
+}
+
+/**
+ * Die Fürbitte um die Gedenkliste. Jeder Teil ist ein eigenständiger Absatz
+ * ohne Anschlusswort, damit er sich unbemerkt in die Fürbitte fügt.
+ */
+function gedenkAbsaetze(lebende: string[], entschlafene: string[]): string[] {
+  const absaetze: string[] = []
+  if (lebende.length > 0) {
+    absaetze.push(`Gedenke, o Herr, ${nennung(lebende)} und behüte sie auf allen ihren Wegen.`)
+  }
+  if (entschlafene.length > 0) {
+    absaetze.push(`Gib den entschlafenen ${nennung(entschlafene)} Ruhe, o Herr, wo Dein Licht leuchtet.`)
+  }
+  return absaetze
 }
 
 /** Ersetzt `{{anliegen}}` oder entfernt den ganzen Trägersatz (eigene Zeile). */
@@ -83,6 +108,17 @@ export function zusammensetzen(eingabe: KompositionEingabe): Zusammensetzung {
 
   const kopf = zeilen.slice(0, grenze)
   const schwanz = zeilen.slice(grenze)
+
+  // Gedenkliste in die Fürbitte einweben — an derselben Stelle, an der die
+  // allgemeine Fürbitte steht, also unmittelbar vor der Schlussformel. Nicht
+  // mittags: dort bleibt das Gebet bewusst kurz (wie der Fürbitte-Zusatz).
+  const lebende = eingabe.lebende ?? []
+  const entschlafene = eingabe.entschlafene ?? []
+  if (tageszeit !== 'mittag' && (lebende.length > 0 || entschlafene.length > 0)) {
+    let ziel = schwanz.findIndex((z) => SCHLUSS.test(z))
+    if (ziel === -1) ziel = schwanz.length
+    schwanz.splice(ziel, 0, ...gedenkAbsaetze(lebende, entschlafene))
+  }
 
   // Schluss abends überschreiben.
   if (tageszeit === 'abend' && modul?.schluss) {

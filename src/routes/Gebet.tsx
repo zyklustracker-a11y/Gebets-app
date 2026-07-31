@@ -2,10 +2,11 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-import { Kreuz, RAND, SERIF, bildschirm, obenSafe, untenSafe } from '../components/ui'
+import { Knopf, Kreuz, RAND, SERIF, Textfeld, bildschirm, obenSafe, untenSafe } from '../components/ui'
 import { db } from '../lib/db'
 import { alsGebetet, andersWaehlen, datumIso, ermittleGebet, komponiere, type Zusammensetzung } from '../lib/gebetsauswahl'
 import { heutigerTag } from '../lib/kalender'
+import { tagebuchSpeichern } from '../lib/tagebuch'
 import { TAGESZEITEN, type Tageszeit } from '../lib/types'
 
 /**
@@ -24,6 +25,8 @@ export default function Gebet() {
   const datum = datumIso(heutigerTag())
 
   const [teile, setTeile] = useState<Zusammensetzung | null>(null)
+  const [nachklang, setNachklang] = useState(false)
+  const [notiz, setNotiz] = useState('')
   const gueltig = istTageszeit(tageszeit)
 
   // Beim Öffnen die Auswahl sicherstellen (idempotent — legt nur an, was fehlt).
@@ -61,7 +64,43 @@ export default function Gebet() {
   async function gebetet() {
     if (!gueltig) return
     await alsGebetet(datum, tageszeit)
+    // Nach dem Gebet die stille Einladung, einen Satz festzuhalten (Abschnitt 11).
+    setNachklang(true)
+  }
+
+  async function festhalten() {
+    await tagebuchSpeichern(id, datum, notiz)
     navigate('/')
+  }
+
+  // Der Nachklang: eigener, ruhiger Schirm nach dem Gebet — kein Banner auf dem
+  // Gebet selbst. Der Satz ist freiwillig.
+  if (nachklang && teile) {
+    return (
+      <div style={bildschirm}>
+        <div style={{ padding: `${obenSafe} ${RAND}px 8px`, display: 'flex', justifyContent: 'flex-end' }}>
+          <Kreuz />
+        </div>
+        <div style={{ flex: 1, padding: `24px ${RAND}px 0`, display: 'flex', flexDirection: 'column' }}>
+          <div style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--faint)' }}>
+            {teile.tageszeitLabel} · gebetet
+          </div>
+          <div style={{ marginTop: 26, fontFamily: SERIF, fontSize: 22, lineHeight: 1.5, color: 'var(--muted)' }}>
+            Möchtest du etwas festhalten?
+          </div>
+          <div style={{ marginTop: 18 }}>
+            <Textfeld wert={notiz} aendern={setNotiz} platzhalter="Ein Satz zu diesem Gebet — oder weiter ohne Eintrag." autoFocus />
+          </div>
+        </div>
+        <div style={{ padding: `18px ${RAND}px 0`, display: 'flex', alignItems: 'center', gap: 16, borderTop: '1px solid var(--rule)' }}>
+          <Knopf onClick={festhalten}>{notiz.trim() ? 'Festhalten' : 'Fertig'}</Knopf>
+          <button onClick={() => navigate('/')} style={{ fontSize: 15, color: 'var(--muted)', padding: '0 4px', flex: 'none' }}>
+            Ohne Eintrag
+          </button>
+        </div>
+        <div style={{ height: untenSafe }} />
+      </div>
+    )
   }
 
   return (
