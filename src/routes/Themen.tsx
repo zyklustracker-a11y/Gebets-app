@@ -34,6 +34,12 @@ export default function Themen() {
 
   const erhoertAnzahl = useLiveQuery(async () => db.themen.where('status').equals('erhoert').count(), [])
 
+  // Welche eigenen Themen haben bereits erzeugte Gebete? Für den Vermerk in der Liste.
+  const mitGebeten = useLiveQuery(async () => {
+    const alle = await db.eigeneGebete.toArray()
+    return new Set(alle.map((g) => g.themaId))
+  }, [])
+
   function abschlussOeffnen(thema: Thema) {
     setAntwort('')
     setAbschluss(thema)
@@ -92,7 +98,12 @@ export default function Themen() {
                         }}
                         aria-label={`${thema.titel} ${aktiv ? 'pausieren' : 'aktivieren'}`}
                       >
-                        <div style={{ fontFamily: SERIF, fontSize: 20 }}>{thema.titel}</div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 2 }}>
+                          <div style={{ fontFamily: SERIF, fontSize: 20 }}>{thema.titel}</div>
+                          {mitGebeten?.has(thema.id) && (
+                            <div style={{ fontSize: 11, color: 'var(--gold)' }}>Eigene Gebete ✓</div>
+                          )}
+                        </div>
                         <Punkt sichtbar={aktiv} />
                       </button>
                       <button

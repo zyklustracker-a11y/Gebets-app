@@ -12,7 +12,6 @@
 
 import { faellige, rufFuer, titelFuer, zuercherDatum, zuercherZeit, type AboZeit } from '../src/lib/benachrichtigung'
 import {
-  ANTWORT_SCHEMA,
   nutzerPrompt,
   pruefeAntwort,
   systemPrompt,
@@ -37,8 +36,8 @@ interface Env {
   VAPID_PUBLIC: string
   VAPID_PRIVATE: string
   VAPID_SUBJECT: string
-  /** Gemini-API-Schlüssel für die Gebetserzeugung (Abschnitt 12). */
-  GEMINI_API_KEY: string
+  /** Groq-API-Schlüssel für die Gebetserzeugung (Abschnitt 12). */
+  GROQ_API_KEY: string
 }
 
 interface GespeichertesAbo extends Abo {
@@ -141,9 +140,9 @@ function merker(aboName: string, datum: string, typ: Tageszeit): string {
 // Gebetserzeugung (Abschnitt 12)
 // ---------------------------------------------------------------------------
 
-// Bewegliches Alias: bleibt gültig, wenn Google einzelne Flash-Versionen
-// abkündigt. Modell im Sinne der Spezifikation: Gemini Flash.
-const GEMINI_MODELL = 'gemini-flash-latest'
+// Groq, OpenAI-kompatibel, kostenloses Kontingent (Abschnitt 12). Llama 3.3 70B
+// ist kein „Denk"-Modell, daher kein Token-Overhead und keine EU-Datennutzung.
+const GROQ_MODELL = 'llama-3.3-70b-versatile'
 
 function normFaerbung(wert: string | undefined): Faerbung {
   return wert === 'fastenzeit' || wert === 'osterzeit' || wert === 'trauer' ? wert : 'gewoehnlich'
@@ -156,39 +155,31 @@ function normFaerbung(wert: string | undefined): Faerbung {
  */
 async function erzeugeGebete(env: Env, anfrage: ErzeugungAnfrage): Promise<ErzeugungAntwort | null> {
   for (let versuch = 0; versuch < 2; versuch++) {
-    const antwort = await geminiAufruf(env, anfrage).catch(() => null)
+    const antwort = await groqAufruf(env, anfrage).catch(() => null)
     if (antwort && pruefeAntwort(antwort, anfrage.titel).gueltig) return antwort
   }
   return null
 }
 
-async function geminiAufruf(env: Env, anfrage: ErzeugungAnfrage): Promise<ErzeugungAntwort | null> {
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODELL}:generateContent`,
-    {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: systemPrompt() }] },
-        contents: [{ role: 'user', parts: [{ text: nutzerPrompt(anfrage) }] }],
-        generationConfig: {
-          temperature: 0.85,
-          // Grosszügig: die Flash-Modelle verbrauchen bis ~4600 Tokens fürs
-          // interne „Denken"; zu knapp bemessen bricht das JSON mit MAX_TOKENS ab.
-          maxOutputTokens: 12288,
-          responseMimeType: 'application/json',
-          responseSchema: ANTWORT_SCHEMA,
-          thinkingConfig: { thinkingBudget: 1024 },
-        },
-      }),
-    },
-  )
+async function groqAufruf(env: Env, anfrage: ErzeugungAnfrage): Promise<ErzeugungAntwort | null> {
+  const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', authorization: `Bearer ${env.GROQ_API_KEY}` },
+    body: JSON.stringify({
+      model: GROQ_MODELL,
+      temperature: 0.85,
+      max_tokens: 2600,
+      response_format: { type: 'json_object' },
+      messages: [
+        { role: 'system', content: systemPrompt() },
+        { role: 'user', content: nutzerPrompt(anfrage) },
+      ],
+    }),
+  })
   if (!res.ok) return null
 
-  const daten = (await res.json()) as {
-    candidates?: { content?: { parts?: { text?: string }[] } }[]
-  }
-  const text = daten.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ?? ''
+  const daten = (await res.json()) as { choices?: { message?: { content?: string } }[] }
+  const text = daten.choices?.[0]?.message?.content ?? ''
   if (!text.trim()) return null
 
   try {

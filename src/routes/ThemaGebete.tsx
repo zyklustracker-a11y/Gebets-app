@@ -88,6 +88,9 @@ export default function ThemaGebete() {
         {/* Fall 1: erzeugte Gebete vorhanden — bearbeitbar. */}
         {hatGebete && (
           <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 30 }}>
+            <div style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--gold)' }}>
+              ✓ Erstellt — dieses Thema wird bevorzugt und läuft offline. Du kannst jeden Text bearbeiten.
+            </div>
             {gebete!.map((gebet) => (
               <GebetBlock key={gebet.id} gebet={gebet} />
             ))}

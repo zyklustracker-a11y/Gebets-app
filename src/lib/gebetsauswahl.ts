@@ -84,6 +84,9 @@ async function erzeugeAuswahl(
     return max
   }
   aktive.sort((a, b) => {
+    // Eigene Themen zuerst (Wunsch des Nutzers, Bauabschnitt 10); innerhalb
+    // jeder Gruppe nach längster Abwesenheit, dann Anlagedatum.
+    if (a.istEigen !== b.istEigen) return a.istEigen ? -1 : 1
     const za = zuletzt(a.id)
     const zb = zuletzt(b.id)
     if (za !== zb) return za < zb ? -1 : 1
@@ -99,12 +102,13 @@ async function erzeugeAuswahl(
   let auswahl: { id: string }[] = korpusFuer(kategorie, tageszeit)
   if (auswahl.length === 0) auswahl = korpusFuer(STANDARD_KATEGORIE, tageszeit)
 
-  // Selbst erzeugte Gebete des Hauptthemas kommen gleichberechtigt in den Topf
-  // (Abschnitt 12): einmal erzeugt, werden sie wie Korpuseinträge behandelt.
+  // Hat das eigene Hauptthema erzeugte Gebete, wird für diese Tageszeit genau
+  // dieses bevorzugt (Bauabschnitt 10): das persönliche Gebet erscheint dann
+  // verlässlich statt eines Standardtextes.
   if (hauptThema?.istEigen) {
     const eigene = await db.eigeneGebete.where('themaId').equals(hauptThema.id).toArray()
     const passend = eigene.filter((g) => g.tageszeit === tageszeit)
-    if (passend.length > 0) auswahl = [...passend, ...auswahl]
+    if (passend.length > 0) auswahl = passend
   }
 
   // Wiederholungssperre: was in den letzten 14 Tagen dran war, meiden.
