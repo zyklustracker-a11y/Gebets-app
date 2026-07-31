@@ -1,0 +1,11 @@
+rules_version = '2';
+
+// Jeder Nutzer darf ausschliesslich unter seiner eigenen uid lesen und
+// schreiben (Spezifikation, Abschnitt 8). Sonst ist alles verboten.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /nutzer/{uid}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}

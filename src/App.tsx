@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
+import { startenAbgleich, stoppenAbgleich, useKonto } from './lib/sync';
 import { useTheme } from './lib/theme';
 import Einstellungen from './routes/Einstellungen';
 import Gebet from './routes/Gebet';
@@ -11,6 +13,14 @@ import Themen from './routes/Themen';
 
 export default function App() {
   useTheme();
+
+  // Bei angemeldetem Konto den Abgleich starten; ohne Konto läuft alles lokal.
+  const konto = useKonto();
+  useEffect(() => {
+    if (!konto?.uid) return;
+    void startenAbgleich(konto.uid);
+    return () => stoppenAbgleich();
+  }, [konto?.uid]);
 
   return (
     <Routes>

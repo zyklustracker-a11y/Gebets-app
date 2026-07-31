@@ -5,7 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import { Linie, RAND, SERIF, Schalter, Ueberschrift, ZurueckWinkel, bildschirm, obenSafe, untenSafe } from '../components/ui'
 import type { AboZeit } from '../lib/benachrichtigung'
 import { db, einstellungenLesen, einstellungenSchreiben } from '../lib/db'
+import { firebaseKonfiguriert } from '../lib/firebase'
 import { erinnerungenAktualisieren, erinnerungenAusschalten, erinnerungenEinschalten, type Grund } from '../lib/push'
+import { abmelden, anmelden, useKonto } from '../lib/sync'
 import { JESUSGEBET_ANZAHLEN, type Erscheinungsbild } from '../lib/types'
 
 /**
@@ -55,6 +57,7 @@ export default function Einstellungen() {
   }, [])
 
   const einstellungen = useLiveQuery(() => einstellungenLesen(), [])
+  const konto = useKonto()
   const [hinweis, setHinweis] = useState<string | null>(null)
 
   async function aktiveZeiten(): Promise<AboZeit[]> {
@@ -212,16 +215,49 @@ export default function Einstellungen() {
         </Abschnitt>
 
         <Abschnitt titel="Anmeldung">
-          <div style={{ minHeight: 78, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
-            <div>
-              <div style={{ fontFamily: SERIF, fontSize: 20 }}>Nicht angemeldet</div>
-              <div style={{ marginTop: 4, fontSize: 13, color: 'var(--muted)' }}>Alles läuft lokal auf diesem Gerät.</div>
-            </div>
-          </div>
-          <Linie />
-          <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
-            Anmeldung und Geräteabgleich kommen später. Themen und Tagebuch bleiben bis dahin auf diesem Gerät.
-          </div>
+          {!firebaseKonfiguriert() ? (
+            <>
+              <div style={{ minHeight: 78, display: 'flex', alignItems: 'center' }}>
+                <div style={{ fontFamily: SERIF, fontSize: 20 }}>Nicht eingerichtet</div>
+              </div>
+              <Linie />
+              <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
+                Der Geräteabgleich ist für diese Installation noch nicht eingerichtet. Alles läuft lokal auf diesem Gerät.
+              </div>
+            </>
+          ) : konto ? (
+            <>
+              <div style={{ minHeight: 78, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
+                <div>
+                  <div style={{ fontFamily: SERIF, fontSize: 20 }}>Angemeldet mit Google</div>
+                  <div style={{ marginTop: 4, fontSize: 13, color: 'var(--muted)' }}>{konto.email}</div>
+                </div>
+                <button
+                  onClick={() => void abmelden()}
+                  style={{ minHeight: 44, display: 'flex', alignItems: 'center', fontSize: 15, color: 'var(--red-text)' }}
+                >
+                  Abmelden
+                </button>
+              </div>
+              <Linie />
+              <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
+                Themen und Tagebuch werden auf allen Geräten abgeglichen.
+              </div>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => void anmelden().catch(() => {})}
+                style={{ minHeight: 78, display: 'flex', alignItems: 'center', width: '100%' }}
+              >
+                <span style={{ fontFamily: SERIF, fontSize: 20, color: 'var(--red-text)' }}>Mit Google anmelden</span>
+              </button>
+              <Linie />
+              <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
+                Freiwillig — nur für den Abgleich zwischen deinen Geräten. Ohne Anmeldung bleibt alles auf diesem Gerät.
+              </div>
+            </>
+          )}
         </Abschnitt>
 
         <div style={{ height: 28 }} />

@@ -46,6 +46,8 @@ export interface Thema {
    * gesetzt, erscheint die Schaltfläche zum Erzeugen eigener Gebete gar nicht.
    */
   keineErzeugung?: boolean;
+  /** ISO-Zeitstempel der letzten Änderung — für den Abgleich (Abschnitt 8). */
+  geaendertAm?: string;
 }
 
 export interface Gebetszeit {
@@ -74,6 +76,8 @@ export interface Gebetseintrag {
   modulId?: string;
   /** ISO-Zeitstempel, gesetzt beim Tippen auf „Gebetet". */
   gebetetAm?: string;
+  /** ISO-Zeitstempel der letzten Änderung — für den Abgleich (Abschnitt 8). */
+  geaendertAm?: string;
 }
 
 export interface Gedenkname {
@@ -81,6 +85,8 @@ export interface Gedenkname {
   name: string;
   art: 'lebend' | 'entschlafen';
   aktiv: boolean;
+  /** ISO-Zeitstempel der letzten Änderung — für den Abgleich (Abschnitt 8). */
+  geaendertAm?: string;
 }
 
 export interface Journaleintrag {
@@ -88,6 +94,8 @@ export interface Journaleintrag {
   gebetId: string;
   datum: string;
   text: string;
+  /** ISO-Zeitstempel der letzten Änderung — für den Abgleich (Abschnitt 8). */
+  geaendertAm?: string;
 }
 
 export const EINSTELLUNGEN_ID = 'einstellungen';
@@ -101,6 +109,8 @@ export interface Einstellungen {
   /** Ob Erinnerungen (Web Push) eingeschaltet sind. */
   benachrichtigungenAn?: boolean;
   kontoId?: string;
+  /** ISO-Zeitstempel der letzten Änderung — für den Abgleich (Abschnitt 8). */
+  geaendertAm?: string;
 }
 
 // ---------------------------------------------------------------------------
