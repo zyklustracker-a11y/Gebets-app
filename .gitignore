@@ -3,3 +3,8 @@ dist/
 *.local
 .DS_Store
 *.tsbuildinfo
+
+# Lokale Konfiguration mit Schlüsseln — nur die Beispieldatei gehört ins Repo.
+.env
+.env.*
+!.env.example

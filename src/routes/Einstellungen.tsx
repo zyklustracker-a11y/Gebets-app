@@ -1,9 +1,11 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Linie, RAND, SERIF, Schalter, Ueberschrift, ZurueckWinkel, bildschirm, obenSafe, untenSafe } from '../components/ui'
+import type { AboZeit } from '../lib/benachrichtigung'
 import { db, einstellungenLesen, einstellungenSchreiben } from '../lib/db'
+import { erinnerungenAktualisieren, erinnerungenAusschalten, erinnerungenEinschalten, type Grund } from '../lib/push'
 import { JESUSGEBET_ANZAHLEN, type Erscheinungsbild } from '../lib/types'
 
 /**
@@ -20,6 +22,14 @@ const ERSCHEINUNG_LABEL: Record<Erscheinungsbild, string> = {
 const ERSCHEINUNG_FOLGE: Erscheinungsbild[] = ['system', 'hell', 'dunkel']
 
 const TITEL: Record<'morgen' | 'mittag' | 'abend', string> = { morgen: 'Morgen', mittag: 'Mittag', abend: 'Abend' }
+
+const HINWEIS: Record<Grund, string> = {
+  'nicht-unterstuetzt': 'Dieses Gerät unterstützt keine Benachrichtigungen.',
+  'nicht-installiert': 'Zum Aktivieren die App zuerst über „Zum Home-Bildschirm" installieren.',
+  'nicht-konfiguriert': 'Benachrichtigungen sind für diese Installation noch nicht eingerichtet.',
+  abgelehnt: 'Benachrichtigungen sind für diese App nicht erlaubt. In den Geräteeinstellungen freigeben.',
+  fehler: 'Das Anmelden hat nicht geklappt. Später erneut versuchen.',
+}
 
 function Abschnitt({ titel, children }: { titel: string; children: ReactNode }) {
   return (
@@ -45,9 +55,33 @@ export default function Einstellungen() {
   }, [])
 
   const einstellungen = useLiveQuery(() => einstellungenLesen(), [])
+  const [hinweis, setHinweis] = useState<string | null>(null)
+
+  async function aktiveZeiten(): Promise<AboZeit[]> {
+    const alle = await db.gebetszeiten.toArray()
+    return alle.filter((z) => z.aktiv).map((z) => ({ typ: z.typ, uhrzeit: z.uhrzeit }))
+  }
 
   async function zeitUmschalten(typ: 'morgen' | 'mittag' | 'abend', aktiv: boolean) {
     await db.gebetszeiten.update(typ, { aktiv: !aktiv })
+    // Bei aktiven Erinnerungen die geänderten Zeiten nachmelden.
+    if (einstellungen?.benachrichtigungenAn) await erinnerungenAktualisieren(await aktiveZeiten())
+  }
+
+  async function erinnerungenUmschalten(an: boolean) {
+    if (an) {
+      const r = await erinnerungenEinschalten(await aktiveZeiten())
+      if (r.ok) {
+        await einstellungenSchreiben({ benachrichtigungenAn: true })
+        setHinweis(null)
+      } else {
+        setHinweis(r.grund ? HINWEIS[r.grund] : null)
+      }
+    } else {
+      await erinnerungenAusschalten()
+      await einstellungenSchreiben({ benachrichtigungenAn: false })
+      setHinweis(null)
+    }
   }
 
   async function erscheinungWeiter() {
@@ -159,6 +193,22 @@ export default function Einstellungen() {
             </div>
           </button>
           <Linie />
+        </Abschnitt>
+
+        <Abschnitt titel="Benachrichtigungen">
+          <div style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
+            <div style={{ fontFamily: SERIF, fontSize: 20 }}>Erinnerungen</div>
+            <button
+              onClick={() => erinnerungenUmschalten(!(einstellungen?.benachrichtigungenAn ?? false))}
+              aria-label="Erinnerungen"
+            >
+              <Schalter an={einstellungen?.benachrichtigungenAn ?? false} />
+            </button>
+          </div>
+          <Linie />
+          <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
+            {hinweis ?? 'Ein ruhiger Ruf zu den aktiven Gebetszeiten — ohne Themen oder Namen, nur eine Einladung.'}
+          </div>
         </Abschnitt>
 
         <Abschnitt titel="Anmeldung">

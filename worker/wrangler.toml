@@ -1,0 +1,26 @@
+# Cloudflare Worker für die Benachrichtigungen.
+#
+# Einrichtung (einmalig):
+#   1. VAPID-Schlüsselpaar erzeugen:  npx web-push generate-vapid-keys
+#   2. KV-Namespace anlegen:          npx wrangler kv namespace create ABOS
+#      und die ausgegebene id unten bei [[kv_namespaces]] eintragen.
+#   3. Geheimnisse setzen:
+#        npx wrangler secret put VAPID_PRIVATE
+#        npx wrangler secret put VAPID_PUBLIC
+#        npx wrangler secret put VAPID_SUBJECT   # z. B. mailto:du@example.com
+#   4. Veröffentlichen:               npx wrangler deploy
+#
+# Der öffentliche VAPID-Schlüssel und die Worker-URL gehören zusätzlich ins
+# Frontend (.env: VITE_VAPID_PUBLIC_KEY, VITE_WORKER_URL).
+
+name = "gebet-benachrichtigung"
+main = "index.ts"
+compatibility_date = "2026-01-01"
+
+# Cron alle 15 Minuten (UTC). Die Umrechnung auf Ortszeit passiert im Code.
+[triggers]
+crons = ["*/15 * * * *"]
+
+[[kv_namespaces]]
+binding = "ABOS"
+id = "HIER_DIE_KV_NAMESPACE_ID_EINTRAGEN"

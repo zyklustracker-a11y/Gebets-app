@@ -98,6 +98,8 @@ export interface Einstellungen {
   jesusgebetAnzahl: JesusgebetAnzahl;
   heiligentagAnzeigen: boolean;
   erscheinungsbild: Erscheinungsbild;
+  /** Ob Erinnerungen (Web Push) eingeschaltet sind. */
+  benachrichtigungenAn?: boolean;
   kontoId?: string;
 }
 

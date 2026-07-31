@@ -24,6 +24,9 @@ export default defineConfig({
         // Heiligenkalender stecken im JS-Bündel (importiertes JSON) und sind
         // damit ebenfalls Teil des Precache.
         globPatterns: ['**/*.{js,css,html,svg,png,json,woff2,webmanifest}'],
+        // Eigene Push-Behandlung (Benachrichtigung anzeigen, Tippen öffnet die
+        // Tageszeit) in den generierten Service Worker einbinden.
+        importScripts: ['push-sw.js'],
         navigateFallback: '/index.html',
         // Grosszügiges Limit, damit das JS-Bündel mit dem Korpus sicher
         // vorab gecacht wird.
