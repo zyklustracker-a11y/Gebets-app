@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "korpus": "node scripts/korpus-bauen.mjs",
     "module": "node scripts/module-bauen.mjs",
-    "verse": "node scripts/verse-bauen.mjs"
+    "verse": "node scripts/verse-bauen.mjs",
+    "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
     "dexie": "^4.4.4",
