@@ -101,7 +101,7 @@ export default function Themen() {
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 2 }}>
                           <div style={{ fontFamily: SERIF, fontSize: 20 }}>{thema.titel}</div>
                           {mitGebeten?.has(thema.id) && (
-                            <div style={{ fontSize: 11, color: 'var(--gold)' }}>Eigene Gebete ✓</div>
+                            <div style={{ fontSize: 11, color: 'var(--gold)' }}>Mit KI erstellt ✓</div>
                           )}
                         </div>
                         <Punkt sichtbar={aktiv} />
