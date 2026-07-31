@@ -96,6 +96,12 @@ export default function Themen() {
                         <Punkt sichtbar={aktiv} />
                       </button>
                       <button
+                        onClick={() => navigate(`/themen/${thema.id}/gebete`)}
+                        style={{ fontSize: 13, color: 'var(--faint)', padding: '8px 0 8px 8px', flex: 'none' }}
+                      >
+                        Gebete
+                      </button>
+                      <button
                         onClick={() => abschlussOeffnen(thema)}
                         style={{ fontSize: 13, color: 'var(--faint)', padding: '8px 0 8px 8px', flex: 'none' }}
                       >

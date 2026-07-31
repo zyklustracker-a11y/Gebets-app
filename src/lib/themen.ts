@@ -7,18 +7,28 @@ import { db } from './db'
 import { kategorieName } from './kategorien'
 import type { Thema } from './types'
 
-/** Legt ein eigenes Thema an (Freitext). */
-export async function themaAnlegen(titel: string, kategorie: string): Promise<void> {
+/** Legt ein eigenes Thema an (Freitext) und gibt seine id zurück. */
+export async function themaAnlegen(titel: string, kategorie: string, keineErzeugung = false): Promise<string | null> {
   const sauber = titel.trim()
-  if (!sauber) return
+  if (!sauber) return null
+  const id = crypto.randomUUID()
   await db.themen.add({
-    id: crypto.randomUUID(),
+    id,
     titel: sauber,
     kategorie,
     istEigen: true,
     status: 'aktiv',
     erstelltAm: new Date().toISOString(),
+    keineErzeugung: keineErzeugung || undefined,
   })
+  return id
+}
+
+/** Schaltet „Nicht an die KI senden" um (Spezifikation, Abschnitt 12). */
+export async function erzeugungUmschalten(id: string): Promise<void> {
+  const thema = await db.themen.get(id)
+  if (!thema) return
+  await db.themen.update(id, { keineErzeugung: thema.keineErzeugung ? undefined : true })
 }
 
 /** Wählt eine Kategorie an oder ab (legt ein Kategorie-Thema an oder entfernt es). */

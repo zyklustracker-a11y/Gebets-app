@@ -96,8 +96,16 @@ async function erzeugeAuswahl(
 
   // Grundgebete zur Kategorie und Tageszeit, mit Rückfall auf die Standard-
   // kategorie und zuletzt auf alles zur Tageszeit passende.
-  let auswahl = korpusFuer(kategorie, tageszeit)
+  let auswahl: { id: string }[] = korpusFuer(kategorie, tageszeit)
   if (auswahl.length === 0) auswahl = korpusFuer(STANDARD_KATEGORIE, tageszeit)
+
+  // Selbst erzeugte Gebete des Hauptthemas kommen gleichberechtigt in den Topf
+  // (Abschnitt 12): einmal erzeugt, werden sie wie Korpuseinträge behandelt.
+  if (hauptThema?.istEigen) {
+    const eigene = await db.eigeneGebete.where('themaId').equals(hauptThema.id).toArray()
+    const passend = eigene.filter((g) => g.tageszeit === tageszeit)
+    if (passend.length > 0) auswahl = [...passend, ...auswahl]
+  }
 
   // Wiederholungssperre: was in den letzten 14 Tagen dran war, meiden.
   const grenze = datumMinusTage(datum, SPERRE_TAGE)
@@ -164,7 +172,8 @@ export async function alsGebetet(datum: string, tageszeit: Tageszeit): Promise<v
  * Moduls. Das Zusammenfügen selbst liegt in `lib/komposition.ts`.
  */
 export async function komponiere(eintrag: Gebetseintrag): Promise<Zusammensetzung | null> {
-  const grundgebet = korpusNachId(eintrag.korpusId)
+  // Erst das mitgelieferte Korpus, dann die selbst erzeugten Gebete (Abschnitt 12).
+  const grundgebet = korpusNachId(eintrag.korpusId) ?? (await db.eigeneGebete.get(eintrag.korpusId))
   if (!grundgebet) return null
 
   const themen = await db.themen.bulkGet(eintrag.themenIds)

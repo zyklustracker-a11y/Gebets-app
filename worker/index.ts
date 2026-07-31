@@ -11,7 +11,15 @@
  */
 
 import { faellige, rufFuer, titelFuer, zuercherDatum, zuercherZeit, type AboZeit } from '../src/lib/benachrichtigung'
-import type { Tageszeit } from '../src/lib/types'
+import {
+  ANTWORT_SCHEMA,
+  nutzerPrompt,
+  pruefeAntwort,
+  systemPrompt,
+  type ErzeugungAnfrage,
+  type ErzeugungAntwort,
+} from '../src/lib/erzeugung'
+import type { Faerbung, Tageszeit } from '../src/lib/types'
 import { sendeWebPush, type Abo } from './webpush'
 
 // Minimale Cloudflare-Typen, um ohne zusätzliche Abhängigkeit auszukommen.
@@ -29,6 +37,8 @@ interface Env {
   VAPID_PUBLIC: string
   VAPID_PRIVATE: string
   VAPID_SUBJECT: string
+  /** Gemini-API-Schlüssel für die Gebetserzeugung (Abschnitt 12). */
+  GEMINI_API_KEY: string
 }
 
 interface GespeichertesAbo extends Abo {
@@ -63,6 +73,27 @@ export default {
       const { endpoint } = (await req.json()) as { endpoint: string }
       await env.ABOS.delete(await aboSchluessel(endpoint))
       return new Response('ok', { headers: CORS })
+    }
+
+    // Eigene Gebete erzeugen (Abschnitt 12). Nur Titel, Kategorie und Färbung
+    // werden übertragen; der Gemini-Schlüssel liegt als Worker-Secret.
+    if (req.method === 'POST' && url.pathname === '/erzeugen') {
+      let roh: { titel?: string; kategorie?: string; faerbung?: string }
+      try {
+        roh = (await req.json()) as typeof roh
+      } catch {
+        return new Response('ungültige Anfrage', { status: 400, headers: CORS })
+      }
+      const titel = (roh.titel ?? '').trim()
+      if (!titel) return new Response('kein Titel', { status: 400, headers: CORS })
+
+      const gebete = await erzeugeGebete(env, {
+        titel,
+        kategorie: (roh.kategorie ?? '').trim() || 'Anliegen',
+        faerbung: normFaerbung(roh.faerbung),
+      })
+      if (!gebete) return new Response('Erzeugung fehlgeschlagen', { status: 502, headers: CORS })
+      return new Response(JSON.stringify(gebete), { headers: { ...CORS, 'content-type': 'application/json' } })
     }
 
     return new Response('Gebet — Benachrichtigungs-Worker', { headers: CORS })
@@ -104,4 +135,65 @@ async function verschickeFaellige(env: Env): Promise<void> {
 
 function merker(aboName: string, datum: string, typ: Tageszeit): string {
   return `gesendet:${aboName}:${datum}:${typ}`
+}
+
+// ---------------------------------------------------------------------------
+// Gebetserzeugung (Abschnitt 12)
+// ---------------------------------------------------------------------------
+
+// Bewegliches Alias: bleibt gültig, wenn Google einzelne Flash-Versionen
+// abkündigt. Modell im Sinne der Spezifikation: Gemini Flash.
+const GEMINI_MODELL = 'gemini-flash-latest'
+
+function normFaerbung(wert: string | undefined): Faerbung {
+  return wert === 'fastenzeit' || wert === 'osterzeit' || wert === 'trauer' ? wert : 'gewoehnlich'
+}
+
+/**
+ * Fordert die drei Gebete an und prüft sie. Fällt eine Prüfung durch, wird
+ * genau einmal neu angefordert; danach `null` — das Frontend fällt dann still
+ * auf den Platzhalter-Weg zurück.
+ */
+async function erzeugeGebete(env: Env, anfrage: ErzeugungAnfrage): Promise<ErzeugungAntwort | null> {
+  for (let versuch = 0; versuch < 2; versuch++) {
+    const antwort = await geminiAufruf(env, anfrage).catch(() => null)
+    if (antwort && pruefeAntwort(antwort, anfrage.titel).gueltig) return antwort
+  }
+  return null
+}
+
+async function geminiAufruf(env: Env, anfrage: ErzeugungAnfrage): Promise<ErzeugungAntwort | null> {
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODELL}:generateContent`,
+    {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: systemPrompt() }] },
+        contents: [{ role: 'user', parts: [{ text: nutzerPrompt(anfrage) }] }],
+        generationConfig: {
+          temperature: 0.85,
+          // Grosszügig: die Flash-Modelle verbrauchen bis ~4600 Tokens fürs
+          // interne „Denken"; zu knapp bemessen bricht das JSON mit MAX_TOKENS ab.
+          maxOutputTokens: 12288,
+          responseMimeType: 'application/json',
+          responseSchema: ANTWORT_SCHEMA,
+          thinkingConfig: { thinkingBudget: 1024 },
+        },
+      }),
+    },
+  )
+  if (!res.ok) return null
+
+  const daten = (await res.json()) as {
+    candidates?: { content?: { parts?: { text?: string }[] } }[]
+  }
+  const text = daten.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ?? ''
+  if (!text.trim()) return null
+
+  try {
+    return JSON.parse(text) as ErzeugungAntwort
+  } catch {
+    return null
+  }
 }

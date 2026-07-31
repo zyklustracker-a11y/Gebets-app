@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Linie, RAND, SERIF, Ueberschrift, bildschirm, obenSafe, untenSafe } from '../components/ui'
+import { Linie, RAND, SERIF, Schalter, Ueberschrift, bildschirm, obenSafe, untenSafe } from '../components/ui'
 import { KATEGORIEN } from '../lib/kategorien'
 import { themaAnlegen } from '../lib/themen'
 
@@ -18,6 +18,7 @@ export default function ThemaNeu() {
   const [titel, setTitel] = useState('')
   const [kategorie, setKategorie] = useState('familie')
   const [alleZeigen, setAlleZeigen] = useState(false)
+  const [keineKi, setKeineKi] = useState(false)
 
   const sichtbar = alleZeigen
     ? KATEGORIEN
@@ -25,8 +26,10 @@ export default function ThemaNeu() {
 
   async function aufnehmen() {
     if (!titel.trim()) return
-    await themaAnlegen(titel, kategorie)
-    navigate('/themen')
+    const id = await themaAnlegen(titel, kategorie, keineKi)
+    if (!id) return
+    // Ohne KI direkt in die Liste; sonst zum bewussten Erzeugen der Gebete.
+    navigate(keineKi ? '/themen' : `/themen/${id}/gebete`)
   }
 
   return (
@@ -97,6 +100,20 @@ export default function ThemaNeu() {
             </>
           )}
         </div>
+
+        <button
+          onClick={() => setKeineKi((v) => !v)}
+          style={{ marginTop: 28, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, width: '100%' }}
+          aria-label="Nicht an die KI senden"
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 4 }}>
+            <div style={{ fontSize: 15, color: 'var(--ink)' }}>Nicht an die KI senden</div>
+            <div style={{ fontSize: 12, color: 'var(--faint)', lineHeight: 1.5, textAlign: 'left' }}>
+              Für dieses Thema keine eigenen Gebete erzeugen lassen.
+            </div>
+          </div>
+          <Schalter an={keineKi} beschriftung="Nicht an die KI senden" />
+        </button>
 
         <div style={{ flex: 1 }} />
         <div style={{ paddingBottom: 20 }}>
