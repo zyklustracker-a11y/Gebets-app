@@ -19,15 +19,17 @@ import { useEffect, useState } from 'react'
 import { db } from './db'
 import { firebaseKonfiguriert, holeAuth, holeFirestore } from './firebase'
 
-// Die abzugleichenden Tabellen (Spezifikation, Abschnitt 8). Gebetszeiten und
-// das Korpus gehören bewusst nicht dazu.
-type SyncSatz = { id: string; geaendertAm?: string; [feld: string]: unknown }
-const TABELLEN: { name: string; tabelle: Table<SyncSatz, string> }[] = [
-  { name: 'themen', tabelle: db.themen as unknown as Table<SyncSatz, string> },
-  { name: 'gedenknamen', tabelle: db.gedenknamen as unknown as Table<SyncSatz, string> },
-  { name: 'journal', tabelle: db.journal as unknown as Table<SyncSatz, string> },
-  { name: 'protokoll', tabelle: db.protokoll as unknown as Table<SyncSatz, string> },
-  { name: 'einstellungen', tabelle: db.einstellungen as unknown as Table<SyncSatz, string> },
+// Die abzugleichenden Tabellen. Die meisten sind über `id` verschlüsselt,
+// gebetszeiten über `typ`; das Korpus wird nicht abgeglichen. Der Nutzer hat
+// die Gebetszeiten bewusst zum Abgleich hinzugewählt.
+type SyncSatz = { geaendertAm?: string; [feld: string]: unknown }
+const TABELLEN: { name: string; schluessel: string; tabelle: Table<SyncSatz, string> }[] = [
+  { name: 'themen', schluessel: 'id', tabelle: db.themen as unknown as Table<SyncSatz, string> },
+  { name: 'gedenknamen', schluessel: 'id', tabelle: db.gedenknamen as unknown as Table<SyncSatz, string> },
+  { name: 'journal', schluessel: 'id', tabelle: db.journal as unknown as Table<SyncSatz, string> },
+  { name: 'protokoll', schluessel: 'id', tabelle: db.protokoll as unknown as Table<SyncSatz, string> },
+  { name: 'einstellungen', schluessel: 'id', tabelle: db.einstellungen as unknown as Table<SyncSatz, string> },
+  { name: 'gebetszeiten', schluessel: 'typ', tabelle: db.gebetszeiten as unknown as Table<SyncSatz, string> },
 ]
 
 const jetzt = () => new Date().toISOString()
@@ -161,7 +163,7 @@ function hooksRegistrieren() {
     const beiCreate = (pk: string, obj: SyncSatz) => {
       if (anwendungsTiefe > 0) return
       obj.geaendertAm = jetzt()
-      merken(schmutzig, name, obj.id ?? pk)
+      merken(schmutzig, name, pk)
       flushPlanen()
     }
     const beiUpdate = (_mods: Partial<SyncSatz>, pk: string) => {
@@ -192,26 +194,28 @@ async function ersterAbgleich(uid: string) {
   const { collection, doc, getDocs, setDoc } = await fs()
   const datenbank = await holeFirestore()
 
-  for (const { name, tabelle } of TABELLEN) {
+  for (const { name, schluessel, tabelle } of TABELLEN) {
     const schnappschuss = await getDocs(collection(datenbank, 'nutzer', uid, name))
     const fern = new Map<string, SyncSatz>()
     schnappschuss.forEach((d) => fern.set(d.id, d.data() as SyncSatz))
     const lokal = await tabelle.toArray()
+    const idVon = (satz: SyncSatz) => String(satz[schluessel])
 
     // Lokal neuer oder nur lokal vorhanden → hochladen.
     for (const l of lokal) {
-      const f = fern.get(l.id)
+      const id = idVon(l)
+      const f = fern.get(id)
       const lz = l.geaendertAm ?? ''
       const fz = f?.geaendertAm ?? ''
       if (!f || lz > fz) {
         const satz = l.geaendertAm ? l : { ...l, geaendertAm: jetzt() }
-        await setDoc(doc(datenbank, 'nutzer', uid, name, l.id), entfernenUndefiniert(satz)).catch(() => {})
+        await setDoc(doc(datenbank, 'nutzer', uid, name, id), entfernenUndefiniert(satz)).catch(() => {})
         if (!l.geaendertAm) await syncSchreiben(() => tabelle.put(satz).then(() => {}))
       }
     }
     // Fern neuer oder nur fern vorhanden → übernehmen.
     for (const [id, f] of fern) {
-      const l = lokal.find((x) => x.id === id)
+      const l = lokal.find((x) => idVon(x) === id)
       const lz = l?.geaendertAm ?? ''
       const fz = f.geaendertAm ?? ''
       if (!l || fz > lz) await syncSchreiben(() => tabelle.put(f).then(() => {}))

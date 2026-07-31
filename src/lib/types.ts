@@ -56,6 +56,8 @@ export interface Gebetszeit {
   uhrzeit: string;
   aktiv: boolean;
   benachrichtigung: boolean;
+  /** ISO-Zeitstempel der letzten Änderung — für den Abgleich (Abschnitt 8). */
+  geaendertAm?: string;
 }
 
 /**
