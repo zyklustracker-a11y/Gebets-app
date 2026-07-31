@@ -37,6 +37,8 @@ export default function ThemaGebete() {
   if (!thema) return <div style={bildschirm} />
 
   const hatGebete = (gebete?.length ?? 0) > 0
+  const erstelltAm = gebete?.[0]?.erstelltAm
+  const erstelltText = erstelltAm ? ` (erstellt am ${new Date(erstelltAm).toLocaleDateString('de-DE')})` : ''
 
   async function erzeugen() {
     if (!thema) return
@@ -85,11 +87,31 @@ export default function ThemaGebete() {
           <Linie />
         </div>
 
-        {/* Fall 1: erzeugte Gebete vorhanden — bearbeitbar. */}
+        {/* Fall 1: erzeugte Gebete vorhanden — klare Bestätigung, dann bearbeitbar. */}
         {hatGebete && (
-          <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 30 }}>
-            <div style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--gold)' }}>
-              ✓ Erstellt — dieses Thema wird bevorzugt und läuft offline. Du kannst jeden Text bearbeiten.
+          <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 26 }}>
+            <div
+              style={{
+                background: 'var(--field)',
+                border: '1px solid var(--edge)',
+                borderRadius: 12,
+                padding: '14px 16px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 6,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span style={{ color: 'var(--gold)', fontSize: 17 }} aria-hidden>
+                  ✓
+                </span>
+                <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>Mit KI erfolgreich erstellt</span>
+              </div>
+              <div style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--muted)' }}>
+                Drei eigene Gebete für „{thema.titel}" — Morgen, Mittag und Abend{erstelltText}. Sie sind auf diesem Gerät
+                gespeichert, laufen offline und erscheinen in der Gebetsansicht, sobald dieses Thema an der Reihe ist. Jeden
+                Text kannst du unten anpassen.
+              </div>
             </div>
             {gebete!.map((gebet) => (
               <GebetBlock key={gebet.id} gebet={gebet} />
@@ -99,7 +121,7 @@ export default function ThemaGebete() {
               disabled={laufend}
               style={{ alignSelf: 'flex-start', fontSize: 14, color: 'var(--muted)', padding: '4px 0' }}
             >
-              {laufend ? 'Einen Moment …' : 'Neu erzeugen lassen'}
+              {laufend ? 'Die KI erstellt neue Gebete …' : 'Neu erzeugen lassen'}
             </button>
           </div>
         )}
@@ -113,7 +135,9 @@ export default function ThemaGebete() {
                 : 'Möchtest du für dieses Thema eigene Gebete für Morgen, Mittag und Abend erstellen lassen? Übertragen werden nur Titel und Kategorie.'}
             </div>
             <div style={{ marginTop: 24 }}>
-              <Knopf onClick={erzeugen}>{laufend ? 'Einen Moment …' : fehlgeschlagen ? 'Nochmal versuchen' : 'Eigene Gebete erstellen'}</Knopf>
+              <Knopf onClick={erzeugen}>
+                {laufend ? 'Die KI erstellt deine Gebete …' : fehlgeschlagen ? 'Nochmal versuchen' : 'Eigene Gebete erstellen'}
+              </Knopf>
             </div>
             <button
               onClick={() => navigate('/themen')}
