@@ -88,6 +88,15 @@ export default function Einstellungen() {
     if (einstellungen?.benachrichtigungenAn) await erinnerungenAktualisieren(await aktiveZeiten())
   }
 
+  async function zeitAendern(typ: 'morgen' | 'mittag' | 'abend', uhrzeit: string) {
+    // Der Zeitwähler liefert "HH:MM"; leere/ungültige Eingaben ignorieren.
+    if (!/^\d{2}:\d{2}$/.test(uhrzeit)) return
+    await db.gebetszeiten.update(typ, { uhrzeit, geaendertAm: new Date().toISOString() })
+    // Kernpunkt: Bei aktiven Erinnerungen sofort das Abo beim Worker mit der
+    // neuen Zeit aktualisieren, damit Anzeige und Benachrichtigung gleich laufen.
+    if (einstellungen?.benachrichtigungenAn) await erinnerungenAktualisieren(await aktiveZeiten())
+  }
+
   async function erinnerungenUmschalten(an: boolean) {
     if (an) {
       const r = await erinnerungenEinschalten(await aktiveZeiten())
@@ -152,18 +161,35 @@ export default function Einstellungen() {
         <Abschnitt titel="Gebetszeiten">
           {(gebetszeiten ?? []).map((zeit) => (
             <div key={zeit.typ} style={{ display: 'flex', flexDirection: 'column' }}>
-              <div style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 14 }}>
-                  <span style={{ fontFamily: SERIF, fontSize: 20 }}>{TITEL[zeit.typ]}</span>
-                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>{zeit.uhrzeit.replace(/^0/, '')}</span>
+              <div style={{ minHeight: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+                <span style={{ fontFamily: SERIF, fontSize: 20 }}>{TITEL[zeit.typ]}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                  <input
+                    type="time"
+                    value={zeit.uhrzeit}
+                    onChange={(e) => zeitAendern(zeit.typ, e.target.value)}
+                    aria-label={`Uhrzeit ${TITEL[zeit.typ]}`}
+                    style={{
+                      font: 'inherit',
+                      fontSize: 15,
+                      color: zeit.aktiv ? 'var(--ink)' : 'var(--faint)',
+                      background: 'var(--field)',
+                      border: '1px solid var(--rule)',
+                      borderRadius: 8,
+                      padding: '6px 10px',
+                    }}
+                  />
+                  <button onClick={() => zeitUmschalten(zeit.typ, zeit.aktiv)} aria-label={`${TITEL[zeit.typ]} anzeigen`}>
+                    <Schalter an={zeit.aktiv} />
+                  </button>
                 </div>
-                <button onClick={() => zeitUmschalten(zeit.typ, zeit.aktiv)} aria-label={`${TITEL[zeit.typ]} anzeigen`}>
-                  <Schalter an={zeit.aktiv} />
-                </button>
               </div>
               <Linie />
             </div>
           ))}
+          <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
+            Tippe auf die Uhrzeit, um sie zu ändern. Sind die Erinnerungen an, wird die neue Zeit automatisch übernommen.
+          </div>
         </Abschnitt>
 
         <Abschnitt titel="Jesusgebet">
