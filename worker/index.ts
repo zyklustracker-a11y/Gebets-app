@@ -154,7 +154,9 @@ function normFaerbung(wert: string | undefined): Faerbung {
  * auf den Platzhalter-Weg zurück.
  */
 async function erzeugeGebete(env: Env, anfrage: ErzeugungAnfrage): Promise<ErzeugungAntwort | null> {
-  for (let versuch = 0; versuch < 2; versuch++) {
+  // Bis zu drei Versuche: das kostenlose Modell trifft die Wortzahlen nicht
+  // immer beim ersten Mal, und Groq liefert gelegentlich 503/429.
+  for (let versuch = 0; versuch < 3; versuch++) {
     const antwort = await groqAufruf(env, anfrage).catch(() => null)
     if (antwort && pruefeAntwort(antwort, anfrage.titel).gueltig) return antwort
   }

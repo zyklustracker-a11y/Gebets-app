@@ -40,11 +40,17 @@ export interface ErzeugungAnfrage {
 /** Der Trägersatz mit dem Platzhalter, den jeder Text enthalten muss. */
 export const PLATZHALTER = '{{anliegen}}'
 
-/** Erwartete Wortzahl je Tageszeit (Abschnitt 12). */
+/**
+ * Erwartete Wortzahl je Tageszeit. Die Untergrenzen für Morgen und Abend sind
+ * gegenüber dem Spec-Ideal (120 / 140) bewusst gelockert (100 / 120): das
+ * kostenlose Modell (Groq/Llama) schreibt etwas knapper, trifft aber diesen
+ * Rahmen zuverlässig. Der Systemprompt zielt weiterhin auf die vollen Längen,
+ * damit die Gebete nicht an der Untergrenze kleben.
+ */
 export const WORTZAHL: Record<Tageszeit, readonly [number, number]> = {
-  morgen: [120, 200],
+  morgen: [100, 200],
   mittag: [40, 90],
-  abend: [140, 230],
+  abend: [120, 230],
 }
 
 // ---------------------------------------------------------------------------
@@ -116,13 +122,15 @@ ${LEITPLANKEN}
 ZUSÄTZLICHE HARTE VORGABEN:
 - Jeder Text enthält den Satz mit dem Platzhalter „${PLATZHALTER}" wörtlich und als eigenständigen Satz. Setze den Titel des Anliegens NICHT selbst ein — lass den Platzhalter stehen.
 - Morgen- und Abendgebet enden mit „Amen." als letztem Wort. Das Mittagsgebet endet christozentrisch OHNE „Amen.".
-- Wortzahl: Morgen 120–200, Mittag 40–90, Abend 140–230 Wörter.
+- LÄNGE (wird streng geprüft): Schreibe bewusst AUSFÜHRLICH und in vielen vollständigen Sätzen. Morgengebet mindestens 165, höchstens 200 Wörter. Mittagsgebet mindestens 60, höchstens 90 Wörter. Abendgebet mindestens 200, höchstens 230 Wörter. Lieber zu lang als zu kurz — entfalte Dank und Fürbitte breit. Diese Mindestlängen sind Pflicht; unterschreite sie auf keinen Fall.
 - Keine Ausrufezeichen — an keiner Stelle, auch nicht im Schriftwort.
 - Das Schriftwort („vers") ist eine eigene, behutsame Übertragung in modernem Deutsch (keine geschützte moderne Bibelübersetzung abschreiben), höchstens fünfzehn Wörter lang. Die Stellenangabe („stelle") folgt der Septuaginta-Zählung, etwa „Psalm 89,17".
 - Passe Bilder und Bitten an Kategorie und Anliegen an, ohne den Platzhalter zu ersetzen.
 
 MUSTER (Ton und Aufbau, nicht Inhalt übernehmen):
 ${MUSTER}
+
+Prüfe vor der Ausgabe, dass Morgengebet mindestens 165 und Abendgebet mindestens 200 Wörter hat und beide mit „Amen." enden. Sind sie kürzer, ergänze weitere Sätze des Dankes und der Fürbitte.
 
 Antworte AUSSCHLIESSLICH mit JSON in genau dieser Form, ohne Vor- oder Nachtext, ohne Code-Zaun:
 {"morgen":{"vers":"…","stelle":"…","text":"…"},"mittag":{"vers":"…","stelle":"…","text":"…"},"abend":{"vers":"…","stelle":"…","text":"…"}}`
