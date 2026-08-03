@@ -280,7 +280,7 @@ export default function Einstellungen() {
           </div>
           <Linie />
           <div style={{ padding: '14px 0 0', fontSize: 13, lineHeight: 1.7, color: 'var(--faint)' }}>
-            {hinweis ?? 'Ein ruhiger Ruf zu den aktiven Gebetszeiten — ohne Themen oder Namen, nur eine Einladung.'}
+            {hinweis ?? 'Eine kurze Erinnerung zu den aktiven Gebetszeiten — ohne Themen oder Namen, nur ein Satz.'}
           </div>
         </Abschnitt>
 

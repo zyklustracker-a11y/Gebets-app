@@ -1,7 +1,10 @@
+import { readFileSync } from 'node:fs'
+
 import { describe, expect, it } from 'vitest'
 
-import { RUFE, faellige, rufFuer, zuercherDatum, zuercherZeit } from './benachrichtigung'
+import { ERINNERUNGSTEXTE, erinnerungstextFuer, faellige, zuercherDatum, zuercherZeit } from './benachrichtigung'
 import type { AboZeit } from './benachrichtigung'
+import { TAGESZEITEN } from './types'
 
 describe('zuercherZeit — Sommerzeit über Intl, ohne feste Offsets', () => {
   it('rechnet im Sommer mit +2 Stunden (MESZ)', () => {
@@ -45,12 +48,45 @@ describe('faellige', () => {
   })
 })
 
-describe('rufFuer', () => {
-  it('ist deterministisch pro Tag und Tageszeit', () => {
-    expect(rufFuer('2026-07-30', 'morgen')).toBe(rufFuer('2026-07-30', 'morgen'))
+describe('erinnerungstextFuer', () => {
+  it('nennt die Gebetszeit beim Namen', () => {
+    expect(erinnerungstextFuer('morgen')).toBe('Zeit für dein Morgengebet')
+    expect(erinnerungstextFuer('mittag')).toBe('Zeit für dein Mittagsgebet')
+    expect(erinnerungstextFuer('abend')).toBe('Zeit für dein Abendgebet')
   })
 
-  it('stammt immer aus der allgemeinen Rufliste', () => {
-    expect(RUFE).toContain(rufFuer('2026-07-30', 'abend'))
+  it('hält auch den Text fürs Nachtgebet bereit', () => {
+    expect(ERINNERUNGSTEXTE.nacht).toBe('Zeit für dein Nachtgebet')
+  })
+
+  it('deckt jede Tageszeit der App ab', () => {
+    for (const tageszeit of TAGESZEITEN) {
+      expect(erinnerungstextFuer(tageszeit), tageszeit).toBeTruthy()
+    }
+  })
+
+  it('trägt keine persönlichen Angaben und keinen alten Ruf mehr', () => {
+    for (const text of Object.values(ERINNERUNGSTEXTE)) {
+      expect(text.toLowerCase()).not.toContain('herr')
+    }
+  })
+})
+
+describe('public/push-sw.js — der Service Worker zeigt dieselben Texte', () => {
+  const quelle = readFileSync(new URL('../../public/push-sw.js', import.meta.url), 'utf8')
+
+  it('spiegelt ERINNERUNGSTEXTE unverändert', () => {
+    const block = quelle.match(/const ERINNERUNGSTEXTE = \{([^}]*)\}/)?.[1]
+    expect(block, 'ERINNERUNGSTEXTE fehlt in push-sw.js').toBeTruthy()
+
+    const gespiegelt: Record<string, string> = {}
+    for (const [, schluessel, text] of block!.matchAll(/(\w+):\s*'([^']*)'/g)) {
+      gespiegelt[schluessel!] = text!
+    }
+    expect(gespiegelt).toEqual(ERINNERUNGSTEXTE)
+  })
+
+  it('setzt keinen zweiten Textkörper — die Meldung bleibt einzeilig', () => {
+    expect(quelle).not.toMatch(/\bbody\s*:/)
   })
 })

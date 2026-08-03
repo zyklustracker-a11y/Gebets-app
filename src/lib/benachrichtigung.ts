@@ -7,7 +7,7 @@
  * 1. Zeitzone über `Intl`, niemals mit festen Offsets. Der Cron läuft in UTC,
  *    die Uhrzeiten des Nutzers sind Ortszeit Europe/Zurich mit Sommerzeit.
  * 2. Der Benachrichtigungstext enthält niemals Themen, Namen oder Journal —
- *    nur einen allgemeinen Ruf aus dieser Liste.
+ *    nur die schlichte, zeitbezogene Erinnerung von hier.
  */
 
 import type { Tageszeit } from './types'
@@ -18,37 +18,26 @@ export interface AboZeit {
   uhrzeit: string
 }
 
-/** Allgemeine Rufe — schlicht, ohne jede persönliche Angabe. */
-export const RUFE: readonly string[] = [
-  'Kommt, lasst uns anbeten.',
-  'Herr, öffne meine Lippen.',
-  'Ein Augenblick der Stille.',
-  'Der Herr ist nahe.',
-  'Sei still und erkenne, dass Er Gott ist.',
-  'Es ist Zeit, sich Gott zuzuwenden.',
-  'Komm zur Ruhe vor Gott.',
-  'Halte einen Augenblick inne.',
-]
-
-const TITEL: Record<Tageszeit, string> = {
-  morgen: 'Morgengebet',
-  mittag: 'Mittagsgebet',
-  abend: 'Abendgebet',
+/**
+ * Die Texte der Erinnerungen — die einzige Stelle, an der sie stehen.
+ *
+ * Wer sie ändern will, ändert sie hier: Der Cloudflare Worker holt sie von
+ * hier, und der Service Worker zeigt genau diesen einen Satz an. Eine
+ * Zusatzzeile („Betreff", Untertitel, zweiter Text) gibt es bewusst nicht.
+ *
+ * `nacht` steht bereit, falls einmal eine vierte Gebetszeit dazukommt; die App
+ * kennt zurzeit Morgen, Mittag und Abend (`Tageszeit` in `types.ts`).
+ */
+export const ERINNERUNGSTEXTE: Record<Tageszeit | 'nacht', string> = {
+  morgen: 'Zeit für dein Morgengebet',
+  mittag: 'Zeit für dein Mittagsgebet',
+  abend: 'Zeit für dein Abendgebet',
+  nacht: 'Zeit für dein Nachtgebet',
 }
 
-export function titelFuer(tageszeit: Tageszeit): string {
-  return TITEL[tageszeit]
-}
-
-/** Deterministischer Ruf pro (Datum, Tageszeit) — stabil über Cron-Wiederholungen. */
-export function rufFuer(datum: string, tageszeit: Tageszeit): string {
-  const schluessel = `${datum}-${tageszeit}`
-  let h = 2166136261
-  for (let i = 0; i < schluessel.length; i++) {
-    h ^= schluessel.charCodeAt(i)
-    h = Math.imul(h, 16777619)
-  }
-  return RUFE[Math.abs(h) % RUFE.length] ?? RUFE[0]!
+/** Der Erinnerungstext einer Gebetszeit — der gesamte Inhalt der Meldung. */
+export function erinnerungstextFuer(tageszeit: Tageszeit): string {
+  return ERINNERUNGSTEXTE[tageszeit]
 }
 
 /** Aktuelle Ortszeit Europe/Zurich als "HH:MM" — mit Sommerzeit über Intl. */

@@ -6,11 +6,12 @@
  *   scheduled  Cron alle 15 Minuten: fällige Gebetszeiten anstossen
  *
  * Zeitzone strikt über Intl (Europe/Zurich, mit Sommerzeit) — die Logik dazu
- * liegt in ../src/lib/benachrichtigung. Der Benachrichtigungstext ist ein
- * allgemeiner Ruf und enthält niemals Themen, Namen oder Journalinhalte.
+ * liegt in ../src/lib/benachrichtigung. Der Benachrichtigungstext ist die
+ * schlichte Erinnerung zur jeweiligen Gebetszeit (ERINNERUNGSTEXTE, ebenfalls
+ * dort) und enthält niemals Themen, Namen oder Journalinhalte.
  */
 
-import { faellige, rufFuer, titelFuer, zuercherDatum, zuercherZeit, type AboZeit } from '../src/lib/benachrichtigung'
+import { erinnerungstextFuer, faellige, zuercherDatum, zuercherZeit, type AboZeit } from '../src/lib/benachrichtigung'
 import {
   nutzerPrompt,
   pruefeAntwort,
@@ -121,7 +122,9 @@ async function verschickeFaellige(env: Env): Promise<void> {
     }
 
     for (const z of faellige(abo.zeiten, zeit, bereits)) {
-      const nutzlast = JSON.stringify({ titel: titelFuer(z.typ), text: rufFuer(datum, z.typ), tageszeit: z.typ })
+      // Nur `titel` und die Tageszeit fürs Öffnen: kein zweites Textfeld, damit
+      // die Meldung aus genau einer Zeile besteht.
+      const nutzlast = JSON.stringify({ titel: erinnerungstextFuer(z.typ), tageszeit: z.typ })
       const status = await sendeWebPush(abo, nutzlast, vapid).catch(() => 0)
       if (status === 201 || status === 200) {
         await env.ABOS.put(merker(name, datum, z.typ), '1', { expirationTtl: 60 * 60 * 48 })
