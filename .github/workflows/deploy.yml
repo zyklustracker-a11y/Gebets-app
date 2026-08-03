@@ -1,0 +1,104 @@
+# Automatischer Deploy bei jedem Push auf main.
+#
+# Zwei getrennte Aufgaben, damit ein fehlender Zugang nie den anderen Deploy
+# blockiert:
+#   hosting   baut die App und veröffentlicht sie auf Firebase Hosting
+#   worker    rollt den Cloudflare Worker der Benachrichtigungen aus
+#
+# Nötige Repository-Secrets (Settings → Secrets and variables → Actions):
+#   FIREBASE_SERVICE_ACCOUNT   Inhalt der Service-Account-JSON-Datei
+#   CLOUDFLARE_API_TOKEN       API-Token mit dem Recht „Edit Workers"
+#   CLOUDFLARE_ACCOUNT_ID      nur nötig, wenn das Token mehrere Konten sieht
+#
+# Fehlt ein Cloudflare-Token, überspringt die Worker-Aufgabe sich selbst und
+# der Lauf bleibt grün — der Hosting-Deploy läuft trotzdem.
+
+name: Veröffentlichen
+
+on:
+  push:
+    branches: [main]
+  # Erlaubt es, den Deploy von Hand aus dem Actions-Tab anzustossen.
+  workflow_dispatch:
+
+jobs:
+  hosting:
+    name: App auf Firebase Hosting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      # Erst prüfen, dann veröffentlichen: Ein roter Test darf nie live gehen.
+      - name: Typen prüfen
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm test
+
+      - name: Bauen
+        run: npm run build
+
+      # Der Inhalt läuft über eine Umgebungsvariable statt direkt in die
+      # Kommandozeile: So kann kein Zeichen aus dem Secret von der Shell
+      # gedeutet werden.
+      - name: Zugangsdatei aus dem Secret schreiben
+        env:
+          DIENSTKONTO: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: printf '%s' "$DIENSTKONTO" > "$RUNNER_TEMP/firebase.json"
+
+      # Hosting und Firestore-Regeln — dasselbe, was `npm run deploy` lokal tut.
+      - name: Veröffentlichen
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase.json
+        run: npx --yes firebase-tools deploy --only hosting,firestore:rules --non-interactive
+
+      - name: Zugangsdatei wieder entfernen
+        if: always()
+        run: rm -f "$RUNNER_TEMP/firebase.json"
+
+  worker:
+    name: Benachrichtigungs-Worker auf Cloudflare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Ist ein Cloudflare-Token hinterlegt?
+        id: zugang
+        run: echo "vorhanden=${{ secrets.CLOUDFLARE_API_TOKEN != '' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Ohne Token nichts tun
+        if: steps.zugang.outputs.vorhanden != 'true'
+        run: echo "Kein CLOUDFLARE_API_TOKEN gesetzt — der Worker wird nicht ausgerollt."
+
+      - name: Abhängigkeiten installieren
+        if: steps.zugang.outputs.vorhanden == 'true'
+        run: npm ci
+
+      # Bewusst ohne `tsc -p worker/tsconfig.json`: Dort stehen sechs
+      # Typfehler in webpush.ts, die es schon vor diesen Änderungen gab (die
+      # neueren lib-Typen unterscheiden Uint8Array<ArrayBuffer> und
+      # <ArrayBufferLike>). Wrangler bündelt mit esbuild und prüft keine Typen,
+      # der Worker läuft also — aber ein Prüfschritt hier würde jeden Deploy
+      # rot färben. Sind die Fehler bereinigt, gehört er wieder hinein.
+      - name: Veröffentlichen
+        if: steps.zugang.outputs.vorhanden == 'true'
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        # Secrets des Workers (VAPID_*, GROQ_API_KEY) bleiben bei einem Deploy
+        # erhalten und müssen hier nicht mitgegeben werden.
+        run: npx --yes wrangler deploy
