@@ -6,9 +6,12 @@ import { useTheme } from './lib/theme';
 import Einstellungen from './routes/Einstellungen';
 import Erhoert from './routes/Erhoert';
 import Gebet from './routes/Gebet';
+import GebetNeu from './routes/GebetNeu';
+import Gebete from './routes/Gebete';
 import Gedenkliste from './routes/Gedenkliste';
 import Heute from './routes/Heute';
 import Jesusgebet from './routes/Jesusgebet';
+import MeinGebet from './routes/MeinGebet';
 import Tagebuch from './routes/Tagebuch';
 import ThemaGebete from './routes/ThemaGebete';
 import ThemaNeu from './routes/ThemaNeu';
@@ -31,6 +34,11 @@ export default function App() {
       {/* Eine Benachrichtigung öffnet die Gebetsansicht der jeweiligen Tageszeit. */}
       <Route path="/gebet/:tageszeit" element={<Gebet />} />
       <Route path="/jesusgebet" element={<Jesusgebet />} />
+      {/* Gebetsübersicht mit den selbst angelegten Gebeten (Punkt 2). */}
+      <Route path="/gebete" element={<Gebete />} />
+      <Route path="/gebete/neu" element={<GebetNeu />} />
+      <Route path="/gebete/:id" element={<MeinGebet />} />
+      <Route path="/gebete/:id/bearbeiten" element={<GebetNeu />} />
       <Route path="/themen" element={<Themen />} />
       <Route path="/themen/neu" element={<ThemaNeu />} />
       <Route path="/themen/:id/gebete" element={<ThemaGebete />} />

@@ -76,6 +76,47 @@ export function Haken() {
   )
 }
 
+/** Ein schlichter Papierkorb — die sichtbare Löschmöglichkeit in Listen. */
+export function Papierkorb() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M3.5 6h17M9 6V3.8h6V6M6.5 6l.9 14.2h9.2L17.5 6M10.2 10.4v6M13.8 10.4v6" />
+    </svg>
+  )
+}
+
+/**
+ * Die Perlenschnur des Zählers — ein Punkt je Wiederholung, wie die Knoten
+ * einer Tschotki. Geteilt zwischen Jesusgebet und eigenen Gebeten.
+ */
+export function Perlen({ anzahl, gefuellt }: { anzahl: number; gefuellt: number }) {
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 11, maxWidth: 220 }}>
+      {Array.from({ length: anzahl }, (_, i) => (
+        <span
+          key={i}
+          style={{
+            width: 7,
+            height: 7,
+            borderRadius: '50%',
+            background: i < gefuellt ? 'var(--red)' : 'var(--rule)',
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
 /** Ein ruhiges Zahnrad — die einzige Navigationsmarke, oben auf „Heute". */
 export function Zahnrad() {
   return (
@@ -130,6 +171,42 @@ export function Overlay({ children, onSchliessen }: { children: ReactNode; onSch
         {children}
       </div>
     </div>
+  )
+}
+
+/**
+ * Die Rückfrage vor einer nicht umkehrbaren Handlung — ein Blatt wie das
+ * Abschluss-Overlay, damit Löschen nie versehentlich geschieht.
+ */
+export function Bestaetigung({
+  frage,
+  hinweis,
+  knopf = 'Löschen',
+  bestaetigen,
+  abbrechen,
+}: {
+  frage: string
+  hinweis?: string
+  knopf?: string
+  bestaetigen: () => void
+  abbrechen: () => void
+}) {
+  return (
+    <Overlay onSchliessen={abbrechen}>
+      <div style={{ fontFamily: SERIF, fontSize: 22, lineHeight: 1.4 }}>{frage}</div>
+      {hinweis && (
+        <div style={{ marginTop: 10, fontSize: 13, lineHeight: 1.7, color: 'var(--muted)' }}>{hinweis}</div>
+      )}
+      <div style={{ marginTop: 22, display: 'flex', alignItems: 'center', gap: 14 }}>
+        <Knopf onClick={bestaetigen}>{knopf}</Knopf>
+        <button
+          onClick={abbrechen}
+          style={{ fontSize: 15, color: 'var(--muted)', padding: '0 6px', flex: 'none' }}
+        >
+          Abbrechen
+        </button>
+      </div>
+    </Overlay>
   )
 }
 

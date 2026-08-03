@@ -22,6 +22,7 @@ import {
   type Gebetszeit,
   type Gedenkname,
   type Journaleintrag,
+  type MeinGebet,
   type Tageszeit,
   type Thema,
 } from './types';
@@ -34,6 +35,7 @@ export class GebetsDatenbank extends Dexie {
   journal!: Table<Journaleintrag, string>;
   einstellungen!: Table<Einstellungen, string>;
   eigeneGebete!: Table<EigenesGebet, string>;
+  meineGebete!: Table<MeinGebet, string>;
 
   constructor() {
     super('gebet');
@@ -48,6 +50,13 @@ export class GebetsDatenbank extends Dexie {
       journal: 'id, gebetId, datum',
       einstellungen: 'id',
       eigeneGebete: 'id, themaId, [kategorie+tageszeit]',
+    });
+
+    // Von Hand angelegte Gebete (Punkt 2). Eine eigene Tabelle, damit sie nicht
+    // mit den für ein Thema erzeugten Gebeten vermengt werden: diese hier
+    // gehören zu keinem Thema und werden nie überschrieben.
+    this.version(2).stores({
+      meineGebete: 'id, kategorie, erstelltAm',
     });
 
     this.on('populate', () => {

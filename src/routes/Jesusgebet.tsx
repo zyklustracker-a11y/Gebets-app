@@ -2,7 +2,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { SERIF, bildschirm, obenSafe, untenSafe } from '../components/ui'
+import { Perlen, SERIF, bildschirm, obenSafe, untenSafe } from '../components/ui'
 import { db } from '../lib/db'
 
 /**
@@ -101,19 +101,7 @@ export default function Jesusgebet() {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 26 }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 11, maxWidth: 220 }}>
-            {Array.from({ length: perlen }, (_, i) => (
-              <span
-                key={i}
-                style={{
-                  width: 7,
-                  height: 7,
-                  borderRadius: '50%',
-                  background: i < gefuellt ? 'var(--red)' : 'var(--rule)',
-                }}
-              />
-            ))}
-          </div>
+          <Perlen anzahl={perlen} gefuellt={gefuellt} />
           <div
             aria-live="polite"
             style={{

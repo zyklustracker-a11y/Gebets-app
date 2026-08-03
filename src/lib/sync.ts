@@ -30,6 +30,9 @@ const TABELLEN: { name: string; schluessel: string; tabelle: Table<SyncSatz, str
   { name: 'protokoll', schluessel: 'id', tabelle: db.protokoll as unknown as Table<SyncSatz, string> },
   { name: 'einstellungen', schluessel: 'id', tabelle: db.einstellungen as unknown as Table<SyncSatz, string> },
   { name: 'gebetszeiten', schluessel: 'typ', tabelle: db.gebetszeiten as unknown as Table<SyncSatz, string> },
+  // Von Hand angelegte Gebete gehören dem Nutzer und sollen wie die Themen auf
+  // allen seinen Geräten stehen.
+  { name: 'meineGebete', schluessel: 'id', tabelle: db.meineGebete as unknown as Table<SyncSatz, string> },
 ]
 
 const jetzt = () => new Date().toISOString()

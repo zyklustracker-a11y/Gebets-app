@@ -152,6 +152,27 @@ export default function Einstellungen() {
           </span>
         </button>
 
+        {/* Die Gebetsübersicht: mitgelieferte Gebete zum Nachlesen, eigene zum Anlegen. */}
+        <button
+          onClick={() => navigate('/gebete')}
+          style={{
+            marginTop: 12,
+            width: '100%',
+            minHeight: 60,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            background: 'var(--field)',
+            borderRadius: 10,
+            padding: '0 18px',
+          }}
+        >
+          <span style={{ fontFamily: SERIF, fontSize: 22 }}>Gebete</span>
+          <span style={{ display: 'inline-flex', transform: 'scaleX(-1)' }}>
+            <ZurueckWinkel />
+          </span>
+        </button>
+
         <Abschnitt titel="Gedenken und Rückschau">
           <Verweiszeile label="Gedenkliste" onClick={() => navigate('/gedenkliste')} />
           <Verweiszeile label="Tagebuch" onClick={() => navigate('/tagebuch')} />

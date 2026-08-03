@@ -151,6 +151,27 @@ export interface EigenesGebet extends Korpuseintrag {
 }
 
 /**
+ * Ein von Hand angelegtes Gebet — etwa eines, das der Priester mitgegeben hat.
+ *
+ * Anders als `EigenesGebet` hängt es an keinem Thema und wird nicht erzeugt,
+ * sondern eingetippt. Es liegt in IndexedDB und ist als einziger Gebetsbestand
+ * änder- und löschbar; das mitgelieferte Korpus bleibt unberührt.
+ */
+export interface MeinGebet {
+  id: string;
+  titel: string;
+  text: string;
+  /** Schlüssel aus `kategorien.ts`; fehlt er, ist das Gebet keiner zugeordnet. */
+  kategorie?: string;
+  /** Wiederholungen für den Zähler; fehlen sie, wird kein Zähler angeboten. */
+  wiederholungen?: number;
+  /** ISO-Zeitstempel. */
+  erstelltAm: string;
+  /** ISO-Zeitstempel der letzten Änderung — für den Abgleich (Abschnitt 8). */
+  geaendertAm?: string;
+}
+
+/**
  * Ein Schriftwort aus `data/verse.json`. Reservoir für die Gebetserzeugung
  * und für Erweiterungen des Korpus — nicht für die tägliche Auswahl.
  */
