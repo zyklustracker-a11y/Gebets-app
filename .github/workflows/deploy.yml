@@ -10,8 +10,9 @@
 #   CLOUDFLARE_API_TOKEN       API-Token mit dem Recht „Edit Workers"
 #   CLOUDFLARE_ACCOUNT_ID      nur nötig, wenn das Token mehrere Konten sieht
 #
-# Fehlt ein Cloudflare-Token, überspringt die Worker-Aufgabe sich selbst und
-# der Lauf bleibt grün — der Hosting-Deploy läuft trotzdem.
+# Solange ein Secret fehlt, überspringt sich die zugehörige Aufgabe von selbst
+# und der Lauf bleibt grün. Wer gar nichts hinterlegt, kann diesen Workflow
+# also einfach ignorieren und wie bisher von Hand veröffentlichen.
 
 name: Veröffentlichen
 
@@ -28,34 +29,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Ist ein Firebase-Dienstkonto hinterlegt?
+        id: zugang
+        run: echo "vorhanden=${{ secrets.FIREBASE_SERVICE_ACCOUNT != '' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Ohne Dienstkonto nichts tun
+        if: steps.zugang.outputs.vorhanden != 'true'
+        run: |
+          echo "Kein FIREBASE_SERVICE_ACCOUNT hinterlegt — es wird nichts veröffentlicht."
+          echo "Einrichtung: siehe docs/9_Veroeffentlichen.md."
+
       - uses: actions/setup-node@v4
+        if: steps.zugang.outputs.vorhanden == 'true'
         with:
           node-version: 22
           cache: npm
 
       - name: Abhängigkeiten installieren
+        if: steps.zugang.outputs.vorhanden == 'true'
         run: npm ci
 
       # Erst prüfen, dann veröffentlichen: Ein roter Test darf nie live gehen.
       - name: Typen prüfen
+        if: steps.zugang.outputs.vorhanden == 'true'
         run: npm run typecheck
 
       - name: Tests
+        if: steps.zugang.outputs.vorhanden == 'true'
         run: npm test
 
       - name: Bauen
+        if: steps.zugang.outputs.vorhanden == 'true'
         run: npm run build
 
       # Der Inhalt läuft über eine Umgebungsvariable statt direkt in die
       # Kommandozeile: So kann kein Zeichen aus dem Secret von der Shell
       # gedeutet werden.
       - name: Zugangsdatei aus dem Secret schreiben
+        if: steps.zugang.outputs.vorhanden == 'true'
         env:
           DIENSTKONTO: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: printf '%s' "$DIENSTKONTO" > "$RUNNER_TEMP/firebase.json"
 
       # Hosting und Firestore-Regeln — dasselbe, was `npm run deploy` lokal tut.
       - name: Veröffentlichen
+        if: steps.zugang.outputs.vorhanden == 'true'
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase.json
         run: npx --yes firebase-tools deploy --only hosting,firestore:rules --non-interactive
@@ -70,18 +88,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
       - name: Ist ein Cloudflare-Token hinterlegt?
         id: zugang
         run: echo "vorhanden=${{ secrets.CLOUDFLARE_API_TOKEN != '' }}" >> "$GITHUB_OUTPUT"
 
       - name: Ohne Token nichts tun
         if: steps.zugang.outputs.vorhanden != 'true'
-        run: echo "Kein CLOUDFLARE_API_TOKEN gesetzt — der Worker wird nicht ausgerollt."
+        run: |
+          echo "Kein CLOUDFLARE_API_TOKEN hinterlegt — der Worker wird nicht ausgerollt."
+          echo "Einrichtung: siehe docs/9_Veroeffentlichen.md."
+
+      - uses: actions/setup-node@v4
+        if: steps.zugang.outputs.vorhanden == 'true'
+        with:
+          node-version: 22
+          cache: npm
 
       - name: Abhängigkeiten installieren
         if: steps.zugang.outputs.vorhanden == 'true'

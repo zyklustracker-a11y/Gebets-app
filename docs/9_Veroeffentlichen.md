@@ -77,6 +77,8 @@ Firestore-Regeln).
 
 Ist dieses Secret nicht gesetzt, überspringt die Worker-Aufgabe sich selbst
 und der Lauf bleibt trotzdem grün — der Hosting-Deploy läuft unabhängig davon.
+Umgekehrt genauso: Ohne `FIREBASE_SERVICE_ACCOUNT` wird nur nichts
+veröffentlicht, nichts schlägt fehl.
 
 ### `CLOUDFLARE_ACCOUNT_ID`
 
