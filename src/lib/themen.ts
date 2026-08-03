@@ -71,6 +71,21 @@ export async function themaAbschliessen(id: string, notiz: string): Promise<void
   })
 }
 
+/**
+ * Entfernt ein Anliegen endgültig — aus der Liste und aus dem Speicher, samt
+ * der Gebete, die eigens dafür erzeugt wurden. Der Aufrufer fragt vorher nach.
+ *
+ * Das Protokoll bleibt unberührt: Es hält fest, was tatsächlich gebetet wurde,
+ * und das Tagebuch lässt gelöschte Themen still weg (`tagebuchLesen`).
+ */
+export async function themaLoeschen(id: string): Promise<void> {
+  await db.transaction('rw', db.themen, db.eigeneGebete, async () => {
+    const eigene = await db.eigeneGebete.where('themaId').equals(id).primaryKeys()
+    if (eigene.length) await db.eigeneGebete.bulkDelete(eigene)
+    await db.themen.delete(id)
+  })
+}
+
 /** Holt ein abgeschlossenes Anliegen zurück in die aktive Liste. */
 export async function themaWiederAufnehmen(id: string): Promise<void> {
   const thema = await db.themen.get(id)
