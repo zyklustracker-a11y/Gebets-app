@@ -7,6 +7,9 @@ dist/
 # Lokaler Firebase-Hosting-Deploy-Cache (wird beim Deploy erzeugt).
 .firebase/
 
+# Lokaler Zwischenspeicher von wrangler (entsteht bei jedem Worker-Deploy).
+.wrangler/
+
 # Lokale Konfiguration mit Schlüsseln — nur Beispiel- und öffentliche
 # Produktions-Vorgabe gehören ins Repo.
 .env
