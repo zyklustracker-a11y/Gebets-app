@@ -16,6 +16,7 @@ import {
   nutzerPrompt,
   pruefeAntwort,
   systemPrompt,
+  vorgabeAnwenden,
   type ErzeugungAnfrage,
   type ErzeugungAntwort,
 } from '../src/lib/erzeugung'
@@ -161,8 +162,12 @@ async function erzeugeGebete(env: Env, anfrage: ErzeugungAnfrage): Promise<Erzeu
   // Bis zu drei Versuche: das kostenlose Modell trifft die Wortzahlen nicht
   // immer beim ersten Mal, und Groq liefert gelegentlich 503/429.
   for (let versuch = 0; versuch < 3; versuch++) {
-    const antwort = await groqAufruf(env, anfrage).catch(() => null)
-    if (antwort && pruefeAntwort(antwort, anfrage).gueltig) return antwort
+    const roh = await groqAufruf(env, anfrage).catch(() => null)
+    if (!roh) continue
+    // Erst das vorgegebene Schriftwort einsetzen, dann prüfen: Die Stelle ist
+    // damit immer echt, und die Prüfung gilt nur noch dem Text des Modells.
+    const antwort = vorgabeAnwenden(roh, anfrage)
+    if (pruefeAntwort(antwort, anfrage).gueltig) return antwort
   }
   return null
 }

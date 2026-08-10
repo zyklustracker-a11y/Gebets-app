@@ -10,7 +10,7 @@
  * niemals Tagebuch, Gedenknamen, Konto oder Gerätedaten.
  */
 
-import { traegersatzVorlage, verseFuerThema } from './themenbezug'
+import { traegersatzVorlage, verseFuerTageszeiten } from './themenbezug'
 import type { Faerbung, Tageszeit } from './types'
 import { TAGESZEITEN } from './types'
 
@@ -52,18 +52,40 @@ export const PLATZHALTER = '{{anliegen}}'
  */
 export const TRAEGERSATZ = traegersatzVorlage(PLATZHALTER)
 
-/** Wie viele Schriftworte dem Modell zur Auswahl vorgelegt werden. */
-const KANDIDATEN = 10
+/**
+ * Das Schriftwort je Tageszeit — von uns gewählt, nicht vom Modell.
+ *
+ * Ursprünglich bekam das Modell eine Liste zur Auswahl und die Prüfliste wies
+ * ab, was nicht daraus stammte. Das kostete jede zweite Erzeugung: Das
+ * kostenlose Modell schrieb lieber die Verse aus den Mustern ab oder erfand
+ * eine Stelle. Jetzt steht der Vers vorher fest und wird nach der Antwort
+ * wieder eingesetzt (`vorgabeAnwenden`) — was das Modell nicht wählt, kann es
+ * auch nicht erfinden.
+ */
+export function versVorgabe(anfrage: ErzeugungAnfrage): Record<Tageszeit, { text: string; stelle: string }> {
+  const verse = verseFuerTageszeiten(anfrage.titel, anfrage.kategorieSchluessel ?? null)
+  const leer = { text: '', stelle: '' }
+  if (!verse) return { morgen: leer, mittag: leer, abend: leer }
+  return {
+    morgen: { text: verse.morgen.text, stelle: verse.morgen.stelle },
+    mittag: { text: verse.mittag.text, stelle: verse.mittag.stelle },
+    abend: { text: verse.abend.text, stelle: verse.abend.stelle },
+  }
+}
 
 /**
- * Die Schriftworte, aus denen das Modell wählen darf — thematisch zum Titel,
- * aus `data/verse.json`. Erfundene Stellen sind damit ausgeschlossen: Was nicht
- * in dieser Liste steht, fällt in der Prüfliste durch.
+ * Setzt die vorgegebenen Schriftworte in die Antwort ein. Damit ist die
+ * Stellenangabe konstruktionsbedingt echt — sie muss nicht mehr geprüft
+ * werden. Der Text des Modells bleibt unberührt.
  */
-export function verskandidaten(anfrage: ErzeugungAnfrage): { text: string; stelle: string }[] {
-  return verseFuerThema(anfrage.titel, anfrage.kategorieSchluessel ?? null)
-    .slice(0, KANDIDATEN)
-    .map((v) => ({ text: v.text, stelle: v.stelle }))
+export function vorgabeAnwenden(antwort: ErzeugungAntwort, anfrage: ErzeugungAnfrage): ErzeugungAntwort {
+  const vorgabe = versVorgabe(anfrage)
+  const teil = (tz: Tageszeit): ErzeugtesTeil => ({
+    ...antwort[tz],
+    vers: vorgabe[tz].text || antwort[tz]?.vers || '',
+    stelle: vorgabe[tz].stelle || antwort[tz]?.stelle || '',
+  })
+  return { morgen: teil('morgen'), mittag: teil('mittag'), abend: teil('abend') }
 }
 
 /**
@@ -147,7 +169,7 @@ ${LEITPLANKEN}
 
 ZUSÄTZLICHE HARTE VORGABEN:
 - Jeder Text enthält genau diesen Satz wörtlich, unverändert und als eigene Zeile: „${TRAEGERSATZ}". Formuliere ihn NICHT um und setze den Titel des Anliegens NICHT selbst ein — der Platzhalter bleibt stehen. Jede andere Fassung wird abgewiesen.
-- Das Schriftwort („vers") und die Stellenangabe („stelle") stammen wörtlich aus der Liste, die im Auftrag mitgegeben wird. Wähle je Tageszeit einen anderen Eintrag daraus und schreibe ihn Zeichen für Zeichen ab. Erfinde keine Stellen und formuliere keine eigenen Übertragungen.
+- Das Schriftwort ist je Tageszeit vorgegeben. Übernimm es unverändert nach „vers" und „stelle". Suche keines aus und erfinde keine Stellenangabe.
 - Morgen- und Abendgebet enden mit „Amen." als letztem Wort. Das Mittagsgebet endet christozentrisch OHNE „Amen.".
 - LÄNGE (wird streng geprüft): Schreibe bewusst AUSFÜHRLICH und in vielen vollständigen Sätzen. Morgengebet mindestens 165, höchstens 200 Wörter. Mittagsgebet mindestens 60, höchstens 90 Wörter. Abendgebet mindestens 200, höchstens 230 Wörter. Lieber zu lang als zu kurz — entfalte Dank und Fürbitte breit. Diese Mindestlängen sind Pflicht; unterschreite sie auf keinen Fall.
 - Keine Ausrufezeichen — an keiner Stelle, auch nicht im Schriftwort.
@@ -165,15 +187,16 @@ Antworte AUSSCHLIESSLICH mit JSON in genau dieser Form, ohne Vor- oder Nachtext,
 
 export function nutzerPrompt(anfrage: ErzeugungAnfrage): string {
   const faerbung = FAERBUNG_LABEL[anfrage.faerbung] ?? anfrage.faerbung
-  const liste = verskandidaten(anfrage)
-    .map((v) => `- „${v.text}" — ${v.stelle}`)
-    .join('\n')
+  const vorgabe = versVorgabe(anfrage)
+  const verse = TAGESZEITEN.map((tz) => `${tz.toUpperCase()}: „${vorgabe[tz].text}" — ${vorgabe[tz].stelle}`).join('\n')
   return `Anliegen (Thema): ${anfrage.titel}
 Kategorie: ${anfrage.kategorie}
 Liturgische Färbung: ${faerbung}
 
-SCHRIFTWORTE ZUR AUSWAHL (nur aus dieser Liste, wörtlich abschreiben — Text nach „vers", Stellenangabe nach „stelle"):
-${liste}
+VORGEGEBENE SCHRIFTWORTE (unverändert nach „vers" und „stelle" übernehmen, je Tageszeit das seine):
+${verse}
+
+Nimm im Text ein Bild oder ein Wort des jeweiligen Schriftworts auf, damit Vers und Gebet zusammengehören.
 
 Erzeuge Morgen-, Mittag- und Abendgebet für dieses Anliegen. Halte alle Vorgaben ein und gib nur das JSON zurück.`
 }
@@ -225,15 +248,11 @@ function vergleichbar(text: string): string {
 /**
  * Prüft einen einzelnen Tageszeit-Text. Leeres Ergebnis heisst: bestanden.
  *
- * `stellen` sind die zugelassenen Stellenangaben aus `verskandidaten`. Fehlen
- * sie, wird die Herkunft des Schriftworts nicht geprüft.
+ * Die Herkunft des Schriftworts wird nicht mehr geprüft: Es wird nach der
+ * Antwort ohnehin durch die Vorgabe ersetzt (`vorgabeAnwenden`) und ist damit
+ * konstruktionsbedingt echt.
  */
-export function pruefeTeil(
-  tageszeit: Tageszeit,
-  teil: ErzeugtesTeil | undefined,
-  _titel: string,
-  stellen?: ReadonlySet<string>,
-): string[] {
+export function pruefeTeil(tageszeit: Tageszeit, teil: ErzeugtesTeil | undefined, _titel: string): string[] {
   const fehler: string[] = []
   if (!teil || typeof teil.text !== 'string' || typeof teil.vers !== 'string' || typeof teil.stelle !== 'string') {
     return ['unvollständig']
@@ -256,10 +275,6 @@ export function pruefeTeil(
 
   if (woerter(teil.vers) > 15) fehler.push('Schriftwort über fünfzehn Wörter')
 
-  if (stellen && stellen.size > 0 && !stellen.has(vergleichbar(teil.stelle))) {
-    fehler.push(`Stellenangabe „${teil.stelle}" steht nicht zur Auswahl`)
-  }
-
   return fehler
 }
 
@@ -267,9 +282,8 @@ export function pruefeTeil(
  * Prüft die komplette Antwort. Gibt je Tageszeit die gefundenen Mängel zurück;
  * `gueltig` ist true, wenn alle drei ohne Mangel sind.
  *
- * Statt des blossen Titels nimmt sie die ganze Anfrage entgegen, um daraus die
- * zugelassenen Stellenangaben zu bilden. Ein Titel als Zeichenkette bleibt
- * erlaubt; dann entfällt nur die Herkunftsprüfung des Schriftworts.
+ * Nimmt die ganze Anfrage oder bloss den Titel entgegen — geprüft wird in
+ * beiden Fällen dasselbe.
  */
 export function pruefeAntwort(
   antwort: ErzeugungAntwort | null | undefined,
@@ -282,11 +296,9 @@ export function pruefeAntwort(
   if (!antwort) return { gueltig: false, fehler }
 
   const titel = typeof anfrage === 'string' ? anfrage : anfrage.titel
-  const stellen =
-    typeof anfrage === 'string' ? undefined : new Set(verskandidaten(anfrage).map((v) => vergleichbar(v.stelle)))
 
   for (const tz of TAGESZEITEN) {
-    fehler[tz] = pruefeTeil(tz, antwort[tz], titel, stellen)
+    fehler[tz] = pruefeTeil(tz, antwort[tz], titel)
   }
   const gueltig = TAGESZEITEN.every((tz) => fehler[tz].length === 0)
   return { gueltig, fehler }

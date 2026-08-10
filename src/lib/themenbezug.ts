@@ -15,7 +15,7 @@
  *   versFuerThema   sucht das Schriftwort nach den Wörtern des Titels
  */
 
-import type { Tageszeit, Vers } from './types'
+import { TAGESZEITEN, type Tageszeit, type Vers } from './types'
 import { verseFuerKategorie } from './verse'
 
 // ---------------------------------------------------------------------------
@@ -198,6 +198,20 @@ export function versFuerThema(titel: string, kategorie: string | null, schluesse
   const verse = verseFuerThema(titel, kategorie)
   if (verse.length === 0) return null
   return verse[streuIndex(`${schluessel}-${titel}`, verse.length)] ?? null
+}
+
+/**
+ * Je ein Schriftwort für Morgen, Mittag und Abend — nach Möglichkeit drei
+ * verschiedene. Für die KI-Erzeugung (Abschnitt 12): Der Vers wird dem Modell
+ * vorgegeben, statt es aus einer Liste wählen zu lassen. Was es nicht wählt,
+ * kann es auch nicht erfinden.
+ */
+export function verseFuerTageszeiten(titel: string, kategorie: string | null): Record<Tageszeit, Vers> | null {
+  const verse = verseFuerThema(titel, kategorie)
+  if (verse.length === 0) return null
+  const start = streuIndex(titel, verse.length)
+  const gewaehlt = TAGESZEITEN.map((_, i) => verse[(start + i) % verse.length]!)
+  return { morgen: gewaehlt[0]!, mittag: gewaehlt[1]!, abend: gewaehlt[2]! }
 }
 
 // ---------------------------------------------------------------------------
