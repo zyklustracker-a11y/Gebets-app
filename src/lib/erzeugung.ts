@@ -168,7 +168,7 @@ SPRACHLICHE LEITPLANKEN (verbindlich):
 ${LEITPLANKEN}
 
 ZUSÄTZLICHE HARTE VORGABEN:
-- Jeder Text enthält genau diesen Satz wörtlich, unverändert und als eigene Zeile: „${TRAEGERSATZ}". Formuliere ihn NICHT um und setze den Titel des Anliegens NICHT selbst ein — der Platzhalter bleibt stehen. Jede andere Fassung wird abgewiesen.
+- Jeder Text enthält den Platzhalter „${PLATZHALTER}" wörtlich, und zwar als eigene Zeile in diesem Satz: „${TRAEGERSATZ}". Setze den Titel des Anliegens NICHT selbst ein — der Platzhalter bleibt unverändert stehen, sonst wird der Text abgewiesen.
 - Das Schriftwort ist je Tageszeit vorgegeben. Übernimm es unverändert nach „vers" und „stelle". Suche keines aus und erfinde keine Stellenangabe.
 - Morgen- und Abendgebet enden mit „Amen." als letztem Wort. Das Mittagsgebet endet christozentrisch OHNE „Amen.".
 - LÄNGE (wird streng geprüft): Schreibe bewusst AUSFÜHRLICH und in vielen vollständigen Sätzen. Morgengebet mindestens 165, höchstens 200 Wörter. Mittagsgebet mindestens 60, höchstens 90 Wörter. Abendgebet mindestens 200, höchstens 230 Wörter. Lieber zu lang als zu kurz — entfalte Dank und Fürbitte breit. Diese Mindestlängen sind Pflicht; unterschreite sie auf keinen Fall.
@@ -240,17 +240,19 @@ export function woerter(text: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length
 }
 
-/** Staucht Leerraum und vereinheitlicht Anführungszeichen — für den Vergleich. */
-function vergleichbar(text: string): string {
-  return text.replace(/\s+/g, ' ').replace(/[„“”"]/g, '"').trim()
-}
-
 /**
  * Prüft einen einzelnen Tageszeit-Text. Leeres Ergebnis heisst: bestanden.
  *
- * Die Herkunft des Schriftworts wird nicht mehr geprüft: Es wird nach der
- * Antwort ohnehin durch die Vorgabe ersetzt (`vorgabeAnwenden`) und ist damit
- * konstruktionsbedingt echt.
+ * Zwei Dinge werden bewusst NICHT geprüft, weil sie nach der Antwort ohnehin
+ * ersetzt werden — eine Prüfung würde nur brauchbare Gebete wegwerfen:
+ *
+ *   das Schriftwort   `vorgabeAnwenden` setzt die Vorgabe ein; die Stelle ist
+ *                     damit konstruktionsbedingt echt statt geprüft.
+ *   der Trägersatz    `komposition.anliegenEinsetzen` ersetzt beim Anzeigen die
+ *                     ganze Zeile mit dem Platzhalter durch den selbst gebauten
+ *                     Satz. Wie das Modell sie formuliert hat, sieht niemand.
+ *
+ * Verlangt wird deshalb nur, dass der Platzhalter überhaupt vorkommt.
  */
 export function pruefeTeil(tageszeit: Tageszeit, teil: ErzeugtesTeil | undefined, _titel: string): string[] {
   const fehler: string[] = []
@@ -267,11 +269,7 @@ export function pruefeTeil(tageszeit: Tageszeit, teil: ErzeugtesTeil | undefined
 
   if (text.includes('!') || teil.vers.includes('!')) fehler.push('enthält ein Ausrufezeichen')
 
-  // Der Trägersatz muss wörtlich stehen — nur so bleibt die Grammatik heil,
-  // wenn beim Anzeigen der Titel eingesetzt wird.
-  if (!vergleichbar(text).includes(vergleichbar(TRAEGERSATZ))) {
-    fehler.push('Trägersatz fehlt oder ist umformuliert')
-  }
+  if (!text.includes(PLATZHALTER)) fehler.push('Platzhaltersatz fehlt')
 
   if (woerter(teil.vers) > 15) fehler.push('Schriftwort über fünfzehn Wörter')
 
