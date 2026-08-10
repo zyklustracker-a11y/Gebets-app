@@ -127,6 +127,19 @@ export function Zahnrad() {
   )
 }
 
+/**
+ * Eine kleine Liste — der Knopf neben einer Gebetszeit auf „Heute", mit dem
+ * sich für diesen einen Durchgang ein Thema wählen lässt.
+ */
+export function Liste() {
+  return (
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="1.5" strokeLinecap="round" aria-hidden>
+      <path d="M9 6h11M9 12h11M9 18h11" />
+      <path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" />
+    </svg>
+  )
+}
+
 /** Ein Zurück-Winkel für die Kopfzeilen von Themen und Einstellungen. */
 export function ZurueckWinkel() {
   return (

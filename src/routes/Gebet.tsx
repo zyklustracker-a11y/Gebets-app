@@ -1,11 +1,20 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 import { Knopf, Kreuz, RAND, SERIF, Textfeld, bildschirm, obenSafe, untenSafe } from '../components/ui'
 import { db } from '../lib/db'
-import { alsGebetet, andersWaehlen, datumIso, ermittleGebet, komponiere, type Zusammensetzung } from '../lib/gebetsauswahl'
+import {
+  alsGebetet,
+  andersWaehlen,
+  datumIso,
+  einmaligesGebet,
+  ermittleGebet,
+  komponiere,
+  type Zusammensetzung,
+} from '../lib/gebetsauswahl'
 import { heutigerTag } from '../lib/kalender'
+import { kategorieName } from '../lib/kategorien'
 import { tagebuchSpeichern } from '../lib/tagebuch'
 import { TAGESZEITEN, type Tageszeit } from '../lib/types'
 
@@ -13,6 +22,10 @@ import { TAGESZEITEN, type Tageszeit } from '../lib/types'
  * Bildschirm 2 · Gebetsansicht — der Kernbildschirm. Zeigt das für heute und
  * diese Tageszeit ausgewählte Gebet. Die Auswahl ist deterministisch: erneutes
  * Öffnen zeigt denselben Text, nur „Anderes Gebet" wählt neu.
+ *
+ * Mit `?thema=…` (vom Knopf neben der Gebetszeit auf „Heute") wird stattdessen
+ * ein Gebet zu genau diesem Thema gezeigt. Das gilt nur für diesen Durchgang:
+ * es wird nichts ins Protokoll geschrieben und keine Einstellung berührt.
  */
 
 function istTageszeit(wert: string | undefined): wert is Tageszeit {
@@ -24,23 +37,42 @@ export default function Gebet() {
   const { tageszeit } = useParams()
   const datum = datumIso(heutigerTag())
 
+  const [suche] = useSearchParams()
+  // Einmalige Themenwahl vom Startbildschirm; leer im gewöhnlichen Fall.
+  const wahl = suche.get('thema')
+
   const [teile, setTeile] = useState<Zusammensetzung | null>(null)
+  const [versuch, setVersuch] = useState(0)
+  // Zum gewählten Thema liegt kein Gebet vor — statt einer leeren Fläche ein Wort.
+  const [leer, setLeer] = useState(false)
   const [nachklang, setNachklang] = useState(false)
   const [notiz, setNotiz] = useState('')
   const gueltig = istTageszeit(tageszeit)
 
   // Beim Öffnen die Auswahl sicherstellen (idempotent — legt nur an, was fehlt).
+  // Bei einer einmaligen Themenwahl unterbleibt das: sie soll nichts festlegen.
   useEffect(() => {
-    if (gueltig) void ermittleGebet(datum, tageszeit)
-  }, [gueltig, datum, tageszeit])
+    if (gueltig && !wahl) void ermittleGebet(datum, tageszeit)
+  }, [gueltig, datum, tageszeit, wahl])
 
-  const id = gueltig ? `${datum}-${tageszeit}` : ''
+  // Die Kennung des Tageseintrags. Auch bei einmaliger Themenwahl hängt ein
+  // Journaleintrag an ihr — gebetet wurde ja zu dieser Tageszeit an diesem Tag.
+  const tagesId = gueltig ? `${datum}-${tageszeit}` : ''
+  // Nachgeschlagen wird der Eintrag nur im gewöhnlichen Fall; die einmalige
+  // Themenwahl legt nichts an und liest deshalb auch nichts.
+  const id = wahl ? '' : tagesId
   const eintrag = useLiveQuery(async () => (id ? db.protokoll.get(id) : undefined), [id])
 
   const wiederholungen = useLiveQuery(
     async () => (await db.einstellungen.get('einstellungen'))?.jesusgebetAnzahl ?? 12,
     [],
     12,
+  )
+
+  // Name des einmalig gewählten Themas für die Kopfzeile.
+  const wahlName = useLiveQuery(
+    async () => (wahl ? ((await db.themen.get(wahl))?.titel ?? kategorieName(wahl)) : null),
+    [wahl],
   )
 
   useEffect(() => {
@@ -51,6 +83,20 @@ export default function Gebet() {
     }
   }, [eintrag])
 
+  useEffect(() => {
+    let aktiv = true
+    if (gueltig && wahl) {
+      void einmaligesGebet(datum, tageszeit, wahl, versuch).then((z) => {
+        if (!aktiv) return
+        setTeile(z)
+        setLeer(z === null)
+      })
+    }
+    return () => {
+      aktiv = false
+    }
+  }, [gueltig, datum, tageszeit, wahl, versuch])
+
   if (!gueltig) {
     navigate('/', { replace: true })
     return null
@@ -58,6 +104,11 @@ export default function Gebet() {
 
   async function anderes() {
     if (!gueltig) return
+    // Bei einmaliger Themenwahl nur weiterrücken — das Protokoll bleibt unberührt.
+    if (wahl) {
+      setVersuch((v) => v + 1)
+      return
+    }
     await andersWaehlen(datum, tageszeit)
   }
 
@@ -69,7 +120,7 @@ export default function Gebet() {
   }
 
   async function festhalten() {
-    await tagebuchSpeichern(id, datum, notiz)
+    await tagebuchSpeichern(tagesId, datum, notiz)
     navigate('/')
   }
 
@@ -110,10 +161,24 @@ export default function Gebet() {
       </div>
 
       <div style={{ flex: 1, padding: `6px ${RAND}px 0` }}>
+        {leer && !teile && (
+          <>
+            <div style={{ marginTop: 26, fontFamily: SERIF, fontSize: 20, lineHeight: 1.55, color: 'var(--muted)' }}>
+              Zu diesem Thema liegt gerade kein Gebet bereit.
+            </div>
+            <button
+              onClick={() => navigate('/')}
+              style={{ marginTop: 20, fontSize: 15, color: 'var(--red-text)', padding: '6px 0' }}
+            >
+              Zurück zu Heute
+            </button>
+          </>
+        )}
         {teile && (
           <>
             <div style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--faint)' }}>
               {teile.tageszeitLabel}
+              {wahl && wahlName ? ` · ${wahlName}` : ''}
             </div>
 
             <div style={{ marginTop: 26, fontFamily: SERIF, fontSize: 19, lineHeight: 1.6, color: 'var(--muted)' }}>

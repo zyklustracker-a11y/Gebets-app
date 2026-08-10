@@ -3,12 +3,14 @@
  * (Spezifikation, Abschnitt 12). Bewusst rein: kein `fetch`, kein `import.meta`,
  * keine Datenbank — damit sowohl der Cloudflare Worker (serverseitig) als auch
  * das Frontend (clientseitig) genau dieselbe Prüfliste und denselben
- * Systemprompt verwenden.
+ * Systemprompt verwenden. Die mitgelieferte Schriftwort-Datenbank
+ * (`data/verse.json`, über `themenbezug.ts`) zählt dazu: sie ist statisch.
  *
  * Übertragen werden ausschliesslich Thementitel, Kategorie und Färbung —
  * niemals Tagebuch, Gedenknamen, Konto oder Gerätedaten.
  */
 
+import { traegersatzVorlage, verseFuerThema } from './themenbezug'
 import type { Faerbung, Tageszeit } from './types'
 import { TAGESZEITEN } from './types'
 
@@ -34,11 +36,35 @@ export interface ErzeugungAnfrage {
   titel: string
   /** Lesbarer Kategoriename, etwa „Geduld". */
   kategorie: string
+  /** Schlüssel derselben Kategorie, für die Auswahl der Schriftworte. */
+  kategorieSchluessel?: string
   faerbung: Faerbung
 }
 
-/** Der Trägersatz mit dem Platzhalter, den jeder Text enthalten muss. */
+/** Der Platzhalter, der im Text stehen bleibt und erst beim Anzeigen füllt. */
 export const PLATZHALTER = '{{anliegen}}'
+
+/**
+ * Der Wortlaut, in dem der Platzhalter stehen muss. Er ist vorgeschrieben und
+ * wird geprüft: Formuliert das Modell den Satz selbst, gerät die Rektion ins
+ * Rutschen, sobald der Titel eingesetzt wird („… ich bitte Dich um Angst vor
+ * der Zukunft"). Die Doppelpunktform ist kasusneutral.
+ */
+export const TRAEGERSATZ = traegersatzVorlage(PLATZHALTER)
+
+/** Wie viele Schriftworte dem Modell zur Auswahl vorgelegt werden. */
+const KANDIDATEN = 10
+
+/**
+ * Die Schriftworte, aus denen das Modell wählen darf — thematisch zum Titel,
+ * aus `data/verse.json`. Erfundene Stellen sind damit ausgeschlossen: Was nicht
+ * in dieser Liste steht, fällt in der Prüfliste durch.
+ */
+export function verskandidaten(anfrage: ErzeugungAnfrage): { text: string; stelle: string }[] {
+  return verseFuerThema(anfrage.titel, anfrage.kategorieSchluessel ?? null)
+    .slice(0, KANDIDATEN)
+    .map((v) => ({ text: v.text, stelle: v.stelle }))
+}
 
 /**
  * Erwartete Wortzahl je Tageszeit. Die Untergrenzen für Morgen und Abend sind
@@ -66,7 +92,7 @@ const TONREGELN = `1. Dank steht vorn — jedes Gebet beginnt mit dem, was da is
 6. Konkret statt allgemein.
 7. Keine Ausrufezeichen, keine Superlative.
 8. Immer Fürbitte (morgens/abends) und christozentrischer Schluss.
-9. \`${PLATZHALTER}\` steht immer als eigenständiger Satz.
+9. Der Trägersatz \`${TRAEGERSATZ}\` steht immer als eigenständiger Satz.
 10. Länge: Morgen ~150, Mittag ~60, Abend ~180 Wörter.`
 
 // Die Sprachlichen Leitplanken aus Konzept 2.4, wörtlich.
@@ -85,7 +111,7 @@ Herr, ich öffne die Augen, und Du bist schon da.
 Ich danke Dir für die Nacht, die mich getragen hat, für den Atem, der ohne mein Zutun geht, für das Licht, das durch das Fenster kommt.
 Ich danke Dir für die Menschen, die zu mir gehören — auch für die, an die ich heute nicht denken werde.
 Lass mich diesen Tag mit offenen Augen gehen und das Gute zuerst sehen. Schenke mir ein dankbares Herz, das wahrnimmt, was da ist.
-Besonders danke ich Dir für: ${PLATZHALTER}.
+${TRAEGERSATZ}
 Heilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, geh diesen Tag mit mir.
 Herr Jesus Christus, unser Gott, alles, was ich habe, kommt aus Deiner Hand. Ich danke Dir dafür, noch bevor der Tag begonnen hat. Amen.
 
@@ -95,7 +121,7 @@ Text:
 Herr, mitten am Tag halte ich einen Augenblick inne.
 Ich danke Dir für alles, was mich bis hierher getragen hat — für die Arbeit, für das Essen, für jeden freundlichen Blick.
 Du bist gut, und Deine Güte hört nicht auf.
-Besonders danke ich Dir für: ${PLATZHALTER}.
+${TRAEGERSATZ}
 Herr Jesus Christus, Sohn Gottes, ich danke Dir.
 
 ABEND (Muster):
@@ -106,7 +132,7 @@ Ich danke Dir für diesen Tag, so wie er gewesen ist. Für das Brot, das ich geg
 Ich danke Dir für das Gute, das ich bemerkt habe — und ebenso für das Gute, das an mir vorbeigegangen ist, ohne dass ich es gesehen habe.
 Wo ich heute hinter dem zurückgeblieben bin, was Du mir zugetraut hast, vergib mir. Ich lasse es bei Dir.
 Deine Treue reicht durch die Nacht.
-Besonders danke ich Dir für: ${PLATZHALTER}.
+${TRAEGERSATZ}
 Heilige Gottesgebärerin, bitte für mich. Heiliger Schutzengel, wache über meinen Schlaf.
 Herr Jesus Christus, unser Gott, ich danke Dir für alles. Lass mich in Frieden einschlafen und dankbar erwachen. Amen.`
 
@@ -120,11 +146,12 @@ SPRACHLICHE LEITPLANKEN (verbindlich):
 ${LEITPLANKEN}
 
 ZUSÄTZLICHE HARTE VORGABEN:
-- Jeder Text enthält den Satz mit dem Platzhalter „${PLATZHALTER}" wörtlich und als eigenständigen Satz. Setze den Titel des Anliegens NICHT selbst ein — lass den Platzhalter stehen.
+- Jeder Text enthält genau diesen Satz wörtlich, unverändert und als eigene Zeile: „${TRAEGERSATZ}". Formuliere ihn NICHT um und setze den Titel des Anliegens NICHT selbst ein — der Platzhalter bleibt stehen. Jede andere Fassung wird abgewiesen.
+- Das Schriftwort („vers") und die Stellenangabe („stelle") stammen wörtlich aus der Liste, die im Auftrag mitgegeben wird. Wähle je Tageszeit einen anderen Eintrag daraus und schreibe ihn Zeichen für Zeichen ab. Erfinde keine Stellen und formuliere keine eigenen Übertragungen.
 - Morgen- und Abendgebet enden mit „Amen." als letztem Wort. Das Mittagsgebet endet christozentrisch OHNE „Amen.".
 - LÄNGE (wird streng geprüft): Schreibe bewusst AUSFÜHRLICH und in vielen vollständigen Sätzen. Morgengebet mindestens 165, höchstens 200 Wörter. Mittagsgebet mindestens 60, höchstens 90 Wörter. Abendgebet mindestens 200, höchstens 230 Wörter. Lieber zu lang als zu kurz — entfalte Dank und Fürbitte breit. Diese Mindestlängen sind Pflicht; unterschreite sie auf keinen Fall.
 - Keine Ausrufezeichen — an keiner Stelle, auch nicht im Schriftwort.
-- Das Schriftwort („vers") ist eine eigene, behutsame Übertragung in modernem Deutsch (keine geschützte moderne Bibelübersetzung abschreiben), höchstens fünfzehn Wörter lang. Die Stellenangabe („stelle") folgt der Septuaginta-Zählung, etwa „Psalm 89,17".
+- Der Text nimmt das gewählte Schriftwort auf: ein Bild, ein Wort daraus kehrt im Gebet wieder, damit Vers und Text zusammengehören.
 - Passe Bilder und Bitten an Kategorie und Anliegen an, ohne den Platzhalter zu ersetzen.
 
 MUSTER (Ton und Aufbau, nicht Inhalt übernehmen):
@@ -138,9 +165,15 @@ Antworte AUSSCHLIESSLICH mit JSON in genau dieser Form, ohne Vor- oder Nachtext,
 
 export function nutzerPrompt(anfrage: ErzeugungAnfrage): string {
   const faerbung = FAERBUNG_LABEL[anfrage.faerbung] ?? anfrage.faerbung
+  const liste = verskandidaten(anfrage)
+    .map((v) => `- „${v.text}" — ${v.stelle}`)
+    .join('\n')
   return `Anliegen (Thema): ${anfrage.titel}
 Kategorie: ${anfrage.kategorie}
 Liturgische Färbung: ${faerbung}
+
+SCHRIFTWORTE ZUR AUSWAHL (nur aus dieser Liste, wörtlich abschreiben — Text nach „vers", Stellenangabe nach „stelle"):
+${liste}
 
 Erzeuge Morgen-, Mittag- und Abendgebet für dieses Anliegen. Halte alle Vorgaben ein und gib nur das JSON zurück.`
 }
@@ -184,8 +217,23 @@ export function woerter(text: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length
 }
 
-/** Prüft einen einzelnen Tageszeit-Text. Leeres Ergebnis heisst: bestanden. */
-export function pruefeTeil(tageszeit: Tageszeit, teil: ErzeugtesTeil | undefined, titel: string): string[] {
+/** Staucht Leerraum und vereinheitlicht Anführungszeichen — für den Vergleich. */
+function vergleichbar(text: string): string {
+  return text.replace(/\s+/g, ' ').replace(/[„“”"]/g, '"').trim()
+}
+
+/**
+ * Prüft einen einzelnen Tageszeit-Text. Leeres Ergebnis heisst: bestanden.
+ *
+ * `stellen` sind die zugelassenen Stellenangaben aus `verskandidaten`. Fehlen
+ * sie, wird die Herkunft des Schriftworts nicht geprüft.
+ */
+export function pruefeTeil(
+  tageszeit: Tageszeit,
+  teil: ErzeugtesTeil | undefined,
+  _titel: string,
+  stellen?: ReadonlySet<string>,
+): string[] {
   const fehler: string[] = []
   if (!teil || typeof teil.text !== 'string' || typeof teil.vers !== 'string' || typeof teil.stelle !== 'string') {
     return ['unvollständig']
@@ -200,11 +248,17 @@ export function pruefeTeil(tageszeit: Tageszeit, teil: ErzeugtesTeil | undefined
 
   if (text.includes('!') || teil.vers.includes('!')) fehler.push('enthält ein Ausrufezeichen')
 
-  if (!text.includes(PLATZHALTER) && !text.includes(titel.trim())) {
-    fehler.push('weder Platzhaltersatz noch Thema enthalten')
+  // Der Trägersatz muss wörtlich stehen — nur so bleibt die Grammatik heil,
+  // wenn beim Anzeigen der Titel eingesetzt wird.
+  if (!vergleichbar(text).includes(vergleichbar(TRAEGERSATZ))) {
+    fehler.push('Trägersatz fehlt oder ist umformuliert')
   }
 
   if (woerter(teil.vers) > 15) fehler.push('Schriftwort über fünfzehn Wörter')
+
+  if (stellen && stellen.size > 0 && !stellen.has(vergleichbar(teil.stelle))) {
+    fehler.push(`Stellenangabe „${teil.stelle}" steht nicht zur Auswahl`)
+  }
 
   return fehler
 }
@@ -212,15 +266,27 @@ export function pruefeTeil(tageszeit: Tageszeit, teil: ErzeugtesTeil | undefined
 /**
  * Prüft die komplette Antwort. Gibt je Tageszeit die gefundenen Mängel zurück;
  * `gueltig` ist true, wenn alle drei ohne Mangel sind.
+ *
+ * Statt des blossen Titels nimmt sie die ganze Anfrage entgegen, um daraus die
+ * zugelassenen Stellenangaben zu bilden. Ein Titel als Zeichenkette bleibt
+ * erlaubt; dann entfällt nur die Herkunftsprüfung des Schriftworts.
  */
-export function pruefeAntwort(antwort: ErzeugungAntwort | null | undefined, titel: string): {
+export function pruefeAntwort(
+  antwort: ErzeugungAntwort | null | undefined,
+  anfrage: ErzeugungAnfrage | string,
+): {
   gueltig: boolean
   fehler: Record<Tageszeit, string[]>
 } {
   const fehler = { morgen: ['fehlt'], mittag: ['fehlt'], abend: ['fehlt'] } as Record<Tageszeit, string[]>
   if (!antwort) return { gueltig: false, fehler }
+
+  const titel = typeof anfrage === 'string' ? anfrage : anfrage.titel
+  const stellen =
+    typeof anfrage === 'string' ? undefined : new Set(verskandidaten(anfrage).map((v) => vergleichbar(v.stelle)))
+
   for (const tz of TAGESZEITEN) {
-    fehler[tz] = pruefeTeil(tz, antwort[tz], titel)
+    fehler[tz] = pruefeTeil(tz, antwort[tz], titel, stellen)
   }
   const gueltig = TAGESZEITEN.every((tz) => fehler[tz].length === 0)
   return { gueltig, fehler }
