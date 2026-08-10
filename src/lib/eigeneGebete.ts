@@ -5,7 +5,7 @@
  */
 
 import { db } from './db'
-import { pruefeAntwort, type ErzeugungAnfrage, type ErzeugungAntwort } from './erzeugung'
+import { pruefeAntwort, vorgabeAnwenden, type ErzeugungAnfrage, type ErzeugungAntwort } from './erzeugung'
 import { TAGESZEITEN, type EigenesGebet, type Faerbung } from './types'
 
 const WORKER = import.meta.env.VITE_WORKER_URL
@@ -24,7 +24,9 @@ export async function gebeteAnfordern(anfrage: ErzeugungAnfrage): Promise<Erzeug
       body: JSON.stringify(anfrage),
     })
     if (!res.ok) return null
-    const antwort = (await res.json()) as ErzeugungAntwort
+    // Die Vorgabe auch hier anwenden: Dann stimmt das Schriftwort selbst dann,
+    // wenn ein älterer Worker antwortet.
+    const antwort = vorgabeAnwenden((await res.json()) as ErzeugungAntwort, anfrage)
     return pruefeAntwort(antwort, anfrage).gueltig ? antwort : null
   } catch {
     return null
