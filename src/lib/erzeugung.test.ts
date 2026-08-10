@@ -90,18 +90,26 @@ describe('vorgabeAnwenden', () => {
   })
 })
 
-describe('pruefeAntwort — der Trägersatz bleibt Pflicht', () => {
-  it('weist einen umformulierten Trägersatz ab', () => {
+describe('pruefeAntwort — nur der Platzhalter ist Pflicht', () => {
+  it('lässt einen umformulierten Trägersatz durch', () => {
+    // Die Zeile wird beim Anzeigen ohnehin ersetzt (`komposition`), ihr Wortlaut
+    // ist also gleichgültig. Eine Prüfung würde nur brauchbare Gebete wegwerfen.
     const roh = antwortMit('Psalm 26,1', 'Kurz.')
     roh.morgen.text = roh.morgen.text.replace(TRAEGERSATZ, `Besonders bitte ich Dich um ${PLATZHALTER}.`)
-    const ergebnis = pruefeAntwort(vorgabeAnwenden(roh, ANFRAGE), ANFRAGE)
-    expect(ergebnis.gueltig).toBe(false)
-    expect(ergebnis.fehler.morgen.join(' ')).toContain('Trägersatz')
+    expect(pruefeAntwort(vorgabeAnwenden(roh, ANFRAGE), ANFRAGE).gueltig).toBe(true)
   })
 
-  it('weist einen fehlenden Trägersatz ab', () => {
+  it('weist einen fehlenden Platzhalter ab', () => {
     const roh = antwortMit('Psalm 26,1', 'Kurz.')
-    roh.abend.text = 'Herr, ich halte still.\nAmen.'
+    roh.abend.text = roh.abend.text.replace(TRAEGERSATZ, 'Besonders denke ich an mein Anliegen.')
+    const ergebnis = pruefeAntwort(vorgabeAnwenden(roh, ANFRAGE), ANFRAGE)
+    expect(ergebnis.gueltig).toBe(false)
+    expect(ergebnis.fehler.abend.join(' ')).toContain('Platzhalter')
+  })
+
+  it('weist einen selbst eingesetzten Titel ab', () => {
+    const roh = antwortMit('Psalm 26,1', 'Kurz.')
+    roh.mittag.text = roh.mittag.text.replace(PLATZHALTER, ANFRAGE.titel)
     expect(pruefeAntwort(vorgabeAnwenden(roh, ANFRAGE), ANFRAGE).gueltig).toBe(false)
   })
 })
