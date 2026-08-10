@@ -78,7 +78,7 @@ export default {
     // Eigene Gebete erzeugen (Abschnitt 12). Nur Titel, Kategorie und Färbung
     // werden übertragen; der Gemini-Schlüssel liegt als Worker-Secret.
     if (req.method === 'POST' && url.pathname === '/erzeugen') {
-      let roh: { titel?: string; kategorie?: string; faerbung?: string }
+      let roh: { titel?: string; kategorie?: string; kategorieSchluessel?: string; faerbung?: string }
       try {
         roh = (await req.json()) as typeof roh
       } catch {
@@ -90,6 +90,7 @@ export default {
       const gebete = await erzeugeGebete(env, {
         titel,
         kategorie: (roh.kategorie ?? '').trim() || 'Anliegen',
+        kategorieSchluessel: (roh.kategorieSchluessel ?? '').trim() || undefined,
         faerbung: normFaerbung(roh.faerbung),
       })
       if (!gebete) return new Response('Erzeugung fehlgeschlagen', { status: 502, headers: CORS })
@@ -161,7 +162,7 @@ async function erzeugeGebete(env: Env, anfrage: ErzeugungAnfrage): Promise<Erzeu
   // immer beim ersten Mal, und Groq liefert gelegentlich 503/429.
   for (let versuch = 0; versuch < 3; versuch++) {
     const antwort = await groqAufruf(env, anfrage).catch(() => null)
-    if (antwort && pruefeAntwort(antwort, anfrage.titel).gueltig) return antwort
+    if (antwort && pruefeAntwort(antwort, anfrage).gueltig) return antwort
   }
   return null
 }

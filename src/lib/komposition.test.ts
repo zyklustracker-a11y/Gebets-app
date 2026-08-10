@@ -84,6 +84,55 @@ describe('zusammensetzen — Mittag bleibt kurz', () => {
   })
 })
 
+describe('zusammensetzen — der Trägersatz des eigenen Anliegens', () => {
+  const g = korpusNachId('angst-morgen-gewoehnlich-01')
+  if (!g) throw new Error('Korpus fehlt')
+
+  function mitAnliegen(titel: string | null, kategorie: string | null = 'angst') {
+    return zusammensetzen({
+      korpustext: g!.text,
+      vers: g!.vers,
+      stelle: g!.stelle,
+      tageszeit: 'morgen',
+      modul: null,
+      eigenesTitel: titel,
+      eigenesKategorie: kategorie,
+      heiligerName: null,
+    })
+  }
+
+  it('baut den Satz neu, statt den Titel in den vorgefundenen zu setzen', () => {
+    const text = mitAnliegen('Angst vor der Zukunft').absaetze.join('\n')
+    expect(text).toContain('Besonders bringe ich Dir vor Augen: Angst vor der Zukunft.')
+    expect(text).not.toContain('{{')
+  })
+
+  it('führt den Titel nie in einer Rektion, die ihn beugen müsste', () => {
+    for (const titel of ['Angst vor der Zukunft', 'Streit in der Familie', 'Krankheit eines Freundes']) {
+      const zeile = mitAnliegen(titel).absaetze.find((a) => a.includes(titel))
+      // Der Titel steht immer hinter einem Doppelpunkt — also im Nominativ.
+      expect(zeile).toBe(`${zeile!.split(': ')[0]}: ${titel}.`)
+    }
+  })
+
+  it('setzt kein doppeltes Satzzeichen, wenn der Titel schon eines trägt', () => {
+    const text = mitAnliegen('Angst vor der Zukunft.').absaetze.join('\n')
+    expect(text).toContain(': Angst vor der Zukunft.')
+    expect(text).not.toContain('Zukunft..')
+  })
+
+  it('nimmt für Dankthemen die Dankwendung', () => {
+    const text = mitAnliegen('Meine Genesung', 'dankbarkeit').absaetze.join('\n')
+    expect(text).toContain('Besonders danke ich Dir für: Meine Genesung.')
+  })
+
+  it('lässt die Zeile ganz weg, wenn kein eigenes Anliegen vorliegt', () => {
+    const text = mitAnliegen(null).absaetze.join('\n')
+    expect(text).not.toContain('Besonders bringe ich Dir vor Augen')
+    expect(text).not.toContain('{{')
+  })
+})
+
 describe('zusammensetzen — Gedenkliste in der Fürbitte', () => {
   const g = korpusNachId('dankbarkeit-morgen-gewoehnlich-01')
   if (!g) throw new Error('Korpus fehlt')

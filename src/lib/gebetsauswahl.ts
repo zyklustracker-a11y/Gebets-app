@@ -20,7 +20,8 @@ import { heiligerDesTages } from './kalender'
 import { zusammensetzen, type Zusammensetzung } from './komposition'
 import { korpusFuer, korpusNachId } from './korpus'
 import { modulFuer, modulNachId } from './liturgie'
-import type { Gebetseintrag, Tageszeit } from './types'
+import { versFuerThema } from './themenbezug'
+import type { EigenesGebet, Gebetseintrag, Tageszeit } from './types'
 
 export type { Zusammensetzung }
 
@@ -188,15 +189,79 @@ export async function komponiere(eintrag: Gebetseintrag): Promise<Zusammensetzun
 
   const { lebende, entschlafene } = await aktiveGedenknamen()
 
+  // Das Schriftwort eines Grundgebets gehört zu seiner Kategorie, nicht zum
+  // Freitext eines eigenen Themas. Steht ein solches Thema im Gebet, wird das
+  // Schriftwort deshalb nach dessen Wortlaut gewählt (`themenbezug.ts`).
+  // Für KI-erzeugte Gebete bleibt es beim mitgelieferten Vers: der ist bereits
+  // zum Thema gewählt worden (Abschnitt 12).
+  let { vers, stelle } = grundgebet
+  const istErzeugt = (grundgebet as Partial<EigenesGebet>).istEigen === true
+  if (eigenes && !istErzeugt) {
+    const passend = versFuerThema(eigenes.titel, eigenes.kategorie, eintrag.id)
+    if (passend) {
+      vers = passend.text
+      stelle = passend.stelle
+    }
+  }
+
   return zusammensetzen({
     korpustext: grundgebet.text,
-    vers: grundgebet.vers,
-    stelle: grundgebet.stelle,
+    vers,
+    stelle,
     tageszeit: eintrag.tageszeit,
     modul,
     eigenesTitel: eigenes?.titel ?? null,
+    eigenesKategorie: eigenes?.kategorie ?? null,
     heiligerName,
     lebende,
     entschlafene,
+  })
+}
+
+// ---------------------------------------------------------------------------
+// Einmalige Themenwahl vom Startbildschirm
+// ---------------------------------------------------------------------------
+
+/**
+ * Ein Gebet zu genau einem gewählten Thema — für den kleinen Knopf neben der
+ * Gebetszeit auf „Heute".
+ *
+ * Bewusst ohne jede Nebenwirkung: Es wird **nichts** ins Protokoll geschrieben
+ * und **nichts** an den Themen geändert. Die Wahl gilt nur für diesen einen
+ * Durchgang; das deterministische Tagesgebet und die Einstellungen bleiben, wie
+ * sie sind.
+ *
+ * `wahl` ist entweder die id eines Themas oder ein Kategorieschlüssel.
+ * `versuch` zählt „Anderes Gebet" hoch und rückt die Auswahl weiter.
+ */
+export async function einmaligesGebet(
+  datum: string,
+  tageszeit: Tageszeit,
+  wahl: string,
+  versuch = 0,
+): Promise<Zusammensetzung | null> {
+  const thema = await db.themen.get(wahl)
+  const kategorie = thema?.kategorie ?? wahl
+
+  // Hat das Thema erzeugte Gebete, kommen sie zuerst — sonst das Korpus.
+  let auswahl: { id: string }[] = []
+  if (thema) {
+    const eigene = await db.eigeneGebete.where('themaId').equals(thema.id).toArray()
+    auswahl = eigene.filter((g) => g.tageszeit === tageszeit)
+  }
+  if (auswahl.length === 0) auswahl = korpusFuer(kategorie, tageszeit)
+  if (auswahl.length === 0) auswahl = korpusFuer(STANDARD_KATEGORIE, tageszeit)
+  if (auswahl.length === 0) return null
+
+  const index = (streuIndex(`${datum}-${tageszeit}-${wahl}`, auswahl.length) + versuch) % auswahl.length
+
+  const modul = modulFuer(datumAusIso(datum))
+  return komponiere({
+    id: `${datum}-${tageszeit}-${wahl}`,
+    datum,
+    tageszeit,
+    korpusId: auswahl[index]?.id ?? '',
+    themenIds: thema ? [thema.id] : [],
+    modulId: modul?.id,
   })
 }

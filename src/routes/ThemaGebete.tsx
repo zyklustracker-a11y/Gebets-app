@@ -47,6 +47,7 @@ export default function ThemaGebete() {
     const antwort = await gebeteAnfordern({
       titel: thema.titel,
       kategorie: kategorieName(thema.kategorie),
+      kategorieSchluessel: thema.kategorie,
       faerbung: 'gewoehnlich',
     })
     if (antwort) {

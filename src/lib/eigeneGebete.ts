@@ -25,7 +25,7 @@ export async function gebeteAnfordern(anfrage: ErzeugungAnfrage): Promise<Erzeug
     })
     if (!res.ok) return null
     const antwort = (await res.json()) as ErzeugungAntwort
-    return pruefeAntwort(antwort, anfrage.titel).gueltig ? antwort : null
+    return pruefeAntwort(antwort, anfrage).gueltig ? antwort : null
   } catch {
     return null
   }

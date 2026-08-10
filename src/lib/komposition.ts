@@ -15,6 +15,7 @@
  * Übergänge unsichtbar bleiben und es nicht nach Blöcken klingt.
  */
 
+import { traegersatz } from './themenbezug'
 import type { Modul, Tageszeit } from './types'
 
 const STANDARD_EROEFFNUNG = 'Im Namen des Vaters, des Sohnes und des Heiligen Geistes.'
@@ -49,6 +50,8 @@ export interface KompositionEingabe {
   modul: Modul | null
   /** Titel eines eigenen Themas für `{{anliegen}}`, sonst null. */
   eigenesTitel: string | null
+  /** Kategorie des eigenen Themas — bestimmt die Wendung des Trägersatzes. */
+  eigenesKategorie?: string | null
   /** Name des Heiligen für `{{heiliger}}` in generischen Modulen, sonst null. */
   heiligerName: string | null
   /** Aktive Gedenknamen für die Fürbitte (Lebende), sonst leer. */
@@ -78,12 +81,28 @@ function gedenkAbsaetze(lebende: string[], entschlafene: string[]): string[] {
   return absaetze
 }
 
-/** Ersetzt `{{anliegen}}` oder entfernt den ganzen Trägersatz (eigene Zeile). */
-function anliegenEinsetzen(text: string, titel: string | null): string {
-  if (titel) return text.split('{{anliegen}}').join(titel)
+/**
+ * Setzt das Anliegen ein — oder entfernt den Trägersatz, wenn keines vorliegt.
+ *
+ * Ersetzt wird die *ganze Zeile* mit dem Platzhalter, nicht nur der Platzhalter
+ * selbst. Früher wurde der Titel roh in den vorgefundenen Satz gesetzt, und
+ * dessen Rektion passte dann nicht mehr („… ich bitte Dich um Angst vor der
+ * Zukunft"). Jetzt liefert `traegersatz` einen kasusneutralen Satz in
+ * Doppelpunktform, und wie der Satz im Grundgebet einmal lautete, ist gleich.
+ */
+function anliegenEinsetzen(
+  text: string,
+  titel: string | null,
+  kategorie: string | null,
+  tageszeit: Tageszeit,
+): string {
+  const satz = titel ? traegersatz(titel, kategorie, tageszeit) : null
   return text
     .split('\n')
-    .filter((zeile) => !zeile.includes('{{anliegen}}'))
+    .flatMap((zeile) => {
+      if (!zeile.includes('{{anliegen}}')) return [zeile]
+      return satz ? [satz] : []
+    })
     .join('\n')
 }
 
@@ -97,7 +116,7 @@ function heiligerEinsetzen(text: string | null, name: string | null): string | n
 export function zusammensetzen(eingabe: KompositionEingabe): Zusammensetzung {
   const { korpustext, vers, stelle, tageszeit, modul, eigenesTitel, heiligerName } = eingabe
 
-  const zeilen = anliegenEinsetzen(korpustext, eigenesTitel)
+  const zeilen = anliegenEinsetzen(korpustext, eigenesTitel, eingabe.eigenesKategorie ?? null, tageszeit)
     .split('\n')
     .map((z) => z.trim())
     .filter(Boolean)
